@@ -1,0 +1,42 @@
+.universidad {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.universidad__logo {
+  height: 42px;
+  width: auto;
+}
+
+.universidad__lockup {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.universidad__lockup-main {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--color-primario);
+}
+
+.universidad__lockup-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--color-primario);
+  opacity: 0.75;
+}
+
+.universidad--dark .universidad__lockup-main,
+.universidad--dark .universidad__lockup-sub {
+  color: #ffffff;
+}
+
+.universidad--dark .universidad__lockup-sub {
+  opacity: 0.8;
+}

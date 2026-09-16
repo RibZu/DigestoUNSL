@@ -1,0 +1,43 @@
+.home-showcase-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.home-showcase-card__title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-primario);
+}
+
+.home-showcase-card__list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.home-showcase-card__cta {
+  align-self: flex-start;
+  color: #ffffff;
+  background: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.home-showcase-card__cta:hover {
+  background: var(--color-primario-hover);
+}

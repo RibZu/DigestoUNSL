@@ -1,0 +1,141 @@
+
+.digesto-header {
+  width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-shadow: 0 4px 20px -2px rgba(31, 36, 73, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+.header-top-bar {
+  background: var(--color-primario);
+  color: #e4e7f2;
+  font-size: 0.825rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 36px;
+}
+
+.institution-name {
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.top-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.top-link {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  opacity: 0.9;
+}
+
+.top-link:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.link-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.7rem;
+}
+
+
+.header-main-bar {
+  background: #ffffff;
+  border-bottom: 3px solid var(--color-primario);
+  padding: 0.85rem 0;
+}
+
+.main-bar-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  text-align: left;
+  flex-shrink: 0;
+}
+
+#header-nav-collapse {
+  margin: 0 clamp(1.5rem, 4vw, 3rem);
+}
+
+.header-nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-link {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.header-nav-link:hover {
+  background: var(--accent-bg);
+  color: var(--color-primario);
+}
+
+
+@media (max-width: 768px) {
+  .institution-name {
+    display: none;
+  }
+  
+  .top-bar-content {
+    justify-content: flex-end;
+  }
+}

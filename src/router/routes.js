@@ -1,0 +1,51 @@
+export const navigationSections = [
+  {
+    key: 'home',
+    label: 'Inicio',
+    path: '/',
+    requiresAuth: false,
+    hasOwnStyling: true,
+  },
+  {
+    key: 'busqueda',
+    label: 'Búsqueda',
+    path: '/busqueda',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
+    key: 'novedades',
+    label: 'Novedades',
+    path: '/novedades',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
+    key: 'concursos',
+    label: 'Concursos',
+    path: '/concursos',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
+    key: 'ayuda',
+    label: 'Ayuda',
+    path: '/ayuda',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
+    key: 'planes-de-estudio',
+    label: 'Planes de estudio',
+    path: '/planes-de-estudio/:facultad/:carrera',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
+    key: 'auth/login',
+    label: 'Ingreso',
+    path: '/login',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+]
