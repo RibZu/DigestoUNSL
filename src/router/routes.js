@@ -42,6 +42,13 @@ export const navigationSections = [
     hasOwnStyling: false,
   },
   {
+    key: 'estadisticas',
+    label: 'Estadísticas',
+    path: '/estadisticas',
+    requiresAuth: false,
+    hasOwnStyling: false,
+  },
+  {
     key: 'auth/login',
     label: 'Ingreso',
     path: '/login',

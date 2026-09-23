@@ -12,3 +12,4 @@ export const layoutNavigationSections = [
 
 export const loginSection = { key: 'auth/login', label: 'Ingreso', path: '/login' }
 export const ayudaSection = { key: 'ayuda', label: 'Ayuda', path: '/ayuda' }
+export const estadisticasSection = { key: 'estadisticas', label: 'Estadísticas', path: '/estadisticas' }

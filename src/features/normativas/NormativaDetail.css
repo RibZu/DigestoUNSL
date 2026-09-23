@@ -1,0 +1,297 @@
+.normativa-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  max-width: 920px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.normativa-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  align-self: flex-start;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.normativa-back-btn:hover {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+}
+
+/* Notice Banner */
+.normativa-original-notice {
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  border-radius: 10px;
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #92400e;
+}
+
+.normativa-notice-text {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.normativa-notice-link {
+  color: var(--color-primario);
+  font-weight: 700;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #fde68a;
+  transition: all 0.2s ease;
+}
+
+.normativa-notice-link:hover {
+  background: var(--color-primario);
+  color: #ffffff;
+  border-color: var(--color-primario);
+}
+
+/* Main Document Card */
+.normativa-document-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+/* Document Top Header */
+.normativa-top-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 1.5rem;
+}
+
+.normativa-header-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.normativa-code-badge {
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  background: var(--accent-bg);
+  padding: 0.35rem 0.85rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border);
+}
+
+.normativa-date-location {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-h);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.normativa-main-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-h);
+  line-height: 1.4;
+}
+
+.normativa-keywords-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.normativa-kw-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #475569;
+  background: #f1f5f9;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* Toolbar */
+.normativa-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.875rem 1.25rem;
+}
+
+.normativa-toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: var(--text-h);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.normativa-toolbar-btn:hover {
+  background: #f1f5f9;
+}
+
+.normativa-toolbar-btn.primary {
+  background: var(--color-primario);
+  color: #ffffff;
+  border-color: var(--color-primario);
+}
+
+.normativa-toolbar-btn.primary:hover {
+  background: var(--color-primario-hover);
+}
+
+/* Legal Content Body */
+.normativa-legal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #334155;
+  font-size: 1.025rem;
+  line-height: 1.7;
+}
+
+.normativa-legal-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.normativa-section-heading {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-h);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.normativa-expte-ref {
+  font-weight: 700;
+  color: var(--color-primario);
+  background: var(--code-bg);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.normativa-resolving-intro {
+  text-align: center;
+  font-weight: 700;
+  color: var(--color-primario);
+  padding: 1rem 0;
+  border-top: 1px dashed #cbd5e1;
+  border-bottom: 1px dashed #cbd5e1;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.normativa-article-card {
+  background: #fafafa;
+  border-left: 4px solid var(--color-primario);
+  border-radius: 0 10px 10px 0;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.normativa-article-heading {
+  font-weight: 800;
+  color: var(--color-primario);
+  font-size: 1rem;
+}
+
+/* Imputación presupuestaria table */
+.normativa-budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.normativa-budget-table td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.normativa-budget-table td.label {
+  font-weight: 700;
+  background: #f1f5f9;
+  width: 35%;
+  color: var(--text-h);
+}
+
+.normativa-order-list {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.normativa-order-list li {
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+
+/* Document Footer Signature */
+.normativa-official-footer {
+  border-top: 2px solid #f1f5f9;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.normativa-resolution-number {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-primario);
+}
+
+.normativa-initials {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: #94a3b8;
+}

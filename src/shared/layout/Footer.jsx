@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import Universidad from './Universidad';
-import { ayudaSection, loginSection } from './navigation';
+import { ayudaSection, estadisticasSection, loginSection } from './navigation';
 import './Footer.css';
 
 export default function Footer() {
@@ -49,6 +49,9 @@ export default function Footer() {
               </Link>
               <Link to={ayudaSection.path} className="btn btn-outline-light">
                 {ayudaSection.label}
+              </Link>
+              <Link to={estadisticasSection.path} className="btn btn-outline-light">
+                {estadisticasSection.label}
               </Link>
             </div>
           </div>

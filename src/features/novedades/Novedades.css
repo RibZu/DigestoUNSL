@@ -1,0 +1,168 @@
+.novedades-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.novedades-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.novedades-header h1 {
+  margin: 0;
+  color: var(--color-primario);
+}
+
+.novedades-header p {
+  color: #475569;
+}
+
+.novedades-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+}
+
+.novedades-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.novedades-filter-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-h);
+}
+
+.novedades-select,
+.novedades-search-input {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text-h);
+  background: var(--bg);
+}
+
+.novedades-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.novedad-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.novedad-card:hover {
+  box-shadow: var(--shadow);
+  border-color: var(--accent-border);
+}
+
+.novedad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.novedad-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.novedad-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-primario);
+  margin: 0;
+}
+
+.novedad-organo {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.novedad-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.novedad-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: var(--code-bg);
+  color: var(--text-h);
+}
+
+.novedad-badge.tipo {
+  background: var(--accent-bg);
+  color: var(--color-primario);
+}
+
+.novedad-description {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.novedad-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.novedad-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.novedad-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  background: var(--color-primario);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.novedad-download-btn:hover {
+  background: var(--color-primario-hover);
+}
