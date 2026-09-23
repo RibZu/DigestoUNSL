@@ -1,0 +1,1353 @@
+{
+  "facultades": [
+    {
+      "codigo": "fqbf",
+      "nombre": "Facultad de Química, Bioquímica y Farmacia",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "02011",
+          "nombre": "ANALISTA QUÍMICO",
+          "planes": [
+            {
+              "ordenanza": "13/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02011&plan=13/12&version=5&version_id=1126"
+            }
+          ]
+        },
+        {
+          "codigo": "02046",
+          "nombre": "CARRERA DE INGRESO",
+          "planes": [
+            {
+              "ordenanza": "01/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02046&plan=01/11&version=1&version_id=749"
+            }
+          ]
+        },
+        {
+          "codigo": "02005",
+          "nombre": "FARMACIA",
+          "planes": [
+            {
+              "ordenanza": "18/24",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02005&plan=18/24&version=1&version_id=1272"
+            },
+            {
+              "ordenanza": "19/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02005&plan=19/13&version=9&version_id=872"
+            }
+          ]
+        },
+        {
+          "codigo": "02029",
+          "nombre": "INGENIERÍA EN ALIMENTOS",
+          "planes": [
+            {
+              "ordenanza": "12/23",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02029&plan=12/23&version=2&version_id=1166"
+            },
+            {
+              "ordenanza": "38/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02029&plan=38/11&version=9&version_id=874"
+            }
+          ]
+        },
+        {
+          "codigo": "02007",
+          "nombre": "LICENCIATURA EN BIOLOGÍA MOLECULAR",
+          "planes": [
+            {
+              "ordenanza": "15/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02007&plan=15/14&version=12&version_id=1214"
+            }
+          ]
+        },
+        {
+          "codigo": "02010",
+          "nombre": "LICENCIATURA EN BIOQUÍMICA",
+          "planes": [
+            {
+              "ordenanza": "1/25",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02010&plan=1/25&version=1&version_id=1269"
+            },
+            {
+              "ordenanza": "11/10",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02010&plan=11/10&version=13&version_id=1316"
+            }
+          ]
+        },
+        {
+          "codigo": "02014",
+          "nombre": "LICENCIATURA EN BIOTECNOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "7/17",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02014&plan=7/17&version=7&version_id=1192"
+            },
+            {
+              "ordenanza": "10/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02014&plan=10/12&version=3&version_id=811"
+            }
+          ]
+        },
+        {
+          "codigo": "02013",
+          "nombre": "LICENCIATURA EN CIENCIA Y TECNOLOGÍA DE LOS ALIMENTOS",
+          "planes": [
+            {
+              "ordenanza": "09/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02013&plan=09/12&version=5&version_id=880"
+            }
+          ]
+        },
+        {
+          "codigo": "02004",
+          "nombre": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
+          "planes": [
+            {
+              "ordenanza": "8/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02004&plan=8/13&version=12_1&version_id=1313"
+            }
+          ]
+        },
+        {
+          "codigo": "02018",
+          "nombre": "LICENCIATURA EN HIGIENE Y SEGURIDAD EN EL TRABAJO - CICLO DE COMPLEMENTACIÓN CURRICULAR",
+          "planes": [
+            {
+              "ordenanza": "6/21",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02018&plan=6/21&version=2&version_id=1125"
+            }
+          ]
+        },
+        {
+          "codigo": "02001",
+          "nombre": "LICENCIATURA EN QUÍMICA",
+          "planes": [
+            {
+              "ordenanza": "12/21",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02001&plan=12/21&version=1&version_id=853"
+            },
+            {
+              "ordenanza": "3/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02001&plan=3/11&version=5&version_id=912"
+            }
+          ]
+        },
+        {
+          "codigo": "02036",
+          "nombre": "PROFESORADO UNIVERSITARIO EN BIOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "3/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02036&plan=3/18&version=4&version_id=1296"
+            }
+          ]
+        },
+        {
+          "codigo": "02031",
+          "nombre": "PROFESORADO UNIVERSITARIO EN QUÍMICA",
+          "planes": [
+            {
+              "ordenanza": "14/19",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02031&plan=14/19&version=3&version_id=1205"
+            }
+          ]
+        },
+        {
+          "codigo": "02015",
+          "nombre": "TECNICATURA UNIVERSITARIA EN ESTERILIZACIÓN",
+          "planes": [
+            {
+              "ordenanza": "11/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02015&plan=11/18&version=3&version_id=913"
+            },
+            {
+              "ordenanza": "12/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02015&plan=12/12&version=3&version_id=817"
+            }
+          ]
+        },
+        {
+          "codigo": "02017",
+          "nombre": "TECNICATURA UNIVERSITARIA EN HIGIENE Y SEGURIDAD EN EL TRABAJO",
+          "planes": [
+            {
+              "ordenanza": "8/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02017&plan=8/18&version=3&version_id=875"
+            }
+          ]
+        },
+        {
+          "codigo": "02016",
+          "nombre": "TECNICATURA UNIVERSITARIA EN LABORATORIOS BIOLÓGICOS",
+          "planes": [
+            {
+              "ordenanza": "15/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02016&plan=15/12&version=7&version_id=881"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fcfmn",
+      "nombre": "Facultad de Ciencias Físico-Matemáticas y Naturales",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "03025",
+          "nombre": "INGENIERÍA ELECTRÓNICA CON ORIENTACIÓN EN SISTEMAS DIGITALES",
+          "planes": [
+            {
+              "ordenanza": "OCD-6/24",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03025&plan=6/24&version=1&version_id=1206"
+            }
+          ]
+        },
+        {
+          "codigo": "03062",
+          "nombre": "INGENIERÍA EN COMPUTACIÓN",
+          "planes": [
+            {
+              "ordenanza": "28/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03062&plan=28/12&version=3&version_id=884"
+            },
+            {
+              "ordenanza": "16/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03062&plan=16/11&version=1&version_id=144"
+            }
+          ]
+        },
+        {
+          "codigo": "03061",
+          "nombre": "INGENIERÍA EN INFORMÁTICA",
+          "planes": [
+            {
+              "ordenanza": "26/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03061&plan=26/12&version=7&version_id=330"
+            },
+            {
+              "ordenanza": "OCD-2/25",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03061&plan=2/25&version=3&version_id=1253"
+            },
+            {
+              "ordenanza": "17/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03061&plan=17/11&version=1&version_id=158"
+            }
+          ]
+        },
+        {
+          "codigo": "03054",
+          "nombre": "INGENIERÍA EN MINAS",
+          "planes": [
+            {
+              "ordenanza": "6/15",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=6/15&version=8&version_id=871"
+            },
+            {
+              "ordenanza": "OCD-11/23",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=11/23&version=1&version_id=878"
+            },
+            {
+              "ordenanza": "07/13",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=07/13&version=1&version_id=164"
+            },
+            {
+              "ordenanza": "18/13",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=18/13&version=3&version_id=209"
+            }
+          ]
+        },
+        {
+          "codigo": "16001",
+          "nombre": "LICENCIATURA EN ANÁLISIS Y GESTIÓN DE DATOS",
+          "planes": [
+            {
+              "ordenanza": "OCS-27/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=16&car=16001&plan=27/22&version=2&version_id=614"
+            }
+          ]
+        },
+        {
+          "codigo": "03003",
+          "nombre": "LICENCIATURA EN CIENCIAS DE LA COMPUTACIÓN",
+          "planes": [
+            {
+              "ordenanza": "32/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03003&plan=32/12&version=2&version_id=1309"
+            },
+            {
+              "ordenanza": "OCD-1/23",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03003&plan=1/23&version=3&version_id=1248"
+            },
+            {
+              "ordenanza": "18/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03003&plan=18/11&version=2&version_id=225"
+            }
+          ]
+        },
+        {
+          "codigo": "03004",
+          "nombre": "LICENCIATURA EN CIENCIAS GEOLÓGICAS",
+          "planes": [
+            {
+              "ordenanza": "02/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03004&plan=02/22&version=5&version_id=1115"
+            },
+            {
+              "ordenanza": "3/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03004&plan=3/11&version=12&version_id=857"
+            }
+          ]
+        },
+        {
+          "codigo": "03002",
+          "nombre": "LICENCIATURA EN CIENCIAS MATEMÁTICAS",
+          "planes": [
+            {
+              "ordenanza": "09/17",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03002&plan=09/17&version=3&version_id=629"
+            },
+            {
+              "ordenanza": "03/14",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03002&plan=03/14&version=1&version_id=196"
+            }
+          ]
+        },
+        {
+          "codigo": "03058",
+          "nombre": "LICENCIATURA EN MATEMÁTICA APLICADA",
+          "planes": [
+            {
+              "ordenanza": "12/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03058&plan=12/14&version=3&version_id=338"
+            }
+          ]
+        },
+        {
+          "codigo": "03024",
+          "nombre": "PROFESORADO EN CIENCIAS DE LA COMPUTACIÓN",
+          "planes": [
+            {
+              "ordenanza": "02/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03024&plan=02/16&version=2&version_id=232"
+            }
+          ]
+        },
+        {
+          "codigo": "03060",
+          "nombre": "PROFESORADO EN MATEMÁTICA",
+          "planes": [
+            {
+              "ordenanza": "21/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03060&plan=21/13&version=3&version_id=1198"
+            }
+          ]
+        },
+        {
+          "codigo": "03TUE",
+          "nombre": "TECNICATURA UNIVERSITARIA EN ELECTRÓNICA",
+          "planes": [
+            {
+              "ordenanza": "15/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUE&plan=15/13&version=1&version_id=178"
+            },
+            {
+              "ordenanza": "24/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUE&plan=24/11&version=2&version_id=198"
+            }
+          ]
+        },
+        {
+          "codigo": "03TER",
+          "nombre": "TECNICATURA UNIVERSITARIA EN ENERGÍAS RENOVABLES",
+          "planes": [
+            {
+              "ordenanza": "05/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TER&plan=05/13&version=2&version_id=327"
+            },
+            {
+              "ordenanza": "28/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TER&plan=28/11&version=1&version_id=161"
+            }
+          ]
+        },
+        {
+          "codigo": "03TEM",
+          "nombre": "TECNICATURA UNIVERSITARIA EN EXPLOTACIÓN MINERA",
+          "planes": [
+            {
+              "ordenanza": "14/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TEM&plan=14/13&version=2&version_id=221"
+            }
+          ]
+        },
+        {
+          "codigo": "03063",
+          "nombre": "TECNICATURA UNIVERSITARIA EN FOTOGRAFÍA",
+          "planes": [
+            {
+              "ordenanza": "15/15",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03063&plan=15/15&version=4&version_id=866"
+            }
+          ]
+        },
+        {
+          "codigo": "03059",
+          "nombre": "TECNICATURA UNIVERSITARIA EN GEOINFORMÁTICA",
+          "planes": [
+            {
+              "ordenanza": "09/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03059&plan=09/13&version=3&version_id=340"
+            }
+          ]
+        },
+        {
+          "codigo": "03TUM",
+          "nombre": "TECNICATURA UNIVERSITARIA EN MINERÍA",
+          "planes": [
+            {
+              "ordenanza": "4/20",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUM&plan=4/20&version=4&version_id=1168"
+            }
+          ]
+        },
+        {
+          "codigo": "03TOV",
+          "nombre": "TECNICATURA UNIVERSITARIA EN OBRAS VIALES",
+          "planes": [
+            {
+              "ordenanza": "01/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TOV&plan=01/18&version=6&version_id=1234"
+            },
+            {
+              "ordenanza": "10/13",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TOV&plan=10/13&version=3&version_id=247"
+            }
+          ]
+        },
+        {
+          "codigo": "03TPM",
+          "nombre": "TECNICATURA UNIVERSITARIA EN PROCESAMIENTO DE MINERALES",
+          "planes": [
+            {
+              "ordenanza": "11/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TPM&plan=11/13&version=3&version_id=333"
+            }
+          ]
+        },
+        {
+          "codigo": "03053",
+          "nombre": "TECNICATURA UNIVERSITARIA EN REDES DE COMPUTADORAS",
+          "planes": [
+            {
+              "ordenanza": "12/15",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03053&plan=12/15&version=3&version_id=1189"
+            },
+            {
+              "ordenanza": "12/13",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03053&plan=12/13&version=1&version_id=175"
+            }
+          ]
+        },
+        {
+          "codigo": "03TUT",
+          "nombre": "TECNICATURA UNIVERSITARIA EN TELECOMUNICACIONES",
+          "planes": [
+            {
+              "ordenanza": "16/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUT&plan=16/13&version=2&version_id=180"
+            },
+            {
+              "ordenanza": "18/10",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUT&plan=18/10&version=2&version_id=609"
+            }
+          ]
+        },
+        {
+          "codigo": "03064",
+          "nombre": "TECNICATURA UNIVERSITARIA EN TELEDETECCIÓN Y SISTEMAS DE INFORMACIÓN GEOGRÁFICA",
+          "planes": [
+            {
+              "ordenanza": "OCD-13/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03064&plan=13/22&version=2&version_id=627"
+            }
+          ]
+        },
+        {
+          "codigo": "03052",
+          "nombre": "TECNICATURA UNIVERSITARIA EN WEB",
+          "planes": [
+            {
+              "ordenanza": "08/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03052&plan=08/13&version=1&version_id=174"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fch",
+      "nombre": "Facultad de Ciencias Humanas",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "04061",
+          "nombre": "LICENCIATURA EN EDUCACION ESPECIAL-CICLO DE COMPLEMENTACION CURRICULAR",
+          "planes": [
+            {
+              "ordenanza": "12/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04061&plan=12/16&version=1&version_id=1105"
+            }
+          ]
+        },
+        {
+          "codigo": "04027",
+          "nombre": "LICENCIATURA EN EDUCACIÓN INICIAL",
+          "planes": [
+            {
+              "ordenanza": "10/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04027&plan=10/11&version=2&version_id=1101"
+            }
+          ]
+        },
+        {
+          "codigo": "04056",
+          "nombre": "PROFESORADO EN EDUCACION SECUNDARIA Y SUPERIOR EN LENGUA Y LITERATURA",
+          "planes": [
+            {
+              "ordenanza": "02/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04056&plan=02/13&version=1&version_id=1094"
+            }
+          ]
+        },
+        {
+          "codigo": "04059",
+          "nombre": "PROFESORADO UNIVERSITARIO EN EDUCACIÓN PRIMARIA",
+          "planes": [
+            {
+              "ordenanza": "07/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04059&plan=07/14&version=1&version_id=1095"
+            }
+          ]
+        },
+        {
+          "codigo": "04058",
+          "nombre": "PROFESORADO UNIVERSITARIO EN LETRAS",
+          "planes": [
+            {
+              "ordenanza": "07/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04058&plan=07/13&version=6&version_id=1202"
+            }
+          ]
+        },
+        {
+          "codigo": "04060",
+          "nombre": "PROFESORADO UNIVERSITARIO EN MÚSICA POPULAR LATINOAMERICANA",
+          "planes": [
+            {
+              "ordenanza": "08/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04060&plan=08/16&version=3&version_id=1250"
+            }
+          ]
+        },
+        {
+          "codigo": "04064",
+          "nombre": "PROFESORADO UNIVERSITARIO EN TEATRO",
+          "planes": [
+            {
+              "ordenanza": "09/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04064&plan=09/16&version=1&version_id=1113"
+            }
+          ]
+        },
+        {
+          "codigo": "04063",
+          "nombre": "TECNICATURA UNIVERSITARIA EN PRODUCCIÓN MUSICAL",
+          "planes": [
+            {
+              "ordenanza": "14/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04063&plan=14/18&version=2&version_id=1249"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fices",
+      "nombre": "Facultad de Ingeniería y Ciencias Económico-Sociales",
+      "ubicacion": "Villa Mercedes",
+      "carreras": [
+        {
+          "codigo": "36",
+          "nombre": "Bromatología",
+          "planes": [
+            {
+              "ordenanza": "C.D.Nº008/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=36&plan=08/11&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "38",
+          "nombre": "Ciclo de Licenciatura en Gestión de Instituciones Universitarias",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D.009/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=38&plan=09/11&version=2"
+            }
+          ]
+        },
+        {
+          "codigo": "3",
+          "nombre": "Ingeniería Química",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D.024/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=3&plan=24/12&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "2",
+          "nombre": "Ingeniería Electromecánica",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D.020/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=2&plan=20/12&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "23",
+          "nombre": "Ingeniería Electrónica",
+          "planes": [
+            {
+              "ordenanza": "OrdC.D.Nº019/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=23&plan=19/12&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "8",
+          "nombre": "Ingeniería Industrial",
+          "planes": [
+            {
+              "ordenanza": "Ord.CD.Nº021/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=8&plan=21/12&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "37",
+          "nombre": "Ingeniería Mecatrónica",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D. 022/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=37&plan=22/12&version=1"
+            },
+            {
+              "ordenanza": "015/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=37&plan=15/11&version=2"
+            }
+          ]
+        },
+        {
+          "codigo": "14",
+          "nombre": "Ingeniería en Alimentos",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D.023/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=14&plan=23/12&version=1"
+            },
+            {
+              "ordenanza": "Ord.C.D.014/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=14&plan=14/11&version=2"
+            },
+            {
+              "ordenanza": "Ord.C.S.38/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=14&plan=38/11&version=2"
+            }
+          ]
+        },
+        {
+          "codigo": "18",
+          "nombre": "Licenciatura en Administración Pública",
+          "planes": [
+            {
+              "ordenanza": "C.D.013/10",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=18&plan=13/10&version=2"
+            }
+          ]
+        },
+        {
+          "codigo": "5",
+          "nombre": "Licenciatura en Trabajo Social",
+          "planes": [
+            {
+              "ordenanza": "Ord.C.D.024/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=5&plan=24/11&version=3"
+            }
+          ]
+        },
+        {
+          "codigo": "40",
+          "nombre": "Tecnicatura Universitaria en Gestión Financiera",
+          "planes": [
+            {
+              "ordenanza": "Ord. CD 015/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=40&plan=15/12&version=1"
+            }
+          ]
+        },
+        {
+          "codigo": "29",
+          "nombre": "Técnico Universitario en Producción Apícola",
+          "planes": [
+            {
+              "ordenanza": "001/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=29&plan=01/11&version=1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "ipau",
+      "nombre": "Instituto Politécnico y Artístico Universitario",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "06030",
+          "nombre": "DIPLOMATURA EN ENSEÑANZA DEL ESPAÑOL COMO LENGUA SEGUNDA Y EXTRANJERA (ELSE)",
+          "planes": [
+            {
+              "ordenanza": "16/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06030&plan=16/11&version=1&version_id=366"
+            }
+          ]
+        },
+        {
+          "codigo": "06086",
+          "nombre": "TECNICATURA UNIVERSITARIA EN GESTIÓN DE ORGANIZACIONES DEPORTIVAS",
+          "planes": [
+            {
+              "ordenanza": "1/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06086&plan=1/18&version=2&version_id=386"
+            }
+          ]
+        },
+        {
+          "codigo": "06083",
+          "nombre": "TECNICATURA UNIVERSITARIA EN SONORIZACIÓN",
+          "planes": [
+            {
+              "ordenanza": "24/10",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06083&plan=24/10&version=2&version_id=361"
+            }
+          ]
+        },
+        {
+          "codigo": "06079",
+          "nombre": "TECNICATURA EN ADMINISTRACION Y GESTIÓN DE INSTITUCIONES UNIVERSITARIAS",
+          "planes": [
+            {
+              "ordenanza": "49/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06079&plan=49/18&version=14&version_id=1167"
+            },
+            {
+              "ordenanza": "19/10",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06079&plan=19/10&version=6&version_id=376"
+            }
+          ]
+        },
+        {
+          "codigo": "06085",
+          "nombre": "TECNICATURA UNIVERSITARIA EN ADMINISTRACIÓN Y GESTIÓN JUDICIAL",
+          "planes": [
+            {
+              "ordenanza": "15/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06085&plan=15/18&version=3&version_id=896"
+            }
+          ]
+        },
+        {
+          "codigo": "06084",
+          "nombre": "TECNICATURA UNIVERSITARIA EN FOTOGRAFIA",
+          "planes": [
+            {
+              "ordenanza": "15/15",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06084&plan=15/15&version=2&version_id=382"
+            },
+            {
+              "ordenanza": "13/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06084&plan=13/11&version=1&version_id=363"
+            }
+          ]
+        },
+        {
+          "codigo": "06007",
+          "nombre": "TECNICATURA UNIVERSITARIA EN SECRETARIADO EJECUTIVO (M.D.)",
+          "planes": [
+            {
+              "ordenanza": "18/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06007&plan=18/16&version=18/16-3&version_id=879"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fcs",
+      "nombre": "Facultad de Ciencias de la Salud",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "10041",
+          "nombre": "LICENCIATURA EN ENFERMERÍA",
+          "planes": [
+            {
+              "ordenanza": "2/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10041&plan=2/18&version=19&version_id=1298"
+            }
+          ]
+        },
+        {
+          "codigo": "10007",
+          "nombre": "LICENCIATURA EN FONOAUDIOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "1/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10007&plan=1/18&version=15&version_id=1175"
+            },
+            {
+              "ordenanza": "OCD-1/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10007&plan=1/2024&version=6&version_id=1301"
+            }
+          ]
+        },
+        {
+          "codigo": "10043",
+          "nombre": "LICENCIATURA EN KINESIOLOGÍA Y FISIATRÍA",
+          "planes": [
+            {
+              "ordenanza": "11/13",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10043&plan=11/13&version=25&version_id=1300"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "ftu",
+      "nombre": "Facultad de Turismo y Urbanismo",
+      "ubicacion": "Merlo",
+      "carreras": [
+        {
+          "codigo": "11080",
+          "nombre": "GUÍA UNIVERSITARIO DE TURISMO",
+          "planes": [
+            {
+              "ordenanza": "18/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11080&plan=18/2024&version=2&version_id=1275"
+            }
+          ]
+        },
+        {
+          "codigo": "11085",
+          "nombre": "LICENCIATURA EN GESTIÓN PARA EL DESARROLLO URBANO Y REGIONAL",
+          "planes": [
+            {
+              "ordenanza": "49/19",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11085&plan=49/19&version=2&version_id=904"
+            }
+          ]
+        },
+        {
+          "codigo": "11082",
+          "nombre": "LICENCIATURA EN HOTELERIA",
+          "planes": [
+            {
+              "ordenanza": "2/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11082&plan=2/14&version=6&version_id=1162"
+            }
+          ]
+        },
+        {
+          "codigo": "11083",
+          "nombre": "LICENCIATURA EN TURISMO",
+          "planes": [
+            {
+              "ordenanza": "3/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11083&plan=3/14&version=6&version_id=901"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fapsi",
+      "nombre": "Facultad de Psicología",
+      "ubicacion": "San Luis",
+      "carreras": [
+        {
+          "codigo": "12002",
+          "nombre": "LICENCIATURA EN PSICOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "12/14",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=12&car=12002&plan=12/14&version=8&version_id=1320"
+            }
+          ]
+        },
+        {
+          "codigo": "12010",
+          "nombre": "LICENCIATURA EN PSICOMOTRICIDAD",
+          "planes": [
+            {
+              "ordenanza": "03/16",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=12&car=12010&plan=03/16&version=7&version_id=1319"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fica",
+      "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias",
+      "ubicacion": "Villa Mercedes",
+      "carreras": [
+        {
+          "codigo": "14036",
+          "nombre": "BROMATOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "08/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14036&plan=08/11&version=4&version_id=1239"
+            },
+            {
+              "ordenanza": "25/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14036&plan=25/2024&version=3&version_id=1290"
+            }
+          ]
+        },
+        {
+          "codigo": "14001",
+          "nombre": "INGENIERÍA AGRONÓMICA",
+          "planes": [
+            {
+              "ordenanza": "1/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14001&plan=1/2024&version=11&version_id=1304"
+            }
+          ]
+        },
+        {
+          "codigo": "14002",
+          "nombre": "INGENIERÍA ELECTROMECÁNICA",
+          "planes": [
+            {
+              "ordenanza": "25/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14002&plan=25/22&version=10&version_id=1306"
+            },
+            {
+              "ordenanza": "20/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14002&plan=20/12&version=21&version_id=681"
+            }
+          ]
+        },
+        {
+          "codigo": "14023",
+          "nombre": "INGENIERÍA ELECTRÓNICA",
+          "planes": [
+            {
+              "ordenanza": "23/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14023&plan=23/22&version=11&version_id=1295"
+            },
+            {
+              "ordenanza": "19/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14023&plan=19/12&version=15&version_id=1230"
+            }
+          ]
+        },
+        {
+          "codigo": "14014",
+          "nombre": "INGENIERÍA EN ALIMENTOS",
+          "planes": [
+            {
+              "ordenanza": "22/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14014&plan=22/22&version=9&version_id=1311"
+            },
+            {
+              "ordenanza": "23/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14014&plan=23/12&version=9&version_id=580"
+            },
+            {
+              "ordenanza": "38/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14014&plan=38/11&version=4&version_id=510"
+            }
+          ]
+        },
+        {
+          "codigo": "14008",
+          "nombre": "INGENIERÍA INDUSTRIAL",
+          "planes": [
+            {
+              "ordenanza": "20/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14008&plan=20/22&version=9&version_id=1276"
+            },
+            {
+              "ordenanza": "21/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14008&plan=21/12&version=15&version_id=642"
+            }
+          ]
+        },
+        {
+          "codigo": "14037",
+          "nombre": "INGENIERÍA MECATRÓNICA",
+          "planes": [
+            {
+              "ordenanza": "19/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14037&plan=19/22&version=14&version_id=1321"
+            },
+            {
+              "ordenanza": "15/11",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14037&plan=15/11&version=2&version_id=482"
+            },
+            {
+              "ordenanza": "22/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14037&plan=22/12&version=15&version_id=643"
+            }
+          ]
+        },
+        {
+          "codigo": "14003",
+          "nombre": "INGENIERÍA QUÍMICA",
+          "planes": [
+            {
+              "ordenanza": "21/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14003&plan=21/22&version=13&version_id=1240"
+            },
+            {
+              "ordenanza": "24/12",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14003&plan=24/12&version=20&version_id=1127"
+            }
+          ]
+        },
+        {
+          "codigo": "14040",
+          "nombre": "LICENCIATURA EN BROMATOLOGÍA",
+          "planes": [
+            {
+              "ordenanza": "23/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14040&plan=23/2024&version=3&version_id=1286"
+            },
+            {
+              "ordenanza": "6/21",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14040&plan=6/21&version=3&version_id=1222"
+            }
+          ]
+        },
+        {
+          "codigo": "14029",
+          "nombre": "TECNICATURA UNIVERSITARIA EN APICULTURA",
+          "planes": [
+            {
+              "ordenanza": "01/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14029&plan=01/11&version=1&version_id=447"
+            }
+          ]
+        },
+        {
+          "codigo": "14009",
+          "nombre": "TECNICATURA UNIVERSITARIA EN MANTENIMIENTO INDUSTRIAL",
+          "planes": [
+            {
+              "ordenanza": "15/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14009&plan=15/2024&version=1&version_id=1231"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "codigo": "fcejs",
+      "nombre": "Facultad de Ciencias Económicas, Jurídicas y Sociales",
+      "ubicacion": "Villa Mercedes",
+      "carreras": [
+        {
+          "codigo": "15035",
+          "nombre": "ABOGACÍA",
+          "planes": [
+            {
+              "ordenanza": "8/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15035&plan=8/18&version=6&version_id=1302"
+            }
+          ]
+        },
+        {
+          "codigo": "15038",
+          "nombre": "CICLO DE LICENCIATURA EN GESTIÓN DE INSTITUCIONES UNIVERSITARIAS",
+          "planes": [
+            {
+              "ordenanza": "09/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15038&plan=09/11&version=2&version_id=275"
+            }
+          ]
+        },
+        {
+          "codigo": "15007",
+          "nombre": "CONTADOR PÚBLICO NACIONAL",
+          "planes": [
+            {
+              "ordenanza": "11/18",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15007&plan=11/18&version=8&version_id=1220"
+            }
+          ]
+        },
+        {
+          "codigo": "15043",
+          "nombre": "LICENCIATURA EN ACOMPAÑAMIENTO TERAPÉUTICO, CICLO DE COMPLEMENTACIÓN CURRICULAR.",
+          "planes": [
+            {
+              "ordenanza": "OCS 53/2022",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15043&plan=53/2022&version=2&version_id=1273"
+            }
+          ]
+        },
+        {
+          "codigo": "15004",
+          "nombre": "LICENCIATURA EN ADMINISTRACIÓN",
+          "planes": [
+            {
+              "ordenanza": "07/19",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15004&plan=07/19&version=6&version_id=1292"
+            }
+          ]
+        },
+        {
+          "codigo": "15018",
+          "nombre": "LICENCIATURA EN ADMINISTRACIÓN PÚBLICA",
+          "planes": [
+            {
+              "ordenanza": "13/10",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15018&plan=13/10&version=3&version_id=624"
+            }
+          ]
+        },
+        {
+          "codigo": "15044",
+          "nombre": "LICENCIATURA EN ADMINISTRACIÓN Y GESTIÓN DE INSTITUCIONES UNIVERSITARIAS, CICLO DE COMPLEMENTACIÓN CURRICULAR.",
+          "planes": [
+            {
+              "ordenanza": "OCS 08/2021",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15044&plan=08/2021&version=3&version_id=1263"
+            }
+          ]
+        },
+        {
+          "codigo": "16001",
+          "nombre": "LICENCIATURA EN ANÁLISIS Y GESTIÓN DE DATOS",
+          "planes": [
+            {
+              "ordenanza": "OCS-27/22",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=16&car=16001&plan=27/22&version=2&version_id=614"
+            }
+          ]
+        },
+        {
+          "codigo": "15045",
+          "nombre": "LICENCIATURA EN SEGURIDAD PÚBLICA, CICLO DE COMPLEMENTACIÓN CURRICULAR",
+          "planes": [
+            {
+              "ordenanza": "OCS 46/2024",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15045&plan=46/2024&version=2&version_id=1317"
+            }
+          ]
+        },
+        {
+          "codigo": "15005",
+          "nombre": "LICENCIATURA EN TRABAJO SOCIAL",
+          "planes": [
+            {
+              "ordenanza": "24/11",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15005&plan=24/11&version=13&version_id=1318"
+            }
+          ]
+        },
+        {
+          "codigo": "15042",
+          "nombre": "MARTILLERO Y CORREDOR PÚBLICO",
+          "planes": [
+            {
+              "ordenanza": "11/15",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15042&plan=11/15&version=1&version_id=292"
+            }
+          ]
+        },
+        {
+          "codigo": "15041",
+          "nombre": "TECNICATURA UNIVERSITARIA EN ACOMPAÑAMIENTO TERAPÉUTICO",
+          "planes": [
+            {
+              "ordenanza": "8/20",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15041&plan=8/20&version=2&version_id=1303"
+            },
+            {
+              "ordenanza": "09/14",
+              "condicion": "activo",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15041&plan=09/14&version=5&version_id=311"
+            }
+          ]
+        },
+        {
+          "codigo": "15040",
+          "nombre": "TECNICATURA UNIVERSITARIA EN GESTIÓN FINANCIERA",
+          "planes": [
+            {
+              "ordenanza": "15/12",
+              "condicion": "vigente",
+              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15040&plan=15/12&version=2&version_id=289"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

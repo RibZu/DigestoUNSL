@@ -1,0 +1,309 @@
+.planes-page {
+    --planes-separador: var(--border);
+}
+
+.planes-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.planes-page__encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+.planes-page__encabezado h1 {
+    margin: 0;
+    color: var(--color-primario);
+}
+
+.planes-page__encabezado p {
+    color: var(--text);
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+.planes-page__facultad-titulo {
+    margin: 0;
+    font-size: 1.15rem;
+}
+
+.carrera-item__nombre {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-h);
+    overflow-wrap: anywhere;
+}
+
+.planes-page__criterios {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.planes-page__campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.planes-page__campo label {
+    font-size: 0.8rem;
+    color: var(--text);
+}
+
+.planes-page__chips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.planes-page__lista-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.planes-page__limpiar {
+    align-self: flex-start;
+}
+
+.planes-page__facultades {
+    border-top: 1px solid var(--border);
+}
+
+.planes-page__facultad-boton {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 1rem;
+    width: 100%;
+    min-height: 44px;
+    padding: 0.75rem 0.25rem;
+    box-sizing: border-box;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font: inherit;
+    color: var(--text-h);
+    cursor: pointer;
+}
+
+.planes-page__facultad-nombre {
+    flex: 1 1 12rem;
+    overflow-wrap: anywhere;
+}
+
+.planes-page__ubicacion {
+    margin-left: auto;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.planes-page__carreras {
+    list-style: none;
+    margin: 0.25rem 0 0.75rem 0.5rem;
+    padding: 0 0 0 0.75rem;
+    border-left: 2px solid var(--accent-border);
+}
+
+.carrera-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--planes-separador);
+    box-sizing: border-box;
+}
+
+.carrera-item__planes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carrera-item__ordenanza {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 44px;
+    color: var(--color-primario);
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.carrera-item__ordenanza:hover,
+.carrera-item__ordenanza:focus-visible {
+    color: #fff;
+    background-color: var(--color-primario);
+}
+
+.planes-page__chevron {
+    width: 1.1em;
+    height: 1.1em;
+    flex: 0 0 auto;
+    transform: rotate(-90deg);
+    transition: transform 0.15s ease;
+}
+
+.planes-page__facultad-boton[aria-expanded="true"] .planes-page__chevron {
+    transform: none;
+}
+
+.planes-page__facultad-boton:hover,
+.planes-page__facultad-boton:focus-visible {
+    background-color: var(--accent-bg);
+}
+
+.carrera-item:hover {
+    background-color: var(--accent-bg);
+}
+
+.carrera-item__ordenanza--activo {
+    color: var(--text);
+    border-style: dashed;
+    border-width: 1.5px;
+    border-color: var(--text);
+}
+
+.carrera-item__ordenanza--activo:hover,
+.carrera-item__ordenanza--activo:focus-visible {
+    color: #fff;
+    background-color: var(--text);
+    border-style: solid;
+}
+
+.carrera-item__condicion {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.planes-page__referencias {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text);
+}
+
+.planes-page__muestra {
+    display: inline-block;
+    padding: 0 0.4rem;
+    border: 1px solid var(--color-primario);
+    border-radius: 0.25rem;
+    color: var(--color-primario);
+    font-size: 0.75rem;
+}
+
+.planes-page__muestra--activo {
+    border-style: dashed;
+    border-width: 1.5px;
+    border-color: var(--text);
+    color: var(--text);
+}
+
+.carrera-item__icono {
+    width: 0.85em;
+    height: 0.85em;
+}
+
+.planes-page__sitio-oficial {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 44px;
+    color: var(--color-primario);
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.planes-page__sitio-oficial:hover,
+.planes-page__sitio-oficial:focus-visible {
+    color: #fff;
+    background-color: var(--color-primario);
+}
+
+.planes-page__icono {
+    width: 0.85em;
+    height: 0.85em;
+}
+
+.planes-page__limpiar {
+    color: var(--color-primario);
+    background-color: transparent;
+    border: 1px solid var(--color-primario);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.planes-page__limpiar:hover {
+    color: #fff;
+    background-color: var(--color-primario);
+}
+
+.planes-page__campo input,
+.planes-page__campo select,
+.planes-page__chip,
+.planes-page__limpiar {
+    min-height: 44px;
+}
+
+.planes-page__mensaje-vacio {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: var(--text);
+    background: var(--accent-bg);
+    box-sizing: border-box;
+}
+
+.planes-page__mensaje-vacio p {
+    margin: 0 0 0.5rem;
+}
+
+.planes-page__mensaje-vacio a {
+    color: var(--color-primario);
+}
+
+@media (min-width: 768px) {
+    .planes-page__criterios {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .planes-page__campo {
+        flex: 1 1 auto;
+        min-width: 10rem;
+    }
+
+    .carrera-item {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        column-gap: 1.5rem;
+    }
+
+    .carrera-item__planes {
+        justify-content: flex-end;
+    }
+
+    .planes-page__carreras {
+        margin-left: 1rem;
+        padding-left: 1.25rem;
+    }
+}
