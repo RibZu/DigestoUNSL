@@ -37,7 +37,7 @@ export const navigationSections = [
   {
     key: 'planes-de-estudio',
     label: 'Planes de estudio',
-    path: '/planes-de-estudio/:facultad/:carrera',
+    path: '/planes-de-estudio',
     requiresAuth: false,
     hasOwnStyling: false,
   },
