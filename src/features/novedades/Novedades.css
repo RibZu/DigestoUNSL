@@ -8,7 +8,9 @@
 .novedades-header {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5rem;
+  text-align: center;
 }
 
 .novedades-header h1 {
@@ -18,6 +20,8 @@
 
 .novedades-header p {
   color: #475569;
+  max-width: 60ch;
+  margin: 0 auto;
 }
 
 .novedades-controls {

@@ -7,7 +7,7 @@ const CRITERIO_INICIAL = { texto: '', facultad: '', caracter: '', dedicacion: ''
 
 const ETIQUETAS_CRITERIO = {
     texto: (valor) => `Búsqueda: "${valor}"`,
-    facultad: (valor, facultades) => facultades[valor] ?? `Facultad: ${valor}`,
+    facultad: (valor, facultades) => facultades[valor]?.nombre ?? `Facultad: ${valor}`,
     caracter: (valor) => `Carácter: ${valor}`,
     dedicacion: (valor) => `Dedicación: ${valor}`,
 }
@@ -54,6 +54,7 @@ export default function Concursos() {
     const [facultades, setFacultades] = useState({})
     const [concursos, setConcursos] = useState([])
     const [criterio, setCriterio] = useState(CRITERIO_INICIAL)
+    const [alternadas, setAlternadas] = useState(() => new Set())
 
     useEffect(() => {
         cargarConcursos(setEstado, setFacultades, setConcursos)
@@ -66,14 +67,26 @@ export default function Concursos() {
     function handleFiltrosChange(e) {
         const { name, value } = e.target
         setCriterio((valores) => ({ ...valores, [name]: value }))
+        setAlternadas(new Set())
     }
 
     function handleLimpiarFiltros() {
         setCriterio(CRITERIO_INICIAL)
+        setAlternadas(new Set())
     }
 
     function handleQuitarCriterio(campo) {
         setCriterio((valores) => ({ ...valores, [campo]: '' }))
+        setAlternadas(new Set())
+    }
+
+    function handleAlternarFacultad(codigo) {
+        setAlternadas((actuales) => {
+            const siguientes = new Set(actuales)
+            if (siguientes.has(codigo)) siguientes.delete(codigo)
+            else siguientes.add(codigo)
+            return siguientes
+        })
     }
 
     if (estado === 'cargando') {
@@ -103,6 +116,7 @@ export default function Concursos() {
 
     const concursosFiltrados = concursos.filter((concurso) => coincideConCriterio(concurso, criterio))
     const hayCriterioActivo = Object.values(criterio).some((valor) => valor !== '')
+    const estaAbierta = (codigo) => hayCriterioActivo !== alternadas.has(codigo)
 
     const facultadesAMostrar = hayCriterioActivo
         ? Object.keys(facultades).filter((codigo) =>
@@ -112,8 +126,12 @@ export default function Concursos() {
 
     const mensajeVacio = calcularMensajeVacio(concursos, concursosFiltrados, hayCriterioActivo)
 
-    const opcionesCaracter = [...new Set(concursos.map((concurso) => concurso.caracter))]
-    const opcionesDedicacion = [...new Set(concursos.map((concurso) => concurso.dedicacion))]
+    const opcionesCaracter = [...new Set(concursos.map((concurso) => concurso.caracter))].sort((a, b) =>
+        a.localeCompare(b, 'es')
+    )
+    const opcionesDedicacion = [...new Set(concursos.map((concurso) => concurso.dedicacion))].sort(
+        (a, b) => a.localeCompare(b, 'es')
+    )
 
     const criteriosActivos = Object.entries(criterio)
         .filter(([, valor]) => valor !== '')
@@ -153,7 +171,7 @@ export default function Concursos() {
                         onChange={handleFiltrosChange}
                     >
                         <option value="">Todas</option>
-                        {Object.entries(facultades).map(([codigo, nombre]) => (
+                        {Object.entries(facultades).map(([codigo, { nombre }]) => (
                             <option key={codigo} value={codigo}>
                                 {nombre}
                             </option>
@@ -234,30 +252,63 @@ export default function Concursos() {
                 <p className="concursos-page__mensaje-vacio">No hay concursos vigentes por el momento.</p>
             )}
 
-            {facultadesAMostrar.map((codigo) => {
-                const concursosDeFacultad = concursosFiltrados.filter(
-                    (concurso) => concurso.facultad === codigo
-                )
-                return (
-                    <article key={codigo} className="concursos-page__facultad">
-                        <h2>{facultades[codigo]}</h2>
-                        {concursosDeFacultad.length > 0 ? (
-                            <div className="concursos-page__lista">
-                                {concursosDeFacultad.map((concurso) => (
-                                    <ConcursoCard
-                                        key={`${concurso.facultad}-${concurso.resolucion}`}
-                                        concurso={concurso}
-                                    />
-                                ))}
+            <div className="concursos-page__facultades">
+                {facultadesAMostrar.map((codigo) => {
+                    const concursosDeFacultad = concursosFiltrados.filter(
+                        (concurso) => concurso.facultad === codigo
+                    )
+                    return (
+                        <section key={codigo} className="concursos-page__facultad">
+                            <h2 className="concursos-page__facultad-titulo">
+                                <button
+                                    type="button"
+                                    className="concursos-page__facultad-boton"
+                                    aria-expanded={estaAbierta(codigo)}
+                                    aria-controls={`concursos-${codigo}`}
+                                    onClick={() => handleAlternarFacultad(codigo)}
+                                >
+                                    <svg
+                                        className="concursos-page__chevron"
+                                        aria-hidden="true"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                    >
+                                        <polyline points="6 9 12 15 18 9" />
+                                    </svg>
+                                    <span className="concursos-page__facultad-nombre">
+                                        {facultades[codigo].nombre}
+                                    </span>{' '}
+                                    <span className="concursos-page__ubicacion">
+                                        {facultades[codigo].ubicacion}
+                                    </span>
+                                </button>
+                            </h2>
+                            <div
+                                id={`concursos-${codigo}`}
+                                className="concursos-page__contenido"
+                                hidden={!estaAbierta(codigo)}
+                            >
+                                {concursosDeFacultad.length > 0 ? (
+                                    <div className="concursos-page__lista">
+                                        {concursosDeFacultad.map((concurso) => (
+                                            <ConcursoCard
+                                                key={`${concurso.facultad}-${concurso.resolucion}`}
+                                                concurso={concurso}
+                                            />
+                                        ))}
+                                    </div>
+                                ) : (
+                                    <p className="concursos-page__sin-concursos">
+                                        No hay concursos vigentes en esta facultad por el momento.
+                                    </p>
+                                )}
                             </div>
-                        ) : (
-                            <p className="concursos-page__sin-concursos">
-                                No hay concursos vigentes en esta facultad por el momento.
-                            </p>
-                        )}
-                    </article>
-                )
-            })}
+                        </section>
+                    )
+                })}
+            </div>
         </section>
     )
 }

@@ -7,6 +7,9 @@ import Login from '../features/auth/login/Login.jsx'
 import Estadisticas from '../features/estadisticas/Estadisticas.jsx'
 import Novedades from '../features/novedades/Novedades.jsx'
 import NormativaDetail from '../features/normativas/NormativaDetail.jsx'
+import Ayuda from '../features/ayuda/Ayuda.jsx'
+import Concursos from '../features/concursos/Concursos.jsx'
+import PlanesDeEstudio from '../features/planes-de-estudio/PlanesDeEstudio.jsx'
 import SectionPlaceholder from '../shared/ui/SectionPlaceholder.jsx'
 import { navigationSections } from './routes.js'
 
@@ -23,13 +26,10 @@ const router = createBrowserRouter([
       { path: 'busqueda', element: <Busqueda /> },
       { path: 'novedades', element: <Novedades /> },
       { path: 'normativas/:id', element: <NormativaDetail /> },
-      { path: 'concursos', element: <SectionPlaceholder title={labelFor('concursos')} /> },
-      { path: 'ayuda', element: <SectionPlaceholder title={labelFor('ayuda')} /> },
+      { path: 'concursos', element: <Concursos /> },
+      { path: 'ayuda', element: <Ayuda /> },
       { path: 'estadisticas', element: <Estadisticas /> },
-      {
-        path: 'planes-de-estudio',
-        element: <SectionPlaceholder title={labelFor('planes-de-estudio')} />,
-      },
+      { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
       {
         path: 'planes-de-estudio/:facultad/:carrera',
         element: <SectionPlaceholder title={labelFor('planes-de-estudio')} />,

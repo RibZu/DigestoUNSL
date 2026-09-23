@@ -13,9 +13,9 @@ export default function Home() {
         <HomeShowcaseCard
           title="Búsqueda"
           sampleItems={[
-            'Búsqueda rápida por texto',
-            'Búsqueda avanzada por tipo, órgano emisor y fecha',
-            'Búsqueda en el texto del documento',
+            'Encontrá resoluciones, ordenanzas y demás normativas por palabra clave',
+            'Filtrá por tipo de documento y organismo emisor',
+            'Con los filtros avanzados, buscá por número, año o rango de fechas',
           ]}
           ctaLabel="Ir a búsqueda"
           ctaHref="/busqueda"
@@ -23,9 +23,9 @@ export default function Home() {
         <HomeShowcaseCard
           title="Novedades"
           sampleItems={[
-            'Resolución 145/2026 — Consejo Superior',
-            'Ordenanza 12/2026 — Facultad de Ciencias',
-            'Resolución 140/2026 — Rectorado',
+            'Los últimos documentos incorporados al Digesto, del más reciente al más antiguo',
+            'Filtrá por tipo o buscá por título, descripción o código',
+            'Abrí el detalle de cada normativa o descargá su PDF',
           ]}
           ctaLabel="Ver todas las novedades"
           ctaHref="/novedades"
@@ -33,9 +33,9 @@ export default function Home() {
         <HomeShowcaseCard
           title="Concursos"
           sampleItems={[
-            'Facultad de Ciencias Físico-Matemáticas y Naturales',
-            'Facultad de Ciencias de la Salud',
-            'Facultad de Ciencias Económicas, Jurídicas y Sociales',
+            'Llamados a concursos docentes, agrupados por facultad',
+            'Filtrá por carácter (efectivo, interino o suplente) y dedicación',
+            'Consultá las fechas de inscripción y la resolución de cada llamado',
           ]}
           ctaLabel="Ver todos los concursos"
           ctaHref="/concursos"
