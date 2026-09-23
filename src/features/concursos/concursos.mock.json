@@ -1,0 +1,87 @@
+{
+  "facultades": {
+    "fcfmn": "Facultad de Ciencias Físico-Matemáticas y Naturales",
+    "fqbf": "Facultad de Química, Bioquímica y Farmacia",
+    "fch": "Facultad de Ciencias Humanas",
+    "fices": "Facultad de Ingeniería y Ciencias Económico-Sociales",
+    "fcs": "Facultad de Ciencias de la Salud",
+    "ftu": "Facultad de Turismo y Urbanismo",
+    "fapsi": "Facultad de Psicología",
+    "fica": "Facultad de Ingeniería y Ciencias Agropecuarias",
+    "fcejs": "Facultad de Ciencias Económicas, Jurídicas y Sociales"
+  },
+  "concursos": [
+    {
+      "facultad": "fcfmn",
+      "departamento": "Departamento de Matemática",
+      "area": "Área Única de Matemática",
+      "cargo": "Profesor Adjuntos",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivos",
+      "inscripcion_desde": "19/08/26",
+      "inscripcion_hasta": "30/09/26",
+      "resolucion": "RD-3-689/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-689/26"
+    },
+    {
+      "facultad": "fcfmn",
+      "departamento": "Departamento de Informática",
+      "area": "Área Ingeniería de Software",
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Interinos",
+      "inscripcion_desde": "01/09/26",
+      "inscripcion_hasta": "15/09/26",
+      "resolucion": "RD-3-701/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-701/26"
+    },
+    {
+      "facultad": "fcejs",
+      "departamento": "Departamento de Contabilidad",
+      "area": "Área Costos",
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivos",
+      "inscripcion_desde": "05/09/26",
+      "inscripcion_hasta": "25/09/26",
+      "resolucion": "RD-1-214/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-214/26"
+    },
+    {
+      "facultad": "fcs",
+      "departamento": "Departamento de Enfermería",
+      "area": "Área Enfermería Clínica",
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interinos",
+      "inscripcion_desde": "10/09/26",
+      "inscripcion_hasta": "24/09/26",
+      "resolucion": "RD-5-098/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-098/26"
+    },
+    {
+      "facultad": "fch",
+      "departamento": "Departamento de Educación y Formación Docente",
+      "area": "Área Didáctica General",
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Simple",
+      "caracter": "Efectivos",
+      "inscripcion_desde": "12/09/26",
+      "inscripcion_hasta": "29/09/26",
+      "resolucion": "RD-2-455/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-455/26"
+    },
+    {
+      "facultad": "fapsi",
+      "departamento": "Departamento de Psicología Clínica",
+      "area": "Área Psicodiagnóstico",
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Interinos",
+      "inscripcion_desde": "03/09/26",
+      "inscripcion_hasta": "18/09/26",
+      "resolucion": "RD-6-133/26",
+      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-133/26"
+    }
+  ]
+}
