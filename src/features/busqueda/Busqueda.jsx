@@ -3,31 +3,31 @@ import { Link } from 'react-router'
 import './Busqueda.css'
 
 export default function Busqueda() {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [terminoBusqueda, setTerminoBusqueda] = useState('')
   const [tipoDocumento, setTipoDocumento] = useState('')
   const [organismoEmisor, setOrganismoEmisor] = useState('')
-  
+
   // Filtros avanzados
-  const [showAdvanced, setShowAdvanced] = useState(false)
+  const [mostrarAvanzado, setMostrarAvanzado] = useState(false)
   const [numeroNorma, setNumeroNorma] = useState('')
   const [anioNorma, setAnioNorma] = useState('')
   const [fechaDesde, setFechaDesde] = useState('')
   const [fechaHasta, setFechaHasta] = useState('')
   const [buscarTextoCompleto, setBuscarTextoCompleto] = useState(false)
 
-  const [hasSearched, setHasSearched] = useState(false)
+  const [busqueda, setBusqueda] = useState(false)
 
-  const handleSearch = (e) => {
+  const manejarBusqueda = (e) => {
     e.preventDefault()
-    setHasSearched(true)
+    setBusqueda(true)
   }
 
-  const handleClearText = () => {
-    setSearchTerm('')
+  const manejarLimpiarTexto = () => {
+    setTerminoBusqueda('')
   }
 
   // Resultados simulados de prueba
-  const mockResults = [
+  const resultadosSimulados = [
     {
       id: 1,
       title: 'Resolución Rectoral N° 145/2026',
@@ -64,7 +64,7 @@ export default function Busqueda() {
         <p>Explore el digesto administrativo de la Universidad Nacional de San Luis mediante búsquedas en texto y filtros estructurados.</p>
       </header>
 
-      <form className="busqueda-card" onSubmit={handleSearch}>
+      <form className="busqueda-card" onSubmit={manejarBusqueda}>
         {/* Input Destacado con Icono */}
         <div className="busqueda-hero-bar">
           <div className="busqueda-hero-input-wrapper">
@@ -86,14 +86,14 @@ export default function Busqueda() {
               type="text"
               className="busqueda-hero-input"
               placeholder="Buscar por palabra clave, concepto o resumen del documento..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              value={terminoBusqueda}
+              onChange={(e) => setTerminoBusqueda(e.target.value)}
             />
-            {searchTerm && (
+            {terminoBusqueda && (
               <button
                 type="button"
                 className="busqueda-clear-btn"
-                onClick={handleClearText}
+                onClick={manejarLimpiarTexto}
                 title="Limpiar texto"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -162,12 +162,12 @@ export default function Busqueda() {
           <button
             type="button"
             className="busqueda-advanced-toggle-btn"
-            onClick={() => setShowAdvanced(!showAdvanced)}
+            onClick={() => setMostrarAvanzado(!mostrarAvanzado)}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
             </svg>
-            {showAdvanced ? 'Ocultar filtros avanzados' : 'Filtros avanzados'}
+            {mostrarAvanzado ? 'Ocultar filtros avanzados' : 'Filtros avanzados'}
             <svg
               width="16"
               height="16"
@@ -175,17 +175,17 @@ export default function Busqueda() {
               fill="none"
               stroke="currentColor"
               strokeWidth="2"
-              style={{ transform: showAdvanced ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
+              style={{ transform: mostrarAvanzado ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}
             >
               <polyline points="6 9 12 15 18 9"></polyline>
             </svg>
           </button>
         </div>
 
-        {showAdvanced && (
+        {mostrarAvanzado && (
           <div className="busqueda-advanced-panel">
             <h3 className="busqueda-advanced-title">Búsqueda por Identificador y Rango de Fechas</h3>
-            
+
             <div className="busqueda-advanced-grid">
               <div className="busqueda-filter-field">
                 <label htmlFor="num-norma" className="busqueda-filter-label">
@@ -256,29 +256,29 @@ export default function Busqueda() {
       </form>
 
       {/* Resultados de Búsqueda */}
-      {hasSearched && (
+      {busqueda && (
         <section className="busqueda-results" aria-label="Resultados de búsqueda">
           <div className="busqueda-results-header">
             <h2>Resultados encontrados</h2>
-            <span className="busqueda-results-count">{mockResults.length} normativas encontradas</span>
+            <span className="busqueda-results-count">{resultadosSimulados.length} normativas encontradas</span>
           </div>
 
-          {mockResults.map((result) => (
-            <article key={result.id} className="busqueda-result-card">
+          {resultadosSimulados.map((resultado) => (
+            <article key={resultado.id} className="busqueda-result-card">
               <div className="busqueda-result-header">
-                <Link to={`/normativas/${result.id}`} className="busqueda-result-title-link">
-                  {result.title}
+                <Link to={`/normativas/${resultado.id}`} className="busqueda-result-title-link">
+                  {resultado.title}
                 </Link>
                 <div className="busqueda-result-meta">
-                  <span className="busqueda-meta-tag tipo">{result.tipo}</span>
-                  <span className="busqueda-meta-tag">{result.codigo}</span>
-                  <span className="busqueda-meta-tag fecha">{result.fecha}</span>
+                  <span className="busqueda-meta-tag tipo">{resultado.tipo}</span>
+                  <span className="busqueda-meta-tag">{resultado.codigo}</span>
+                  <span className="busqueda-meta-tag fecha">{resultado.fecha}</span>
                 </div>
               </div>
               <span style={{ fontSize: '0.875rem', fontWeight: '600', color: '#64748b' }}>
-                {result.organo}
+                {resultado.organo}
               </span>
-              <p className="busqueda-result-snippet">{result.snippet}</p>
+              <p className="busqueda-result-snippet">{resultado.snippet}</p>
             </article>
           ))}
         </section>

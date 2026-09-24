@@ -3,8 +3,8 @@ import { Link } from 'react-router'
 import './Novedades.css'
 
 export default function Novedades() {
-  const [filterTipo, setFilterTipo] = useState('')
-  const [searchQuery, setSearchQuery] = useState('')
+  const [filtroTipo, setFiltroTipo] = useState('')
+  const [consultaBusqueda, setConsultaBusqueda] = useState('')
 
   const novedades = [
     {
@@ -64,14 +64,14 @@ export default function Novedades() {
     },
   ]
 
-  const filteredNovedades = novedades.filter((item) => {
-    const matchesTipo = filterTipo === '' || item.tipo.toLowerCase() === filterTipo.toLowerCase()
-    const matchesQuery =
-      searchQuery === '' ||
-      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.descripcion.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      item.codigo.toLowerCase().includes(searchQuery.toLowerCase())
-    return matchesTipo && matchesQuery
+  const novedadesFiltradas = novedades.filter((elemento) => {
+    const coincideTipo = filtroTipo === '' || elemento.tipo.toLowerCase() === filtroTipo.toLowerCase()
+    const coincideConsulta =
+      consultaBusqueda === '' ||
+      elemento.title.toLowerCase().includes(consultaBusqueda.toLowerCase()) ||
+      elemento.descripcion.toLowerCase().includes(consultaBusqueda.toLowerCase()) ||
+      elemento.codigo.toLowerCase().includes(consultaBusqueda.toLowerCase())
+    return coincideTipo && coincideConsulta
   })
 
   return (
@@ -89,8 +89,8 @@ export default function Novedades() {
           <select
             id="tipo-filter"
             className="novedades-select"
-            value={filterTipo}
-            onChange={(e) => setFilterTipo(e.target.value)}
+            value={filtroTipo}
+            onChange={(e) => setFiltroTipo(e.target.value)}
           >
             <option value="">Todos los tipos</option>
             <option value="Resolución">Resoluciones</option>
@@ -104,34 +104,34 @@ export default function Novedades() {
             type="text"
             className="novedades-search-input"
             placeholder="Buscar en novedades..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={consultaBusqueda}
+            onChange={(e) => setConsultaBusqueda(e.target.value)}
           />
         </div>
       </div>
 
       <main className="novedades-list">
-        {filteredNovedades.length === 0 ? (
+        {novedadesFiltradas.length === 0 ? (
           <div className="novedad-card" style={{ textAlign: 'center', padding: '2rem' }}>
             <p>No se encontraron normativas recientes que coincidan con el filtro.</p>
           </div>
         ) : (
-          filteredNovedades.map((item) => (
-            <article key={item.id} className="novedad-card">
+          novedadesFiltradas.map((elemento) => (
+            <article key={elemento.id} className="novedad-card">
               <div className="novedad-header">
                 <div className="novedad-title-group">
-                  <Link to={`/normativas/${item.id}`} style={{ textDecoration: 'none' }}>
-                    <h2 className="novedad-title" style={{ cursor: 'pointer' }}>{item.title}</h2>
+                  <Link to={`/normativas/${elemento.id}`} style={{ textDecoration: 'none' }}>
+                    <h2 className="novedad-title" style={{ cursor: 'pointer' }}>{elemento.title}</h2>
                   </Link>
-                  <span className="novedad-organo">{item.organo}</span>
+                  <span className="novedad-organo">{elemento.organo}</span>
                 </div>
                 <div className="novedad-badges">
-                  <span className="novedad-badge tipo">{item.tipo}</span>
-                  <span className="novedad-badge">{item.codigo}</span>
+                  <span className="novedad-badge tipo">{elemento.tipo}</span>
+                  <span className="novedad-badge">{elemento.codigo}</span>
                 </div>
               </div>
 
-              <p className="novedad-description">{item.descripcion}</p>
+              <p className="novedad-description">{elemento.descripcion}</p>
 
               <footer className="novedad-footer">
                 <span className="novedad-date">
@@ -141,16 +141,16 @@ export default function Novedades() {
                     <line x1="8" y1="2" x2="8" y2="6"></line>
                     <line x1="3" y1="10" x2="21" y2="10"></line>
                   </svg>
-                  {item.fecha}
+                  {elemento.fecha}
                 </span>
 
                 <a
-                  href={item.pdfUrl}
+                  href={elemento.pdfUrl}
                   className="novedad-download-btn"
                   download
                   onClick={(e) => {
                     e.preventDefault()
-                    alert(`Descargando PDF para: ${item.codigo}`)
+                    alert(`Descargando PDF para: ${elemento.codigo}`)
                   }}
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

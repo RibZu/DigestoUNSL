@@ -1,14 +1,14 @@
 import './Estadisticas.css'
 
 export default function Estadisticas() {
-  const kpis = [
+  const indicadores = [
     { title: 'Documentos Registrados', value: '45.280', trend: '+1.200 este año' },
     { title: 'Resoluciones de Rectorado', value: '18.420', trend: '40.6% del total' },
     { title: 'Ordenanzas C. Superior', value: '6.150', trend: '13.5% del total' },
     { title: 'Consultas Mensuales', value: '12.850', trend: '+8% vs mes anterior' },
   ]
 
-  const emisorStats = [
+  const estadisticasEmisor = [
     { label: 'Rectorado (RR)', count: 18420, percentage: 40.6 },
     { label: 'Consejo Superior (RCS / OCS)', count: 12300, percentage: 27.1 },
     { label: 'Facultad de FCFMyN', count: 5400, percentage: 11.9 },
@@ -16,7 +16,7 @@ export default function Estadisticas() {
     { label: 'Otras Dependencias', count: 4960, percentage: 11.2 },
   ]
 
-  const yearlyStats = [
+  const estadisticasAnuales = [
     { label: '2026 (En curso)', count: 850, percentage: 25 },
     { label: '2025', count: 3420, percentage: 100 },
     { label: '2024', count: 3210, percentage: 94 },
@@ -31,7 +31,7 @@ export default function Estadisticas() {
       </header>
 
       <section className="estadisticas-kpis" aria-label="Indicadores principales">
-        {kpis.map((kpi, idx) => (
+        {indicadores.map((kpi, idx) => (
           <div key={idx} className="kpi-card">
             <span className="kpi-title">{kpi.title}</span>
             <span className="kpi-value">{kpi.value}</span>
@@ -44,7 +44,7 @@ export default function Estadisticas() {
         <section className="chart-card">
           <h2>Documentación por Órgano Emisor</h2>
           <div className="chart-bar-list">
-            {emisorStats.map((item, idx) => (
+            {estadisticasEmisor.map((item, idx) => (
               <div key={idx} className="chart-bar-item">
                 <div className="chart-bar-header">
                   <span>{item.label}</span>
@@ -61,7 +61,7 @@ export default function Estadisticas() {
         <section className="chart-card">
           <h2>Normativas por Año de Emisión</h2>
           <div className="chart-bar-list">
-            {yearlyStats.map((item, idx) => (
+            {estadisticasAnuales.map((item, idx) => (
               <div key={idx} className="chart-bar-item">
                 <div className="chart-bar-header">
                   <span>{item.label}</span>

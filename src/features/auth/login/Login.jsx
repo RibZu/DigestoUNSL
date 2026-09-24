@@ -4,9 +4,9 @@ import './Login.css'
 export default function Login() {
   const [usuario, setUsuario] = useState('')
   const [password, setPassword] = useState('')
-  const [rememberMe, setRememberMe] = useState(false)
+  const [recordarSesion, setRecordarSesion] = useState(false)
 
-  const handleSubmit = (e) => {
+  const manejarEnvio = (e) => {
     e.preventDefault()
     // Lógica de inicio de sesión frontend
     alert(`Intento de inicio de sesión para: ${usuario}`)
@@ -20,7 +20,7 @@ export default function Login() {
           <p>Digesto Administrativo — Universidad Nacional de San Luis</p>
         </header>
 
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={manejarEnvio}>
           <div className="login-form-group">
             <label htmlFor="usuario">Usuario o correo institucional</label>
             <input
@@ -51,8 +51,8 @@ export default function Login() {
             <label className="login-checkbox-label">
               <input
                 type="checkbox"
-                checked={rememberMe}
-                onChange={(e) => setRememberMe(e.target.checked)}
+                checked={recordarSesion}
+                onChange={(e) => setRecordarSesion(e.target.checked)}
               />
               Recordar mi sesión
             </label>
