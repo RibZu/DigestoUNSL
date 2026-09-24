@@ -30,9 +30,8 @@ const router = createBrowserRouter([
       { path: 'concursos', element: <Concursos /> },
       { path: 'ayuda', element: <Ayuda /> },
       { path: 'estadisticas', element: <Estadisticas /> },
-      { path: 'planes-de-estudio', element: <SectionPlaceholder title={labelFor('planes-de-estudio')} />,},
-      { path: 'planes-de-estudio/:facultad/:carrera',element: <SectionPlaceholder title={labelFor('planes-de-estudio')} />,},
-      { path: 'login', element: <Login /> },// implementar loader PENDIENTE 
+      { path: 'planes-de-estudio', element: <PlanesDeEstudio/>,},
+      { path: 'login', element: <Login /> },// implementar loader PENDIENTE
       { path: '*', element: <SectionPlaceholder title="Página no encontrada" /> },
     ],
   },
