@@ -1,12 +1,11 @@
 import { useParams, useNavigate } from 'react-router'
 import './NormativaDetail.css'
 
-export default function NormativaDetail({ data }) {
+export default function NormativaDetail({ datos }) {
   const { id } = useParams()
-  const navigate = useNavigate()
+  const navegar = useNavigate()
 
-  // Datos adaptados de la estructura del Digesto real de la UNSL
-  const doc = data || {
+  const documento = datos || {
     id: id || 'rcd-3-002-26',
     codigo: 'RCD-3-002/26',
     lugarFecha: 'SAN LUIS, 12 de marzo de 2026',
@@ -61,7 +60,7 @@ export default function NormativaDetail({ data }) {
     docOriginalUrl: '#',
   }
 
-  const handleCopyLink = () => {
+  const copiarEnlace = () => {
     navigator.clipboard.writeText(window.location.href)
     alert('Enlace al documento copiado al portapapeles.')
   }
@@ -69,7 +68,7 @@ export default function NormativaDetail({ data }) {
   return (
     <div className="normativa-detail-page">
       {/* Botón Volver */}
-      <button onClick={() => navigate(-1)} className="normativa-back-btn">
+      <button onClick={() => navegar(-1)} className="normativa-back-btn">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <line x1="19" y1="12" x2="5" y2="12"></line>
           <polyline points="12 19 5 12 12 5"></polyline>
@@ -82,19 +81,19 @@ export default function NormativaDetail({ data }) {
         {/* Cabecera Superior */}
         <header className="normativa-top-header">
           <div className="normativa-header-meta">
-            <span className="normativa-code-badge">{doc.codigo}</span>
-            <span className="normativa-date-location">{doc.lugarFecha}</span>
+            <span className="normativa-code-badge">{documento.codigo}</span>
+            <span className="normativa-date-location">{documento.lugarFecha}</span>
           </div>
 
-          <h1 className="normativa-main-title">{doc.titulo}</h1>
+          <h1 className="normativa-main-title">{documento.titulo}</h1>
         </header>
 
         {/* Barra de Herramientas */}
         <div className="normativa-toolbar">
-          <span className="normativa-expte-ref">{doc.expediente}</span>
+          <span className="normativa-expte-ref">{documento.expediente}</span>
 
           <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-            <button type="button" className="normativa-toolbar-btn" onClick={handleCopyLink}>
+            <button type="button" className="normativa-toolbar-btn" onClick={copiarEnlace}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
@@ -102,11 +101,11 @@ export default function NormativaDetail({ data }) {
               Copiar Enlace
             </button>
             <a
-              href={doc.docOriginalUrl}
+              href={documento.docOriginalUrl}
               className="normativa-toolbar-btn primary"
               onClick={(e) => {
                 e.preventDefault()
-                alert(`Descargando PDF oficial de ${doc.codigo}`)
+                alert(`Descargando PDF oficial de ${documento.codigo}`)
               }}
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -124,13 +123,13 @@ export default function NormativaDetail({ data }) {
           {/* VISTO */}
           <div className="normativa-legal-section">
             <span className="normativa-section-heading">VISTO:</span>
-            <p style={{ margin: 0 }}>{doc.visto}</p>
+            <p style={{ margin: 0 }}>{documento.visto}</p>
           </div>
 
           {/* CONSIDERANDO */}
           <div className="normativa-legal-section">
             <span className="normativa-section-heading">CONSIDERANDO:</span>
-            {doc.considerando.map((item, idx) => (
+            {documento.considerando.map((item, idx) => (
               <p key={idx} style={{ margin: '0 0 0.5rem 0' }}>
                 {item}
               </p>
@@ -138,15 +137,15 @@ export default function NormativaDetail({ data }) {
           </div>
 
           {/* Fórmula Resolutiva */}
-          <div className="normativa-resolving-intro">{doc.resolvingBody}</div>
+          <div className="normativa-resolving-intro">{documento.resolvingBody}</div>
 
           {/* Orden de mérito en artículo 1 */}
           <div className="normativa-article-card">
-            <span className="normativa-article-heading">{doc.articulos[0].numero}</span>
-            <p style={{ margin: 0 }}>{doc.articulos[0].contenido}</p>
+            <span className="normativa-article-heading">{documento.articulos[0].numero}</span>
+            <p style={{ margin: 0 }}>{documento.articulos[0].contenido}</p>
 
             <ul className="normativa-order-list">
-              {doc.ordenMerito.map((merito, idx) => (
+              {documento.ordenMerito.map((merito, idx) => (
                 <li key={idx}>{merito}</li>
               ))}
             </ul>
@@ -154,19 +153,19 @@ export default function NormativaDetail({ data }) {
 
           {/* Artículo 2 */}
           <div className="normativa-article-card">
-            <span className="normativa-article-heading">{doc.articulos[1].numero}</span>
-            <p style={{ margin: 0 }}>{doc.articulos[1].contenido}</p>
+            <span className="normativa-article-heading">{documento.articulos[1].numero}</span>
+            <p style={{ margin: 0 }}>{documento.articulos[1].contenido}</p>
           </div>
 
           {/* Artículo 3 con Tabla Presupuestaria */}
           <div className="normativa-article-card">
-            <span className="normativa-article-heading">{doc.articulos[2].numero}</span>
-            <p style={{ margin: 0 }}>{doc.articulos[2].contenido}</p>
+            <span className="normativa-article-heading">{documento.articulos[2].numero}</span>
+            <p style={{ margin: 0 }}>{documento.articulos[2].contenido}</p>
 
-            {doc.articulos[2].imputacion && (
+            {documento.articulos[2].imputacion && (
               <table className="normativa-budget-table">
                 <tbody>
-                  {doc.articulos[2].imputacion.map((row, idx) => (
+                  {documento.articulos[2].imputacion.map((row, idx) => (
                     <tr key={idx}>
                       <td className="label">{row.label}</td>
                       <td>{row.value}</td>
@@ -179,15 +178,15 @@ export default function NormativaDetail({ data }) {
 
           {/* Artículo 4 */}
           <div className="normativa-article-card">
-            <span className="normativa-article-heading">{doc.articulos[3].numero}</span>
-            <p style={{ margin: 0 }}>{doc.articulos[3].contenido}</p>
+            <span className="normativa-article-heading">{documento.articulos[3].numero}</span>
+            <p style={{ margin: 0 }}>{documento.articulos[3].contenido}</p>
           </div>
         </section>
 
         {/* Cierre Oficial del Documento */}
         <footer className="normativa-official-footer">
-          <span className="normativa-resolution-number">{doc.numeroResolucion}</span>
-          <span className="normativa-initials">{doc.iniciales}</span>
+          <span className="normativa-resolution-number">{documento.numeroResolucion}</span>
+          <span className="normativa-initials">{documento.iniciales}</span>
         </footer>
       </article>
     </div>
