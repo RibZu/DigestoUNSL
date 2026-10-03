@@ -25,8 +25,8 @@
 }
 
 .novedades-filter-label {
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: var(--peso-regular);
+  font-size: var(--texto-sm);
   color: var(--text-h);
 }
 
@@ -36,7 +36,7 @@
   border: 1px solid var(--border);
   border-radius: 8px;
   font-family: var(--fuente);
-  font-size: 0.9rem;
+  font-size: var(--texto);
   color: var(--text-h);
   background: var(--bg);
 }
@@ -78,15 +78,15 @@
 }
 
 .novedad-title {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: var(--titulo-sm);
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
   margin: 0;
 }
 
 .novedad-organo {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-regular);
   color: var(--text);
 }
 
@@ -97,8 +97,8 @@
 }
 
 .novedad-badge {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-negrita);
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   background: var(--code-bg);
@@ -111,7 +111,7 @@
 }
 
 .novedad-description {
-  font-size: 0.95rem;
+  font-size: var(--texto);
   color: var(--text);
   line-height: 1.55;
   margin: 0;
@@ -127,7 +127,7 @@
 }
 
 .novedad-date {
-  font-size: 0.85rem;
+  font-size: var(--texto-sm);
   color: var(--text);
   display: flex;
   align-items: center;
@@ -139,17 +139,17 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--bs-white);
-  background: var(--color-accion);
+  background: var(--color-primario);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
+  font-weight: var(--peso-regular);
+  font-size: var(--texto-sm);
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 }
 
 .novedad-download-btn:hover {
-  background: var(--color-accion-hover);
+  background: var(--color-primario-hover);
 }
 
 .novedad-card--vacia {

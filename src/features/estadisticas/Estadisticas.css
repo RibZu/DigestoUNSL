@@ -12,7 +12,7 @@
 }
 
 .estadisticas-nota {
-  font-size: 0.85rem;
+  font-size: var(--texto-sm);
   color: var(--text);
 }
 
@@ -32,7 +32,7 @@ ol.barras {
 ol.barras .barras__etiqueta::before {
   counter-increment: ranking;
   content: counter(ranking) '. ';
-  font-weight: 400;
+  font-weight: var(--peso-regular);
   color: var(--text);
 }
 
@@ -51,15 +51,16 @@ ol.barras .barras__etiqueta::before {
 }
 
 .barras__etiqueta {
-  font-weight: 700;
+  font-weight: var(--peso-regular);
   color: var(--text-h);
   overflow-wrap: anywhere;
+  font-size: var(--texto);
 }
 
 .barras__detalle {
   display: block;
-  font-size: 0.8rem;
-  font-weight: 400;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-regular);
   color: var(--text);
 }
 
@@ -98,14 +99,14 @@ ol.barras .barras__etiqueta::before {
   align-items: baseline;
   gap: 0.25rem 1rem;
   margin: 0 0 0.75rem;
-  font-size: 1.05rem;
+  font-size: var(--titulo-xs);
   color: var(--color-primario);
 }
 
 .estadisticas-grupo__total,
 .concursos-facultad__total {
-  font-size: 0.85rem;
-  font-weight: 400;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-regular);
   color: var(--text);
 }
 
@@ -121,7 +122,7 @@ ol.barras .barras__etiqueta::before {
 .concursos-facultad caption {
   caption-side: top;
   padding: 0.5rem 0;
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
   color: var(--text-h);
 }
 
@@ -132,13 +133,13 @@ ol.barras .barras__etiqueta::before {
 .tabla-apilada .estadistica-tabla__anio th {
   justify-content: flex-start;
   text-align: left;
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
   background: var(--color-fondo);
 }
 
 .estadistica-estado--vigente {
-  background: var(--color-accion);
+  background: var(--color-primario);
   color: var(--bs-white);
 }
 

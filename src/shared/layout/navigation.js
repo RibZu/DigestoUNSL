@@ -11,3 +11,5 @@ export const layoutNavigationSections = [
 ]
 
 export const ayudaSection = { key: 'ayuda', label: 'Ayuda', path: '/ayuda' }
+
+export const ingresoSection = { key: 'login', label: 'Ingresar', path: '/login' }

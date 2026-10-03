@@ -14,8 +14,8 @@
   gap: 0.5rem;
   color: var(--color-primario);
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: var(--peso-regular);
+  font-size: var(--texto);
   align-self: flex-start;
   padding: 0.45rem 0.85rem;
   border-radius: 8px;
@@ -51,8 +51,8 @@
 
 .normativa-code-badge {
   font-family: var(--mono);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--titulo-xs);
+  font-weight: var(--peso-negrita);
   color: var(--bs-white);
   background: rgb(255 255 255 / 0.12);
   padding: 0.35rem 0.85rem;
@@ -61,8 +61,8 @@
 }
 
 .normativa-date-location {
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-negrita);
   color: var(--bs-white);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -87,8 +87,8 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-family: var(--fuente);
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-regular);
   cursor: pointer;
   border: 1px solid var(--border);
   background: var(--bg);
@@ -116,7 +116,7 @@
   flex-direction: column;
   gap: 1.5rem;
   color: var(--text-h);
-  font-size: 1.025rem;
+  font-size: var(--texto);
   line-height: 1.7;
 }
 
@@ -127,15 +127,15 @@
 }
 
 .normativa-section-heading {
-  font-size: 1.05rem;
-  font-weight: 800;
+  font-size: var(--titulo-xs);
+  font-weight: var(--peso-negrita);
   color: var(--text-h);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .normativa-expte-ref {
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
   background: var(--code-bg);
   padding: 0.2rem 0.5rem;
@@ -144,7 +144,7 @@
 
 .normativa-resolving-intro {
   text-align: center;
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
   padding: 1rem 0;
   border-top: 1px dashed var(--border);
@@ -164,16 +164,16 @@
 }
 
 .normativa-article-heading {
-  font-weight: 800;
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
-  font-size: 1rem;
+  font-size: var(--titulo-xs);
 }
 
 .normativa-budget-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: var(--texto-sm);
 }
 
 .normativa-budget-table td {
@@ -182,7 +182,7 @@
 }
 
 .normativa-budget-table td.label {
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
   background: var(--color-fondo);
   width: 35%;
   color: var(--text-h);
@@ -195,7 +195,7 @@
 
 .normativa-order-list li {
   margin-bottom: 0.35rem;
-  font-weight: 600;
+  font-weight: var(--peso-regular);
 }
 
 .normativa-official-footer {
@@ -209,14 +209,14 @@
 }
 
 .normativa-resolution-number {
-  font-size: 1.15rem;
-  font-weight: 800;
+  font-size: var(--titulo-sm);
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
 }
 
 .normativa-initials {
   font-family: var(--mono);
-  font-size: 0.85rem;
+  font-size: var(--texto-sm);
   color: var(--text);
 }
 

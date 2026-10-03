@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
 import Universidad from './Universidad';
-import { ayudaSection } from './navigation';
+import { ayudaSection, ingresoSection } from './navigation';
 import './Footer.css';
 
 const ANIO_ACTUAL = new Date().getFullYear();
@@ -47,9 +47,14 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-            <Link to={ayudaSection.path} className="btn btn-primary footer-ayuda">
-              {ayudaSection.label}
-            </Link>
+            <div className="d-flex flex-wrap gap-2">
+              <Link to={ayudaSection.path} className="btn btn-primary footer-accion">
+                {ayudaSection.label}
+              </Link>
+              <Link to={ingresoSection.path} className="btn btn-primary footer-accion">
+                {ingresoSection.label}
+              </Link>
+            </div>
           </section>
         </div>
 

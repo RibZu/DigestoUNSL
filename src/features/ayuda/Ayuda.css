@@ -37,8 +37,8 @@
 
 .ayuda-page__pregunta h3 {
     margin-bottom: 0.25rem;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: var(--titulo-xs);
+    font-weight: var(--peso-negrita);
 }
 
 .ayuda-page__pregunta p,

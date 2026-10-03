@@ -21,12 +21,11 @@
 .home-portada h1 {
   margin: 0;
   color: var(--bs-white);
-  font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
 .home-portada p {
   max-width: 60ch;
-  font-size: 1.15rem;
+  font-size: var(--texto-lg);
   color: rgb(255 255 255 / 0.9);
 }
 

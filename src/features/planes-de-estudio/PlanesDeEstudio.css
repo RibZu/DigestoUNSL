@@ -11,8 +11,8 @@
 
 .carrera-item__nombre {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: var(--titulo-xs);
+    font-weight: var(--peso-negrita);
     color: var(--text-h);
     overflow-wrap: anywhere;
 }
@@ -30,7 +30,7 @@
 }
 
 .planes-page__campo label {
-    font-size: 0.8rem;
+    font-size: var(--texto-sm);
     color: var(--text);
 }
 
@@ -87,16 +87,16 @@
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--color-accion);
+    color: var(--color-primario);
     background-color: transparent;
-    border: 1px solid var(--color-accion);
+    border: 1px solid var(--color-primario);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .carrera-item__plan:hover,
 .carrera-item__plan:focus-visible {
     color: var(--bs-white);
-    background-color: var(--color-accion);
+    background-color: var(--color-primario);
 }
 
 .carrera-item:hover {
@@ -113,17 +113,17 @@
 }
 
 .planes-page__limpiar {
-    color: var(--color-accion);
+    color: var(--color-primario);
     background-color: transparent;
-    border: 1px solid var(--color-accion);
+    border: 1px solid var(--color-primario);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .planes-page__limpiar:hover,
 .planes-page__limpiar:focus-visible {
     color: var(--bs-white);
-    background-color: var(--color-accion);
-    border-color: var(--color-accion);
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
 }
 
 .planes-page__campo input,

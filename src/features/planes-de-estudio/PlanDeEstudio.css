@@ -20,8 +20,8 @@
 }
 
 .plan-datos dt {
-    font-size: 0.75rem;
-    font-weight: 400;
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-regular);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: rgb(255 255 255 / 0.75);
@@ -29,7 +29,7 @@
 
 .plan-datos dd {
     margin: 0;
-    font-weight: 700;
+    font-weight: var(--peso-regular);
     overflow-wrap: anywhere;
 }
 

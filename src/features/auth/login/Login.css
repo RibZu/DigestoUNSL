@@ -30,8 +30,8 @@
 }
 
 .login-form-group label {
-  font-weight: 700;
-  font-size: 0.9rem;
+  font-weight: var(--peso-regular);
+  font-size: var(--texto-sm);
   color: var(--text-h);
 }
 
@@ -41,7 +41,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 0.5rem;
-  font-size: 0.875rem;
+  font-size: var(--texto-sm);
 }
 
 .login-checkbox-label {
@@ -52,19 +52,19 @@
   cursor: pointer;
 }
 
-.login-forgot-link {
-  color: var(--color-accion);
-  text-decoration: none;
-  font-weight: 700;
+.login-checkbox-label input {
+  accent-color: var(--color-primario);
 }
 
-.login-forgot-link:hover {
+.login-forgot-link {
+  color: var(--color-primario);
   text-decoration: underline;
+  font-weight: var(--peso-regular);
 }
 
 .login-footer {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: var(--texto-sm);
   color: var(--text);
   border-top: 1px solid var(--border);
   padding-top: 1rem;

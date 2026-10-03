@@ -41,7 +41,7 @@
 .busqueda-hero-input {
   width: 100%;
   padding: 1rem 1rem 1rem 3.25rem;
-  font-size: 1.1rem;
+  font-size: var(--texto);
   font-family: var(--fuente);
   color: var(--text-h);
   background: var(--color-fondo);
@@ -85,21 +85,21 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-accion);
+  background: var(--color-primario);
   color: var(--bs-white);
   border: none;
   border-radius: var(--radio);
   padding: 1rem 1.75rem;
   font-family: var(--fuente);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: var(--texto);
+  font-weight: var(--peso-regular);
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .busqueda-submit-btn:hover {
-  background: var(--color-accion-hover);
+  background: var(--color-primario-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px var(--accent-border);
 }
@@ -123,8 +123,8 @@
 }
 
 .busqueda-filter-label {
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: var(--peso-regular);
+  font-size: var(--texto-sm);
   color: var(--text-h);
   display: flex;
   align-items: center;
@@ -138,7 +138,7 @@
   border: 1px solid var(--border);
   border-radius: var(--radio);
   font-family: var(--fuente);
-  font-size: 0.95rem;
+  font-size: var(--texto);
   color: var(--text-h);
   background: var(--bg);
   transition: all 0.2s ease;
@@ -168,8 +168,8 @@
   border: none;
   color: var(--color-primario);
   font-family: var(--fuente);
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: var(--texto);
+  font-weight: var(--peso-regular);
   cursor: pointer;
   padding: 0.4rem 0.75rem;
   border-radius: 8px;
@@ -203,8 +203,8 @@
 }
 
 .busqueda-advanced-title {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-negrita);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--text);
@@ -227,7 +227,7 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.925rem;
+  font-size: var(--texto-sm);
   color: var(--text-h);
   cursor: pointer;
   user-select: none;
@@ -255,15 +255,15 @@
 }
 
 .busqueda-results-header h2 {
-  font-size: 1.25rem;
+  font-size: var(--titulo-sm);
   margin: 0;
   color: var(--color-primario);
 }
 
 .busqueda-results-count {
-  font-size: 0.875rem;
+  font-size: var(--texto-sm);
   color: var(--text);
-  font-weight: 600;
+  font-weight: var(--peso-regular);
 }
 
 .busqueda-result-card {
@@ -293,8 +293,8 @@
 
 .busqueda-result-title-link {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: var(--titulo-sm);
+  font-weight: var(--peso-negrita);
   color: var(--color-primario);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -313,8 +313,8 @@
 }
 
 .busqueda-meta-tag {
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-negrita);
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
   background: var(--code-bg);
@@ -332,7 +332,7 @@
 }
 
 .busqueda-result-snippet {
-  font-size: 0.95rem;
+  font-size: var(--texto);
   color: var(--text);
   line-height: 1.55;
   margin: 0;
@@ -351,8 +351,8 @@
 }
 
 .busqueda-result-organo {
-  font-size: 0.875rem;
-  font-weight: 600;
+  font-size: var(--texto-sm);
+  font-weight: var(--peso-regular);
   color: var(--text);
 }
 

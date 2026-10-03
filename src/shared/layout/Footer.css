@@ -24,23 +24,19 @@
 
 .footer-descripcion {
   max-width: 28rem;
-  font-size: 0.95rem;
+  font-size: var(--texto-sm);
   color: var(--text);
 }
 
 .footer-enlace {
   color: var(--color-primario);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.footer-enlace:hover {
+  font-weight: var(--peso-regular);
   text-decoration: underline;
 }
 
 .footer-titulo {
   margin: 0 0 1rem;
-  font-size: 1rem;
+  font-size: var(--texto);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--color-primario);
@@ -60,7 +56,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.95rem;
+  font-size: var(--texto-sm);
 }
 
 .footer-rol {
@@ -71,7 +67,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  font-weight: 700;
+  font-weight: var(--peso-negrita);
 }
 
 .footer-icono {
@@ -80,7 +76,7 @@
   color: var(--color-primario);
 }
 
-.footer-ayuda {
+.footer-accion {
   min-height: 2.75rem;
 }
 

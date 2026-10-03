@@ -24,7 +24,7 @@
 }
 
 .concursos-page__campo label {
-    font-size: 0.8rem;
+    font-size: var(--texto-sm);
     color: var(--text);
 }
 
@@ -90,8 +90,8 @@
 
 .concurso-card__cargo {
     margin: 0;
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: var(--titulo-xs);
+    font-weight: var(--peso-negrita);
     color: var(--text-h);
 }
 
@@ -101,21 +101,21 @@
 }
 
 .concurso-card__detalle dt {
-    font-size: 0.75rem;
+    font-size: var(--texto-sm);
     color: var(--text);
 }
 
 .concurso-card__detalle dd {
     margin: 0;
-    font-size: 0.9rem;
+    font-size: var(--texto-sm);
 }
 
 .concurso-card__resolucion {
     display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-regular);
     color: var(--bs-white);
-    background-color: var(--color-accion);
+    background-color: var(--color-primario);
     text-decoration: none;
     transition: background-color 0.15s ease;
 }
@@ -123,21 +123,21 @@
 .concurso-card__resolucion:hover,
 .concurso-card__resolucion:focus-visible {
     color: var(--bs-white);
-    background-color: var(--color-accion-hover);
+    background-color: var(--color-primario-hover);
 }
 
 .concursos-page__limpiar {
-    color: var(--color-accion);
+    color: var(--color-primario);
     background-color: transparent;
-    border: 1px solid var(--color-accion);
+    border: 1px solid var(--color-primario);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .concursos-page__limpiar:hover,
 .concursos-page__limpiar:focus-visible {
     color: var(--bs-white);
-    background-color: var(--color-accion);
-    border-color: var(--color-accion);
+    background-color: var(--color-primario);
+    border-color: var(--color-primario);
 }
 
 .concursos-page__campo input,

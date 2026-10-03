@@ -14,7 +14,7 @@
 
 .home-showcase-card__title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: var(--titulo-sm);
   color: var(--color-primario);
 }
 
@@ -22,7 +22,7 @@
   flex: 1;
   margin: 0;
   padding-left: 1.1rem;
-  font-size: 0.95rem;
+  font-size: var(--texto-sm);
   color: var(--text);
 }
 

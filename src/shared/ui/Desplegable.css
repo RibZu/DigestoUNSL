@@ -6,7 +6,8 @@
 
 .desplegable__titulo {
     margin: 0;
-    font-size: 1.15rem;
+    font-size: var(--titulo-sm);
+    font-weight: var(--peso-negrita);
 }
 
 .desplegable__boton {
@@ -23,7 +24,6 @@
     border-radius: var(--radio);
     text-align: left;
     font: inherit;
-    font-weight: 700;
     color: var(--text-h);
     cursor: pointer;
 }
@@ -33,7 +33,7 @@
 }
 
 .desplegable__boton:focus-visible {
-    outline: 2px solid var(--color-accion);
+    outline: 2px solid var(--color-primario);
     outline-offset: -2px;
 }
 
@@ -51,8 +51,8 @@
 
 .desplegable__resumen {
     margin-left: auto;
-    font-size: 0.85rem;
-    font-weight: 400;
+    font-size: var(--texto-sm);
+    font-weight: var(--peso-regular);
     color: var(--text);
 }
 
