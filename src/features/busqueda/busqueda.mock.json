@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "title": "Resolución Rectoral N° 145/2026",
+    "codigo": "RR-1-145/26",
+    "organo": "Consejo Superior / Rectorado",
+    "tipo": "Resolución",
+    "fecha": "12-05-2026",
+    "snippet": "... por la cual se aprueba el calendario académico para el ciclo lectivo 2026 en todas las facultades ..."
+  },
+  {
+    "id": 2,
+    "title": "Ordenanza Consejo Superior N° 12/2026",
+    "codigo": "OCS-1-12/26",
+    "organo": "FCFMyN (Fac. de Ciencias Físico-Matemáticas y Naturales)",
+    "tipo": "Ordenanza",
+    "fecha": "05-04-2026",
+    "snippet": "... actualización del plan de estudios de la carrera Licenciatura en Ciencias de la Computación ..."
+  },
+  {
+    "id": 3,
+    "title": "Resolución Rectoral N° 140/2026",
+    "codigo": "RR-1-140/26",
+    "organo": "Consejo Superior / Rectorado",
+    "tipo": "Resolución",
+    "fecha": "01-04-2026",
+    "snippet": "... designación de autoridades para la comisión de evaluación institucional ..."
+  },
+  {
+    "id": 4,
+    "title": "Disposición Consejo Directivo N° 45/2026",
+    "codigo": "CD-4-45/26",
+    "organo": "FCS (Fac. de Ciencias de la Salud)",
+    "tipo": "Disposición",
+    "fecha": "05-03-2026",
+    "snippet": "... asignación de espacio físico y equipamiento de laboratorio para proyectos de investigación en salud pública ..."
+  },
+  {
+    "id": 5,
+    "title": "Resolución Consejo Superior N° 132/2026",
+    "codigo": "RCS-1-132/26",
+    "organo": "Consejo Superior / Rectorado",
+    "tipo": "Resolución",
+    "fecha": "28-02-2026",
+    "snippet": "... concesión de licencias por capacitación técnica al personal no docente de la Universidad ..."
+  },
+  {
+    "id": 6,
+    "title": "Ordenanza N° 8/2025",
+    "codigo": "OCS-1-8/25",
+    "organo": "FCH (Fac. de Ciencias Humanas)",
+    "tipo": "Ordenanza",
+    "fecha": "15-11-2025",
+    "snippet": "... reglamento para el funcionamiento de los consejos departamentales de la Facultad de Ciencias Humanas ..."
+  },
+  {
+    "id": 7,
+    "title": "Decreto N° 22/2025",
+    "codigo": "DEC-1-22/25",
+    "organo": "Consejo Superior / Rectorado",
+    "tipo": "Decreto",
+    "fecha": "03-10-2025",
+    "snippet": "... designación interina de personal directivo en la Secretaría General de la UNSL ..."
+  },
+  {
+    "id": 8,
+    "title": "Acta de Directorio N° 5/2025",
+    "codigo": "ACT-1-5/25",
+    "organo": "Secretarías o Direcciones Generales",
+    "tipo": "Acta / Circular",
+    "fecha": "20-08-2025",
+    "snippet": "... circular interna sobre el uso y administración del sistema de gestión académica SIU-Guaraní ..."
+  }
+]
