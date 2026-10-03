@@ -1,582 +1,3222 @@
 {
-  "facultades": {
-    "fcfmn": {
-      "nombre": "Facultad de Ciencias Físico-Matemáticas y Naturales",
-      "ubicacion": "San Luis"
+  "dependencias": [
+    {
+      "numero": 0,
+      "sigla": "Org. Nac.",
+      "nombre": "Organismos Nacionales",
+      "ubicacion": null,
+      "esFacultad": false,
+      "historica": false
     },
-    "fqbf": {
+    {
+      "numero": 1,
+      "sigla": "Rectorado",
+      "nombre": "Rectorado",
+      "ubicacion": "San Luis",
+      "esFacultad": false,
+      "historica": false
+    },
+    {
+      "numero": 2,
+      "sigla": "FQByF",
       "nombre": "Facultad de Química, Bioquímica y Farmacia",
-      "ubicacion": "San Luis"
+      "ubicacion": "San Luis",
+      "esFacultad": true,
+      "historica": false
     },
-    "fch": {
+    {
+      "numero": 3,
+      "sigla": "FCFMyN",
+      "nombre": "Facultad de Ciencias Físico-Matemáticas y Naturales",
+      "ubicacion": "San Luis",
+      "esFacultad": true,
+      "historica": false
+    },
+    {
+      "numero": 4,
+      "sigla": "FCH",
       "nombre": "Facultad de Ciencias Humanas",
-      "ubicacion": "San Luis"
+      "ubicacion": "San Luis",
+      "esFacultad": true,
+      "historica": false
     },
-    "fices": {
+    {
+      "numero": 5,
+      "sigla": "FICES",
       "nombre": "Facultad de Ingeniería y Ciencias Económico-Sociales",
-      "ubicacion": "Villa Mercedes"
+      "ubicacion": "Villa Mercedes",
+      "esFacultad": true,
+      "historica": true
     },
-    "fcs": {
+    {
+      "numero": 6,
+      "sigla": "ENJPP",
+      "nombre": "Escuela Normal Juan Pascual Pringles",
+      "ubicacion": "San Luis",
+      "esFacultad": false,
+      "historica": false
+    },
+    {
+      "numero": 8,
+      "sigla": "IPAU",
+      "nombre": "Instituto Politécnico y Artístico Universitario",
+      "ubicacion": "San Luis",
+      "esFacultad": false,
+      "historica": false
+    },
+    {
+      "numero": 9,
+      "sigla": "DOSPU",
+      "nombre": "DOSPU",
+      "ubicacion": "San Luis",
+      "esFacultad": false,
+      "historica": false
+    },
+    {
+      "numero": 10,
+      "sigla": "FCS",
       "nombre": "Facultad de Ciencias de la Salud",
-      "ubicacion": "San Luis"
+      "ubicacion": "San Luis",
+      "esFacultad": true,
+      "historica": false
     },
-    "ftu": {
+    {
+      "numero": 11,
+      "sigla": "FTU",
       "nombre": "Facultad de Turismo y Urbanismo",
-      "ubicacion": "Merlo"
+      "ubicacion": "Merlo",
+      "esFacultad": true,
+      "historica": false
     },
-    "fapsi": {
+    {
+      "numero": 12,
+      "sigla": "FaPsi",
       "nombre": "Facultad de Psicología",
-      "ubicacion": "San Luis"
+      "ubicacion": "San Luis",
+      "esFacultad": true,
+      "historica": false
     },
-    "fica": {
+    {
+      "numero": 14,
+      "sigla": "FICA",
       "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias",
-      "ubicacion": "Villa Mercedes"
+      "ubicacion": "Villa Mercedes",
+      "esFacultad": true,
+      "historica": false
     },
-    "fcejs": {
+    {
+      "numero": 15,
+      "sigla": "FCEJS",
       "nombre": "Facultad de Ciencias Económicas, Jurídicas y Sociales",
-      "ubicacion": "Villa Mercedes"
+      "ubicacion": "Villa Mercedes",
+      "esFacultad": true,
+      "historica": false
     }
-  },
-  "concursos": [
+  ],
+  "codificacion": [
     {
-      "facultad": "fcfmn",
-      "departamento": "Departamento de Matemática",
-      "area": "Área Única de Matemática",
+      "prefijo": "RCS",
+      "tipo": "Resolución",
+      "organo": "Consejo Superior",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RR",
+      "tipo": "Resolución",
+      "organo": "Rectorado",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RAU",
+      "tipo": "Resolución",
+      "organo": "Asamblea Universitaria",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RSA",
+      "tipo": "Resolución",
+      "organo": "Secretaría Académica (Rectorado)",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RSE",
+      "tipo": "Resolución",
+      "organo": "Secretaría de Extensión Universitaria",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RJE",
+      "tipo": "Resolución",
+      "organo": "Junta Electoral UNSL",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "RCD",
+      "tipo": "Resolución",
+      "organo": "Consejo Directivo",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RD",
+      "tipo": "Resolución",
+      "organo": "Decanato",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDInf",
+      "tipo": "Resolución",
+      "organo": "Departamento de Informática (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDMat",
+      "tipo": "Resolución",
+      "organo": "Departamento de Matemáticas (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDFis",
+      "tipo": "Resolución",
+      "organo": "Departamento de Física (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDGeo",
+      "tipo": "Resolución",
+      "organo": "Departamento de Geología (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDMin",
+      "tipo": "Resolución",
+      "organo": "Departamento de Minería (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RDEle",
+      "tipo": "Resolución",
+      "organo": "Departamento de Electrónica (FCFMyN)",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "RCE",
+      "tipo": "Resolución",
+      "organo": "Consejo de Escuela (ENJPP)",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "RRE",
+      "tipo": "Resolución",
+      "organo": "Rectoría de la ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "OCS",
+      "tipo": "Ordenanza",
+      "organo": "Consejo Superior",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "OR",
+      "tipo": "Ordenanza",
+      "organo": "Rectorado",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "OAU",
+      "tipo": "Ordenanza",
+      "organo": "Asamblea Universitaria",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "OCD",
+      "tipo": "Ordenanza",
+      "organo": "Consejo Directivo",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "OD",
+      "tipo": "Ordenanza",
+      "organo": "Decanato",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "OCE",
+      "tipo": "Ordenanza",
+      "organo": "Consejo de Escuela (ENJPP)",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "ORE",
+      "tipo": "Ordenanza",
+      "organo": "Rectoría de la ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "DR",
+      "tipo": "Decreto",
+      "organo": "Rectorado",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "DD",
+      "tipo": "Decreto",
+      "organo": "Decanato",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "DE",
+      "tipo": "Decreto",
+      "organo": "Rectoría de la ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "ACS",
+      "tipo": "Acta",
+      "organo": "Consejo Superior",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ACD",
+      "tipo": "Acta",
+      "organo": "Consejo Directivo",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "AAU",
+      "tipo": "Acta",
+      "organo": "Asamblea Universitaria",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ACE",
+      "tipo": "Acta",
+      "organo": "Consejo de Escuela (ENJPP)",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "ACC",
+      "tipo": "Acta",
+      "organo": "Complementaria de un convenio de la UNSL",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ACCD",
+      "tipo": "Acta",
+      "organo": "Complementaria de un convenio de una facultad",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "ACCE",
+      "tipo": "Acta",
+      "organo": "Complementaria de un convenio de la ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "ACCo",
+      "tipo": "Acta",
+      "organo": "Consejo Consultivo de facultad",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "ACVTS",
+      "tipo": "Acta",
+      "organo": "Comisión de Vinculación Tecnológica y Social",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ACA",
+      "tipo": "Acta",
+      "organo": "Comité Académico",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ACP",
+      "tipo": "Acta",
+      "organo": "Consejo de Posgrado",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ODCS",
+      "tipo": "Orden del día",
+      "organo": "Consejo Superior",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "ODCD",
+      "tipo": "Orden del día",
+      "organo": "Consejo Directivo",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "ODCE",
+      "tipo": "Orden del día",
+      "organo": "Consejo de Escuela (ENJPP)",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "CISA",
+      "tipo": "Circular",
+      "organo": "Secretaría Académica",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISH",
+      "tipo": "Circular",
+      "organo": "Secretaría de Hacienda",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISG",
+      "tipo": "Circular",
+      "organo": "Secretaría General",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISE",
+      "tipo": "Circular",
+      "organo": "Secretaría de Extensión",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISC",
+      "tipo": "Circular",
+      "organo": "Secretaría de Ciencia y Técnica",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISB",
+      "tipo": "Circular",
+      "organo": "Secretaría de Asuntos Estudiantiles y Bienestar",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISAD",
+      "tipo": "Circular",
+      "organo": "Secretaría Administrativa",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISP",
+      "tipo": "Circular",
+      "organo": "Secretaría de Planeamiento",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CISEP",
+      "tipo": "Circular",
+      "organo": "Secretaría de Posgrado y Extensión",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CIDP",
+      "tipo": "Circular",
+      "organo": "Dirección de Personal",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CID",
+      "tipo": "Circular",
+      "organo": "Decanato",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "CIR",
+      "tipo": "Circular",
+      "organo": "Rectorado",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CICS",
+      "tipo": "Circular",
+      "organo": "Consejo Superior",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CICD",
+      "tipo": "Circular",
+      "organo": "Consejo Directivo",
+      "ambito": "facultad"
+    },
+    {
+      "prefijo": "CIAI",
+      "tipo": "Circular",
+      "organo": "Auditoría Interna",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CIRE",
+      "tipo": "Circular",
+      "organo": "Rectoría de la ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "CIIE",
+      "tipo": "Circular",
+      "organo": "IPAU",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CIDE",
+      "tipo": "Circular",
+      "organo": "DEDA",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CIDO",
+      "tipo": "Circular",
+      "organo": "DOSPU",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "CO",
+      "tipo": "Convenio",
+      "organo": "UNSL",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "COE",
+      "tipo": "Convenio",
+      "organo": "ENJPP",
+      "ambito": "escuela"
+    },
+    {
+      "prefijo": "PCPDGA",
+      "tipo": "Proveído",
+      "organo": "Concurso de precios, Dirección General de Administración",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "PCPSA",
+      "tipo": "Proveído",
+      "organo": "Concurso de precios, Secretaría Administrativa",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "PCDDGA",
+      "tipo": "Proveído",
+      "organo": "Compra directa, Dirección General de Administración",
+      "ambito": "universidad"
+    },
+    {
+      "prefijo": "PCDSA",
+      "tipo": "Proveído",
+      "organo": "Compra directa, Secretaría Administrativa",
+      "ambito": "universidad"
+    }
+  ],
+  "oficinas": [
+    {
+      "id": 201,
+      "dependencia": 2,
+      "nombre": "Departamento de Concursos"
+    },
+    {
+      "id": 202,
+      "dependencia": 2,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 203,
+      "dependencia": 2,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 301,
+      "dependencia": 3,
+      "nombre": "Departamento de Concursos"
+    },
+    {
+      "id": 302,
+      "dependencia": 3,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 303,
+      "dependencia": 3,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 401,
+      "dependencia": 4,
+      "nombre": "Departamento de Concursos"
+    },
+    {
+      "id": 402,
+      "dependencia": 4,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 403,
+      "dependencia": 4,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 1001,
+      "dependencia": 10,
+      "nombre": "Concursos"
+    },
+    {
+      "id": 1002,
+      "dependencia": 10,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 1003,
+      "dependencia": 10,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 1101,
+      "dependencia": 11,
+      "nombre": "Concursos"
+    },
+    {
+      "id": 1102,
+      "dependencia": 11,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 1103,
+      "dependencia": 11,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 1201,
+      "dependencia": 12,
+      "nombre": "Concursos"
+    },
+    {
+      "id": 1202,
+      "dependencia": 12,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 1203,
+      "dependencia": 12,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 1401,
+      "dependencia": 14,
+      "nombre": "Concursos"
+    },
+    {
+      "id": 1402,
+      "dependencia": 14,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 1403,
+      "dependencia": 14,
+      "nombre": "Secretaría Académica"
+    },
+    {
+      "id": 1501,
+      "dependencia": 15,
+      "nombre": "Concursos"
+    },
+    {
+      "id": 1502,
+      "dependencia": 15,
+      "nombre": "Dirección de Despacho"
+    },
+    {
+      "id": 1503,
+      "dependencia": 15,
+      "nombre": "Secretaría Académica"
+    }
+  ],
+  "departamentos": [
+    {
+      "id": 1,
+      "dependencia": 2,
+      "nombre": "Departamento de Biología"
+    },
+    {
+      "id": 2,
+      "dependencia": 2,
+      "nombre": "Departamento de Bioquímica y Ciencias Biológicas"
+    },
+    {
+      "id": 3,
+      "dependencia": 2,
+      "nombre": "Departamento de Farmacia"
+    },
+    {
+      "id": 4,
+      "dependencia": 2,
+      "nombre": "Departamento de Química"
+    },
+    {
+      "id": 5,
+      "dependencia": 3,
+      "nombre": "Departamento de Física"
+    },
+    {
+      "id": 6,
+      "dependencia": 3,
+      "nombre": "Departamento de Geología"
+    },
+    {
+      "id": 7,
+      "dependencia": 3,
+      "nombre": "Departamento de Informática"
+    },
+    {
+      "id": 8,
+      "dependencia": 3,
+      "nombre": "Departamento de Matemática"
+    },
+    {
+      "id": 9,
+      "dependencia": 3,
+      "nombre": "Departamento de Minería"
+    },
+    {
+      "id": 10,
+      "dependencia": 4,
+      "nombre": "Departamento de Artes"
+    },
+    {
+      "id": 11,
+      "dependencia": 4,
+      "nombre": "Departamento de Comunicación"
+    },
+    {
+      "id": 12,
+      "dependencia": 4,
+      "nombre": "Departamento de Educación Física"
+    },
+    {
+      "id": 13,
+      "dependencia": 4,
+      "nombre": "Departamento de Educación y Formación Docente"
+    },
+    {
+      "id": 14,
+      "dependencia": 10,
+      "nombre": "Departamento de Enfermería"
+    },
+    {
+      "id": 15,
+      "dependencia": 10,
+      "nombre": "Departamento de Fonoaudiología"
+    },
+    {
+      "id": 16,
+      "dependencia": 10,
+      "nombre": "Departamento de Kinesiología y Fisioterapia"
+    },
+    {
+      "id": 17,
+      "dependencia": 10,
+      "nombre": "Departamento de Nutrición"
+    },
+    {
+      "id": 18,
+      "dependencia": 10,
+      "nombre": "Departamento de Obstetricia"
+    },
+    {
+      "id": 19,
+      "dependencia": 11,
+      "nombre": "Departamento de Arquitectura"
+    },
+    {
+      "id": 20,
+      "dependencia": 11,
+      "nombre": "Departamento de Ciencias Básicas"
+    },
+    {
+      "id": 21,
+      "dependencia": 11,
+      "nombre": "Departamento de Turismo"
+    },
+    {
+      "id": 22,
+      "dependencia": 11,
+      "nombre": "Departamento de Urbanismo"
+    },
+    {
+      "id": 23,
+      "dependencia": 12,
+      "nombre": "Departamento de Formación Básica"
+    },
+    {
+      "id": 24,
+      "dependencia": 12,
+      "nombre": "Departamento de Psicología Clínica"
+    },
+    {
+      "id": 25,
+      "dependencia": 12,
+      "nombre": "Departamento de Psicología Educacional"
+    },
+    {
+      "id": 26,
+      "dependencia": 12,
+      "nombre": "Departamento de Psicología Social"
+    },
+    {
+      "id": 27,
+      "dependencia": 14,
+      "nombre": "Departamento de Ciencias Agropecuarias"
+    },
+    {
+      "id": 28,
+      "dependencia": 14,
+      "nombre": "Departamento de Ciencias Básicas"
+    },
+    {
+      "id": 29,
+      "dependencia": 14,
+      "nombre": "Departamento de Ingeniería de Alimentos"
+    },
+    {
+      "id": 30,
+      "dependencia": 14,
+      "nombre": "Departamento de Ingeniería Química"
+    },
+    {
+      "id": 31,
+      "dependencia": 15,
+      "nombre": "Departamento de Administración"
+    },
+    {
+      "id": 32,
+      "dependencia": 15,
+      "nombre": "Departamento de Ciencias Sociales"
+    },
+    {
+      "id": 33,
+      "dependencia": 15,
+      "nombre": "Departamento de Contabilidad"
+    },
+    {
+      "id": 34,
+      "dependencia": 15,
+      "nombre": "Departamento de Derecho"
+    },
+    {
+      "id": 35,
+      "dependencia": 15,
+      "nombre": "Departamento de Economía"
+    }
+  ],
+  "areas": [
+    {
+      "id": 1,
+      "departamento": 1,
+      "nombre": "Área Biología Molecular"
+    },
+    {
+      "id": 2,
+      "departamento": 2,
+      "nombre": "Área Microbiología"
+    },
+    {
+      "id": 3,
+      "departamento": 3,
+      "nombre": "Área Tecnología Farmacéutica"
+    },
+    {
+      "id": 4,
+      "departamento": 4,
+      "nombre": "Área Química Analítica"
+    },
+    {
+      "id": 5,
+      "departamento": 4,
+      "nombre": "Área Química General e Inorgánica"
+    },
+    {
+      "id": 6,
+      "departamento": 5,
+      "nombre": "Área Física Experimental"
+    },
+    {
+      "id": 7,
+      "departamento": 6,
+      "nombre": "Área Geología Básica"
+    },
+    {
+      "id": 8,
+      "departamento": 7,
+      "nombre": "Área Ingeniería de Software"
+    },
+    {
+      "id": 9,
+      "departamento": 8,
+      "nombre": "Área Única de Matemática"
+    },
+    {
+      "id": 10,
+      "departamento": 9,
+      "nombre": "Área Explotación de Minas"
+    },
+    {
+      "id": 11,
+      "departamento": 10,
+      "nombre": "Área Música"
+    },
+    {
+      "id": 12,
+      "departamento": 11,
+      "nombre": "Área Producción Audiovisual"
+    },
+    {
+      "id": 13,
+      "departamento": 12,
+      "nombre": "Área Actividad Física y Salud"
+    },
+    {
+      "id": 14,
+      "departamento": 13,
+      "nombre": "Área Didáctica General"
+    },
+    {
+      "id": 15,
+      "departamento": 13,
+      "nombre": "Área Psicología Educacional"
+    },
+    {
+      "id": 16,
+      "departamento": 14,
+      "nombre": "Área Enfermería Clínica"
+    },
+    {
+      "id": 17,
+      "departamento": 15,
+      "nombre": "Área Audiología"
+    },
+    {
+      "id": 18,
+      "departamento": 16,
+      "nombre": "Área Rehabilitación"
+    },
+    {
+      "id": 19,
+      "departamento": 17,
+      "nombre": "Área Nutrición Comunitaria"
+    },
+    {
+      "id": 20,
+      "departamento": 18,
+      "nombre": "Área Obstetricia Clínica"
+    },
+    {
+      "id": 21,
+      "departamento": 19,
+      "nombre": "Área Diseño Arquitectónico"
+    },
+    {
+      "id": 22,
+      "departamento": 20,
+      "nombre": "Área Idiomas"
+    },
+    {
+      "id": 23,
+      "departamento": 21,
+      "nombre": "Área Gestión Turística"
+    },
+    {
+      "id": 24,
+      "departamento": 21,
+      "nombre": "Área Hotelería"
+    },
+    {
+      "id": 25,
+      "departamento": 22,
+      "nombre": "Área Planificación Urbana"
+    },
+    {
+      "id": 26,
+      "departamento": 23,
+      "nombre": "Área Neurociencias"
+    },
+    {
+      "id": 27,
+      "departamento": 24,
+      "nombre": "Área Psicodiagnóstico"
+    },
+    {
+      "id": 28,
+      "departamento": 24,
+      "nombre": "Área Psicopatología"
+    },
+    {
+      "id": 29,
+      "departamento": 25,
+      "nombre": "Área Orientación Vocacional"
+    },
+    {
+      "id": 30,
+      "departamento": 26,
+      "nombre": "Área Psicología Comunitaria"
+    },
+    {
+      "id": 31,
+      "departamento": 27,
+      "nombre": "Área Producción Animal"
+    },
+    {
+      "id": 32,
+      "departamento": 27,
+      "nombre": "Área Producción Vegetal"
+    },
+    {
+      "id": 33,
+      "departamento": 28,
+      "nombre": "Área Química"
+    },
+    {
+      "id": 34,
+      "departamento": 29,
+      "nombre": "Área Tecnología de Alimentos"
+    },
+    {
+      "id": 35,
+      "departamento": 30,
+      "nombre": "Área Operaciones Unitarias"
+    },
+    {
+      "id": 36,
+      "departamento": 31,
+      "nombre": "Área Gestión de Organizaciones"
+    },
+    {
+      "id": 37,
+      "departamento": 32,
+      "nombre": "Área Trabajo Social"
+    },
+    {
+      "id": 38,
+      "departamento": 33,
+      "nombre": "Área Costos"
+    },
+    {
+      "id": 39,
+      "departamento": 34,
+      "nombre": "Área Derecho Privado"
+    },
+    {
+      "id": 40,
+      "departamento": 35,
+      "nombre": "Área Microeconomía"
+    }
+  ],
+  "documentos": [
+    {
+      "codigo": "RD-2-73/24",
+      "prefijo": "RD",
+      "numero": 73,
+      "anio": 2024,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2024-03-11",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202403/20240312113000_12317.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2024-03-12T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-2-170/24",
+      "prefijo": "RCD",
+      "numero": 170,
+      "anio": 2024,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2024-09-02",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202409/20240903113000_12334.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2024-09-03T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-2-267/25",
+      "prefijo": "RD",
+      "numero": 267,
+      "anio": 2025,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2025-03-10",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202503/20250311113000_12351.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2025-03-11T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-2-364/25",
+      "prefijo": "RCD",
+      "numero": 364,
+      "anio": 2025,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2025-08-25",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202508/20250826113000_12368.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2025-08-26T11:30:00",
+      "ultimaModificacion": {
+        "usuario": "cargador.fqbyf",
+        "fecha": "2025-08-27T16:05:00"
+      },
+      "baja": null
+    },
+    {
+      "codigo": "RD-2-461/26",
+      "prefijo": "RD",
+      "numero": 461,
+      "anio": 2026,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2026-02-09",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202602/20260210113000_12385.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2026-02-10T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-2-558/26",
+      "prefijo": "RCD",
+      "numero": 558,
+      "anio": 2026,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2026-09-14",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202609/20260915113000_12402.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2026-09-15T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-2-655/26",
+      "prefijo": "RD",
+      "numero": 655,
+      "anio": 2026,
+      "dependenciaEmisora": 2,
+      "dependenciaOrigen": 2,
+      "fechaEmision": "2026-09-28",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FQByF",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fqbyf"
+      ],
+      "pdf": "202609/20260929113000_12419.pdf",
+      "usuario": "cargador.fqbyf",
+      "oficina": 201,
+      "fechaRegistro": "2026-09-29T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-3-126/24",
+      "prefijo": "RCD",
+      "numero": 126,
+      "anio": 2024,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2024-03-12",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202403/20240313113000_12436.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2024-03-13T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-3-223/24",
+      "prefijo": "RD",
+      "numero": 223,
+      "anio": 2024,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2024-09-03",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202409/20240904113000_12453.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2024-09-04T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-3-320/25",
+      "prefijo": "RCD",
+      "numero": 320,
+      "anio": 2025,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2025-03-11",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202503/20250312113000_12470.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2025-03-12T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-3-417/25",
+      "prefijo": "RD",
+      "numero": 417,
+      "anio": 2025,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2025-08-26",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202508/20250827113000_12487.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2025-08-27T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-3-514/26",
+      "prefijo": "RCD",
+      "numero": 514,
+      "anio": 2026,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2026-02-10",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202602/20260211113000_12504.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2026-02-11T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-3-611/26",
+      "prefijo": "RD",
+      "numero": 611,
+      "anio": 2026,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2026-09-15",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202609/20260916113000_12521.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2026-09-16T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-3-708/26",
+      "prefijo": "RCD",
+      "numero": 708,
+      "anio": 2026,
+      "dependenciaEmisora": 3,
+      "dependenciaOrigen": 3,
+      "fechaEmision": "2026-09-29",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCFMyN",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcfmyn"
+      ],
+      "pdf": "202609/20260930113000_12538.pdf",
+      "usuario": "cargador.fcfmyn",
+      "oficina": 301,
+      "fechaRegistro": "2026-09-30T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-4-179/24",
+      "prefijo": "RD",
+      "numero": 179,
+      "anio": 2024,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2024-03-13",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202403/20240314113000_12555.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2024-03-14T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-4-276/24",
+      "prefijo": "RCD",
+      "numero": 276,
+      "anio": 2024,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2024-09-04",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202409/20240905113000_12572.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2024-09-05T11:30:00",
+      "ultimaModificacion": null,
+      "baja": {
+        "usuario": "admin.digesto",
+        "fecha": "2024-10-10T14:40:00"
+      }
+    },
+    {
+      "codigo": "RD-4-373/25",
+      "prefijo": "RD",
+      "numero": 373,
+      "anio": 2025,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2025-03-12",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202503/20250313113000_12589.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2025-03-13T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-4-470/25",
+      "prefijo": "RCD",
+      "numero": 470,
+      "anio": 2025,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2025-08-27",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202508/20250828113000_12606.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2025-08-28T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-4-567/26",
+      "prefijo": "RD",
+      "numero": 567,
+      "anio": 2026,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2026-02-11",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202602/20260212113000_12623.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2026-02-12T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-4-664/26",
+      "prefijo": "RCD",
+      "numero": 664,
+      "anio": 2026,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2026-09-16",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202609/20260917113000_12640.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2026-09-17T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-4-61/26",
+      "prefijo": "RD",
+      "numero": 61,
+      "anio": 2026,
+      "dependenciaEmisora": 4,
+      "dependenciaOrigen": 4,
+      "fechaEmision": "2026-09-30",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCH",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fch"
+      ],
+      "pdf": "202610/20261001113000_12657.pdf",
+      "usuario": "cargador.fch",
+      "oficina": 401,
+      "fechaRegistro": "2026-10-01T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-10-232/24",
+      "prefijo": "RCD",
+      "numero": 232,
+      "anio": 2024,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2024-03-14",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202403/20240315113000_12674.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2024-03-15T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-10-329/24",
+      "prefijo": "RD",
+      "numero": 329,
+      "anio": 2024,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2024-09-05",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202409/20240906113000_12691.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2024-09-06T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-10-426/25",
+      "prefijo": "RCD",
+      "numero": 426,
+      "anio": 2025,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2025-03-13",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202503/20250314113000_12708.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2025-03-14T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-10-523/25",
+      "prefijo": "RD",
+      "numero": 523,
+      "anio": 2025,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2025-08-28",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202508/20250829113000_12725.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2025-08-29T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-10-620/26",
+      "prefijo": "RCD",
+      "numero": 620,
+      "anio": 2026,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2026-02-12",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202602/20260213113000_12742.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2026-02-13T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-10-717/26",
+      "prefijo": "RD",
+      "numero": 717,
+      "anio": 2026,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2026-09-17",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202609/20260918113000_12759.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2026-09-18T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-10-114/26",
+      "prefijo": "RCD",
+      "numero": 114,
+      "anio": 2026,
+      "dependenciaEmisora": 10,
+      "dependenciaOrigen": 10,
+      "fechaEmision": "2026-10-01",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcs"
+      ],
+      "pdf": "202610/20261002113000_12776.pdf",
+      "usuario": "cargador.fcs",
+      "oficina": 1001,
+      "fechaRegistro": "2026-10-02T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-11-285/24",
+      "prefijo": "RD",
+      "numero": 285,
+      "anio": 2024,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2024-03-15",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202403/20240316113000_12793.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2024-03-16T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-11-382/24",
+      "prefijo": "RCD",
+      "numero": 382,
+      "anio": 2024,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2024-09-06",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202409/20240907113000_12810.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2024-09-07T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-11-479/25",
+      "prefijo": "RD",
+      "numero": 479,
+      "anio": 2025,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2025-03-14",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202503/20250315113000_12827.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2025-03-15T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-11-576/25",
+      "prefijo": "RCD",
+      "numero": 576,
+      "anio": 2025,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2025-08-29",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202508/20250830113000_12844.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2025-08-30T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-11-673/26",
+      "prefijo": "RD",
+      "numero": 673,
+      "anio": 2026,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2026-02-13",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202602/20260214113000_12861.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2026-02-14T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-11-70/26",
+      "prefijo": "RCD",
+      "numero": 70,
+      "anio": 2026,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2026-09-18",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202609/20260919113000_12878.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2026-09-19T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-11-167/26",
+      "prefijo": "RD",
+      "numero": 167,
+      "anio": 2026,
+      "dependenciaEmisora": 11,
+      "dependenciaOrigen": 11,
+      "fechaEmision": "2026-10-02",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FTU",
+      "claves": [
+        "concurso",
+        "docentes",
+        "ftu"
+      ],
+      "pdf": "202610/20261003113000_12895.pdf",
+      "usuario": "cargador.ftu",
+      "oficina": 1101,
+      "fechaRegistro": "2026-10-03T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-12-338/24",
+      "prefijo": "RCD",
+      "numero": 338,
+      "anio": 2024,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2024-03-16",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202403/20240317113000_12912.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2024-03-17T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-12-435/24",
+      "prefijo": "RD",
+      "numero": 435,
+      "anio": 2024,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2024-09-07",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202409/20240908113000_12929.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2024-09-08T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-12-532/25",
+      "prefijo": "RCD",
+      "numero": 532,
+      "anio": 2025,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2025-03-15",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202503/20250316113000_12946.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2025-03-16T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-12-629/25",
+      "prefijo": "RD",
+      "numero": 629,
+      "anio": 2025,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2025-08-30",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202508/20250831113000_12963.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2025-08-31T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-12-26/26",
+      "prefijo": "RCD",
+      "numero": 26,
+      "anio": 2026,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2026-02-14",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202602/20260215113000_12980.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2026-02-15T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-12-123/26",
+      "prefijo": "RD",
+      "numero": 123,
+      "anio": 2026,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2026-09-19",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202609/20260920113000_12997.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2026-09-20T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-12-220/26",
+      "prefijo": "RCD",
+      "numero": 220,
+      "anio": 2026,
+      "dependenciaEmisora": 12,
+      "dependenciaOrigen": 12,
+      "fechaEmision": "2026-10-03",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FaPsi",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fapsi"
+      ],
+      "pdf": "202610/20261004113000_13014.pdf",
+      "usuario": "cargador.fapsi",
+      "oficina": 1201,
+      "fechaRegistro": "2026-10-04T11:30:00",
+      "ultimaModificacion": null,
+      "baja": {
+        "usuario": "admin.digesto",
+        "fecha": "2026-09-30T09:15:00"
+      }
+    },
+    {
+      "codigo": "RD-14-391/24",
+      "prefijo": "RD",
+      "numero": 391,
+      "anio": 2024,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2024-03-17",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202403/20240318113000_13031.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2024-03-18T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-14-488/24",
+      "prefijo": "RCD",
+      "numero": 488,
+      "anio": 2024,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2024-09-08",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202409/20240909113000_13048.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2024-09-09T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-14-585/25",
+      "prefijo": "RD",
+      "numero": 585,
+      "anio": 2025,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2025-03-16",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202503/20250317113000_13065.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2025-03-17T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-14-682/25",
+      "prefijo": "RCD",
+      "numero": 682,
+      "anio": 2025,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2025-08-31",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202509/20250901113000_13082.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2025-09-01T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-14-79/26",
+      "prefijo": "RD",
+      "numero": 79,
+      "anio": 2026,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2026-02-15",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202602/20260216113000_13099.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2026-02-16T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-14-176/26",
+      "prefijo": "RCD",
+      "numero": 176,
+      "anio": 2026,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2026-09-20",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202609/20260921113000_13116.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2026-09-21T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-14-273/26",
+      "prefijo": "RD",
+      "numero": 273,
+      "anio": 2026,
+      "dependenciaEmisora": 14,
+      "dependenciaOrigen": 14,
+      "fechaEmision": "2026-10-04",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FICA",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fica"
+      ],
+      "pdf": "202610/20261005113000_13133.pdf",
+      "usuario": "cargador.fica",
+      "oficina": 1401,
+      "fechaRegistro": "2026-10-05T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-15-444/24",
+      "prefijo": "RCD",
+      "numero": 444,
+      "anio": 2024,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2024-03-18",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202403/20240319113000_13150.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2024-03-19T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-15-541/24",
+      "prefijo": "RD",
+      "numero": 541,
+      "anio": 2024,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2024-09-09",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202409/20240910113000_13167.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2024-09-10T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-15-638/25",
+      "prefijo": "RCD",
+      "numero": 638,
+      "anio": 2025,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2025-03-17",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202503/20250318113000_13184.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2025-03-18T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-15-35/25",
+      "prefijo": "RD",
+      "numero": 35,
+      "anio": 2025,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2025-09-01",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202509/20250902113000_13201.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2025-09-02T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-15-132/26",
+      "prefijo": "RCD",
+      "numero": 132,
+      "anio": 2026,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2026-02-16",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202602/20260217113000_13218.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2026-02-17T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RD-15-229/26",
+      "prefijo": "RD",
+      "numero": 229,
+      "anio": 2026,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2026-09-21",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 2 cargos docentes en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202609/20260922113000_13235.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2026-09-22T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    },
+    {
+      "codigo": "RCD-15-326/26",
+      "prefijo": "RCD",
+      "numero": 326,
+      "anio": 2026,
+      "dependenciaEmisora": 15,
+      "dependenciaOrigen": 15,
+      "fechaEmision": "2026-10-05",
+      "areaInteres": "Concursos docentes",
+      "descripcion": "Llamado a concurso de 1 cargo docente en la FCEJS",
+      "claves": [
+        "concurso",
+        "docentes",
+        "fcejs"
+      ],
+      "pdf": "202610/20261006113000_13252.pdf",
+      "usuario": "cargador.fcejs",
+      "oficina": 1501,
+      "fechaRegistro": "2026-10-06T11:30:00",
+      "ultimaModificacion": null,
+      "baja": null
+    }
+  ],
+  "llamados": [
+    {
+      "id": 1,
+      "documento": "RD-2-73/24",
+      "departamento": 1,
+      "area": 1,
       "cargo": "Profesor Titular",
       "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "01/09/26",
-      "inscripcion_hasta": "15/09/26",
-      "resolucion": "RD-3-689/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-689/26"
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-03-18",
+      "inscripcionHasta": "2024-04-07"
     },
     {
-      "facultad": "fcfmn",
-      "departamento": "Departamento de Informática",
-      "area": "Área Ingeniería de Software",
+      "id": 2,
+      "documento": "RCD-2-170/24",
+      "departamento": 2,
+      "area": 2,
       "cargo": "Profesor Asociado",
-      "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "14/09/26",
-      "inscripcion_hasta": "12/10/26",
-      "resolucion": "RD-3-701/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-701/26"
-    },
-    {
-      "facultad": "fcfmn",
-      "departamento": "Departamento de Física",
-      "area": "Área Física Experimental",
-      "cargo": "Profesor Adjunto",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "27/09/26",
-      "inscripcion_hasta": "08/11/26",
-      "resolucion": "RD-3-710/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-710/26"
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-09",
+      "inscripcionHasta": "2024-10-04"
     },
     {
-      "facultad": "fcfmn",
-      "departamento": "Departamento de Geología",
-      "area": "Área Geología Básica",
-      "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "10/10/26",
-      "inscripcion_hasta": "31/10/26",
-      "resolucion": "RD-3-711/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-711/26"
-    },
-    {
-      "facultad": "fcfmn",
-      "departamento": "Departamento de Minería",
-      "area": "Área Explotación de Minas",
-      "cargo": "Auxiliar de Primera",
-      "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "23/10/26",
-      "inscripcion_hasta": "27/11/26",
-      "resolucion": "RD-3-712/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-3-712/26"
-    },
-    {
-      "facultad": "fqbf",
-      "departamento": "Departamento de Farmacia",
-      "area": "Área Tecnología Farmacéutica",
-      "cargo": "Profesor Titular",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "08/09/26",
-      "inscripcion_hasta": "29/09/26",
-      "resolucion": "RD-4-713/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-4-713/26"
-    },
-    {
-      "facultad": "fqbf",
-      "departamento": "Departamento de Química",
-      "area": "Área Química General e Inorgánica",
-      "cargo": "Profesor Asociado",
-      "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "21/09/26",
-      "inscripcion_hasta": "26/10/26",
-      "resolucion": "RD-4-714/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-4-714/26"
-    },
-    {
-      "facultad": "fqbf",
-      "departamento": "Departamento de Bioquímica y Ciencias Biológicas",
-      "area": "Área Microbiología",
+      "id": 3,
+      "documento": "RCD-2-170/24",
+      "departamento": 3,
+      "area": 3,
       "cargo": "Profesor Adjunto",
       "dedicacion": "Simple",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "04/10/26",
-      "inscripcion_hasta": "18/10/26",
-      "resolucion": "RD-4-715/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-4-715/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-09-11",
+      "inscripcionHasta": "2024-10-06"
     },
     {
-      "facultad": "fqbf",
-      "departamento": "Departamento de Química",
-      "area": "Área Química Analítica",
+      "id": 4,
+      "documento": "RD-2-267/25",
+      "departamento": 3,
+      "area": 3,
       "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "17/10/26",
-      "inscripcion_hasta": "14/11/26",
-      "resolucion": "RD-4-716/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-4-716/26"
-    },
-    {
-      "facultad": "fqbf",
-      "departamento": "Departamento de Biología",
-      "area": "Área Biología Molecular",
-      "cargo": "Auxiliar de Primera",
       "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "30/10/26",
-      "inscripcion_hasta": "11/12/26",
-      "resolucion": "RD-4-717/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-4-717/26"
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-03-17",
+      "inscripcionHasta": "2025-04-06"
     },
     {
-      "facultad": "fch",
-      "departamento": "Departamento de Educación y Formación Docente",
-      "area": "Área Didáctica General",
+      "id": 5,
+      "documento": "RCD-2-364/25",
+      "departamento": 4,
+      "area": 4,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-01",
+      "inscripcionHasta": "2025-09-29"
+    },
+    {
+      "id": 6,
+      "documento": "RCD-2-364/25",
+      "departamento": 1,
+      "area": 1,
       "cargo": "Profesor Titular",
       "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "15/09/26",
-      "inscripcion_hasta": "13/10/26",
-      "resolucion": "RD-2-455/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-455/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-09-03",
+      "inscripcionHasta": "2025-10-01"
     },
     {
-      "facultad": "fch",
-      "departamento": "Departamento de Comunicación",
-      "area": "Área Producción Audiovisual",
+      "id": 7,
+      "documento": "RD-2-461/26",
+      "departamento": 1,
+      "area": 1,
       "cargo": "Profesor Asociado",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "28/09/26",
-      "inscripcion_hasta": "09/11/26",
-      "resolucion": "RD-2-718/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-718/26"
-    },
-    {
-      "facultad": "fch",
-      "departamento": "Departamento de Educación Física",
-      "area": "Área Actividad Física y Salud",
-      "cargo": "Profesor Adjunto",
       "dedicacion": "Exclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "11/10/26",
-      "inscripcion_hasta": "01/11/26",
-      "resolucion": "RD-2-719/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-719/26"
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-16",
+      "inscripcionHasta": "2026-03-12"
     },
     {
-      "facultad": "fch",
-      "departamento": "Departamento de Educación y Formación Docente",
-      "area": "Área Psicología Educacional",
-      "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "24/10/26",
-      "inscripcion_hasta": "28/11/26",
-      "resolucion": "RD-2-720/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-720/26"
-    },
-    {
-      "facultad": "fch",
-      "departamento": "Departamento de Artes",
-      "area": "Área Música",
-      "cargo": "Auxiliar de Primera",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "06/11/26",
-      "inscripcion_hasta": "20/11/26",
-      "resolucion": "RD-2-721/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-2-721/26"
-    },
-    {
-      "facultad": "fices",
-      "departamento": "Departamento de Ingeniería",
-      "area": "Área Electrónica",
-      "cargo": "Profesor Titular",
-      "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "22/09/26",
-      "inscripcion_hasta": "27/10/26",
-      "resolucion": "RD-7-722/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-7-722/26"
-    },
-    {
-      "facultad": "fices",
-      "departamento": "Departamento de Ingeniería",
-      "area": "Área Industrial",
-      "cargo": "Profesor Asociado",
-      "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "05/10/26",
-      "inscripcion_hasta": "19/10/26",
-      "resolucion": "RD-7-723/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-7-723/26"
-    },
-    {
-      "facultad": "fices",
-      "departamento": "Departamento de Ciencias Económicas",
-      "area": "Área Administración",
+      "id": 8,
+      "documento": "RD-2-461/26",
+      "departamento": 2,
+      "area": 2,
       "cargo": "Profesor Adjunto",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "18/10/26",
-      "inscripcion_hasta": "15/11/26",
-      "resolucion": "RD-7-724/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-7-724/26"
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-02-18",
+      "inscripcionHasta": "2026-03-14"
     },
     {
-      "facultad": "fices",
-      "departamento": "Departamento de Ciencias Básicas",
-      "area": "Área Matemática",
+      "id": 9,
+      "documento": "RCD-2-558/26",
+      "departamento": 2,
+      "area": 2,
       "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "31/10/26",
-      "inscripcion_hasta": "12/12/26",
-      "resolucion": "RD-7-725/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-7-725/26"
-    },
-    {
-      "facultad": "fices",
-      "departamento": "Departamento de Ingeniería",
-      "area": "Área Mecatrónica",
-      "cargo": "Auxiliar de Primera",
       "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "13/11/26",
-      "inscripcion_hasta": "04/12/26",
-      "resolucion": "RD-7-726/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-7-726/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-09-21",
+      "inscripcionHasta": "2026-11-02"
     },
     {
-      "facultad": "fcs",
-      "departamento": "Departamento de Enfermería",
-      "area": "Área Enfermería Clínica",
+      "id": 10,
+      "documento": "RCD-2-558/26",
+      "departamento": 3,
+      "area": 3,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-09-23",
+      "inscripcionHasta": "2026-11-04"
+    },
+    {
+      "id": 11,
+      "documento": "RD-2-655/26",
+      "departamento": 3,
+      "area": 3,
       "cargo": "Profesor Titular",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "29/09/26",
-      "inscripcion_hasta": "10/11/26",
-      "resolucion": "RD-5-098/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-098/26"
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-10-05",
+      "inscripcionHasta": "2026-11-14"
     },
     {
-      "facultad": "fcs",
-      "departamento": "Departamento de Kinesiología y Fisioterapia",
-      "area": "Área Rehabilitación",
-      "cargo": "Profesor Asociado",
-      "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "12/10/26",
-      "inscripcion_hasta": "02/11/26",
-      "resolucion": "RD-5-727/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-727/26"
-    },
-    {
-      "facultad": "fcs",
-      "departamento": "Departamento de Obstetricia",
-      "area": "Área Obstetricia Clínica",
-      "cargo": "Profesor Adjunto",
-      "dedicacion": "Simple",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "25/10/26",
-      "inscripcion_hasta": "29/11/26",
-      "resolucion": "RD-5-728/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-728/26"
-    },
-    {
-      "facultad": "fcs",
-      "departamento": "Departamento de Nutrición",
-      "area": "Área Nutrición Comunitaria",
-      "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "07/11/26",
-      "inscripcion_hasta": "21/11/26",
-      "resolucion": "RD-5-729/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-729/26"
-    },
-    {
-      "facultad": "fcs",
-      "departamento": "Departamento de Fonoaudiología",
-      "area": "Área Audiología",
-      "cargo": "Auxiliar de Primera",
-      "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "01/09/26",
-      "inscripcion_hasta": "29/09/26",
-      "resolucion": "RD-5-730/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-5-730/26"
-    },
-    {
-      "facultad": "ftu",
-      "departamento": "Departamento de Turismo",
-      "area": "Área Gestión Turística",
-      "cargo": "Profesor Titular",
-      "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "06/10/26",
-      "inscripcion_hasta": "20/10/26",
-      "resolucion": "RD-8-731/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-8-731/26"
-    },
-    {
-      "facultad": "ftu",
-      "departamento": "Departamento de Urbanismo",
-      "area": "Área Planificación Urbana",
-      "cargo": "Profesor Asociado",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "19/10/26",
-      "inscripcion_hasta": "16/11/26",
-      "resolucion": "RD-8-732/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-8-732/26"
-    },
-    {
-      "facultad": "ftu",
-      "departamento": "Departamento de Arquitectura",
-      "area": "Área Diseño Arquitectónico",
-      "cargo": "Profesor Adjunto",
-      "dedicacion": "Exclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "01/11/26",
-      "inscripcion_hasta": "13/12/26",
-      "resolucion": "RD-8-733/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-8-733/26"
-    },
-    {
-      "facultad": "ftu",
-      "departamento": "Departamento de Turismo",
-      "area": "Área Hotelería",
-      "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "14/11/26",
-      "inscripcion_hasta": "05/12/26",
-      "resolucion": "RD-8-734/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-8-734/26"
-    },
-    {
-      "facultad": "ftu",
-      "departamento": "Departamento de Ciencias Básicas",
-      "area": "Área Idiomas",
-      "cargo": "Auxiliar de Primera",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "08/09/26",
-      "inscripcion_hasta": "13/10/26",
-      "resolucion": "RD-8-735/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-8-735/26"
-    },
-    {
-      "facultad": "fapsi",
-      "departamento": "Departamento de Psicología Clínica",
-      "area": "Área Psicodiagnóstico",
-      "cargo": "Profesor Titular",
-      "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "13/10/26",
-      "inscripcion_hasta": "03/11/26",
-      "resolucion": "RD-6-133/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-133/26"
-    },
-    {
-      "facultad": "fapsi",
-      "departamento": "Departamento de Psicología Educacional",
-      "area": "Área Orientación Vocacional",
-      "cargo": "Profesor Asociado",
-      "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "26/10/26",
-      "inscripcion_hasta": "30/11/26",
-      "resolucion": "RD-6-736/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-736/26"
-    },
-    {
-      "facultad": "fapsi",
-      "departamento": "Departamento de Psicología Social",
-      "area": "Área Psicología Comunitaria",
+      "id": 12,
+      "documento": "RCD-3-126/24",
+      "departamento": 6,
+      "area": 7,
       "cargo": "Profesor Adjunto",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "08/11/26",
-      "inscripcion_hasta": "22/11/26",
-      "resolucion": "RD-6-737/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-737/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-03-20",
+      "inscripcionHasta": "2024-04-10"
     },
     {
-      "facultad": "fapsi",
-      "departamento": "Departamento de Formación Básica",
-      "area": "Área Neurociencias",
+      "id": 13,
+      "documento": "RD-3-223/24",
+      "departamento": 7,
+      "area": 8,
       "cargo": "Jefe de Trabajos Prácticos",
-      "dedicacion": "Exclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "02/09/26",
-      "inscripcion_hasta": "30/09/26",
-      "resolucion": "RD-6-738/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-738/26"
-    },
-    {
-      "facultad": "fapsi",
-      "departamento": "Departamento de Psicología Clínica",
-      "area": "Área Psicopatología",
-      "cargo": "Auxiliar de Primera",
       "dedicacion": "Simple",
-      "caracter": "Interinos",
-      "inscripcion_desde": "15/09/26",
-      "inscripcion_hasta": "27/10/26",
-      "resolucion": "RD-6-739/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-6-739/26"
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-09-11",
+      "inscripcionHasta": "2024-10-07"
     },
     {
-      "facultad": "fica",
-      "departamento": "Departamento de Ciencias Agropecuarias",
-      "area": "Área Producción Animal",
+      "id": 14,
+      "documento": "RD-3-223/24",
+      "departamento": 8,
+      "area": 9,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-13",
+      "inscripcionHasta": "2024-10-09"
+    },
+    {
+      "id": 15,
+      "documento": "RCD-3-320/25",
+      "departamento": 8,
+      "area": 9,
       "cargo": "Profesor Titular",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "20/10/26",
-      "inscripcion_hasta": "17/11/26",
-      "resolucion": "RD-9-740/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-9-740/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-03-19",
+      "inscripcionHasta": "2025-04-09"
     },
     {
-      "facultad": "fica",
-      "departamento": "Departamento de Ciencias Agropecuarias",
-      "area": "Área Producción Vegetal",
+      "id": 16,
+      "documento": "RD-3-417/25",
+      "departamento": 9,
+      "area": 10,
       "cargo": "Profesor Asociado",
-      "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "02/11/26",
-      "inscripcion_hasta": "14/12/26",
-      "resolucion": "RD-9-741/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-9-741/26"
-    },
-    {
-      "facultad": "fica",
-      "departamento": "Departamento de Ingeniería de Alimentos",
-      "area": "Área Tecnología de Alimentos",
-      "cargo": "Profesor Adjunto",
       "dedicacion": "Simple",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "15/11/26",
-      "inscripcion_hasta": "06/12/26",
-      "resolucion": "RD-9-742/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-9-742/26"
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-09-03",
+      "inscripcionHasta": "2025-10-02"
     },
     {
-      "facultad": "fica",
-      "departamento": "Departamento de Ingeniería Química",
-      "area": "Área Operaciones Unitarias",
+      "id": 17,
+      "documento": "RD-3-417/25",
+      "departamento": 5,
+      "area": 6,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-05",
+      "inscripcionHasta": "2025-10-04"
+    },
+    {
+      "id": 18,
+      "documento": "RCD-3-514/26",
+      "departamento": 5,
+      "area": 6,
       "cargo": "Jefe de Trabajos Prácticos",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "09/09/26",
-      "inscripcion_hasta": "14/10/26",
-      "resolucion": "RD-9-743/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-9-743/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-02-18",
+      "inscripcionHasta": "2026-03-15"
     },
     {
-      "facultad": "fica",
-      "departamento": "Departamento de Ciencias Básicas",
-      "area": "Área Química",
+      "id": 19,
+      "documento": "RCD-3-514/26",
+      "departamento": 6,
+      "area": 7,
       "cargo": "Auxiliar de Primera",
-      "dedicacion": "Exclusiva",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "22/09/26",
-      "inscripcion_hasta": "06/10/26",
-      "resolucion": "RD-9-744/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-9-744/26"
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-20",
+      "inscripcionHasta": "2026-03-17"
     },
     {
-      "facultad": "fcejs",
-      "departamento": "Departamento de Contabilidad",
-      "area": "Área Costos",
+      "id": 20,
+      "documento": "RD-3-611/26",
+      "departamento": 6,
+      "area": 7,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-09-23",
+      "inscripcionHasta": "2026-11-05"
+    },
+    {
+      "id": 21,
+      "documento": "RD-3-611/26",
+      "departamento": 7,
+      "area": 8,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-09-25",
+      "inscripcionHasta": "2026-11-07"
+    },
+    {
+      "id": 22,
+      "documento": "RCD-3-708/26",
+      "departamento": 7,
+      "area": 8,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-10-07",
+      "inscripcionHasta": "2026-11-17"
+    },
+    {
+      "id": 23,
+      "documento": "RD-4-179/24",
+      "departamento": 12,
+      "area": 13,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-03-22",
+      "inscripcionHasta": "2024-04-13"
+    },
+    {
+      "id": 24,
+      "documento": "RCD-4-276/24",
+      "departamento": 13,
+      "area": 15,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-09-13",
+      "inscripcionHasta": "2024-10-10"
+    },
+    {
+      "id": 25,
+      "documento": "RCD-4-276/24",
+      "departamento": 10,
+      "area": 11,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-09-15",
+      "inscripcionHasta": "2024-10-12"
+    },
+    {
+      "id": 26,
+      "documento": "RD-4-373/25",
+      "departamento": 10,
+      "area": 11,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-03-21",
+      "inscripcionHasta": "2025-04-12"
+    },
+    {
+      "id": 27,
+      "documento": "RCD-4-470/25",
+      "departamento": 11,
+      "area": 12,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-09-05",
+      "inscripcionHasta": "2025-10-05"
+    },
+    {
+      "id": 28,
+      "documento": "RCD-4-470/25",
+      "departamento": 12,
+      "area": 13,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-09-07",
+      "inscripcionHasta": "2025-10-07"
+    },
+    {
+      "id": 29,
+      "documento": "RD-4-567/26",
+      "departamento": 12,
+      "area": 13,
       "cargo": "Profesor Titular",
       "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "27/10/26",
-      "inscripcion_hasta": "01/12/26",
-      "resolucion": "RD-1-214/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-214/26"
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-02-20",
+      "inscripcionHasta": "2026-03-18"
     },
     {
-      "facultad": "fcejs",
-      "departamento": "Departamento de Derecho",
-      "area": "Área Derecho Privado",
+      "id": 30,
+      "documento": "RD-4-567/26",
+      "departamento": 13,
+      "area": 14,
       "cargo": "Profesor Asociado",
-      "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "09/11/26",
-      "inscripcion_hasta": "23/11/26",
-      "resolucion": "RD-1-745/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-745/26"
-    },
-    {
-      "facultad": "fcejs",
-      "departamento": "Departamento de Economía",
-      "area": "Área Microeconomía",
-      "cargo": "Profesor Adjunto",
       "dedicacion": "Exclusiva",
-      "caracter": "Interinos",
-      "inscripcion_desde": "03/09/26",
-      "inscripcion_hasta": "01/10/26",
-      "resolucion": "RD-1-746/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-746/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-02-22",
+      "inscripcionHasta": "2026-03-20"
     },
     {
-      "facultad": "fcejs",
-      "departamento": "Departamento de Administración",
-      "area": "Área Gestión de Organizaciones",
+      "id": 31,
+      "documento": "RCD-4-664/26",
+      "departamento": 13,
+      "area": 14,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-09-25",
+      "inscripcionHasta": "2026-11-08"
+    },
+    {
+      "id": 32,
+      "documento": "RCD-4-664/26",
+      "departamento": 10,
+      "area": 11,
       "cargo": "Jefe de Trabajos Prácticos",
       "dedicacion": "Simple",
-      "caracter": "Suplentes",
-      "inscripcion_desde": "16/09/26",
-      "inscripcion_hasta": "28/10/26",
-      "resolucion": "RD-1-747/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-747/26"
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-09-27",
+      "inscripcionHasta": "2026-11-10"
     },
     {
-      "facultad": "fcejs",
-      "departamento": "Departamento de Ciencias Sociales",
-      "area": "Área Trabajo Social",
+      "id": 33,
+      "documento": "RD-4-61/26",
+      "departamento": 10,
+      "area": 11,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-10-09",
+      "inscripcionHasta": "2026-11-20"
+    },
+    {
+      "id": 34,
+      "documento": "RCD-10-232/24",
+      "departamento": 17,
+      "area": 19,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-03-21",
+      "inscripcionHasta": "2024-04-13"
+    },
+    {
+      "id": 35,
+      "documento": "RD-10-329/24",
+      "departamento": 18,
+      "area": 20,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-12",
+      "inscripcionHasta": "2024-10-10"
+    },
+    {
+      "id": 36,
+      "documento": "RD-10-329/24",
+      "departamento": 14,
+      "area": 16,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-09-14",
+      "inscripcionHasta": "2024-10-12"
+    },
+    {
+      "id": 37,
+      "documento": "RCD-10-426/25",
+      "departamento": 14,
+      "area": 16,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-03-20",
+      "inscripcionHasta": "2025-04-12"
+    },
+    {
+      "id": 38,
+      "documento": "RD-10-523/25",
+      "departamento": 15,
+      "area": 17,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-04",
+      "inscripcionHasta": "2025-10-05"
+    },
+    {
+      "id": 39,
+      "documento": "RD-10-523/25",
+      "departamento": 16,
+      "area": 18,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-09-06",
+      "inscripcionHasta": "2025-10-07"
+    },
+    {
+      "id": 40,
+      "documento": "RCD-10-620/26",
+      "departamento": 16,
+      "area": 18,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-19",
+      "inscripcionHasta": "2026-03-18"
+    },
+    {
+      "id": 41,
+      "documento": "RCD-10-620/26",
+      "departamento": 17,
+      "area": 19,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-02-21",
+      "inscripcionHasta": "2026-03-20"
+    },
+    {
+      "id": 42,
+      "documento": "RD-10-717/26",
+      "departamento": 17,
+      "area": 19,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-09-24",
+      "inscripcionHasta": "2026-11-08"
+    },
+    {
+      "id": 43,
+      "documento": "RD-10-717/26",
+      "departamento": 18,
+      "area": 20,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-09-26",
+      "inscripcionHasta": "2026-11-10"
+    },
+    {
+      "id": 44,
+      "documento": "RCD-10-114/26",
+      "departamento": 18,
+      "area": 20,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-10-08",
+      "inscripcionHasta": "2026-11-20"
+    },
+    {
+      "id": 45,
+      "documento": "RD-11-285/24",
+      "departamento": 19,
+      "area": 21,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-03-23",
+      "inscripcionHasta": "2024-04-12"
+    },
+    {
+      "id": 46,
+      "documento": "RCD-11-382/24",
+      "departamento": 20,
+      "area": 22,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-09-14",
+      "inscripcionHasta": "2024-10-09"
+    },
+    {
+      "id": 47,
+      "documento": "RCD-11-382/24",
+      "departamento": 21,
+      "area": 24,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-16",
+      "inscripcionHasta": "2024-10-11"
+    },
+    {
+      "id": 48,
+      "documento": "RD-11-479/25",
+      "departamento": 21,
+      "area": 24,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-03-22",
+      "inscripcionHasta": "2025-04-11"
+    },
+    {
+      "id": 49,
+      "documento": "RCD-11-576/25",
+      "departamento": 22,
+      "area": 25,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-09-06",
+      "inscripcionHasta": "2025-10-04"
+    },
+    {
+      "id": 50,
+      "documento": "RCD-11-576/25",
+      "departamento": 19,
+      "area": 21,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-08",
+      "inscripcionHasta": "2025-10-06"
+    },
+    {
+      "id": 51,
+      "documento": "RD-11-673/26",
+      "departamento": 19,
+      "area": 21,
       "cargo": "Auxiliar de Primera",
       "dedicacion": "Semiexclusiva",
-      "caracter": "Efectivos",
-      "inscripcion_desde": "29/09/26",
-      "inscripcion_hasta": "20/10/26",
-      "resolucion": "RD-1-748/26",
-      "resolucion_url": "http://digesto.unsl.edu.ar/busca_codigo.php3?var=RD-1-748/26"
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-02-21",
+      "inscripcionHasta": "2026-03-17"
+    },
+    {
+      "id": 52,
+      "documento": "RD-11-673/26",
+      "departamento": 20,
+      "area": 22,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-23",
+      "inscripcionHasta": "2026-03-19"
+    },
+    {
+      "id": 53,
+      "documento": "RCD-11-70/26",
+      "departamento": 20,
+      "area": 22,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-09-26",
+      "inscripcionHasta": "2026-11-07"
+    },
+    {
+      "id": 54,
+      "documento": "RCD-11-70/26",
+      "departamento": 21,
+      "area": 23,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-09-28",
+      "inscripcionHasta": "2026-11-09"
+    },
+    {
+      "id": 55,
+      "documento": "RD-11-167/26",
+      "departamento": 21,
+      "area": 23,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-10-10",
+      "inscripcionHasta": "2026-11-19"
+    },
+    {
+      "id": 56,
+      "documento": "RCD-12-338/24",
+      "departamento": 24,
+      "area": 27,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-03-25",
+      "inscripcionHasta": "2024-04-15"
+    },
+    {
+      "id": 57,
+      "documento": "RD-12-435/24",
+      "departamento": 25,
+      "area": 29,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-09-16",
+      "inscripcionHasta": "2024-10-12"
+    },
+    {
+      "id": 58,
+      "documento": "RD-12-435/24",
+      "departamento": 26,
+      "area": 30,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-09-18",
+      "inscripcionHasta": "2024-10-14"
+    },
+    {
+      "id": 59,
+      "documento": "RCD-12-532/25",
+      "departamento": 26,
+      "area": 30,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-03-24",
+      "inscripcionHasta": "2025-04-14"
+    },
+    {
+      "id": 60,
+      "documento": "RD-12-629/25",
+      "departamento": 23,
+      "area": 26,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-09-08",
+      "inscripcionHasta": "2025-10-07"
+    },
+    {
+      "id": 61,
+      "documento": "RD-12-629/25",
+      "departamento": 24,
+      "area": 27,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-09-10",
+      "inscripcionHasta": "2025-10-09"
+    },
+    {
+      "id": 62,
+      "documento": "RCD-12-26/26",
+      "departamento": 24,
+      "area": 27,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-02-23",
+      "inscripcionHasta": "2026-03-20"
+    },
+    {
+      "id": 63,
+      "documento": "RCD-12-26/26",
+      "departamento": 25,
+      "area": 29,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-02-25",
+      "inscripcionHasta": "2026-03-22"
+    },
+    {
+      "id": 64,
+      "documento": "RD-12-123/26",
+      "departamento": 25,
+      "area": 29,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-09-28",
+      "inscripcionHasta": "2026-11-10"
+    },
+    {
+      "id": 65,
+      "documento": "RD-12-123/26",
+      "departamento": 26,
+      "area": 30,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-09-30",
+      "inscripcionHasta": "2026-11-12"
+    },
+    {
+      "id": 66,
+      "documento": "RCD-12-220/26",
+      "departamento": 26,
+      "area": 30,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-10-12",
+      "inscripcionHasta": "2026-11-22"
+    },
+    {
+      "id": 67,
+      "documento": "RD-14-391/24",
+      "departamento": 29,
+      "area": 34,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-03-24",
+      "inscripcionHasta": "2024-04-15"
+    },
+    {
+      "id": 68,
+      "documento": "RCD-14-488/24",
+      "departamento": 30,
+      "area": 35,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-15",
+      "inscripcionHasta": "2024-10-12"
+    },
+    {
+      "id": 69,
+      "documento": "RCD-14-488/24",
+      "departamento": 27,
+      "area": 32,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-09-17",
+      "inscripcionHasta": "2024-10-14"
+    },
+    {
+      "id": 70,
+      "documento": "RD-14-585/25",
+      "departamento": 27,
+      "area": 32,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-03-23",
+      "inscripcionHasta": "2025-04-14"
+    },
+    {
+      "id": 71,
+      "documento": "RCD-14-682/25",
+      "departamento": 28,
+      "area": 33,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-07",
+      "inscripcionHasta": "2025-10-07"
+    },
+    {
+      "id": 72,
+      "documento": "RCD-14-682/25",
+      "departamento": 29,
+      "area": 34,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-09-09",
+      "inscripcionHasta": "2025-10-09"
+    },
+    {
+      "id": 73,
+      "documento": "RD-14-79/26",
+      "departamento": 29,
+      "area": 34,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-22",
+      "inscripcionHasta": "2026-03-20"
+    },
+    {
+      "id": 74,
+      "documento": "RD-14-79/26",
+      "departamento": 30,
+      "area": 35,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-02-24",
+      "inscripcionHasta": "2026-03-22"
+    },
+    {
+      "id": 75,
+      "documento": "RCD-14-176/26",
+      "departamento": 30,
+      "area": 35,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Simple",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-09-27",
+      "inscripcionHasta": "2026-11-10"
+    },
+    {
+      "id": 76,
+      "documento": "RCD-14-176/26",
+      "departamento": 27,
+      "area": 31,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Exclusiva",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-09-29",
+      "inscripcionHasta": "2026-11-12"
+    },
+    {
+      "id": 77,
+      "documento": "RD-14-273/26",
+      "departamento": 27,
+      "area": 31,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-10-11",
+      "inscripcionHasta": "2026-11-22"
+    },
+    {
+      "id": 78,
+      "documento": "RCD-15-444/24",
+      "departamento": 33,
+      "area": 38,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2024-03-26",
+      "inscripcionHasta": "2024-04-18"
+    },
+    {
+      "id": 79,
+      "documento": "RD-15-541/24",
+      "departamento": 34,
+      "area": 39,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2024-09-17",
+      "inscripcionHasta": "2024-10-15"
+    },
+    {
+      "id": 80,
+      "documento": "RD-15-541/24",
+      "departamento": 35,
+      "area": 40,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2024-09-19",
+      "inscripcionHasta": "2024-10-17"
+    },
+    {
+      "id": 81,
+      "documento": "RCD-15-638/25",
+      "departamento": 35,
+      "area": 40,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2025-03-25",
+      "inscripcionHasta": "2025-04-17"
+    },
+    {
+      "id": 82,
+      "documento": "RD-15-35/25",
+      "departamento": 31,
+      "area": 36,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2025-09-09",
+      "inscripcionHasta": "2025-10-10"
+    },
+    {
+      "id": 83,
+      "documento": "RD-15-35/25",
+      "departamento": 32,
+      "area": 37,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2025-09-11",
+      "inscripcionHasta": "2025-10-12"
+    },
+    {
+      "id": 84,
+      "documento": "RCD-15-132/26",
+      "departamento": 32,
+      "area": 37,
+      "cargo": "Profesor Titular",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-02-24",
+      "inscripcionHasta": "2026-03-23"
+    },
+    {
+      "id": 85,
+      "documento": "RCD-15-132/26",
+      "departamento": 33,
+      "area": 38,
+      "cargo": "Profesor Asociado",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-02-26",
+      "inscripcionHasta": "2026-03-25"
+    },
+    {
+      "id": 86,
+      "documento": "RD-15-229/26",
+      "departamento": 33,
+      "area": 38,
+      "cargo": "Profesor Adjunto",
+      "dedicacion": "Exclusiva",
+      "caracter": "Suplente",
+      "inscripcionDesde": "2026-09-29",
+      "inscripcionHasta": "2026-11-13"
+    },
+    {
+      "id": 87,
+      "documento": "RD-15-229/26",
+      "departamento": 34,
+      "area": 39,
+      "cargo": "Jefe de Trabajos Prácticos",
+      "dedicacion": "Semiexclusiva",
+      "caracter": "Interino",
+      "inscripcionDesde": "2026-10-01",
+      "inscripcionHasta": "2026-11-15"
+    },
+    {
+      "id": 88,
+      "documento": "RCD-15-326/26",
+      "departamento": 34,
+      "area": 39,
+      "cargo": "Auxiliar de Primera",
+      "dedicacion": "Simple",
+      "caracter": "Efectivo",
+      "inscripcionDesde": "2026-10-13",
+      "inscripcionHasta": "2026-11-25"
     }
   ]
 }

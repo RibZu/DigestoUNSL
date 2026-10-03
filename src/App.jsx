@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router'
+import { Outlet, ScrollRestoration } from 'react-router'
 import Header from './shared/layout/Header'
 import Footer from './shared/layout/Footer'
 import './App.css'
@@ -11,6 +11,7 @@ function App() {
         <Outlet />
       </main>
       <Footer />
+      <ScrollRestoration />
     </div>
   )
 }

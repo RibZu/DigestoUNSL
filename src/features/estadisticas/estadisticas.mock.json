@@ -1,0 +1,562 @@
+{
+  "documentosPorTipo": [
+    {
+      "tipo": "Resoluciones",
+      "cantidad": 159213
+    },
+    {
+      "tipo": "Ordenanzas",
+      "cantidad": 3416
+    },
+    {
+      "tipo": "Decretos",
+      "cantidad": 2900
+    },
+    {
+      "tipo": "Actas",
+      "cantidad": 1302
+    },
+    {
+      "tipo": "Órdenes del día",
+      "cantidad": 609
+    },
+    {
+      "tipo": "Circulares",
+      "cantidad": 156
+    },
+    {
+      "tipo": "Convenios",
+      "cantidad": 59
+    },
+    {
+      "tipo": "Proveídos",
+      "cantidad": 29
+    }
+  ],
+  "documentosPorDependencia": [
+    {
+      "numero": 0,
+      "sigla": "Org. Nac.",
+      "nombre": "Organismos Nacionales",
+      "cantidad": null
+    },
+    {
+      "numero": 1,
+      "sigla": "Rectorado",
+      "nombre": "Rectorado",
+      "cantidad": 22833
+    },
+    {
+      "numero": 2,
+      "sigla": "FQByF",
+      "nombre": "Facultad de Química, Bioquímica y Farmacia",
+      "cantidad": 18458
+    },
+    {
+      "numero": 3,
+      "sigla": "FCFMyN",
+      "nombre": "Facultad de Ciencias Físico-Matemáticas y Naturales",
+      "cantidad": 34505
+    },
+    {
+      "numero": 4,
+      "sigla": "FCH",
+      "nombre": "Facultad de Ciencias Humanas",
+      "cantidad": 14165
+    },
+    {
+      "numero": 5,
+      "sigla": "FICES",
+      "nombre": "Facultad de Ingeniería y Ciencias Económico-Sociales (histórica)",
+      "cantidad": 12761
+    },
+    {
+      "numero": 6,
+      "sigla": "ENJPP",
+      "nombre": "Escuela Normal Juan Pascual Pringles",
+      "cantidad": 1541
+    },
+    {
+      "numero": 8,
+      "sigla": "IPAU",
+      "nombre": "Instituto Politécnico y Artístico Universitario",
+      "cantidad": null
+    },
+    {
+      "numero": 9,
+      "sigla": "DOSPU",
+      "nombre": "DOSPU",
+      "cantidad": 13
+    },
+    {
+      "numero": 10,
+      "sigla": "FCS",
+      "nombre": "Facultad de Ciencias de la Salud",
+      "cantidad": 12356
+    },
+    {
+      "numero": 11,
+      "sigla": "FTU",
+      "nombre": "Facultad de Turismo y Urbanismo",
+      "cantidad": 2761
+    },
+    {
+      "numero": 12,
+      "sigla": "FaPsi",
+      "nombre": "Facultad de Psicología",
+      "cantidad": 18878
+    },
+    {
+      "numero": 14,
+      "sigla": "FICA",
+      "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias",
+      "cantidad": 17539
+    },
+    {
+      "numero": 15,
+      "sigla": "FCEJS",
+      "nombre": "Facultad de Ciencias Económicas, Jurídicas y Sociales",
+      "cantidad": 11874
+    }
+  ],
+  "documentosPorOficina": [
+    {
+      "dependencia": "Rectorado",
+      "oficinas": [
+        {
+          "nombre": "Admin",
+          "cantidad": 2
+        },
+        {
+          "nombre": "Consejo Superior",
+          "cantidad": 67085
+        },
+        {
+          "nombre": "IPAU",
+          "cantidad": 785
+        },
+        {
+          "nombre": "Depto Coordinación de RRHH",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Dirección de Despacho",
+          "cantidad": 4257
+        },
+        {
+          "nombre": "Dirección de Compras y Contrataciones",
+          "cantidad": 1474
+        },
+        {
+          "nombre": "Dirección de Liquidación de Haberes",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Dirección de Personal",
+          "cantidad": 182
+        },
+        {
+          "nombre": "Dirección de Protocolo y Ceremonial",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Nueva Editorial Universitaria",
+          "cantidad": 8
+        },
+        {
+          "nombre": "Secretaría Académica",
+          "cantidad": 1095
+        },
+        {
+          "nombre": "Secretaría de Ciencia y Técnica",
+          "cantidad": 282
+        },
+        {
+          "nombre": "Secretaría de Extensión Universitaria",
+          "cantidad": 235
+        },
+        {
+          "nombre": "Secretaría de Relaciones Interinstitucionales",
+          "cantidad": 486
+        },
+        {
+          "nombre": "Secretaría de Planeamiento",
+          "cantidad": 2
+        },
+        {
+          "nombre": "Secretaría de Postgrado",
+          "cantidad": 6192
+        },
+        {
+          "nombre": "Secretaría de Imagen y Comunicación Institucional",
+          "cantidad": 3
+        },
+        {
+          "nombre": "Secretaría de Vinculación Tecnológica y Social",
+          "cantidad": 59
+        },
+        {
+          "nombre": "Subsecretaría de Acreditación e Información Institucional",
+          "cantidad": 42
+        },
+        {
+          "nombre": "Junta Electoral-UNSL",
+          "cantidad": 13
+        },
+        {
+          "nombre": "Secretaría Académica-DAF",
+          "cantidad": 7
+        },
+        {
+          "nombre": "OPGPN",
+          "cantidad": 1
+        }
+      ]
+    },
+    {
+      "dependencia": "FQByF",
+      "oficinas": [
+        {
+          "nombre": "Consejo Directivo",
+          "cantidad": 408
+        },
+        {
+          "nombre": "Decanato",
+          "cantidad": 5
+        },
+        {
+          "nombre": "Departamento de Concursos",
+          "cantidad": 2119
+        },
+        {
+          "nombre": "Departamento de Coordinación Académica",
+          "cantidad": 1689
+        },
+        {
+          "nombre": "Dirección Académica",
+          "cantidad": 6411
+        },
+        {
+          "nombre": "Dirección de Contabilidad",
+          "cantidad": 155
+        },
+        {
+          "nombre": "Dirección de Despacho",
+          "cantidad": 4582
+        },
+        {
+          "nombre": "Dirección de Personal",
+          "cantidad": 351
+        },
+        {
+          "nombre": "Departamento Alumnos FQByF",
+          "cantidad": 527
+        },
+        {
+          "nombre": "Secretaría de Posgrado",
+          "cantidad": 1800
+        },
+        {
+          "nombre": "Secretaría de Vinculación y Extensión",
+          "cantidad": 360
+        }
+      ]
+    },
+    {
+      "dependencia": "FCFMyN",
+      "oficinas": [
+        {
+          "nombre": "Consejo Directivo",
+          "cantidad": 126
+        },
+        {
+          "nombre": "Departamento de Concursos",
+          "cantidad": 23
+        },
+        {
+          "nombre": "Dirección de Despacho",
+          "cantidad": 280
+        },
+        {
+          "nombre": "Secretaría Académica",
+          "cantidad": 2049
+        },
+        {
+          "nombre": "Secretaría General",
+          "cantidad": 31510
+        },
+        {
+          "nombre": "Secretaría de Ciencia y Técnica",
+          "cantidad": 15
+        },
+        {
+          "nombre": "Secretaría Administrativa",
+          "cantidad": 258
+        }
+      ]
+    },
+    {
+      "dependencia": "FCH",
+      "oficinas": [
+        {
+          "nombre": "Consejo Directivo",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Departamento de Despacho",
+          "cantidad": 13060
+        },
+        {
+          "nombre": "Dirección Administrativa",
+          "cantidad": 1
+        },
+        {
+          "nombre": "Secretaría Académica - Postgrado",
+          "cantidad": 30
+        },
+        {
+          "nombre": "Secretaría Administrativa - Compras",
+          "cantidad": 139
+        },
+        {
+          "nombre": "Departamento de Concursos",
+          "cantidad": 921
+        },
+        {
+          "nombre": "Secretaría General",
+          "cantidad": 31
+        }
+      ]
+    },
+    {
+      "dependencia": "FICES",
+      "oficinas": [
+        {
+          "nombre": "Decanato",
+          "cantidad": 4
+        },
+        {
+          "nombre": "Secretaría Administrativa",
+          "cantidad": 137
+        },
+        {
+          "nombre": "Secretaría General - Despacho",
+          "cantidad": 9426
+        },
+        {
+          "nombre": "Secretaría General",
+          "cantidad": 3192
+        }
+      ]
+    },
+    {
+      "dependencia": "FCS",
+      "oficinas": [
+        {
+          "nombre": "Consejo Directivo",
+          "cantidad": 869
+        },
+        {
+          "nombre": "Compras",
+          "cantidad": 97
+        },
+        {
+          "nombre": "Concursos",
+          "cantidad": 552
+        },
+        {
+          "nombre": "Despacho",
+          "cantidad": 4481
+        },
+        {
+          "nombre": "Secretaría Académica",
+          "cantidad": 6033
+        },
+        {
+          "nombre": "Secretaría de Ciencia y Técnica",
+          "cantidad": 20
+        },
+        {
+          "nombre": "Secretaría de Posgrado",
+          "cantidad": 269
+        }
+      ]
+    },
+    {
+      "dependencia": "FTU",
+      "oficinas": [
+        {
+          "nombre": "Compras",
+          "cantidad": 139
+        },
+        {
+          "nombre": "Despacho",
+          "cantidad": 2622
+        }
+      ]
+    },
+    {
+      "dependencia": "ENJPP",
+      "oficinas": [
+        {
+          "nombre": "Consejo de Escuela",
+          "cantidad": 3
+        },
+        {
+          "nombre": "Alumnos",
+          "cantidad": 43
+        },
+        {
+          "nombre": "Mesa de Entradas",
+          "cantidad": 1335
+        },
+        {
+          "nombre": "Compras",
+          "cantidad": 53
+        },
+        {
+          "nombre": "Personal",
+          "cantidad": 50
+        },
+        {
+          "nombre": "Rectoría",
+          "cantidad": 49
+        },
+        {
+          "nombre": "Regencia",
+          "cantidad": 20
+        }
+      ]
+    },
+    {
+      "dependencia": "DOSPU",
+      "oficinas": [
+        {
+          "nombre": "Administración",
+          "cantidad": 13
+        }
+      ]
+    },
+    {
+      "dependencia": "FaPsi",
+      "oficinas": [
+        {
+          "nombre": "Compras",
+          "cantidad": 44
+        },
+        {
+          "nombre": "Concursos",
+          "cantidad": 1519
+        },
+        {
+          "nombre": "Despacho",
+          "cantidad": 17137
+        },
+        {
+          "nombre": "Secretaría Académica",
+          "cantidad": 145
+        },
+        {
+          "nombre": "Posgrado",
+          "cantidad": 12
+        }
+      ]
+    },
+    {
+      "dependencia": "FICA",
+      "oficinas": [
+        {
+          "nombre": "Compras",
+          "cantidad": 269
+        },
+        {
+          "nombre": "Concursos",
+          "cantidad": 32
+        },
+        {
+          "nombre": "Despacho",
+          "cantidad": 7541
+        },
+        {
+          "nombre": "Secretaría de Planeamiento",
+          "cantidad": 9643
+        }
+      ]
+    },
+    {
+      "dependencia": "FCEJS",
+      "oficinas": [
+        {
+          "nombre": "Compras",
+          "cantidad": 171
+        },
+        {
+          "nombre": "Despacho",
+          "cantidad": 11674
+        }
+      ]
+    }
+  ],
+  "terminosMasBuscados": [
+    {
+      "termino": "calendario académico",
+      "busquedas": 1842
+    },
+    {
+      "termino": "concurso docente",
+      "busquedas": 1517
+    },
+    {
+      "termino": "plan de estudios",
+      "busquedas": 1390
+    },
+    {
+      "termino": "licencia",
+      "busquedas": 1204
+    },
+    {
+      "termino": "becas",
+      "busquedas": 1131
+    },
+    {
+      "termino": "designación",
+      "busquedas": 987
+    },
+    {
+      "termino": "régimen académico",
+      "busquedas": 864
+    },
+    {
+      "termino": "equivalencias",
+      "busquedas": 864
+    },
+    {
+      "termino": "elecciones",
+      "busquedas": 702
+    },
+    {
+      "termino": "viáticos",
+      "busquedas": 655
+    },
+    {
+      "termino": "reglamento de posgrado",
+      "busquedas": 598
+    },
+    {
+      "termino": "adscripciones",
+      "busquedas": 541
+    },
+    {
+      "termino": "aranceles",
+      "busquedas": 487
+    },
+    {
+      "termino": "carrera docente",
+      "busquedas": 432
+    },
+    {
+      "termino": "mesas de examen",
+      "busquedas": 401
+    }
+  ]
+}

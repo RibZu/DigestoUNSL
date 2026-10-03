@@ -1,40 +1,45 @@
 import { Link } from 'react-router';
 import Universidad from './Universidad';
-import { ayudaSection, estadisticasSection, loginSection } from './navigation';
+import { ayudaSection } from './navigation';
 import './Footer.css';
 
-export default function Footer() {
-  const currentYear = new Date().getFullYear();
+const ANIO_ACTUAL = new Date().getFullYear();
 
+export default function Footer() {
   return (
     <footer className="digesto-footer">
-      <div className="footer-container">
-       
-        <div className="footer-main-grid">
-     
-          <div className="footer-col-brand">
-            <Universidad variant="dark" />
-            <p className="footer-brand-desc">
+      <div className="container-xl">
+        <div className="footer-grid">
+          <section className="footer-marca">
+            <Universidad variante="pie" />
+            <p className="footer-descripcion">
               Repositorio oficial de resoluciones, ordenanzas y normativas de la{' '}
-              <a 
-                href="http://www.unsl.edu.ar" 
-                target="_blank" 
+              <a
+                href="http://www.unsl.edu.ar"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="footer-unsl-link"
+                className="footer-enlace"
               >
                 Universidad Nacional de San Luis
-              </a>.
+              </a>
+              .
             </p>
-          </div>
+          </section>
 
-      
-          <div className="footer-col-contacts">
-            <h2 className="footer-heading">Contacto y Administración</h2>
-            <ul className="footer-contact-list">
+          <section className="footer-contacto">
+            <h2 className="footer-titulo">Contacto</h2>
+            <ul className="footer-lista-contacto">
               <li>
-                <span className="contact-role">Administración:</span>
-                <span className="contact-email">
-                  <svg className="footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <span className="footer-rol">Administración:</span>
+                <span className="footer-correo">
+                  <svg
+                    className="footer-icono"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
@@ -42,36 +47,24 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-
-            <div className="footer-cta-buttons">
-              <Link to={loginSection.path} className="btn btn-light">
-                {loginSection.label}
-              </Link>
-              <Link to={ayudaSection.path} className="btn btn-outline-light">
-                {ayudaSection.label}
-              </Link>
-              <Link to={estadisticasSection.path} className="btn btn-outline-light">
-                {estadisticasSection.label}
-              </Link>
-            </div>
-          </div>
+            <Link to={ayudaSection.path} className="btn btn-primary footer-ayuda">
+              {ayudaSection.label}
+            </Link>
+          </section>
         </div>
 
-     
-        <div className="footer-bottom-bar">
-          <p className="copyright-text">
-            &copy; 2026–{currentYear}{' '}
-            <a 
-              href="http://www.unsl.edu.ar" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="copyright-unsl"
-            >
-              Universidad Nacional de San Luis
-            </a>{' '}
-            — Todos los Derechos Reservados.
-          </p>
-        </div>
+        <p className="footer-legal">
+          &copy; 2026–{ANIO_ACTUAL}{' '}
+          <a
+            href="http://www.unsl.edu.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-enlace"
+          >
+            Universidad Nacional de San Luis
+          </a>{' '}
+          — Todos los Derechos Reservados.
+        </p>
       </div>
     </footer>
   );

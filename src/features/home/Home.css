@@ -1,32 +1,49 @@
-.home-page {
+.home-portada {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  align-items: center;
+  min-height: 60vh;
+  padding: calc(var(--alto-barra) + 3rem) 0 3rem;
+  background:
+    linear-gradient(rgb(30 41 77 / 0.72), rgb(38 43 69 / 0.82)),
+    url('./portada-unsl.webp') center / cover no-repeat,
+    var(--color-marino-base);
+  color: var(--bs-white);
 }
 
-.home-hero {
+.home-portada__contenido {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
   align-items: center;
+  gap: 1.25rem;
   text-align: center;
 }
 
-.home-hero h1 {
+.home-portada h1 {
   margin: 0;
-  color: var(--color-primario);
+  color: var(--bs-white);
+  font-size: clamp(2rem, 6vw, 3.5rem);
 }
 
-.home-hero p {
-  color: #475569;
+.home-portada p {
   max-width: 60ch;
-  margin: 0 auto;
+  font-size: 1.15rem;
+  color: rgb(255 255 255 / 0.9);
 }
 
 .home-showcase {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
+  padding-top: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+.home-showcase > :nth-child(1) {
+  border-top-color: var(--color-celeste);
+}
+
+.home-showcase > :nth-child(2) {
+  border-top-color: var(--color-violeta);
 }
 
 @media (min-width: 768px) {

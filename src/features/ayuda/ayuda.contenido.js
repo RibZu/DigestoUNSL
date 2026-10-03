@@ -37,7 +37,7 @@ export const BLOQUES_AYUDA = [
                 id: 'generales-cuenta',
                 pregunta: '¿Necesito una cuenta para consultar?',
                 respuesta:
-                    'No, toda la consulta es pública. "Ingreso" es solo para el personal institucional.',
+                    'No, toda la consulta es pública y no requiere cuenta. El acceso institucional es solo para el personal que administra el Digesto.',
             },
             {
                 id: 'generales-celular',
@@ -69,7 +69,7 @@ export const BLOQUES_AYUDA = [
                 id: 'inicio-que-encuentro',
                 pregunta: '¿Qué encuentro en la página de inicio?',
                 respuesta:
-                    'Tres accesos rápidos: Búsqueda, Novedades y Concursos. Cada uno explica qué ofrece su sección y tiene un botón para ir a ella. El pie de página tiene los accesos a Ingreso, Ayuda y Estadísticas.',
+                    'Tres accesos rápidos: Búsqueda, Novedades y Concursos. Cada uno explica qué ofrece su sección y tiene un botón para ir a ella. El pie de página tiene el acceso a Ayuda.',
             },
         ],
     },
@@ -198,57 +198,19 @@ export const BLOQUES_AYUDA = [
                 id: 'planes-encontrar',
                 pregunta: '¿Cómo encuentro el plan de mi carrera?',
                 respuesta:
-                    'Buscá por carrera u ordenanza, o filtrá por facultad y desplegala. Cada plan tiene un enlace a su ordenanza en el sitio oficial de planes de estudio.',
-            },
-            {
-                id: 'planes-vigente-activo',
-                pregunta: '¿Qué diferencia hay entre un plan vigente y uno activo?',
-                respuesta:
-                    'Un plan vigente rige para los ingresantes. Uno activo es un plan anterior que todavía tiene estudiantes cursando.',
+                    'Buscá por carrera u ordenanza, o filtrá por facultad y desplegala. Cada plan abre una página con sus materias por año. El plan oficial y las correlativas de cada materia se consultan en el sitio oficial de planes de estudio.',
             },
             {
                 id: 'planes-no-aparece',
                 pregunta: '¿Por qué no aparece mi plan?',
                 respuesta:
-                    'Se muestran solo los planes vigentes y activos posteriores a 2009. Para ver todos los planes, usá el botón "¿No encontrás tu plan? …", que lleva al sitio oficial planesestudio.unsl.edu.ar.',
+                    'Se muestran solo los planes vigentes posteriores a 2009. Para ver todos los planes, usá el botón "¿No encontrás tu plan? …", que lleva al sitio oficial planesestudio.unsl.edu.ar.',
             },
             {
                 id: 'planes-dos-facultades',
                 pregunta: '¿Por qué una misma carrera aparece en dos facultades?',
                 respuesta:
                     'Algunas carreras se dictan en más de una facultad, como la Licenciatura en Análisis y Gestión de Datos. Aparecen en cada una de ellas.',
-            },
-        ],
-    },
-    {
-        id: 'estadisticas',
-        titulo: 'Estadísticas',
-        ruta: '/estadisticas',
-        preguntas: [
-            {
-                id: 'estadisticas-que-muestran',
-                pregunta:
-                    '¿Qué muestran las estadísticas: indicadores, documentos por órgano emisor y por año?',
-                respuesta:
-                    'Muestran indicadores generales, como los documentos registrados y las consultas mensuales. Además, las barras "Documentación por Órgano Emisor" y "Normativas por Año de Emisión" comparan cuántos documentos hay por origen y por año.',
-            },
-        ],
-    },
-    {
-        id: 'ingreso',
-        titulo: 'Ingreso',
-        ruta: '/login',
-        preguntas: [
-            {
-                id: 'ingreso-quien',
-                pregunta: '¿Quién puede ingresar y para qué?',
-                respuesta:
-                    'Es un acceso para el personal institucional que administra el Digesto. Se ingresa en "Acceso Institucional", con el usuario o correo institucional y la contraseña.',
-            },
-            {
-                id: 'ingreso-para-consultar',
-                pregunta: '¿Tengo que ingresar para consultar documentos?',
-                respuesta: 'No, la consulta del Digesto es libre y no requiere ingresar.',
             },
         ],
     },

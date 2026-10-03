@@ -9,3 +9,11 @@ function simularRespuesta(datos) {
 export function obtenerPlanesDeEstudio() {
     return simularRespuesta(mock.facultades)
 }
+
+export async function obtenerPlanDeEstudio(carrera, plan) {
+    const { default: detalle } = await import(
+        '../features/planes-de-estudio/planes-de-estudio.detalle.mock.json'
+    )
+    const encontrado = detalle.planes.find((p) => p.carrera === carrera && p.plan === plan)
+    return simularRespuesta(encontrado ?? null)
+}

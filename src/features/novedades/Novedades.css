@@ -2,26 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem 0;
-}
-
-.novedades-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  text-align: center;
-}
-
-.novedades-header h1 {
-  margin: 0;
-  color: var(--color-primario);
-}
-
-.novedades-header p {
-  color: #475569;
-  max-width: 60ch;
-  margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 .novedades-controls {
@@ -30,9 +11,9 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radio);
   padding: 1rem 1.25rem;
 }
 
@@ -54,7 +35,7 @@
   padding: 0.5rem 0.75rem;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-family: var(--sans);
+  font-family: var(--fuente);
   font-size: 0.9rem;
   color: var(--text-h);
   background: var(--bg);
@@ -67,9 +48,9 @@
 }
 
 .novedad-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radio);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -78,7 +59,7 @@
 }
 
 .novedad-card:hover {
-  box-shadow: var(--shadow);
+  box-shadow: var(--sombra);
   border-color: var(--accent-border);
 }
 
@@ -106,7 +87,7 @@
 .novedad-organo {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #64748b;
+  color: var(--text);
 }
 
 .novedad-badges {
@@ -142,12 +123,12 @@
   align-items: center;
   margin-top: 0.5rem;
   padding-top: 0.75rem;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid var(--color-fondo);
 }
 
 .novedad-date {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--text);
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -157,8 +138,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #ffffff;
-  background: var(--color-primario);
+  color: var(--bs-white);
+  background: var(--color-accion);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.875rem;
@@ -168,5 +149,14 @@
 }
 
 .novedad-download-btn:hover {
-  background: var(--color-primario-hover);
+  background: var(--color-accion-hover);
+}
+
+.novedad-card--vacia {
+  padding: 2rem;
+  text-align: center;
+}
+
+.novedad-enlace {
+  text-decoration: none;
 }

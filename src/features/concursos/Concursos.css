@@ -1,48 +1,16 @@
-/* variables */
 .concursos-page {
     --concursos-gap: 1rem;
     --concursos-card-shadow: 0 1px 2px rgba(8, 6, 13, 0.06), 0 8px 16px -8px rgba(8, 6, 13, 0.12);
     --concursos-card-shadow-hover: 0 2px 4px rgba(8, 6, 13, 0.08), 0 16px 24px -10px rgba(8, 6, 13, 0.18);
 }
 
-/* general */
 .concursos-page {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1rem;
+    padding-bottom: 3rem;
 }
 
-.concursos-page__encabezado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    text-align: center;
-}
-
-.concursos-page__encabezado h1 {
-    margin: 0;
-    color: var(--color-primario);
-}
-
-.concursos-page__encabezado p {
-    color: var(--text);
-    max-width: 60ch;
-    margin: 0 auto;
-}
-
-.concurso-card__detalle dt {
-    font-size: 0.75rem;
-    color: #6c757d;
-}
-
-.concurso-card__detalle dd {
-    margin: 0;
-    font-size: 0.9rem;
-}
-
-/* layout */
 .concursos-page__criterios {
     display: flex;
     flex-direction: column;
@@ -99,73 +67,16 @@
     margin: 0.75rem 0;
 }
 
-/* componentes */
 .concursos-page__facultades {
-    border-top: 1px solid var(--border);
-}
-
-.concursos-page__facultad-titulo {
-    margin: 0;
-    font-size: 1.15rem;
-}
-
-.concursos-page__facultad-boton {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.25rem 1rem;
-    width: 100%;
-    min-height: 44px;
-    padding: 0.75rem 0.25rem;
-    box-sizing: border-box;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid var(--border);
-    text-align: left;
-    font: inherit;
-    color: var(--text-h);
-    cursor: pointer;
-}
-
-.concursos-page__facultad-boton:hover,
-.concursos-page__facultad-boton:focus-visible {
-    background-color: var(--accent-bg);
-}
-
-.concursos-page__facultad-nombre {
-    flex: 1 1 12rem;
-    overflow-wrap: anywhere;
-}
-
-.concursos-page__ubicacion {
-    margin-left: auto;
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--text);
-}
-
-.concursos-page__chevron {
-    width: 1.1em;
-    height: 1.1em;
-    flex: 0 0 auto;
-    transform: rotate(-90deg);
-    transition: transform 0.15s ease;
-}
-
-.concursos-page__facultad-boton[aria-expanded="true"] .concursos-page__chevron {
-    transform: none;
-}
-
-.concursos-page__contenido {
-    margin: 0.25rem 0 0.75rem 0.5rem;
-    padding: 0.75rem 0 0.25rem 0.75rem;
-    border-left: 2px solid var(--accent-border);
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .concurso-card {
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 0.75rem;
+    border-radius: var(--radio);
     padding: 1.1rem;
     box-sizing: border-box;
     box-shadow: var(--concursos-card-shadow);
@@ -185,35 +96,48 @@
 }
 
 .concurso-card__caracter {
-    background-color: var(--color-primario);
-    color: #fff;
+    background-color: var(--color-violeta);
+    color: var(--bs-white);
+}
+
+.concurso-card__detalle dt {
+    font-size: 0.75rem;
+    color: var(--text);
+}
+
+.concurso-card__detalle dd {
+    margin: 0;
+    font-size: 0.9rem;
 }
 
 .concurso-card__resolucion {
     display: inline-block;
     font-size: 0.9rem;
     font-weight: 600;
-    color: #fff;
-    background-color: var(--color-primario);
+    color: var(--bs-white);
+    background-color: var(--color-accion);
     text-decoration: none;
     transition: background-color 0.15s ease;
 }
 
-.concurso-card__resolucion:hover {
-    color: #fff;
-    background-color: var(--color-primario-hover);
+.concurso-card__resolucion:hover,
+.concurso-card__resolucion:focus-visible {
+    color: var(--bs-white);
+    background-color: var(--color-accion-hover);
 }
 
 .concursos-page__limpiar {
-    color: var(--color-primario);
+    color: var(--color-accion);
     background-color: transparent;
-    border: 1px solid var(--color-primario);
+    border: 1px solid var(--color-accion);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.concursos-page__limpiar:hover {
-    color: #fff;
-    background-color: var(--color-primario);
+.concursos-page__limpiar:hover,
+.concursos-page__limpiar:focus-visible {
+    color: var(--bs-white);
+    background-color: var(--color-accion);
+    border-color: var(--color-accion);
 }
 
 .concursos-page__campo input,
@@ -238,13 +162,7 @@
     font-style: italic;
 }
 
-/* media queries */
 @media (min-width: 768px) {
-    .concursos-page__contenido {
-        margin-left: 1rem;
-        padding-left: 1.25rem;
-    }
-
     .concursos-page__criterios {
         flex-direction: row;
         flex-wrap: wrap;
