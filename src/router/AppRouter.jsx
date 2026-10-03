@@ -26,8 +26,16 @@ const router = createBrowserRouter([
       { path: 'normativas/:id', element: <NormativaDetail /> },
       { path: 'concursos', element: <Concursos /> },
       { path: 'ayuda', element: <Ayuda /> },
-      { path: 'estadisticas', element: <Estadisticas /> },
-      { path: 'planes-de-estudio', element: <PlanesDeEstudio />, },
+      {
+        path: 'login',
+        children: [
+          { index: true, element: <Login /> },
+          { path: 'estadisticas', element: <Estadisticas /> },
+        ],
+      },
+      { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
+      { path: 'planes-de-estudio/:carrera/:plan', element: <PlanDeEstudio /> },
+
       { path: 'alta', element: <AltaDocumento /> },
       { path: 'alta-documentos', element: <AltaDocumento /> },
       { path: 'login', element: <Login /> },// implementar loader PENDIENTE
