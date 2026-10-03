@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router'
 import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
+import { buscarNormativas } from '../../services/busqueda'
 import './Busqueda.css'
 
 export default function Busqueda() {
@@ -15,44 +16,27 @@ export default function Busqueda() {
   const [buscarTextoCompleto, setBuscarTextoCompleto] = useState(false)
 
   const [hasSearched, setHasSearched] = useState(false)
+  const [results, setResults] = useState([])
 
   const handleSearch = (e) => {
     e.preventDefault()
-    setHasSearched(true)
+    buscarNormativas({
+      searchTerm,
+      tipoDocumento,
+      organismoEmisor,
+      numeroNorma,
+      anioNorma,
+      fechaDesde,
+      fechaHasta,
+    }).then((data) => {
+      setResults(data)
+      setHasSearched(true)
+    })
   }
 
   const handleClearText = () => {
     setSearchTerm('')
   }
-  const mockResults = [
-    {
-      id: 1,
-      title: 'Resolución Rectoral N° 145/2026',
-      codigo: 'RR-1-145/26',
-      organo: 'Consejo Superior / Rectorado',
-      tipo: 'Resolución',
-      fecha: '12-05-2026',
-      snippet: '... por la cual se aprueba el calendario académico para el ciclo lectivo 2026 en todas las facultades ...',
-    },
-    {
-      id: 2,
-      title: 'Ordenanza Consejo Superior N° 12/2026',
-      codigo: 'OCS-1-12/26',
-      organo: 'FCFMyN (Fac. de Ciencias Físico-Matemáticas y Naturales)',
-      tipo: 'Ordenanza',
-      fecha: '05-04-2026',
-      snippet: '... actualización del plan de estudios de la carrera Licenciatura en Ciencias de la Computación ...',
-    },
-    {
-      id: 3,
-      title: 'Resolución Rectoral N° 140/2026',
-      codigo: 'RR-1-140/26',
-      organo: 'Consejo Superior / Rectorado',
-      tipo: 'Resolución',
-      fecha: '01-04-2026',
-      snippet: '... designación de autoridades para la comisión de evaluación institucional ...',
-    },
-  ]
 
   return (
     <>
@@ -251,27 +235,33 @@ export default function Busqueda() {
           <section className="busqueda-results" aria-label="Resultados de búsqueda">
             <div className="busqueda-results-header">
               <h2>Resultados encontrados</h2>
-              <span className="busqueda-results-count">{mockResults.length} normativas encontradas</span>
+              <span className="busqueda-results-count">{results.length} normativas encontradas</span>
             </div>
 
-            {mockResults.map((result) => (
-              <article key={result.id} className="busqueda-result-card">
-                <div className="busqueda-result-header">
-                  <Link to={`/normativas/${result.id}`} className="busqueda-result-title-link">
-                    {result.title}
-                  </Link>
-                  <div className="busqueda-result-meta">
-                    <span className="busqueda-meta-tag tipo">{result.tipo}</span>
-                    <span className="busqueda-meta-tag">{result.codigo}</span>
-                    <span className="busqueda-meta-tag fecha">{result.fecha}</span>
+            {results.length === 0 ? (
+              <div className="busqueda-result-card busqueda-result-card--vacio">
+                <p>No se encontraron normativas que coincidan con los criterios de búsqueda.</p>
+              </div>
+            ) : (
+              results.map((result) => (
+                <article key={result.id} className="busqueda-result-card">
+                  <div className="busqueda-result-header">
+                    <Link to={`/normativas/${result.id}`} className="busqueda-result-title-link">
+                      {result.title}
+                    </Link>
+                    <div className="busqueda-result-meta">
+                      <span className="busqueda-meta-tag tipo">{result.tipo}</span>
+                      <span className="busqueda-meta-tag">{result.codigo}</span>
+                      <span className="busqueda-meta-tag fecha">{result.fecha}</span>
+                    </div>
                   </div>
-                </div>
-                <span className="busqueda-result-organo">
-                  {result.organo}
-                </span>
-                <p className="busqueda-result-snippet">{result.snippet}</p>
-              </article>
-            ))}
+                  <span className="busqueda-result-organo">
+                    {result.organo}
+                  </span>
+                  <p className="busqueda-result-snippet">{result.snippet}</p>
+                </article>
+              ))
+            )}
           </section>
         )}
       </section>
