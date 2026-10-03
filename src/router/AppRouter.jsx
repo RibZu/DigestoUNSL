@@ -12,6 +12,8 @@ import Concursos from '../features/concursos/Concursos.jsx'
 import PlanesDeEstudio from '../features/planes-de-estudio/PlanesDeEstudio.jsx'
 import PlanDeEstudio from '../features/planes-de-estudio/PlanDeEstudio.jsx'
 import PaginaNoEncontrada from '../shared/ui/PaginaNoEncontrada.jsx'
+import AltaDocumento from '../features/alta/AltaDocumento.jsx'
+
 
 const router = createBrowserRouter([
   {
@@ -24,8 +26,6 @@ const router = createBrowserRouter([
       { path: 'normativas/:id', element: <NormativaDetail /> },
       { path: 'concursos', element: <Concursos /> },
       { path: 'ayuda', element: <Ayuda /> },
-      { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
-      { path: 'planes-de-estudio/:carrera/:plan', element: <PlanDeEstudio /> },
       {
         path: 'login',
         children: [
@@ -33,6 +33,12 @@ const router = createBrowserRouter([
           { path: 'estadisticas', element: <Estadisticas /> },
         ],
       },
+      { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
+      { path: 'planes-de-estudio/:carrera/:plan', element: <PlanDeEstudio /> },
+
+      { path: 'alta', element: <AltaDocumento /> },
+      { path: 'alta-documentos', element: <AltaDocumento /> },
+      { path: 'login', element: <Login /> },// implementar loader PENDIENTE
       { path: '*', element: <PaginaNoEncontrada /> },
     ],
   },
