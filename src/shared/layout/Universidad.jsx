@@ -1,30 +1,22 @@
-import isologoUnsl from './isologo-unsl.webp'
-import logoUnslBlanco from './logo-unsl-blanco.png'
+import logoBlanco from '../../assets/logo/logo-unsl-blanco.png'
+import logoColor from '../../assets/logo/logo-unsl-color.png'
 import './Universidad.css'
 
-export default function Universidad({
-  variant = 'light',
-  showLogo = true,
-  showLockup = true,
-  className = '',
-}) {
-  const logoSrc = variant === 'dark' ? logoUnslBlanco : isologoUnsl
+const LOGOS = { barra: logoBlanco, pie: logoColor }
 
+export default function Universidad({ variante = 'barra' }) {
   return (
-    <div className={`universidad universidad--${variant} ${className}`.trim()}>
-      {showLogo && (
-        <img
-          className="universidad__logo"
-          src={logoSrc}
-          alt="Universidad Nacional de San Luis"
-        />
-      )}
-      {showLockup && (
-        <p className="universidad__lockup">
-          <span className="universidad__lockup-main">Digesto</span>
-          <span className="universidad__lockup-sub">Administrativo</span>
-        </p>
-      )}
+    <div className={`universidad universidad--${variante}`}>
+      <img
+        className="universidad__logo"
+        src={LOGOS[variante]}
+        alt="Universidad Nacional de San Luis"
+      />
+      <span className="universidad__separador" aria-hidden="true" />
+      <p className="universidad__lockup">
+        <span className="universidad__lockup-main">Digesto</span>
+        <span className="universidad__lockup-sub">Administrativo</span>
+      </p>
     </div>
   )
 }

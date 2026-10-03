@@ -5,8 +5,16 @@
 }
 
 .universidad__logo {
-  height: 42px;
+  height: 3rem;
   width: auto;
+  max-width: 100%;
+}
+
+.universidad__separador {
+  align-self: center;
+  width: 1px;
+  height: 2.5rem;
+  background: rgb(255 255 255 / 0.4);
 }
 
 .universidad__lockup {
@@ -14,29 +22,36 @@
   flex-direction: column;
   line-height: 1.1;
   margin: 0;
+  color: var(--bs-white);
 }
 
 .universidad__lockup-main {
   font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: -0.3px;
-  color: var(--color-primario);
+  font-weight: 700;
 }
 
 .universidad__lockup-sub {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
+  letter-spacing: 0.06em;
+  opacity: 0.85;
+}
+
+.universidad--pie .universidad__logo {
+  height: 4.5rem;
+}
+
+.universidad--pie .universidad__separador {
+  background: var(--border);
+}
+
+.universidad--pie .universidad__lockup {
   color: var(--color-primario);
-  opacity: 0.75;
 }
 
-.universidad--dark .universidad__lockup-main,
-.universidad--dark .universidad__lockup-sub {
-  color: #ffffff;
-}
-
-.universidad--dark .universidad__lockup-sub {
-  opacity: 0.8;
+@media (min-width: 768px) {
+  .universidad--barra .universidad__logo {
+    height: 3.5rem;
+  }
 }

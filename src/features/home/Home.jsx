@@ -1,15 +1,24 @@
+import { Link } from 'react-router'
 import HomeShowcaseCard from './HomeShowcaseCard'
 import './Home.css'
 
 export default function Home() {
   return (
-    <div className="home-page">
-      <section className="home-hero">
-        <h1>Digesto Administrativo</h1>
-        <p>Repositorio de resoluciones, ordenanzas y normativas de la Universidad Nacional de San Luis.</p>
+    <>
+      <section className="home-portada">
+        <div className="container-xl home-portada__contenido">
+          <h1>Digesto Administrativo</h1>
+          <p>
+            Repositorio de resoluciones, ordenanzas y normativas de la Universidad Nacional de San
+            Luis.
+          </p>
+          <Link to="/busqueda" className="btn btn-primary btn-lg">
+            Buscar en el Digesto
+          </Link>
+        </div>
       </section>
 
-      <section className="home-showcase" aria-label="Accesos rápidos">
+      <section className="container-xl home-showcase" aria-label="Accesos rápidos">
         <HomeShowcaseCard
           title="Búsqueda"
           sampleItems={[
@@ -41,6 +50,6 @@ export default function Home() {
           ctaHref="/concursos"
         />
       </section>
-    </div>
+    </>
   )
 }

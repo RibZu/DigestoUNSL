@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
+import Desplegable from '../../shared/ui/Desplegable'
 import ConcursoCard from './ConcursoCard'
 import { obtenerConcursos, obtenerFacultades } from '../../services/concursos.js'
 import './Concursos.css'
@@ -7,20 +9,10 @@ const CRITERIO_INICIAL = { texto: '', facultad: '', caracter: '', dedicacion: ''
 
 const ETIQUETAS_CRITERIO = {
     texto: (valor) => `Búsqueda: "${valor}"`,
-    facultad: (valor, facultades) => facultades[valor]?.nombre ?? `Facultad: ${valor}`,
+    facultad: (valor, facultades) =>
+        facultades.find((facultad) => String(facultad.numero) === valor)?.nombre ?? `Facultad: ${valor}`,
     caracter: (valor) => `Carácter: ${valor}`,
     dedicacion: (valor) => `Dedicación: ${valor}`,
-}
-
-function cargarConcursos(setEstado, setFacultades, setConcursos) {
-    setEstado('cargando')
-    Promise.all([obtenerFacultades(), obtenerConcursos()])
-        .then(([facultadesRecibidas, concursosRecibidos]) => {
-            setFacultades(facultadesRecibidas)
-            setConcursos(concursosRecibidos)
-            setEstado('listo')
-        })
-        .catch(() => setEstado('error'))
 }
 
 function normalizarTexto(texto) {
@@ -37,7 +29,7 @@ function coincideConCriterio(concurso, criterio) {
 
     return (
         coincideTexto &&
-        (criterio.facultad === '' || concurso.facultad === criterio.facultad) &&
+        (criterio.facultad === '' || String(concurso.facultad) === criterio.facultad) &&
         (criterio.caracter === '' || concurso.caracter === criterio.caracter) &&
         (criterio.dedicacion === '' || concurso.dedicacion === criterio.dedicacion)
     )
@@ -51,17 +43,39 @@ function calcularMensajeVacio(concursos, concursosFiltrados, hayCriterioActivo) 
 
 export default function Concursos() {
     const [estado, setEstado] = useState('cargando')
-    const [facultades, setFacultades] = useState({})
+    const [facultades, setFacultades] = useState([])
     const [concursos, setConcursos] = useState([])
     const [criterio, setCriterio] = useState(CRITERIO_INICIAL)
     const [alternadas, setAlternadas] = useState(() => new Set())
+    const [intento, setIntento] = useState(0)
 
     useEffect(() => {
-        cargarConcursos(setEstado, setFacultades, setConcursos)
-    }, [])
+        let ignorar = false
+
+        async function cargar() {
+            try {
+                const [facultadesRecibidas, concursosRecibidos] = await Promise.all([
+                    obtenerFacultades(),
+                    obtenerConcursos(),
+                ])
+                if (ignorar) return
+                setFacultades(facultadesRecibidas)
+                setConcursos(concursosRecibidos)
+                setEstado('listo')
+            } catch {
+                if (!ignorar) setEstado('error')
+            }
+        }
+
+        cargar()
+        return () => {
+            ignorar = true
+        }
+    }, [intento])
 
     function handleReintentar() {
-        cargarConcursos(setEstado, setFacultades, setConcursos)
+        setEstado('cargando')
+        setIntento((anterior) => anterior + 1)
     }
 
     function handleFiltrosChange(e) {
@@ -80,49 +94,54 @@ export default function Concursos() {
         setAlternadas(new Set())
     }
 
-    function handleAlternarFacultad(codigo) {
+    function handleAlternarFacultad(numero) {
         setAlternadas((actuales) => {
             const siguientes = new Set(actuales)
-            if (siguientes.has(codigo)) siguientes.delete(codigo)
-            else siguientes.add(codigo)
+            if (siguientes.has(numero)) siguientes.delete(numero)
+            else siguientes.add(numero)
             return siguientes
         })
     }
 
     if (estado === 'cargando') {
         return (
-            <section className="concursos-page">
-                <header className="concursos-page__encabezado">
-                    <h1>Concursos</h1>
-                    <p role="status">Cargando Concursos...</p>
-                </header>
-            </section>
+            <>
+                <EncabezadoPagina titulo="Concursos" />
+                <section className="container-xl concursos-page">
+                    <div className="d-flex align-items-center gap-2" role="status">
+                        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span>Cargando concursos...</span>
+                    </div>
+                </section>
+            </>
         )
     }
 
     if (estado === 'error') {
         return (
-            <section className="concursos-page">
-                <header className="concursos-page__encabezado">
-                    <h1>Concursos</h1>
-                    <p role="alert">No se pudieron cargar los concursos</p>
-                    <button type="button" className="btn btn-primary" onClick={handleReintentar}>
+            <>
+                <EncabezadoPagina titulo="Concursos" />
+                <section className="container-xl concursos-page">
+                    <div className="alert alert-danger mb-0" role="alert">
+                        No se pudieron cargar los concursos.
+                    </div>
+                    <button type="button" className="btn btn-primary align-self-start" onClick={handleReintentar}>
                         Reintentar
                     </button>
-                </header>
-            </section>
+                </section>
+            </>
         )
     }
 
     const concursosFiltrados = concursos.filter((concurso) => coincideConCriterio(concurso, criterio))
     const hayCriterioActivo = Object.values(criterio).some((valor) => valor !== '')
-    const estaAbierta = (codigo) => hayCriterioActivo !== alternadas.has(codigo)
+    const estaAbierta = (numero) => hayCriterioActivo !== alternadas.has(numero)
 
     const facultadesAMostrar = hayCriterioActivo
-        ? Object.keys(facultades).filter((codigo) =>
-              concursosFiltrados.some((concurso) => concurso.facultad === codigo)
+        ? facultades.filter((facultad) =>
+              concursosFiltrados.some((concurso) => concurso.facultad === facultad.numero)
           )
-        : Object.keys(facultades)
+        : facultades
 
     const mensajeVacio = calcularMensajeVacio(concursos, concursosFiltrados, hayCriterioActivo)
 
@@ -141,162 +160,136 @@ export default function Concursos() {
         }))
 
     return (
-        <section className="concursos-page">
-            <header className="concursos-page__encabezado">
-                <h1>Concursos</h1>
+        <>
+            <EncabezadoPagina titulo="Concursos">
                 <p>Llamado a concursos de cargos vigentes, agrupados por facultad</p>
-            </header>
+            </EncabezadoPagina>
 
-            <search className="concursos-page__criterios">
-                <div className="concursos-page__campo">
-                    <label htmlFor="concursos-texto">Buscar</label>
-                    <input
-                        type="search"
-                        id="concursos-texto"
-                        name="texto"
-                        className="form-control"
-                        placeholder="Cargo, área, departamento o resolución"
-                        value={criterio.texto}
-                        onChange={handleFiltrosChange}
-                    />
-                </div>
+            <section className="container-xl concursos-page">
+                <search className="concursos-page__criterios">
+                    <div className="concursos-page__campo">
+                        <label htmlFor="concursos-texto">Buscar</label>
+                        <input
+                            type="search"
+                            id="concursos-texto"
+                            name="texto"
+                            className="form-control"
+                            placeholder="Cargo, área, departamento o resolución"
+                            value={criterio.texto}
+                            onChange={handleFiltrosChange}
+                        />
+                    </div>
 
-                <div className="concursos-page__campo">
-                    <label htmlFor="concursos-facultad">Facultad</label>
-                    <select
-                        id="concursos-facultad"
-                        name="facultad"
-                        className="form-select"
-                        value={criterio.facultad}
-                        onChange={handleFiltrosChange}
-                    >
-                        <option value="">Todas</option>
-                        {Object.entries(facultades).map(([codigo, { nombre }]) => (
-                            <option key={codigo} value={codigo}>
-                                {nombre}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                    <div className="concursos-page__campo">
+                        <label htmlFor="concursos-facultad">Facultad</label>
+                        <select
+                            id="concursos-facultad"
+                            name="facultad"
+                            className="form-select"
+                            value={criterio.facultad}
+                            onChange={handleFiltrosChange}
+                        >
+                            <option value="">Todas</option>
+                            {facultades.map(({ numero, nombre }) => (
+                                <option key={numero} value={numero}>
+                                    {nombre}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                <div className="concursos-page__campo">
-                    <label htmlFor="concursos-caracter">Carácter</label>
-                    <select
-                        id="concursos-caracter"
-                        name="caracter"
-                        className="form-select"
-                        value={criterio.caracter}
-                        onChange={handleFiltrosChange}
-                    >
-                        <option value="">Todos</option>
-                        {opcionesCaracter.map((valor) => (
-                            <option key={valor} value={valor}>
-                                {valor}
-                            </option>
-                        ))}
-                    </select>
-                </div>
+                    <div className="concursos-page__campo">
+                        <label htmlFor="concursos-caracter">Carácter</label>
+                        <select
+                            id="concursos-caracter"
+                            name="caracter"
+                            className="form-select"
+                            value={criterio.caracter}
+                            onChange={handleFiltrosChange}
+                        >
+                            <option value="">Todos</option>
+                            {opcionesCaracter.map((valor) => (
+                                <option key={valor} value={valor}>
+                                    {valor}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                <div className="concursos-page__campo">
-                    <label htmlFor="concursos-dedicacion">Dedicación</label>
-                    <select
-                        id="concursos-dedicacion"
-                        name="dedicacion"
-                        className="form-select"
-                        value={criterio.dedicacion}
-                        onChange={handleFiltrosChange}
-                    >
-                        <option value="">Todas</option>
-                        {opcionesDedicacion.map((valor) => (
-                            <option key={valor} value={valor}>
-                                {valor}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-            </search>
+                    <div className="concursos-page__campo">
+                        <label htmlFor="concursos-dedicacion">Dedicación</label>
+                        <select
+                            id="concursos-dedicacion"
+                            name="dedicacion"
+                            className="form-select"
+                            value={criterio.dedicacion}
+                            onChange={handleFiltrosChange}
+                        >
+                            <option value="">Todas</option>
+                            {opcionesDedicacion.map((valor) => (
+                                <option key={valor} value={valor}>
+                                    {valor}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </search>
 
-            {criteriosActivos.length > 0 && (
-                <div className="concursos-page__chips">
-                    <ul className="concursos-page__lista-chips">
-                        {criteriosActivos.map(({ campo, etiqueta }) => (
-                            <li key={campo}>
-                                <button
-                                    type="button"
-                                    className="btn btn-sm btn-outline-secondary concursos-page__chip"
-                                    onClick={() => handleQuitarCriterio(campo)}
-                                    aria-label={`Quitar filtro: ${etiqueta}`}
-                                >
-                                    {etiqueta} ✕
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
-                    <button
-                        type="button"
-                        className="btn btn-sm concursos-page__limpiar"
-                        onClick={handleLimpiarFiltros}
-                    >
-                        Limpiar filtros
-                    </button>
-                </div>
-            )}
-
-            {mensajeVacio === 'sin-resultados' && (
-                <p className="concursos-page__mensaje-vacio">
-                    No se encontraron concursos con los criterios seleccionados.
-                </p>
-            )}
-
-            {mensajeVacio === 'sin-datos' && (
-                <p className="concursos-page__mensaje-vacio">No hay concursos vigentes por el momento.</p>
-            )}
-
-            <div className="concursos-page__facultades">
-                {facultadesAMostrar.map((codigo) => {
-                    const concursosDeFacultad = concursosFiltrados.filter(
-                        (concurso) => concurso.facultad === codigo
-                    )
-                    return (
-                        <section key={codigo} className="concursos-page__facultad">
-                            <h2 className="concursos-page__facultad-titulo">
-                                <button
-                                    type="button"
-                                    className="concursos-page__facultad-boton"
-                                    aria-expanded={estaAbierta(codigo)}
-                                    aria-controls={`concursos-${codigo}`}
-                                    onClick={() => handleAlternarFacultad(codigo)}
-                                >
-                                    <svg
-                                        className="concursos-page__chevron"
-                                        aria-hidden="true"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
+                {criteriosActivos.length > 0 && (
+                    <div className="concursos-page__chips">
+                        <ul className="concursos-page__lista-chips">
+                            {criteriosActivos.map(({ campo, etiqueta }) => (
+                                <li key={campo}>
+                                    <button
+                                        type="button"
+                                        className="btn btn-sm btn-outline-secondary concursos-page__chip"
+                                        onClick={() => handleQuitarCriterio(campo)}
+                                        aria-label={`Quitar filtro: ${etiqueta}`}
                                     >
-                                        <polyline points="6 9 12 15 18 9" />
-                                    </svg>
-                                    <span className="concursos-page__facultad-nombre">
-                                        {facultades[codigo].nombre}
-                                    </span>{' '}
-                                    <span className="concursos-page__ubicacion">
-                                        {facultades[codigo].ubicacion}
-                                    </span>
-                                </button>
-                            </h2>
-                            <div
-                                id={`concursos-${codigo}`}
-                                className="concursos-page__contenido"
-                                hidden={!estaAbierta(codigo)}
+                                        {etiqueta} ✕
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                        <button
+                            type="button"
+                            className="btn btn-sm concursos-page__limpiar"
+                            onClick={handleLimpiarFiltros}
+                        >
+                            Limpiar filtros
+                        </button>
+                    </div>
+                )}
+
+                {mensajeVacio === 'sin-resultados' && (
+                    <p className="concursos-page__mensaje-vacio">
+                        No se encontraron concursos con los criterios seleccionados.
+                    </p>
+                )}
+
+                {mensajeVacio === 'sin-datos' && (
+                    <p className="concursos-page__mensaje-vacio">No hay concursos vigentes por el momento.</p>
+                )}
+
+
+                <div className="concursos-page__facultades">
+                    {facultadesAMostrar.map((facultad) => {
+                        const concursosDeFacultad = concursosFiltrados.filter(
+                            (concurso) => concurso.facultad === facultad.numero
+                        )
+                        return (
+                            <Desplegable
+                                key={facultad.numero}
+                                id={`concursos-${facultad.numero}`}
+                                titulo={facultad.nombre}
+                                resumen={facultad.ubicacion}
+                                abierto={estaAbierta(facultad.numero)}
+                                onAlternar={() => handleAlternarFacultad(facultad.numero)}
                             >
                                 {concursosDeFacultad.length > 0 ? (
                                     <div className="concursos-page__lista">
                                         {concursosDeFacultad.map((concurso) => (
-                                            <ConcursoCard
-                                                key={`${concurso.facultad}-${concurso.resolucion}`}
-                                                concurso={concurso}
-                                            />
+                                            <ConcursoCard key={concurso.id} concurso={concurso} />
                                         ))}
                                     </div>
                                 ) : (
@@ -304,11 +297,11 @@ export default function Concursos() {
                                         No hay concursos vigentes en esta facultad por el momento.
                                     </p>
                                 )}
-                            </div>
-                        </section>
-                    )
-                })}
-            </div>
-        </section>
+                            </Desplegable>
+                        )
+                    })}
+                </div>
+            </section>
+        </>
     )
 }
