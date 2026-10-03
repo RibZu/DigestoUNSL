@@ -8,13 +8,13 @@ const UMBRAL_SCROLL = 50;
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [conFondo, setConFondo] = useState(() => window.scrollY > UMBRAL_SCROLL);
+  const [desplazada, setDesplazada] = useState(() => window.scrollY > UMBRAL_SCROLL);
   const location = useLocation();
   const [renderedPathname, setRenderedPathname] = useState(location.pathname);
 
   useEffect(() => {
     function handleScroll() {
-      setConFondo(window.scrollY > UMBRAL_SCROLL);
+      setDesplazada(window.scrollY > UMBRAL_SCROLL);
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -26,10 +26,17 @@ export default function Header() {
     setIsOpen(false);
   }
 
+  const transparente = location.pathname === '/' && !desplazada && !isOpen;
+  const claseEstado = desplazada
+    ? ' digesto-header--desplazada'
+    : transparente
+      ? ' digesto-header--transparente'
+      : '';
+
   return (
-    <header className={`digesto-header${conFondo || isOpen ? ' digesto-header--solida' : ''}`}>
+    <header className={`digesto-header${claseEstado}`}>
       <nav
-        className="navbar navbar-expand-md"
+        className="navbar navbar-expand-lg"
         data-bs-theme="dark"
         aria-label="Secciones del Digesto"
       >
@@ -53,7 +60,7 @@ export default function Header() {
             className={`collapse navbar-collapse ${isOpen ? 'show' : ''}`}
             id="header-nav-collapse"
           >
-            <ul className="header-nav-list navbar-nav ms-md-auto">
+            <ul className="header-nav-list navbar-nav ms-lg-auto">
               {layoutNavigationSections.map((section) => (
                 <li key={section.key}>
                   <NavLink

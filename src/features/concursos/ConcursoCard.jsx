@@ -1,49 +1,40 @@
-function formatearFecha(iso) {
-    return new Date(`${iso}T00:00:00`).toLocaleDateString('es-AR', {
-        day: '2-digit',
-        month: '2-digit',
-        year: '2-digit',
-    })
-}
+const SIN_DATO = '—'
 
 export default function ConcursoCard({ concurso }) {
+    function handleVerResolucion() {
+        console.log(concurso.resolucion)
+    }
+
     return (
         <article className="concurso-card">
-            <header className="concurso-card__encabezado">
-                <h3 className="concurso-card__cargo">{concurso.cargo}</h3>
-                <span className="concurso-card__caracter badge">{concurso.caracter}</span>
-            </header>
+            <h3 className="concurso-card__cargo">{concurso.cargo}</h3>
 
             <dl className="concurso-card__detalle">
                 <div>
                     <dt>Departamento</dt>
-                    <dd>{concurso.departamento}</dd>
+                    <dd>{concurso.departamento || SIN_DATO}</dd>
                 </div>
                 <div>
                     <dt>Área</dt>
-                    <dd>{concurso.area}</dd>
+                    <dd>{concurso.area || SIN_DATO}</dd>
                 </div>
                 <div>
                     <dt>Dedicación</dt>
-                    <dd>{concurso.dedicacion}</dd>
+                    <dd>{concurso.dedicacion || SIN_DATO}</dd>
                 </div>
                 <div>
-                    <dt>Inscripción</dt>
-                    <dd>
-                        {formatearFecha(concurso.inscripcionDesde)} al{' '}
-                        {formatearFecha(concurso.inscripcionHasta)}
-                    </dd>
+                    <dt>Carácter</dt>
+                    <dd>{concurso.caracter || SIN_DATO}</dd>
                 </div>
             </dl>
 
-            <a
+            <button
+                type="button"
                 className="concurso-card__resolucion btn btn-sm"
-                href={concurso.resolucionUrl}
-                target="_blank"
-                rel="noreferrer"
+                onClick={handleVerResolucion}
             >
                 Ver resolución {concurso.resolucion}
-            </a>
+            </button>
         </article>
     )
 }

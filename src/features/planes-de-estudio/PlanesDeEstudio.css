@@ -173,3 +173,8 @@
         justify-content: flex-end;
     }
 }
+
+.planes-page .btn,
+.btn.planes-page__sitio-oficial {
+    --bs-btn-border-radius: var(--radio);
+}

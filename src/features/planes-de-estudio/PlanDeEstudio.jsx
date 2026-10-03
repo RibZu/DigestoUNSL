@@ -102,6 +102,7 @@ export default function PlanDeEstudio() {
     }
 
     const detalle = resultado.detalle
+    const cantidadMaterias = detalle.materiasPorAnio.reduce((total, grupo) => total + grupo.materias.length, 0)
 
     return (
         <>
@@ -113,7 +114,7 @@ export default function PlanDeEstudio() {
                     </div>
                     <div>
                         <dt>Plan</dt>
-                        <dd>{detalle.planOficial}</dd>
+                        <dd>{detalle.plan}</dd>
                     </div>
                     <div>
                         <dt>Ordenanza</dt>
@@ -125,7 +126,7 @@ export default function PlanDeEstudio() {
                     </div>
                     <div>
                         <dt>Materias</dt>
-                        <dd>{detalle.cantidadMaterias}</dd>
+                        <dd>{cantidadMaterias}</dd>
                     </div>
                 </dl>
                 <div className="plan-acciones">
@@ -145,13 +146,15 @@ export default function PlanDeEstudio() {
             </EncabezadoPagina>
 
             <section className="container-xl plan-page">
-                {detalle.materiasPorAnio.map((grupo) => (
-                    <MateriasDelAnio
-                        key={grupo.anio ?? 'sin-anio'}
-                        titulo={tituloDelGrupo(grupo.anio)}
-                        materias={grupo.materias}
-                    />
-                ))}
+                <div className="plan-materias">
+                    {detalle.materiasPorAnio.map((grupo) => (
+                        <MateriasDelAnio
+                            key={grupo.anio ?? 'sin-anio'}
+                            titulo={tituloDelGrupo(grupo.anio)}
+                            materias={grupo.materias}
+                        />
+                    ))}
+                </div>
             </section>
         </>
     )

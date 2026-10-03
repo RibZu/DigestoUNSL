@@ -5,6 +5,8 @@ import Home from '../features/home/Home.jsx'
 import Busqueda from '../features/busqueda/Busqueda.jsx'
 import Login from '../features/auth/login/Login.jsx'
 import Estadisticas from '../features/estadisticas/Estadisticas.jsx'
+import EstadisticasPrivadas from '../features/estadisticas-privadas/EstadisticasPrivadas.jsx'
+import Panel from '../features/panel/Panel.jsx'
 import Novedades from '../features/novedades/Novedades.jsx'
 import NormativaDetail from '../features/normativas/NormativaDetail.jsx'
 import Ayuda from '../features/ayuda/Ayuda.jsx'
@@ -26,11 +28,13 @@ const router = createBrowserRouter([
       { path: 'normativas/:id', element: <NormativaDetail /> },
       { path: 'concursos', element: <Concursos /> },
       { path: 'ayuda', element: <Ayuda /> },
+      { path: 'estadisticas', element: <Estadisticas /> },
       {
         path: 'login',
         children: [
           { index: true, element: <Login /> },
-          { path: 'estadisticas', element: <Estadisticas /> },
+          { path: 'estadisticas', element: <EstadisticasPrivadas /> },
+          { path: 'panel', element: <Panel /> },
         ],
       },
       { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
@@ -38,7 +42,7 @@ const router = createBrowserRouter([
 
       { path: 'alta', element: <AltaDocumento /> },
       { path: 'alta-documentos', element: <AltaDocumento /> },
-      { path: 'login', element: <Login /> },// implementar loader PENDIENTE
+      { path: 'login', element: <Login /> },
       { path: '*', element: <PaginaNoEncontrada /> },
     ],
   },

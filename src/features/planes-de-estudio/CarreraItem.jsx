@@ -9,7 +9,7 @@ export default function CarreraItem({ carrera }) {
                     <li key={plan.plan}>
                         <Link
                             className="carrera-item__plan btn btn-sm"
-                            to={`/planes-de-estudio/${carrera.codigo}/${plan.plan}`}
+                            to={`/planes-de-estudio/${carrera.codigo}/${plan.plan.replaceAll('/', '-')}`}
                             aria-label={`Plan ${plan.ordenanza} de ${carrera.nombre}`}
                         >
                             {plan.ordenanza}

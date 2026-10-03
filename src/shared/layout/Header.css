@@ -3,7 +3,7 @@
   inset: 0 0 auto 0;
   z-index: 1030;
   min-height: var(--alto-barra);
-  background-color: transparent;
+  background-color: var(--color-primario);
   backdrop-filter: blur(0);
   transition:
     background-color 300ms ease,
@@ -16,7 +16,11 @@
   padding-block: 0.25rem;
 }
 
-.digesto-header--solida {
+.digesto-header--transparente {
+  background-color: transparent;
+}
+
+.digesto-header--desplazada {
   background-color: rgb(30 41 77 / 0.95);
   backdrop-filter: blur(4px);
   box-shadow: var(--sombra-barra);
@@ -61,7 +65,7 @@
   outline-offset: 2px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .header-nav-list {
     padding-bottom: 0;
   }

@@ -1,6 +1,18 @@
 import mock from '../features/concursos/concursos.mock.json'
 
-const URL_RESOLUCION = 'http://digesto.unsl.edu.ar/busca_codigo.php3?var='
+const DATOS_FIJOS = {
+    fapsi: { ubicacion: 'San Luis', historica: false },
+    fcejs: { ubicacion: 'Villa Mercedes', historica: false },
+    fcfmn: { ubicacion: 'San Luis', historica: false },
+    fch: { ubicacion: 'San Luis', historica: false },
+    fcs: { ubicacion: 'San Luis', historica: false },
+    fica: { ubicacion: 'Villa Mercedes', historica: false },
+    fices: { ubicacion: 'Villa Mercedes', historica: true },
+    fqbf: { ubicacion: 'San Luis', historica: false },
+    ftu: { ubicacion: 'Merlo', historica: false },
+}
+
+const FECHA_DE_LA_API = /^(\d{2})\/(\d{2})\/(\d{2}|\d{4})$/
 
 function simularRespuesta(datos) {
     return new Promise((resolve) => {
@@ -15,42 +27,45 @@ function fechaLocalIso() {
     return `${ahora.getFullYear()}-${mes}-${dia}`
 }
 
-export function esVigente(llamado, hoy = fechaLocalIso()) {
-    return llamado.inscripcionHasta >= hoy
+function esLlamado(concurso) {
+    return concurso.cargo !== '' && concurso.resolucion !== ''
+}
+
+function convertirFecha(texto) {
+    const partes = FECHA_DE_LA_API.exec(texto)
+    if (partes === null) return null
+    const [, dia, mes, anio] = partes
+    return `${anio.length === 2 ? `20${anio}` : anio}-${mes}-${dia}`
+}
+
+function fechaDeCierre(concurso) {
+    return convertirFecha(concurso.inscripcion_hasta)
+}
+
+export function anioDeInscripcion(concurso) {
+    const fecha = convertirFecha(concurso.inscripcion_desde)
+    return fecha === null ? null : Number(fecha.slice(0, 4))
+}
+
+function esVigente(concurso, hoy = fechaLocalIso()) {
+    const cierre = fechaDeCierre(concurso)
+    return cierre !== null && cierre >= hoy
 }
 
 export function listarFacultades() {
-    return mock.dependencias
-        .filter((dependencia) => dependencia.esFacultad && !dependencia.historica)
-        .sort((a, b) => a.numero - b.numero)
-        .map(({ numero, sigla, nombre, ubicacion }) => ({ numero, sigla, nombre, ubicacion }))
+    return Object.entries(mock.facultades)
+        .filter(([codigo]) => !DATOS_FIJOS[codigo]?.historica)
+        .map(([codigo, nombre]) => ({
+            codigo,
+            nombre,
+            ubicacion: DATOS_FIJOS[codigo]?.ubicacion ?? null,
+        }))
+        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
 }
 
-export function unirConcursos() {
-    const documentos = new Map(
-        mock.documentos.filter((documento) => documento.baja === null).map((documento) => [documento.codigo, documento])
-    )
-    const departamentos = new Map(mock.departamentos.map((departamento) => [departamento.id, departamento]))
-    const areas = new Map(mock.areas.map((area) => [area.id, area]))
-
-    return mock.llamados
-        .filter((llamado) => documentos.has(llamado.documento))
-        .map((llamado) => {
-            const documento = documentos.get(llamado.documento)
-            return {
-                id: llamado.id,
-                facultad: documento.dependenciaEmisora,
-                departamento: departamentos.get(llamado.departamento).nombre,
-                area: areas.get(llamado.area).nombre,
-                cargo: llamado.cargo,
-                dedicacion: llamado.dedicacion,
-                caracter: llamado.caracter,
-                inscripcionDesde: llamado.inscripcionDesde,
-                inscripcionHasta: llamado.inscripcionHasta,
-                resolucion: documento.codigo,
-                resolucionUrl: `${URL_RESOLUCION}${documento.codigo}`,
-            }
-        })
+export function listarLlamados() {
+    const codigos = new Set(listarFacultades().map((facultad) => facultad.codigo))
+    return mock.concursos.filter((concurso) => esLlamado(concurso) && codigos.has(concurso.facultad))
 }
 
 export function obtenerFacultades() {
@@ -58,8 +73,8 @@ export function obtenerFacultades() {
 }
 
 export function obtenerConcursos() {
-    const vigentes = unirConcursos()
+    const vigentes = listarLlamados()
         .filter((concurso) => esVigente(concurso))
-        .sort((a, b) => a.inscripcionHasta.localeCompare(b.inscripcionHasta))
+        .sort((a, b) => fechaDeCierre(a).localeCompare(fechaDeCierre(b)))
     return simularRespuesta(vigentes)
 }

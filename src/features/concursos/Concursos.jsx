@@ -10,9 +10,20 @@ const CRITERIO_INICIAL = { texto: '', facultad: '', caracter: '', dedicacion: ''
 const ETIQUETAS_CRITERIO = {
     texto: (valor) => `Búsqueda: "${valor}"`,
     facultad: (valor, facultades) =>
-        facultades.find((facultad) => String(facultad.numero) === valor)?.nombre ?? `Facultad: ${valor}`,
+        facultades.find((facultad) => facultad.codigo === valor)?.nombre ?? `Facultad: ${valor}`,
     caracter: (valor) => `Carácter: ${valor}`,
     dedicacion: (valor) => `Dedicación: ${valor}`,
+}
+
+function claveDelConcurso(concurso) {
+    return [
+        concurso.resolucion,
+        concurso.departamento,
+        concurso.area,
+        concurso.cargo,
+        concurso.dedicacion,
+        concurso.caracter,
+    ].join('|')
 }
 
 function normalizarTexto(texto) {
@@ -29,7 +40,7 @@ function coincideConCriterio(concurso, criterio) {
 
     return (
         coincideTexto &&
-        (criterio.facultad === '' || String(concurso.facultad) === criterio.facultad) &&
+        (criterio.facultad === '' || concurso.facultad === criterio.facultad) &&
         (criterio.caracter === '' || concurso.caracter === criterio.caracter) &&
         (criterio.dedicacion === '' || concurso.dedicacion === criterio.dedicacion)
     )
@@ -94,11 +105,11 @@ export default function Concursos() {
         setAlternadas(new Set())
     }
 
-    function handleAlternarFacultad(numero) {
+    function handleAlternarFacultad(codigo) {
         setAlternadas((actuales) => {
             const siguientes = new Set(actuales)
-            if (siguientes.has(numero)) siguientes.delete(numero)
-            else siguientes.add(numero)
+            if (siguientes.has(codigo)) siguientes.delete(codigo)
+            else siguientes.add(codigo)
             return siguientes
         })
     }
@@ -135,11 +146,11 @@ export default function Concursos() {
 
     const concursosFiltrados = concursos.filter((concurso) => coincideConCriterio(concurso, criterio))
     const hayCriterioActivo = Object.values(criterio).some((valor) => valor !== '')
-    const estaAbierta = (numero) => hayCriterioActivo !== alternadas.has(numero)
+    const estaAbierta = (codigo) => hayCriterioActivo !== alternadas.has(codigo)
 
     const facultadesAMostrar = hayCriterioActivo
         ? facultades.filter((facultad) =>
-              concursosFiltrados.some((concurso) => concurso.facultad === facultad.numero)
+              concursosFiltrados.some((concurso) => concurso.facultad === facultad.codigo)
           )
         : facultades
 
@@ -190,8 +201,8 @@ export default function Concursos() {
                             onChange={handleFiltrosChange}
                         >
                             <option value="">Todas</option>
-                            {facultades.map(({ numero, nombre }) => (
-                                <option key={numero} value={numero}>
+                            {facultades.map(({ codigo, nombre }) => (
+                                <option key={codigo} value={codigo}>
                                     {nombre}
                                 </option>
                             ))}
@@ -275,21 +286,21 @@ export default function Concursos() {
                 <div className="concursos-page__facultades">
                     {facultadesAMostrar.map((facultad) => {
                         const concursosDeFacultad = concursosFiltrados.filter(
-                            (concurso) => concurso.facultad === facultad.numero
+                            (concurso) => concurso.facultad === facultad.codigo
                         )
                         return (
                             <Desplegable
-                                key={facultad.numero}
-                                id={`concursos-${facultad.numero}`}
+                                key={facultad.codigo}
+                                id={`concursos-${facultad.codigo}`}
                                 titulo={facultad.nombre}
                                 resumen={facultad.ubicacion}
-                                abierto={estaAbierta(facultad.numero)}
-                                onAlternar={() => handleAlternarFacultad(facultad.numero)}
+                                abierto={estaAbierta(facultad.codigo)}
+                                onAlternar={() => handleAlternarFacultad(facultad.codigo)}
                             >
                                 {concursosDeFacultad.length > 0 ? (
                                     <div className="concursos-page__lista">
                                         {concursosDeFacultad.map((concurso) => (
-                                            <ConcursoCard key={concurso.id} concurso={concurso} />
+                                            <ConcursoCard key={claveDelConcurso(concurso)} concurso={concurso} />
                                         ))}
                                     </div>
                                 ) : (

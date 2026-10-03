@@ -69,3 +69,16 @@
   border-top: 1px solid var(--border);
   padding-top: 1rem;
 }
+
+.login-form .form-control:user-invalid {
+  border-color: var(--bs-form-invalid-border-color);
+}
+
+.login-form .form-control:user-invalid:focus {
+  border-color: var(--bs-form-invalid-border-color);
+  box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
+}
+
+.login-form .form-control:user-invalid ~ .invalid-feedback {
+  display: block;
+}

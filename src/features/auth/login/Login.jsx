@@ -5,13 +5,13 @@ import './Login.css'
 
 export default function Login() {
   const navigate = useNavigate()
-  const [usuario, setUsuario] = useState('')
+  const [correo, setCorreo] = useState('')
   const [password, setPassword] = useState('')
   const [rememberMe, setRememberMe] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    navigate('/login/estadisticas', { replace: true })
+    navigate('/login/panel', { replace: true })
   }
 
   return (
@@ -24,17 +24,24 @@ export default function Login() {
         <div className="login-card">
           <form className="login-form" onSubmit={handleSubmit}>
             <div className="login-form-group">
-              <label htmlFor="usuario">Usuario o correo institucional</label>
+              <label htmlFor="correo">Correo electrónico</label>
               <input
-                type="text"
-                id="usuario"
+                type="email"
+                id="correo"
+                name="correo"
                 className="form-control"
-                placeholder="ejemplo@unsl.edu.ar"
+                placeholder="nombre@unsl.edu.ar"
                 autoComplete="username"
-                value={usuario}
-                onChange={(e) => setUsuario(e.target.value)}
+                autoCapitalize="none"
+                spellCheck={false}
+                maxLength={254}
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                title="Ingresá un correo con el formato nombre@dominio.com"
+                value={correo}
+                onChange={(e) => setCorreo(e.target.value)}
                 required
               />
+              <div className="invalid-feedback">Ingresá un correo válido, por ejemplo nombre@dominio.com.</div>
             </div>
 
             <div className="login-form-group">
@@ -42,13 +49,16 @@ export default function Login() {
               <input
                 type="password"
                 id="password"
+                name="password"
                 className="form-control"
                 placeholder="••••••••"
                 autoComplete="current-password"
+                maxLength={128}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <div className="invalid-feedback">Ingresá tu contraseña.</div>
             </div>
 
             <div className="login-options">

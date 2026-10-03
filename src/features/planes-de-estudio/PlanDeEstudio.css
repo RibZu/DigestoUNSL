@@ -40,9 +40,41 @@
     gap: 0.75rem;
 }
 
+.plan-materias {
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radio);
+}
+
+.plan-materias .materias-anio + .materias-anio {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
 .materias-anio__titulo {
-    margin: 0 0 0.75rem;
+    margin: 0 0 0.5rem;
+    font-size: var(--titulo-xs);
     color: var(--color-primario);
+}
+
+.plan-materias .materias-tabla {
+    font-size: var(--texto-sm);
+}
+
+.plan-materias .materias-tabla tbody tr {
+    margin-bottom: 0.5rem;
+}
+
+.plan-materias .materias-tabla tbody th,
+.plan-materias .materias-tabla tbody td {
+    padding: 0.375rem 0.6rem;
+    overflow-wrap: anywhere;
+}
+
+.plan-materias .materias-tabla tbody tr > * + * {
+    border-top: 1px solid var(--border);
 }
 
 .materias-tabla tbody .materias-tabla__fila--optativa {
@@ -51,15 +83,40 @@
 }
 
 @media (min-width: 768px) {
+    .plan-materias .materias-tabla {
+        table-layout: fixed;
+        width: 100%;
+    }
+
+    .materias-tabla__col-codigo {
+        width: 9rem;
+    }
+
+    .materias-tabla__col-periodo {
+        width: 10rem;
+    }
+
+    .plan-materias .materias-tabla thead th,
+    .plan-materias .materias-tabla tbody th,
+    .plan-materias .materias-tabla tbody td {
+        padding: 0.375rem 0.6rem;
+        border: 1px solid var(--border);
+    }
+
     .materias-tabla tbody .materias-tabla__fila--optativa {
         border-left: 0;
     }
 
     .materias-tabla tbody .materias-tabla__fila--optativa > :first-child {
-        border-left: 4px solid var(--color-violeta);
+        box-shadow: inset 4px 0 0 var(--color-violeta);
     }
 
     .plan-datos {
         grid-template-columns: repeat(5, minmax(0, 1fr));
     }
+}
+
+.plan-page .btn,
+.plan-acciones .btn {
+    --bs-btn-border-radius: var(--radio);
 }
