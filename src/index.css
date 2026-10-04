@@ -10,7 +10,6 @@
 :root {
   --color-primario: #1e294d;
   --color-primario-hover: #2a3766;
-  --color-marino-base: #262b45;
   --color-fondo: #f3f4f6;
   --color-pie: #f1f5f9;
   --color-celeste: #0088cc;
@@ -42,10 +41,10 @@
 
   --alto-barra: 4rem;
   --radio: 0.5rem;
-  --sombra:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   --sombra-barra:
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --sombra:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
   --bs-body-font-family: var(--fuente);
   --bs-body-color: var(--text-h);
@@ -128,7 +127,7 @@ p {
 }
 
 .btn {
-  --bs-btn-border-radius: 999px;
+  --bs-btn-border-radius: var(--radio);
   --bs-btn-font-weight: var(--peso-regular);
 }
 

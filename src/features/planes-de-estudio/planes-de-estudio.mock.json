@@ -10,9 +10,8 @@
           "nombre": "ANALISTA QUÍMICO",
           "planes": [
             {
-              "plan": "13-12",
-              "ordenanza": "13/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02011&plan=13/12&version=5&version_id=1126"
+              "plan": "13/12",
+              "ordenanza": "13/12"
             }
           ]
         },
@@ -21,9 +20,8 @@
           "nombre": "CARRERA DE INGRESO",
           "planes": [
             {
-              "plan": "01-11",
-              "ordenanza": "01/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02046&plan=01/11&version=1&version_id=749"
+              "plan": "01/11",
+              "ordenanza": "01/11"
             }
           ]
         },
@@ -32,14 +30,12 @@
           "nombre": "FARMACIA",
           "planes": [
             {
-              "plan": "18-24",
-              "ordenanza": "18/24",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02005&plan=18/24&version=1&version_id=1272"
+              "plan": "18/24",
+              "ordenanza": "18/24"
             },
             {
-              "plan": "19-13",
-              "ordenanza": "19/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02005&plan=19/13&version=9&version_id=872"
+              "plan": "19/13",
+              "ordenanza": "19/13"
             }
           ]
         },
@@ -48,14 +44,12 @@
           "nombre": "INGENIERÍA EN ALIMENTOS",
           "planes": [
             {
-              "plan": "12-23",
-              "ordenanza": "12/23",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02029&plan=12/23&version=2&version_id=1166"
+              "plan": "12/23",
+              "ordenanza": "12/23"
             },
             {
-              "plan": "38-11",
-              "ordenanza": "38/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02029&plan=38/11&version=9&version_id=874"
+              "plan": "38/11",
+              "ordenanza": "38/11"
             }
           ]
         },
@@ -64,9 +58,8 @@
           "nombre": "LICENCIATURA EN BIOLOGÍA MOLECULAR",
           "planes": [
             {
-              "plan": "15-14",
-              "ordenanza": "15/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02007&plan=15/14&version=12&version_id=1214"
+              "plan": "15/14",
+              "ordenanza": "15/14"
             }
           ]
         },
@@ -75,14 +68,12 @@
           "nombre": "LICENCIATURA EN BIOQUÍMICA",
           "planes": [
             {
-              "plan": "1-25",
-              "ordenanza": "1/25",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02010&plan=1/25&version=1&version_id=1269"
+              "plan": "1/25",
+              "ordenanza": "1/25"
             },
             {
-              "plan": "11-10",
-              "ordenanza": "11/10",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02010&plan=11/10&version=13&version_id=1316"
+              "plan": "11/10",
+              "ordenanza": "11/10"
             }
           ]
         },
@@ -91,9 +82,8 @@
           "nombre": "LICENCIATURA EN BIOTECNOLOGÍA",
           "planes": [
             {
-              "plan": "7-17",
-              "ordenanza": "7/17",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02014&plan=7/17&version=7&version_id=1192"
+              "plan": "7/17",
+              "ordenanza": "7/17"
             }
           ]
         },
@@ -102,9 +92,8 @@
           "nombre": "LICENCIATURA EN CIENCIA Y TECNOLOGÍA DE LOS ALIMENTOS",
           "planes": [
             {
-              "plan": "09-12",
-              "ordenanza": "09/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02013&plan=09/12&version=5&version_id=880"
+              "plan": "09/12",
+              "ordenanza": "09/12"
             }
           ]
         },
@@ -113,9 +102,8 @@
           "nombre": "LICENCIATURA EN CIENCIAS BIOLÓGICAS",
           "planes": [
             {
-              "plan": "8-13",
-              "ordenanza": "8/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02004&plan=8/13&version=12_1&version_id=1313"
+              "plan": "8/13",
+              "ordenanza": "8/13"
             }
           ]
         },
@@ -124,9 +112,8 @@
           "nombre": "LICENCIATURA EN HIGIENE Y SEGURIDAD EN EL TRABAJO - CICLO DE COMPLEMENTACIÓN CURRICULAR",
           "planes": [
             {
-              "plan": "6-21",
-              "ordenanza": "6/21",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02018&plan=6/21&version=2&version_id=1125"
+              "plan": "6/21",
+              "ordenanza": "6/21"
             }
           ]
         },
@@ -135,9 +122,8 @@
           "nombre": "LICENCIATURA EN QUÍMICA",
           "planes": [
             {
-              "plan": "12-21",
-              "ordenanza": "12/21",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02001&plan=12/21&version=1&version_id=853"
+              "plan": "12/21",
+              "ordenanza": "12/21"
             }
           ]
         },
@@ -146,9 +132,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN BIOLOGÍA",
           "planes": [
             {
-              "plan": "3-18",
-              "ordenanza": "3/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02036&plan=3/18&version=4&version_id=1296"
+              "plan": "3/18",
+              "ordenanza": "3/18"
             }
           ]
         },
@@ -157,9 +142,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN QUÍMICA",
           "planes": [
             {
-              "plan": "14-19",
-              "ordenanza": "14/19",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02031&plan=14/19&version=3&version_id=1205"
+              "plan": "14/19",
+              "ordenanza": "14/19"
             }
           ]
         },
@@ -168,9 +152,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN ESTERILIZACIÓN",
           "planes": [
             {
-              "plan": "11-18",
-              "ordenanza": "11/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02015&plan=11/18&version=3&version_id=913"
+              "plan": "11/18",
+              "ordenanza": "11/18"
             }
           ]
         },
@@ -179,9 +162,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN HIGIENE Y SEGURIDAD EN EL TRABAJO",
           "planes": [
             {
-              "plan": "8-18",
-              "ordenanza": "8/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02017&plan=8/18&version=3&version_id=875"
+              "plan": "8/18",
+              "ordenanza": "8/18"
             }
           ]
         },
@@ -190,9 +172,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN LABORATORIOS BIOLÓGICOS",
           "planes": [
             {
-              "plan": "15-12",
-              "ordenanza": "15/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=2&car=02016&plan=15/12&version=7&version_id=881"
+              "plan": "15/12",
+              "ordenanza": "15/12"
             }
           ]
         }
@@ -208,9 +189,8 @@
           "nombre": "INGENIERÍA ELECTRÓNICA CON ORIENTACIÓN EN SISTEMAS DIGITALES",
           "planes": [
             {
-              "plan": "6-24",
-              "ordenanza": "OCD-6/24",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03025&plan=6/24&version=1&version_id=1206"
+              "plan": "6/24",
+              "ordenanza": "OCD-6/24"
             }
           ]
         },
@@ -219,9 +199,8 @@
           "nombre": "INGENIERÍA EN COMPUTACIÓN",
           "planes": [
             {
-              "plan": "28-12",
-              "ordenanza": "28/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03062&plan=28/12&version=3&version_id=884"
+              "plan": "28/12",
+              "ordenanza": "28/12"
             }
           ]
         },
@@ -230,14 +209,12 @@
           "nombre": "INGENIERÍA EN INFORMÁTICA",
           "planes": [
             {
-              "plan": "26-12",
-              "ordenanza": "26/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03061&plan=26/12&version=7&version_id=330"
+              "plan": "26/12",
+              "ordenanza": "26/12"
             },
             {
-              "plan": "2-25",
-              "ordenanza": "OCD-2/25",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03061&plan=2/25&version=3&version_id=1253"
+              "plan": "2/25",
+              "ordenanza": "OCD-2/25"
             }
           ]
         },
@@ -246,14 +223,12 @@
           "nombre": "INGENIERÍA EN MINAS",
           "planes": [
             {
-              "plan": "6-15",
-              "ordenanza": "6/15",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=6/15&version=8&version_id=871"
+              "plan": "6/15",
+              "ordenanza": "6/15"
             },
             {
-              "plan": "11-23",
-              "ordenanza": "OCD-11/23",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03054&plan=11/23&version=1&version_id=878"
+              "plan": "11/23",
+              "ordenanza": "OCD-11/23"
             }
           ]
         },
@@ -262,9 +237,8 @@
           "nombre": "LICENCIATURA EN ANÁLISIS Y GESTIÓN DE DATOS",
           "planes": [
             {
-              "plan": "27-22",
-              "ordenanza": "OCS-27/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=16&car=16001&plan=27/22&version=2&version_id=614"
+              "plan": "27/22",
+              "ordenanza": "OCS-27/22"
             }
           ]
         },
@@ -273,14 +247,12 @@
           "nombre": "LICENCIATURA EN CIENCIAS DE LA COMPUTACIÓN",
           "planes": [
             {
-              "plan": "32-12",
-              "ordenanza": "32/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03003&plan=32/12&version=2&version_id=1309"
+              "plan": "32/12",
+              "ordenanza": "32/12"
             },
             {
-              "plan": "1-23",
-              "ordenanza": "OCD-1/23",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03003&plan=1/23&version=3&version_id=1248"
+              "plan": "1/23",
+              "ordenanza": "OCD-1/23"
             }
           ]
         },
@@ -289,9 +261,8 @@
           "nombre": "LICENCIATURA EN CIENCIAS GEOLÓGICAS",
           "planes": [
             {
-              "plan": "02-22",
-              "ordenanza": "02/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03004&plan=02/22&version=5&version_id=1115"
+              "plan": "02/22",
+              "ordenanza": "02/22"
             }
           ]
         },
@@ -300,9 +271,8 @@
           "nombre": "LICENCIATURA EN CIENCIAS MATEMÁTICAS",
           "planes": [
             {
-              "plan": "09-17",
-              "ordenanza": "09/17",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03002&plan=09/17&version=3&version_id=629"
+              "plan": "09/17",
+              "ordenanza": "09/17"
             }
           ]
         },
@@ -311,9 +281,8 @@
           "nombre": "LICENCIATURA EN MATEMÁTICA APLICADA",
           "planes": [
             {
-              "plan": "12-14",
-              "ordenanza": "12/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03058&plan=12/14&version=3&version_id=338"
+              "plan": "12/14",
+              "ordenanza": "12/14"
             }
           ]
         },
@@ -322,9 +291,8 @@
           "nombre": "PROFESORADO EN CIENCIAS DE LA COMPUTACIÓN",
           "planes": [
             {
-              "plan": "02-16",
-              "ordenanza": "02/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03024&plan=02/16&version=2&version_id=232"
+              "plan": "02/16",
+              "ordenanza": "02/16"
             }
           ]
         },
@@ -333,9 +301,8 @@
           "nombre": "PROFESORADO EN MATEMÁTICA",
           "planes": [
             {
-              "plan": "21-13",
-              "ordenanza": "21/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03060&plan=21/13&version=3&version_id=1198"
+              "plan": "21/13",
+              "ordenanza": "21/13"
             }
           ]
         },
@@ -344,9 +311,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN ELECTRÓNICA",
           "planes": [
             {
-              "plan": "15-13",
-              "ordenanza": "15/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUE&plan=15/13&version=1&version_id=178"
+              "plan": "15/13",
+              "ordenanza": "15/13"
             }
           ]
         },
@@ -355,9 +321,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN ENERGÍAS RENOVABLES",
           "planes": [
             {
-              "plan": "05-13",
-              "ordenanza": "05/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TER&plan=05/13&version=2&version_id=327"
+              "plan": "05/13",
+              "ordenanza": "05/13"
             }
           ]
         },
@@ -366,9 +331,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN EXPLOTACIÓN MINERA",
           "planes": [
             {
-              "plan": "14-13",
-              "ordenanza": "14/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TEM&plan=14/13&version=2&version_id=221"
+              "plan": "14/13",
+              "ordenanza": "14/13"
             }
           ]
         },
@@ -377,9 +341,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN FOTOGRAFÍA",
           "planes": [
             {
-              "plan": "15-15",
-              "ordenanza": "15/15",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03063&plan=15/15&version=4&version_id=866"
+              "plan": "15/15",
+              "ordenanza": "15/15"
             }
           ]
         },
@@ -388,9 +351,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN GEOINFORMÁTICA",
           "planes": [
             {
-              "plan": "09-13",
-              "ordenanza": "09/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03059&plan=09/13&version=3&version_id=340"
+              "plan": "09/13",
+              "ordenanza": "09/13"
             }
           ]
         },
@@ -399,9 +361,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN MINERÍA",
           "planes": [
             {
-              "plan": "4-20",
-              "ordenanza": "4/20",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUM&plan=4/20&version=4&version_id=1168"
+              "plan": "4/20",
+              "ordenanza": "4/20"
             }
           ]
         },
@@ -410,9 +371,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN OBRAS VIALES",
           "planes": [
             {
-              "plan": "01-18",
-              "ordenanza": "01/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TOV&plan=01/18&version=6&version_id=1234"
+              "plan": "01/18",
+              "ordenanza": "01/18"
             }
           ]
         },
@@ -421,9 +381,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN PROCESAMIENTO DE MINERALES",
           "planes": [
             {
-              "plan": "11-13",
-              "ordenanza": "11/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TPM&plan=11/13&version=3&version_id=333"
+              "plan": "11/13",
+              "ordenanza": "11/13"
             }
           ]
         },
@@ -432,9 +391,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN REDES DE COMPUTADORAS",
           "planes": [
             {
-              "plan": "12-15",
-              "ordenanza": "12/15",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03053&plan=12/15&version=3&version_id=1189"
+              "plan": "12/15",
+              "ordenanza": "12/15"
             }
           ]
         },
@@ -443,9 +401,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN TELECOMUNICACIONES",
           "planes": [
             {
-              "plan": "16-13",
-              "ordenanza": "16/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03TUT&plan=16/13&version=2&version_id=180"
+              "plan": "16/13",
+              "ordenanza": "16/13"
             }
           ]
         },
@@ -454,9 +411,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN TELEDETECCIÓN Y SISTEMAS DE INFORMACIÓN GEOGRÁFICA",
           "planes": [
             {
-              "plan": "13-22",
-              "ordenanza": "OCD-13/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03064&plan=13/22&version=2&version_id=627"
+              "plan": "13/22",
+              "ordenanza": "OCD-13/22"
             }
           ]
         },
@@ -465,9 +421,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN WEB",
           "planes": [
             {
-              "plan": "08-13",
-              "ordenanza": "08/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=3&car=03052&plan=08/13&version=1&version_id=174"
+              "plan": "08/13",
+              "ordenanza": "08/13"
             }
           ]
         }
@@ -483,9 +438,8 @@
           "nombre": "LICENCIATURA EN EDUCACION ESPECIAL-CICLO DE COMPLEMENTACION CURRICULAR",
           "planes": [
             {
-              "plan": "12-16",
-              "ordenanza": "12/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04061&plan=12/16&version=1&version_id=1105"
+              "plan": "12/16",
+              "ordenanza": "12/16"
             }
           ]
         },
@@ -494,9 +448,8 @@
           "nombre": "LICENCIATURA EN EDUCACIÓN INICIAL",
           "planes": [
             {
-              "plan": "10-11",
-              "ordenanza": "10/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04027&plan=10/11&version=2&version_id=1101"
+              "plan": "10/11",
+              "ordenanza": "10/11"
             }
           ]
         },
@@ -505,9 +458,8 @@
           "nombre": "PROFESORADO EN EDUCACION SECUNDARIA Y SUPERIOR EN LENGUA Y LITERATURA",
           "planes": [
             {
-              "plan": "02-13",
-              "ordenanza": "02/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04056&plan=02/13&version=1&version_id=1094"
+              "plan": "02/13",
+              "ordenanza": "02/13"
             }
           ]
         },
@@ -516,9 +468,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN EDUCACIÓN PRIMARIA",
           "planes": [
             {
-              "plan": "07-14",
-              "ordenanza": "07/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04059&plan=07/14&version=1&version_id=1095"
+              "plan": "07/14",
+              "ordenanza": "07/14"
             }
           ]
         },
@@ -527,9 +478,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN LETRAS",
           "planes": [
             {
-              "plan": "07-13",
-              "ordenanza": "07/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04058&plan=07/13&version=6&version_id=1202"
+              "plan": "07/13",
+              "ordenanza": "07/13"
             }
           ]
         },
@@ -538,9 +488,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN MÚSICA POPULAR LATINOAMERICANA",
           "planes": [
             {
-              "plan": "08-16",
-              "ordenanza": "08/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04060&plan=08/16&version=3&version_id=1250"
+              "plan": "08/16",
+              "ordenanza": "08/16"
             }
           ]
         },
@@ -549,9 +498,8 @@
           "nombre": "PROFESORADO UNIVERSITARIO EN TEATRO",
           "planes": [
             {
-              "plan": "09-16",
-              "ordenanza": "09/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04064&plan=09/16&version=1&version_id=1113"
+              "plan": "09/16",
+              "ordenanza": "09/16"
             }
           ]
         },
@@ -560,9 +508,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN PRODUCCIÓN MUSICAL",
           "planes": [
             {
-              "plan": "14-18",
-              "ordenanza": "14/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=4&car=04063&plan=14/18&version=2&version_id=1249"
+              "plan": "14/18",
+              "ordenanza": "14/18"
             }
           ]
         }
@@ -578,9 +525,8 @@
           "nombre": "Bromatología",
           "planes": [
             {
-              "plan": "08-11",
-              "ordenanza": "C.D.Nº008/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=36&plan=08/11&version=1"
+              "plan": "08/11",
+              "ordenanza": "C.D.Nº008/11"
             }
           ]
         },
@@ -589,9 +535,8 @@
           "nombre": "Ciclo de Licenciatura en Gestión de Instituciones Universitarias",
           "planes": [
             {
-              "plan": "09-11",
-              "ordenanza": "Ord.C.D.009/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=38&plan=09/11&version=2"
+              "plan": "09/11",
+              "ordenanza": "Ord.C.D.009/11"
             }
           ]
         },
@@ -600,9 +545,8 @@
           "nombre": "Ingeniería Química",
           "planes": [
             {
-              "plan": "24-12",
-              "ordenanza": "Ord.C.D.024/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=3&plan=24/12&version=1"
+              "plan": "24/12",
+              "ordenanza": "Ord.C.D.024/12"
             }
           ]
         },
@@ -611,9 +555,8 @@
           "nombre": "Ingeniería Electromecánica",
           "planes": [
             {
-              "plan": "20-12",
-              "ordenanza": "Ord.C.D.020/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=2&plan=20/12&version=1"
+              "plan": "20/12",
+              "ordenanza": "Ord.C.D.020/12"
             }
           ]
         },
@@ -622,9 +565,8 @@
           "nombre": "Ingeniería Electrónica",
           "planes": [
             {
-              "plan": "19-12",
-              "ordenanza": "OrdC.D.Nº019/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=23&plan=19/12&version=1"
+              "plan": "19/12",
+              "ordenanza": "OrdC.D.Nº019/12"
             }
           ]
         },
@@ -633,9 +575,8 @@
           "nombre": "Ingeniería Industrial",
           "planes": [
             {
-              "plan": "21-12",
-              "ordenanza": "Ord.CD.Nº021/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=8&plan=21/12&version=1"
+              "plan": "21/12",
+              "ordenanza": "Ord.CD.Nº021/12"
             }
           ]
         },
@@ -644,9 +585,8 @@
           "nombre": "Ingeniería Mecatrónica",
           "planes": [
             {
-              "plan": "22-12",
-              "ordenanza": "Ord.C.D. 022/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=37&plan=22/12&version=1"
+              "plan": "22/12",
+              "ordenanza": "Ord.C.D. 022/12"
             }
           ]
         },
@@ -655,9 +595,8 @@
           "nombre": "Ingeniería en Alimentos",
           "planes": [
             {
-              "plan": "23-12",
-              "ordenanza": "Ord.C.D.023/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=14&plan=23/12&version=1"
+              "plan": "23/12",
+              "ordenanza": "Ord.C.D.023/12"
             }
           ]
         },
@@ -666,9 +605,8 @@
           "nombre": "Licenciatura en Administración Pública",
           "planes": [
             {
-              "plan": "13-10",
-              "ordenanza": "C.D.013/10",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=18&plan=13/10&version=2"
+              "plan": "13/10",
+              "ordenanza": "C.D.013/10"
             }
           ]
         },
@@ -677,9 +615,8 @@
           "nombre": "Licenciatura en Trabajo Social",
           "planes": [
             {
-              "plan": "24-11",
-              "ordenanza": "Ord.C.D.024/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=5&plan=24/11&version=3"
+              "plan": "24/11",
+              "ordenanza": "Ord.C.D.024/11"
             }
           ]
         },
@@ -688,9 +625,8 @@
           "nombre": "Tecnicatura Universitaria en Gestión Financiera",
           "planes": [
             {
-              "plan": "15-12",
-              "ordenanza": "Ord. CD 015/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=40&plan=15/12&version=1"
+              "plan": "15/12",
+              "ordenanza": "Ord. CD 015/12"
             }
           ]
         },
@@ -699,9 +635,8 @@
           "nombre": "Técnico Universitario en Producción Apícola",
           "planes": [
             {
-              "plan": "01-11",
-              "ordenanza": "001/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car&fac=5&car=29&plan=01/11&version=1"
+              "plan": "01/11",
+              "ordenanza": "001/11"
             }
           ]
         }
@@ -717,9 +652,8 @@
           "nombre": "DIPLOMATURA EN ENSEÑANZA DEL ESPAÑOL COMO LENGUA SEGUNDA Y EXTRANJERA (ELSE)",
           "planes": [
             {
-              "plan": "16-11",
-              "ordenanza": "16/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06030&plan=16/11&version=1&version_id=366"
+              "plan": "16/11",
+              "ordenanza": "16/11"
             }
           ]
         },
@@ -728,9 +662,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN GESTIÓN DE ORGANIZACIONES DEPORTIVAS",
           "planes": [
             {
-              "plan": "1-18",
-              "ordenanza": "1/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06086&plan=1/18&version=2&version_id=386"
+              "plan": "1/18",
+              "ordenanza": "1/18"
             }
           ]
         },
@@ -739,9 +672,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN SONORIZACIÓN",
           "planes": [
             {
-              "plan": "24-10",
-              "ordenanza": "24/10",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06083&plan=24/10&version=2&version_id=361"
+              "plan": "24/10",
+              "ordenanza": "24/10"
             }
           ]
         },
@@ -750,9 +682,8 @@
           "nombre": "TECNICATURA EN ADMINISTRACION Y GESTIÓN DE INSTITUCIONES UNIVERSITARIAS",
           "planes": [
             {
-              "plan": "49-18",
-              "ordenanza": "49/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06079&plan=49/18&version=14&version_id=1167"
+              "plan": "49/18",
+              "ordenanza": "49/18"
             }
           ]
         },
@@ -761,9 +692,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN ADMINISTRACIÓN Y GESTIÓN JUDICIAL",
           "planes": [
             {
-              "plan": "15-18",
-              "ordenanza": "15/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06085&plan=15/18&version=3&version_id=896"
+              "plan": "15/18",
+              "ordenanza": "15/18"
             }
           ]
         },
@@ -772,9 +702,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN FOTOGRAFIA",
           "planes": [
             {
-              "plan": "15-15",
-              "ordenanza": "15/15",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06084&plan=15/15&version=2&version_id=382"
+              "plan": "15/15",
+              "ordenanza": "15/15"
             }
           ]
         },
@@ -783,9 +712,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN SECRETARIADO EJECUTIVO (M.D.)",
           "planes": [
             {
-              "plan": "18-16",
-              "ordenanza": "18/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=6&car=06007&plan=18/16&version=18/16-3&version_id=879"
+              "plan": "18/16",
+              "ordenanza": "18/16"
             }
           ]
         }
@@ -801,9 +729,8 @@
           "nombre": "LICENCIATURA EN ENFERMERÍA",
           "planes": [
             {
-              "plan": "2-18",
-              "ordenanza": "2/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10041&plan=2/18&version=19&version_id=1298"
+              "plan": "2/18",
+              "ordenanza": "2/18"
             }
           ]
         },
@@ -812,14 +739,12 @@
           "nombre": "LICENCIATURA EN FONOAUDIOLOGÍA",
           "planes": [
             {
-              "plan": "1-18",
-              "ordenanza": "1/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10007&plan=1/18&version=15&version_id=1175"
+              "plan": "1/18",
+              "ordenanza": "1/18"
             },
             {
-              "plan": "1-2024",
-              "ordenanza": "OCD-1/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10007&plan=1/2024&version=6&version_id=1301"
+              "plan": "1/2024",
+              "ordenanza": "OCD-1/2024"
             }
           ]
         },
@@ -828,9 +753,8 @@
           "nombre": "LICENCIATURA EN KINESIOLOGÍA Y FISIATRÍA",
           "planes": [
             {
-              "plan": "11-13",
-              "ordenanza": "11/13",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=10&car=10043&plan=11/13&version=25&version_id=1300"
+              "plan": "11/13",
+              "ordenanza": "11/13"
             }
           ]
         }
@@ -846,9 +770,8 @@
           "nombre": "GUÍA UNIVERSITARIO DE TURISMO",
           "planes": [
             {
-              "plan": "18-2024",
-              "ordenanza": "18/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11080&plan=18/2024&version=2&version_id=1275"
+              "plan": "18/2024",
+              "ordenanza": "18/2024"
             }
           ]
         },
@@ -857,9 +780,8 @@
           "nombre": "LICENCIATURA EN GESTIÓN PARA EL DESARROLLO URBANO Y REGIONAL",
           "planes": [
             {
-              "plan": "49-19",
-              "ordenanza": "49/19",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11085&plan=49/19&version=2&version_id=904"
+              "plan": "49/19",
+              "ordenanza": "49/19"
             }
           ]
         },
@@ -868,9 +790,8 @@
           "nombre": "LICENCIATURA EN HOTELERIA",
           "planes": [
             {
-              "plan": "2-14",
-              "ordenanza": "2/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11082&plan=2/14&version=6&version_id=1162"
+              "plan": "2/14",
+              "ordenanza": "2/14"
             }
           ]
         },
@@ -879,9 +800,8 @@
           "nombre": "LICENCIATURA EN TURISMO",
           "planes": [
             {
-              "plan": "3-14",
-              "ordenanza": "3/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=11&car=11083&plan=3/14&version=6&version_id=901"
+              "plan": "3/14",
+              "ordenanza": "3/14"
             }
           ]
         }
@@ -897,9 +817,8 @@
           "nombre": "LICENCIATURA EN PSICOLOGÍA",
           "planes": [
             {
-              "plan": "12-14",
-              "ordenanza": "12/14",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=12&car=12002&plan=12/14&version=8&version_id=1320"
+              "plan": "12/14",
+              "ordenanza": "12/14"
             }
           ]
         },
@@ -908,9 +827,8 @@
           "nombre": "LICENCIATURA EN PSICOMOTRICIDAD",
           "planes": [
             {
-              "plan": "03-16",
-              "ordenanza": "03/16",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=12&car=12010&plan=03/16&version=7&version_id=1319"
+              "plan": "03/16",
+              "ordenanza": "03/16"
             }
           ]
         }
@@ -926,14 +844,12 @@
           "nombre": "BROMATOLOGÍA",
           "planes": [
             {
-              "plan": "08-11",
-              "ordenanza": "08/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14036&plan=08/11&version=4&version_id=1239"
+              "plan": "08/11",
+              "ordenanza": "08/11"
             },
             {
-              "plan": "25-2024",
-              "ordenanza": "25/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14036&plan=25/2024&version=3&version_id=1290"
+              "plan": "25/2024",
+              "ordenanza": "25/2024"
             }
           ]
         },
@@ -942,9 +858,8 @@
           "nombre": "INGENIERÍA AGRONÓMICA",
           "planes": [
             {
-              "plan": "1-2024",
-              "ordenanza": "1/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14001&plan=1/2024&version=11&version_id=1304"
+              "plan": "1/2024",
+              "ordenanza": "1/2024"
             }
           ]
         },
@@ -953,9 +868,8 @@
           "nombre": "INGENIERÍA ELECTROMECÁNICA",
           "planes": [
             {
-              "plan": "25-22",
-              "ordenanza": "25/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14002&plan=25/22&version=10&version_id=1306"
+              "plan": "25/22",
+              "ordenanza": "25/22"
             }
           ]
         },
@@ -964,9 +878,8 @@
           "nombre": "INGENIERÍA ELECTRÓNICA",
           "planes": [
             {
-              "plan": "23-22",
-              "ordenanza": "23/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14023&plan=23/22&version=11&version_id=1295"
+              "plan": "23/22",
+              "ordenanza": "23/22"
             }
           ]
         },
@@ -975,9 +888,8 @@
           "nombre": "INGENIERÍA EN ALIMENTOS",
           "planes": [
             {
-              "plan": "22-22",
-              "ordenanza": "22/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14014&plan=22/22&version=9&version_id=1311"
+              "plan": "22/22",
+              "ordenanza": "22/22"
             }
           ]
         },
@@ -986,9 +898,8 @@
           "nombre": "INGENIERÍA INDUSTRIAL",
           "planes": [
             {
-              "plan": "20-22",
-              "ordenanza": "20/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14008&plan=20/22&version=9&version_id=1276"
+              "plan": "20/22",
+              "ordenanza": "20/22"
             }
           ]
         },
@@ -997,9 +908,8 @@
           "nombre": "INGENIERÍA MECATRÓNICA",
           "planes": [
             {
-              "plan": "19-22",
-              "ordenanza": "19/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14037&plan=19/22&version=14&version_id=1321"
+              "plan": "19/22",
+              "ordenanza": "19/22"
             }
           ]
         },
@@ -1008,9 +918,8 @@
           "nombre": "INGENIERÍA QUÍMICA",
           "planes": [
             {
-              "plan": "21-22",
-              "ordenanza": "21/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14003&plan=21/22&version=13&version_id=1240"
+              "plan": "21/22",
+              "ordenanza": "21/22"
             }
           ]
         },
@@ -1019,14 +928,12 @@
           "nombre": "LICENCIATURA EN BROMATOLOGÍA",
           "planes": [
             {
-              "plan": "23-2024",
-              "ordenanza": "23/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14040&plan=23/2024&version=3&version_id=1286"
+              "plan": "23/2024",
+              "ordenanza": "23/2024"
             },
             {
-              "plan": "6-21",
-              "ordenanza": "6/21",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14040&plan=6/21&version=3&version_id=1222"
+              "plan": "6/21",
+              "ordenanza": "6/21"
             }
           ]
         },
@@ -1035,9 +942,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN APICULTURA",
           "planes": [
             {
-              "plan": "01-11",
-              "ordenanza": "01/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14029&plan=01/11&version=1&version_id=447"
+              "plan": "01/11",
+              "ordenanza": "01/11"
             }
           ]
         },
@@ -1046,9 +952,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN MANTENIMIENTO INDUSTRIAL",
           "planes": [
             {
-              "plan": "15-2024",
-              "ordenanza": "15/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=14&car=14009&plan=15/2024&version=1&version_id=1231"
+              "plan": "15/2024",
+              "ordenanza": "15/2024"
             }
           ]
         }
@@ -1064,9 +969,8 @@
           "nombre": "ABOGACÍA",
           "planes": [
             {
-              "plan": "8-18",
-              "ordenanza": "8/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15035&plan=8/18&version=6&version_id=1302"
+              "plan": "8/18",
+              "ordenanza": "8/18"
             }
           ]
         },
@@ -1075,9 +979,8 @@
           "nombre": "CICLO DE LICENCIATURA EN GESTIÓN DE INSTITUCIONES UNIVERSITARIAS",
           "planes": [
             {
-              "plan": "09-11",
-              "ordenanza": "09/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15038&plan=09/11&version=2&version_id=275"
+              "plan": "09/11",
+              "ordenanza": "09/11"
             }
           ]
         },
@@ -1086,9 +989,8 @@
           "nombre": "CONTADOR PÚBLICO NACIONAL",
           "planes": [
             {
-              "plan": "11-18",
-              "ordenanza": "11/18",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15007&plan=11/18&version=8&version_id=1220"
+              "plan": "11/18",
+              "ordenanza": "11/18"
             }
           ]
         },
@@ -1097,9 +999,8 @@
           "nombre": "LICENCIATURA EN ACOMPAÑAMIENTO TERAPÉUTICO, CICLO DE COMPLEMENTACIÓN CURRICULAR.",
           "planes": [
             {
-              "plan": "53-2022",
-              "ordenanza": "OCS 53/2022",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15043&plan=53/2022&version=2&version_id=1273"
+              "plan": "53/2022",
+              "ordenanza": "OCS 53/2022"
             }
           ]
         },
@@ -1108,9 +1009,8 @@
           "nombre": "LICENCIATURA EN ADMINISTRACIÓN",
           "planes": [
             {
-              "plan": "07-19",
-              "ordenanza": "07/19",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15004&plan=07/19&version=6&version_id=1292"
+              "plan": "07/19",
+              "ordenanza": "07/19"
             }
           ]
         },
@@ -1119,9 +1019,8 @@
           "nombre": "LICENCIATURA EN ADMINISTRACIÓN PÚBLICA",
           "planes": [
             {
-              "plan": "13-10",
-              "ordenanza": "13/10",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15018&plan=13/10&version=3&version_id=624"
+              "plan": "13/10",
+              "ordenanza": "13/10"
             }
           ]
         },
@@ -1130,9 +1029,8 @@
           "nombre": "LICENCIATURA EN ADMINISTRACIÓN Y GESTIÓN DE INSTITUCIONES UNIVERSITARIAS, CICLO DE COMPLEMENTACIÓN CURRICULAR.",
           "planes": [
             {
-              "plan": "08-2021",
-              "ordenanza": "OCS 08/2021",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15044&plan=08/2021&version=3&version_id=1263"
+              "plan": "08/2021",
+              "ordenanza": "OCS 08/2021"
             }
           ]
         },
@@ -1141,9 +1039,8 @@
           "nombre": "LICENCIATURA EN ANÁLISIS Y GESTIÓN DE DATOS",
           "planes": [
             {
-              "plan": "27-22",
-              "ordenanza": "OCS-27/22",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=16&car=16001&plan=27/22&version=2&version_id=614"
+              "plan": "27/22",
+              "ordenanza": "OCS-27/22"
             }
           ]
         },
@@ -1152,9 +1049,8 @@
           "nombre": "LICENCIATURA EN SEGURIDAD PÚBLICA, CICLO DE COMPLEMENTACIÓN CURRICULAR",
           "planes": [
             {
-              "plan": "46-2024",
-              "ordenanza": "OCS 46/2024",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15045&plan=46/2024&version=2&version_id=1317"
+              "plan": "46/2024",
+              "ordenanza": "OCS 46/2024"
             }
           ]
         },
@@ -1163,9 +1059,8 @@
           "nombre": "LICENCIATURA EN TRABAJO SOCIAL",
           "planes": [
             {
-              "plan": "24-11",
-              "ordenanza": "24/11",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15005&plan=24/11&version=13&version_id=1318"
+              "plan": "24/11",
+              "ordenanza": "24/11"
             }
           ]
         },
@@ -1174,9 +1069,8 @@
           "nombre": "MARTILLERO Y CORREDOR PÚBLICO",
           "planes": [
             {
-              "plan": "11-15",
-              "ordenanza": "11/15",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15042&plan=11/15&version=1&version_id=292"
+              "plan": "11/15",
+              "ordenanza": "11/15"
             }
           ]
         },
@@ -1185,9 +1079,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN ACOMPAÑAMIENTO TERAPÉUTICO",
           "planes": [
             {
-              "plan": "8-20",
-              "ordenanza": "8/20",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15041&plan=8/20&version=2&version_id=1303"
+              "plan": "8/20",
+              "ordenanza": "8/20"
             }
           ]
         },
@@ -1196,9 +1089,8 @@
           "nombre": "TECNICATURA UNIVERSITARIA EN GESTIÓN FINANCIERA",
           "planes": [
             {
-              "plan": "15-12",
-              "ordenanza": "15/12",
-              "url": "http://planesestudio.unsl.edu.ar/index.php?action=car_g3&fac=15&car=15040&plan=15/12&version=2&version_id=289"
+              "plan": "15/12",
+              "ordenanza": "15/12"
             }
           ]
         }

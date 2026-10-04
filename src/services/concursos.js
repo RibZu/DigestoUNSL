@@ -1,65 +1,88 @@
 import mock from '../features/concursos/concursos.mock.json'
 
-const URL_RESOLUCION = 'http://digesto.unsl.edu.ar/busca_codigo.php3?var='
-
-function simularRespuesta(datos) {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(datos), 100)
-    })
+const CIUDADES = {
+    fapsi: 'San Luis',
+    fcejs: 'Villa Mercedes',
+    fcfmn: 'San Luis',
+    fch: 'San Luis',
+    fcs: 'San Luis',
+    fica: 'Villa Mercedes',
+    fqbf: 'San Luis',
+    ftu: 'Merlo',
 }
 
-function fechaLocalIso() {
+const FECHA_DE_LA_API = /^(\d{2})\/(\d{2})\/(\d{2}|\d{4})$/
+
+function fechaDeHoy() {
     const ahora = new Date()
     const mes = String(ahora.getMonth() + 1).padStart(2, '0')
     const dia = String(ahora.getDate()).padStart(2, '0')
     return `${ahora.getFullYear()}-${mes}-${dia}`
 }
 
-export function esVigente(llamado, hoy = fechaLocalIso()) {
-    return llamado.inscripcionHasta >= hoy
+function convertirFecha(texto) {
+    const partes = FECHA_DE_LA_API.exec(texto)
+    if (partes === null) return null
+    const [, dia, mes, anio] = partes
+    return `${anio.length === 2 ? `20${anio}` : anio}-${mes}-${dia}`
 }
 
-export function listarFacultades() {
-    return mock.dependencias
-        .filter((dependencia) => dependencia.esFacultad && !dependencia.historica)
-        .sort((a, b) => a.numero - b.numero)
-        .map(({ numero, sigla, nombre, ubicacion }) => ({ numero, sigla, nombre, ubicacion }))
-}
-
-export function unirConcursos() {
-    const documentos = new Map(
-        mock.documentos.filter((documento) => documento.baja === null).map((documento) => [documento.codigo, documento])
+function inicioDelConcurso(concurso) {
+    return concurso.llamados.reduce(
+        (inicio, llamado) => (llamado.inscripcionDesde > inicio ? llamado.inscripcionDesde : inicio),
+        ''
     )
-    const departamentos = new Map(mock.departamentos.map((departamento) => [departamento.id, departamento]))
-    const areas = new Map(mock.areas.map((area) => [area.id, area]))
+}
 
-    return mock.llamados
-        .filter((llamado) => documentos.has(llamado.documento))
-        .map((llamado) => {
-            const documento = documentos.get(llamado.documento)
-            return {
-                id: llamado.id,
-                facultad: documento.dependenciaEmisora,
-                departamento: departamentos.get(llamado.departamento).nombre,
-                area: areas.get(llamado.area).nombre,
-                cargo: llamado.cargo,
-                dedicacion: llamado.dedicacion,
-                caracter: llamado.caracter,
-                inscripcionDesde: llamado.inscripcionDesde,
-                inscripcionHasta: llamado.inscripcionHasta,
-                resolucion: documento.codigo,
-                resolucionUrl: `${URL_RESOLUCION}${documento.codigo}`,
-            }
-        })
+export function estaVigente(llamado) {
+    return Boolean(llamado.inscripcionHasta) && llamado.inscripcionHasta >= fechaDeHoy()
 }
 
 export function obtenerFacultades() {
-    return simularRespuesta(listarFacultades())
+    return Object.entries(mock.facultades)
+        .filter(([codigo]) => codigo in CIUDADES)
+        .map(([codigo, nombre]) => ({ codigo, nombre, ubicacion: CIUDADES[codigo] }))
+        .sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'))
 }
 
-export function obtenerConcursos() {
-    const vigentes = unirConcursos()
-        .filter((concurso) => esVigente(concurso))
+export function obtenerLlamados() {
+    return mock.concursos
+        .map((fila, posicion) => ({
+            id: `${fila.resolucion}#${posicion}`,
+            facultad: fila.facultad,
+            departamento: fila.departamento,
+            area: fila.area,
+            cargo: fila.cargo,
+            dedicacion: fila.dedicacion,
+            caracter: fila.caracter,
+            resolucion: fila.resolucion,
+            inscripcionDesde: convertirFecha(fila.inscripcion_desde),
+            inscripcionHasta: convertirFecha(fila.inscripcion_hasta),
+        }))
+        .filter((llamado) => llamado.cargo !== '' && llamado.resolucion !== '' && llamado.facultad in CIUDADES)
+}
+
+export function obtenerConcursosVigentes() {
+    return obtenerLlamados()
+        .filter(estaVigente)
         .sort((a, b) => a.inscripcionHasta.localeCompare(b.inscripcionHasta))
-    return simularRespuesta(vigentes)
+}
+
+export function obtenerConcursosCargados() {
+    const porResolucion = new Map()
+
+    for (const llamado of obtenerLlamados()) {
+        const concurso = porResolucion.get(llamado.resolucion) ?? {
+            id: llamado.resolucion,
+            codigo: llamado.resolucion,
+            dependencia: llamado.facultad,
+            llamados: [],
+        }
+        concurso.llamados.push(llamado)
+        porResolucion.set(llamado.resolucion, concurso)
+    }
+
+    return [...porResolucion.values()].sort(
+        (a, b) => inicioDelConcurso(b).localeCompare(inicioDelConcurso(a)) || a.codigo.localeCompare(b.codigo, 'es')
+    )
 }
