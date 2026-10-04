@@ -1,4 +1,4 @@
-const SIN_DATO = '—'
+import { SIN_DATO } from '../../shared/utils/formato.js'
 
 export default function MateriasDelAnio({ titulo, materias }) {
     return (
@@ -20,10 +20,7 @@ export default function MateriasDelAnio({ titulo, materias }) {
                 </thead>
                 <tbody>
                     {materias.map((materia) => (
-                        <tr
-                            key={materia.codigo}
-                            className={materia.optativa ? 'materias-tabla__fila--optativa' : undefined}
-                        >
+                        <tr key={materia.codigo}>
                             <td data-label="Código">{materia.codigo}</td>
                             <th scope="row" data-label="Materia">
                                 {materia.nombre}

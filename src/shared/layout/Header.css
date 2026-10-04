@@ -32,6 +32,7 @@
 }
 
 .digesto-header .navbar-toggler {
+  --bs-navbar-toggler-border-radius: var(--radio);
   min-width: 2.75rem;
   min-height: 2.75rem;
 }

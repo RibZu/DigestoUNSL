@@ -1,239 +1,92 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
 import Desplegable from '../../shared/ui/Desplegable'
+import Filtros from '../../shared/ui/Filtros'
+import MensajeVacio from '../../shared/ui/MensajeVacio'
 import CarreraItem from './CarreraItem'
-import { obtenerPlanesDeEstudio } from '../../services/planesDeEstudio.js'
+import { obtenerPlanesDeEstudio, SITIO_PLANES_DE_ESTUDIO } from '../../services/planesDeEstudio.js'
+import { alternar, contieneTexto, tieneValores } from '../../shared/utils/listas.js'
 import './PlanesDeEstudio.css'
 
-const SITIO_OFICIAL = 'http://planesestudio.unsl.edu.ar/'
+const CRITERIO_VACIO = { texto: '', facultad: '' }
 
-function normalizarTexto(valor) {
-    return valor.toLocaleLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
-}
-
-function coincideTexto(carrera, textoNormalizado) {
-    return (
-        textoNormalizado === '' ||
-        normalizarTexto(carrera.nombre).includes(textoNormalizado) ||
-        carrera.planes.some((plan) => normalizarTexto(plan.ordenanza).includes(textoNormalizado))
-    )
+function filtrarFacultades(facultades, criterio) {
+    return facultades
+        .filter((facultad) => criterio.facultad === '' || facultad.codigo === criterio.facultad)
+        .map((facultad) => ({
+            ...facultad,
+            carreras: facultad.carreras.filter((carrera) =>
+                contieneTexto([carrera.nombre, ...carrera.planes.map((plan) => plan.ordenanza)], criterio.texto)
+            ),
+        }))
+        .filter((facultad) => facultad.carreras.length > 0)
 }
 
 export default function PlanesDeEstudio() {
-    const [estado, setEstado] = useState('cargando')
-    const [facultades, setFacultades] = useState([])
-    const [texto, setTexto] = useState('')
-    const [facultad, setFacultad] = useState('')
-    const [alternadas, setAlternadas] = useState(() => new Set())
-    const [intento, setIntento] = useState(0)
+    const [criterio, setCriterio] = useState(CRITERIO_VACIO)
+    const [abiertas, setAbiertas] = useState([])
+    const facultades = obtenerPlanesDeEstudio()
+    const visibles = filtrarFacultades(facultades, criterio)
 
-    useEffect(() => {
-        let ignorar = false
-
-        async function cargar() {
-            try {
-                const facultadesRecibidas = await obtenerPlanesDeEstudio()
-                if (ignorar) return
-                setFacultades(facultadesRecibidas)
-                setEstado('listo')
-            } catch {
-                if (!ignorar) setEstado('error')
-            }
-        }
-
-        cargar()
-        return () => {
-            ignorar = true
-        }
-    }, [intento])
-
-    function handleReintentar() {
-        setEstado('cargando')
-        setIntento((anterior) => anterior + 1)
+    function handleAplicar(nuevo) {
+        setCriterio(nuevo)
+        setAbiertas(tieneValores(nuevo) ? filtrarFacultades(facultades, nuevo).map((facultad) => facultad.codigo) : [])
     }
 
-    function handleTextoChange(e) {
-        setTexto(e.target.value)
-        setAlternadas(new Set())
+    function handleAlternar(codigo) {
+        setAbiertas(alternar(abiertas, codigo))
     }
-
-    function handleFacultadChange(e) {
-        setFacultad(e.target.value)
-        setAlternadas(new Set())
-    }
-
-    function handleLimpiarFiltros() {
-        setTexto('')
-        setFacultad('')
-        setAlternadas(new Set())
-    }
-
-    function handleQuitarTexto() {
-        setTexto('')
-        setAlternadas(new Set())
-    }
-
-    function handleQuitarFacultad() {
-        setFacultad('')
-        setAlternadas(new Set())
-    }
-
-    function handleAlternarFacultad(codigo) {
-        setAlternadas((actuales) => {
-            const nuevas = new Set(actuales)
-            if (nuevas.has(codigo)) {
-                nuevas.delete(codigo)
-            } else {
-                nuevas.add(codigo)
-            }
-            return nuevas
-        })
-    }
-
-    if (estado === 'cargando') {
-        return (
-            <>
-                <EncabezadoPagina titulo="Planes de estudio" />
-                <section className="container-xl planes-page">
-                    <div className="d-flex align-items-center gap-2" role="status">
-                        <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
-                        <span>Cargando planes de estudio...</span>
-                    </div>
-                </section>
-            </>
-        )
-    }
-
-    if (estado === 'error') {
-        return (
-            <>
-                <EncabezadoPagina titulo="Planes de estudio" />
-                <section className="container-xl planes-page">
-                    <div className="alert alert-danger mb-0" role="alert">
-                        No se pudieron cargar los planes de estudio.
-                    </div>
-                    <button type="button" className="btn btn-primary align-self-start" onClick={handleReintentar}>
-                        Reintentar
-                    </button>
-                </section>
-            </>
-        )
-    }
-
-    const textoNormalizado = normalizarTexto(texto.trim())
-    const hayCriterioActivo = texto.trim() !== '' || facultad !== ''
-    const estaAbierta = (codigo) => hayCriterioActivo !== alternadas.has(codigo)
-
-    const facultadesVisibles = facultades
-        .filter((f) => facultad === '' || f.codigo === facultad)
-        .map((f) => ({ ...f, carreras: f.carreras.filter((c) => coincideTexto(c, textoNormalizado)) }))
-        .filter((f) => f.carreras.length > 0)
-
-    const nombreFacultadElegida = facultades.find((f) => f.codigo === facultad)?.nombre
 
     return (
         <>
             <EncabezadoPagina titulo="Planes de estudio">
                 <p>Planes de estudio vigentes de cada carrera, agrupados por facultad</p>
-                <a className="btn btn-light planes-page__sitio-oficial" href={SITIO_OFICIAL} target="_blank" rel="noreferrer">
+                <a
+                    className="btn btn-light planes-page__sitio-oficial"
+                    href={SITIO_PLANES_DE_ESTUDIO}
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     ¿No encontrás tu plan? Consultá todos los planes en el sitio oficial
                 </a>
             </EncabezadoPagina>
 
-            <section className="container-xl planes-page">
-                <search className="planes-page__criterios">
-                    <div className="planes-page__campo">
-                        <label htmlFor="planes-texto">Buscar</label>
-                        <input
-                            type="search"
-                            id="planes-texto"
-                            name="texto"
-                            className="form-control"
-                            placeholder="Carrera u ordenanza"
-                            value={texto}
-                            onChange={handleTextoChange}
-                        />
-                    </div>
+            <section className="container-xl d-flex flex-column gap-4 pb-5">
+                <Filtros
+                    id="planes"
+                    placeholder="Carrera u ordenanza"
+                    selects={[
+                        {
+                            name: 'facultad',
+                            etiqueta: 'Facultad',
+                            todas: 'Todas',
+                            opciones: facultades.map((facultad) => ({ valor: facultad.codigo, texto: facultad.nombre })),
+                        },
+                    ]}
+                    vacio={CRITERIO_VACIO}
+                    aplicado={criterio}
+                    onAplicar={handleAplicar}
+                />
 
-                    <div className="planes-page__campo">
-                        <label htmlFor="planes-facultad">Facultad</label>
-                        <select
-                            id="planes-facultad"
-                            name="facultad"
-                            className="form-select"
-                            value={facultad}
-                            onChange={handleFacultadChange}
-                        >
-                            <option value="">Todas</option>
-                            {facultades.map((f) => (
-                                <option key={f.codigo} value={f.codigo}>
-                                    {f.nombre}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-                </search>
-
-                {hayCriterioActivo && (
-                    <div className="planes-page__chips">
-                        <ul className="planes-page__lista-chips">
-                            {texto.trim() !== '' && (
-                                <li key="texto">
-                                    <button
-                                        type="button"
-                                        className="btn btn-sm btn-outline-secondary planes-page__chip"
-                                        onClick={handleQuitarTexto}
-                                        aria-label={`Quitar filtro: Búsqueda: "${texto}"`}
-                                    >
-                                        Búsqueda: "{texto}" ✕
-                                    </button>
-                                </li>
-                            )}
-                            {facultad !== '' && (
-                                <li key="facultad">
-                                    <button
-                                        type="button"
-                                        className="btn btn-sm btn-outline-secondary planes-page__chip"
-                                        onClick={handleQuitarFacultad}
-                                        aria-label={`Quitar filtro: ${nombreFacultadElegida}`}
-                                    >
-                                        {nombreFacultadElegida} ✕
-                                    </button>
-                                </li>
-                            )}
-                        </ul>
-                        <button
-                            type="button"
-                            className="btn btn-sm planes-page__limpiar"
-                            onClick={handleLimpiarFiltros}
-                        >
-                            Limpiar filtros
-                        </button>
-                    </div>
-                )}
-
-                {facultadesVisibles.length === 0 && (
-                    <div className="planes-page__mensaje-vacio">
-                        <p>No se encontraron carreras con los criterios seleccionados.</p>
-                        <a href={SITIO_OFICIAL} target="_blank" rel="noreferrer">
+                {visibles.length === 0 ? (
+                    <MensajeVacio texto="No se encontraron carreras con los criterios seleccionados.">
+                        <a href={SITIO_PLANES_DE_ESTUDIO} target="_blank" rel="noreferrer">
                             Buscá tu plan en el sitio oficial de planes de estudio
                         </a>
-                    </div>
-                )}
-
-                {facultadesVisibles.length > 0 && (
+                    </MensajeVacio>
+                ) : (
                     <div className="planes-page__facultades">
-                        {facultadesVisibles.map((f) => (
+                        {visibles.map((facultad) => (
                             <Desplegable
-                                key={f.codigo}
-                                id={`carreras-${f.codigo}`}
-                                titulo={f.nombre}
-                                resumen={f.ubicacion}
-                                abierto={estaAbierta(f.codigo)}
-                                onAlternar={() => handleAlternarFacultad(f.codigo)}
+                                key={facultad.codigo}
+                                id={`carreras-${facultad.codigo}`}
+                                titulo={facultad.nombre}
+                                resumen={facultad.ubicacion}
+                                abierto={abiertas.includes(facultad.codigo)}
+                                onAlternar={() => handleAlternar(facultad.codigo)}
                             >
                                 <ul className="planes-page__carreras">
-                                    {f.carreras.map((carrera) => (
+                                    {facultad.carreras.map((carrera) => (
                                         <CarreraItem key={carrera.codigo} carrera={carrera} />
                                     ))}
                                 </ul>

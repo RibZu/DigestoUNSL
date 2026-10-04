@@ -10,6 +10,12 @@ const MODULOS = [
     ruta: '/login/estadisticas',
   },
   {
+    clave: 'concursos',
+    nombre: 'Gestión de concursos',
+    descripcion: 'Carga y consulta de llamados a concurso y sus resoluciones.',
+    ruta: '/login/concursos',
+  },
+  {
     clave: 'alta',
     nombre: 'Gestión y alta de documentos',
     descripcion: 'Carga, edición y baja de los documentos del Digesto.',
@@ -27,7 +33,7 @@ export default function Panel() {
       <nav className="container-xl pb-5" aria-label="Módulos">
         <ul className="row g-3 list-unstyled mb-0">
           {MODULOS.map((modulo) => (
-            <li key={modulo.clave} className="col-12 col-md-6">
+            <li key={modulo.clave} className="col-12 col-md-6 col-lg-4">
               <article className="card h-100 panel-modulo">
                 <div className="card-body">
                   <h2 className="panel-modulo__nombre">

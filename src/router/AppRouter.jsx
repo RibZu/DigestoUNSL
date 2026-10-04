@@ -7,6 +7,7 @@ import Login from '../features/auth/login/Login.jsx'
 import Estadisticas from '../features/estadisticas/Estadisticas.jsx'
 import EstadisticasPrivadas from '../features/estadisticas-privadas/EstadisticasPrivadas.jsx'
 import Panel from '../features/panel/Panel.jsx'
+import GestionConcursos from '../features/gestion-concursos/GestionConcursos.jsx'
 import Novedades from '../features/novedades/Novedades.jsx'
 import NormativaDetail from '../features/normativas/NormativaDetail.jsx'
 import Ayuda from '../features/ayuda/Ayuda.jsx'
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
           { index: true, element: <Login /> },
           { path: 'estadisticas', element: <EstadisticasPrivadas /> },
           { path: 'panel', element: <Panel /> },
+          { path: 'concursos', element: <GestionConcursos /> },
         ],
       },
       { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },
@@ -42,7 +44,6 @@ const router = createBrowserRouter([
 
       { path: 'alta', element: <AltaDocumento /> },
       { path: 'alta-documentos', element: <AltaDocumento /> },
-      { path: 'login', element: <Login /> },
       { path: '*', element: <PaginaNoEncontrada /> },
     ],
   },

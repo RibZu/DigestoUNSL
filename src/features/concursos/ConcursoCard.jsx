@@ -1,4 +1,4 @@
-const SIN_DATO = '—'
+import { formatearFecha, SIN_DATO } from '../../shared/utils/formato.js'
 
 export default function ConcursoCard({ concurso }) {
     function handleVerResolucion() {
@@ -26,11 +26,19 @@ export default function ConcursoCard({ concurso }) {
                     <dt>Carácter</dt>
                     <dd>{concurso.caracter || SIN_DATO}</dd>
                 </div>
+                <div>
+                    <dt>Inscripción desde</dt>
+                    <dd>{formatearFecha(concurso.inscripcionDesde)}</dd>
+                </div>
+                <div>
+                    <dt>Inscripción hasta</dt>
+                    <dd>{formatearFecha(concurso.inscripcionHasta)}</dd>
+                </div>
             </dl>
 
             <button
                 type="button"
-                className="concurso-card__resolucion btn btn-sm"
+                className="btn btn-sm btn-primary"
                 onClick={handleVerResolucion}
             >
                 Ver resolución {concurso.resolucion}

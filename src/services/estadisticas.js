@@ -1,32 +1,25 @@
 import terminosMock from '../features/estadisticas-privadas/terminos.mock.json'
-import { anioDeInscripcion, listarFacultades, listarLlamados } from './concursos.js'
-
-function simularRespuesta(datos) {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(datos), 100)
-    })
-}
+import { obtenerFacultades, obtenerLlamados } from './concursos.js'
 
 export function obtenerTerminosMasBuscados() {
-    const ordenados = [...terminosMock.terminos].sort(
+    return [...terminosMock.terminos].sort(
         (a, b) => b.busquedas - a.busquedas || a.termino.localeCompare(b.termino, 'es')
     )
-    return simularRespuesta(ordenados)
 }
 
 export function obtenerConcursosPorAnio() {
-    const facultades = listarFacultades()
+    const facultades = obtenerFacultades()
     const porAnio = new Map()
 
-    for (const llamado of listarLlamados()) {
-        const anio = anioDeInscripcion(llamado)
-        if (anio === null) continue
+    for (const llamado of obtenerLlamados()) {
+        if (!llamado.inscripcionDesde) continue
+        const anio = Number(llamado.inscripcionDesde.slice(0, 4))
         const conteo = porAnio.get(anio) ?? new Map()
         conteo.set(llamado.facultad, (conteo.get(llamado.facultad) ?? 0) + 1)
         porAnio.set(anio, conteo)
     }
 
-    const anios = [...porAnio.entries()]
+    return [...porAnio.entries()]
         .map(([anio, conteo]) => {
             const porFacultad = facultades
                 .map(({ codigo, nombre }) => ({ codigo, nombre, cantidad: conteo.get(codigo) ?? 0 }))
@@ -35,6 +28,4 @@ export function obtenerConcursosPorAnio() {
             return { anio, total, facultades: porFacultad }
         })
         .sort((a, b) => b.anio - a.anio)
-
-    return simularRespuesta(anios)
 }

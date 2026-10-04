@@ -1,89 +1,40 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Desplegable from '../../shared/ui/Desplegable'
+import MensajeVacio from '../../shared/ui/MensajeVacio'
 import BarrasEstadistica from './BarrasEstadistica'
+import { contar } from './contar.js'
 import { obtenerTerminosMasBuscados } from '../../services/estadisticas.js'
-import './EstadisticasTerminos.css'
 
 export default function EstadisticasTerminos() {
-  const [abierto, setAbierto] = useState(false)
-  const [estado, setEstado] = useState('cargando')
-  const [terminos, setTerminos] = useState([])
-  const [intento, setIntento] = useState(0)
+    const [abierto, setAbierto] = useState(false)
+    const terminos = obtenerTerminosMasBuscados()
+    const maximo = Math.max(0, ...terminos.map((termino) => termino.busquedas))
 
-  useEffect(() => {
-    let ignorar = false
-
-    async function cargar() {
-      try {
-        const recibidos = await obtenerTerminosMasBuscados()
-        if (ignorar) return
-        setTerminos(recibidos)
-        setEstado('listo')
-      } catch {
-        if (!ignorar) setEstado('error')
-      }
+    function handleAlternar() {
+        setAbierto(!abierto)
     }
 
-    cargar()
-    return () => {
-      ignorar = true
-    }
-  }, [intento])
-
-  function handleAlternar() {
-    setAbierto((actual) => !actual)
-  }
-
-  function handleReintentar() {
-    setEstado('cargando')
-    setIntento((anterior) => anterior + 1)
-  }
-
-  const maximo = Math.max(0, ...terminos.map((termino) => termino.busquedas))
-  const resumen = `${terminos.length} ${terminos.length === 1 ? 'término' : 'términos'}`
-
-  return (
-    <Desplegable
-      id="est-terminos"
-      titulo="Términos más buscados"
-      resumen={estado === 'listo' ? resumen : undefined}
-      abierto={abierto}
-      onAlternar={handleAlternar}
-    >
-      {estado === 'cargando' && (
-        <div className="d-flex align-items-center gap-2" role="status">
-          <span className="spinner-border spinner-border-sm" aria-hidden="true"></span>
-          <span>Cargando términos...</span>
-        </div>
-      )}
-
-      {estado === 'error' && (
-        <div className="estadisticas-terminos__estado">
-          <div className="alert alert-danger mb-0" role="alert">
-            No se pudieron cargar los términos más buscados.
-          </div>
-          <button type="button" className="btn btn-primary" onClick={handleReintentar}>
-            Reintentar
-          </button>
-        </div>
-      )}
-
-      {estado === 'listo' && terminos.length === 0 && (
-        <p className="estadisticas-terminos__vacio">No hay términos buscados para mostrar.</p>
-      )}
-
-      {estado === 'listo' && terminos.length > 0 && (
-        <BarrasEstadistica
-          filas={terminos.map((termino) => ({
-            clave: termino.termino,
-            etiqueta: termino.termino,
-            cantidad: termino.busquedas,
-          }))}
-          maximo={maximo}
-          unidad="búsquedas"
-          unidadSingular="búsqueda"
-        />
-      )}
-    </Desplegable>
-  )
+    return (
+        <Desplegable
+            id="est-terminos"
+            titulo="Términos más buscados"
+            resumen={contar(terminos.length, 'término', 'términos')}
+            abierto={abierto}
+            onAlternar={handleAlternar}
+        >
+            {terminos.length === 0 ? (
+                <MensajeVacio texto="No hay términos buscados para mostrar." />
+            ) : (
+                <BarrasEstadistica
+                    filas={terminos.map((termino) => ({
+                        clave: termino.termino,
+                        etiqueta: termino.termino,
+                        cantidad: termino.busquedas,
+                        texto: contar(termino.busquedas, 'búsqueda', 'búsquedas'),
+                    }))}
+                    maximo={maximo}
+                />
+            )}
+        </Desplegable>
+    )
 }

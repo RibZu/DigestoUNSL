@@ -127,7 +127,7 @@ p {
 }
 
 .btn {
-  --bs-btn-border-radius: 999px;
+  --bs-btn-border-radius: var(--radio);
   --bs-btn-font-weight: var(--peso-regular);
 }
 

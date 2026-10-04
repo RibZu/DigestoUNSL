@@ -1,56 +1,56 @@
 .barras {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: ranking;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: ranking;
 }
 
 .barras__etiqueta::before {
-  counter-increment: ranking;
-  content: counter(ranking) '. ';
-  font-weight: var(--peso-regular);
-  color: var(--text);
+    counter-increment: ranking;
+    content: counter(ranking) '. ';
+    font-weight: var(--peso-regular);
+    color: var(--text);
 }
 
 .barras__fila {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .barras__encabezado {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.25rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
 }
 
 .barras__etiqueta {
-  font-weight: var(--peso-regular);
-  color: var(--text-h);
-  overflow-wrap: anywhere;
-  font-size: var(--texto);
+    font-weight: var(--peso-regular);
+    color: var(--text-h);
+    overflow-wrap: anywhere;
+    font-size: var(--texto);
 }
 
 .barras__valor {
-  font-variant-numeric: tabular-nums;
-  color: var(--text-h);
-  white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-h);
+    white-space: nowrap;
 }
 
 .barras__pista {
-  height: 0.75rem;
-  background: var(--color-fondo);
-  border-radius: 0 4px 4px 0;
+    height: 0.75rem;
+    background: var(--color-fondo);
+    border-radius: 0 4px 4px 0;
 }
 
 .barras__relleno {
-  min-width: 2px;
-  height: 100%;
-  background: var(--color-primario);
-  border-radius: 0 4px 4px 0;
+    min-width: 2px;
+    height: 100%;
+    background: var(--color-primario);
+    border-radius: 0 4px 4px 0;
 }

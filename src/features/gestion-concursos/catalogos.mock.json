@@ -1,0 +1,574 @@
+{
+  "tiposDocumento": [
+    "Actas",
+    "Circulares",
+    "Convenios",
+    "Decretos",
+    "Ordenanzas del día",
+    "Ordenanzas",
+    "Proveídos",
+    "Resoluciones"
+  ],
+  "origenes": [
+    {
+      "nombre": "Escuela Normal Juan Pascual Pringles",
+      "numero": 6
+    },
+    {
+      "nombre": "DEDA",
+      "numero": null
+    },
+    {
+      "nombre": "IPAU",
+      "numero": 8
+    },
+    {
+      "nombre": "DOSPU",
+      "numero": 9
+    },
+    {
+      "nombre": "Facultad de Ciencias Físicas Matemáticas y Naturales",
+      "numero": 3
+    },
+    {
+      "nombre": "Facultad de Ciencias Humanas",
+      "numero": 4
+    },
+    {
+      "nombre": "Facultad de Ingeniería y Ciencias Económico-Sociales",
+      "numero": 5
+    },
+    {
+      "nombre": "Facultad de Química Bioquímica y Farmacia",
+      "numero": 2
+    },
+    {
+      "nombre": "Organismos Nacionales",
+      "numero": 0
+    },
+    {
+      "nombre": "Rectorado",
+      "numero": 1
+    },
+    {
+      "nombre": "Facultad de Ciencias de la Salud",
+      "numero": 10
+    },
+    {
+      "nombre": "Facultad de Turismo y Urbanismo",
+      "numero": 11
+    },
+    {
+      "nombre": "Facultad de Psicología",
+      "numero": 12
+    },
+    {
+      "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias",
+      "numero": 14
+    },
+    {
+      "nombre": "Facultad de Ciencias Económicas, Jurídicas y Sociales",
+      "numero": 15
+    }
+  ],
+  "organos": [
+    "Asamblea Universitaria",
+    "Auditoría Interna",
+    "Consejo de Escuela",
+    "Consejo Consultivo",
+    "Consejo Directivo",
+    "Consejo Superior",
+    "Consejo de Posgrado",
+    "Secretaría de Vinculación Tecnológica y Social",
+    "Actas de Comité Académico",
+    "Decanato",
+    "DEDA",
+    "IPAU",
+    "DOSPU",
+    "Rectorado",
+    "Rectoría",
+    "Secretaría Académica",
+    "Secretaría Administrativa",
+    "Secretaría de Asuntos Estudiantiles y Bienestar",
+    "Secretaría de Ciencia y Técnica",
+    "Secretaría de Extensión Universitaria",
+    "Secretaría General",
+    "Secretaría de Hacienda",
+    "Secretaría de Postgrado",
+    "Secretaría de Planeamiento",
+    "Dirección General de Administración",
+    "Departamento de Física-FCFMN",
+    "Departamento de Matemáticas-FCFMN",
+    "Departamento de Informática-FCFMN",
+    "Departamento de Geología-FCFMN",
+    "Departamento de Minería-FCFMN",
+    "CONEAU",
+    "Ministerio de Ciencia y Tecnología",
+    "Ministerio de Educación",
+    "Junta Electoral-UNSL",
+    "Departamento de Electrónica-FCFMN",
+    "Junta Electoral-Facultad",
+    "Secretaría de Imagen y Comunicación Institucional"
+  ],
+  "codificacion": [
+    {
+      "prefijo": "RCS",
+      "tipo": "Resoluciones",
+      "organo": "Consejo Superior"
+    },
+    {
+      "prefijo": "RR",
+      "tipo": "Resoluciones",
+      "organo": "Rectorado"
+    },
+    {
+      "prefijo": "RAU",
+      "tipo": "Resoluciones",
+      "organo": "Asamblea Universitaria"
+    },
+    {
+      "prefijo": "RSA",
+      "tipo": "Resoluciones",
+      "organo": "Secretaría Académica"
+    },
+    {
+      "prefijo": "RSE",
+      "tipo": "Resoluciones",
+      "organo": "Secretaría de Extensión Universitaria"
+    },
+    {
+      "prefijo": "RJE",
+      "tipo": "Resoluciones",
+      "organo": "Junta Electoral-UNSL"
+    },
+    {
+      "prefijo": "RCD",
+      "tipo": "Resoluciones",
+      "organo": "Consejo Directivo"
+    },
+    {
+      "prefijo": "RD",
+      "tipo": "Resoluciones",
+      "organo": "Decanato"
+    },
+    {
+      "prefijo": "RDInf",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Informática-FCFMN"
+    },
+    {
+      "prefijo": "RDMat",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Matemáticas-FCFMN"
+    },
+    {
+      "prefijo": "RDFis",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Física-FCFMN"
+    },
+    {
+      "prefijo": "RDGeo",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Geología-FCFMN"
+    },
+    {
+      "prefijo": "RDMin",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Minería-FCFMN"
+    },
+    {
+      "prefijo": "RDEle",
+      "tipo": "Resoluciones",
+      "organo": "Departamento de Electrónica-FCFMN"
+    },
+    {
+      "prefijo": "RCE",
+      "tipo": "Resoluciones",
+      "organo": "Consejo de Escuela"
+    },
+    {
+      "prefijo": "RRE",
+      "tipo": "Resoluciones",
+      "organo": "Rectoría"
+    },
+    {
+      "prefijo": "OCS",
+      "tipo": "Ordenanzas",
+      "organo": "Consejo Superior"
+    },
+    {
+      "prefijo": "OR",
+      "tipo": "Ordenanzas",
+      "organo": "Rectorado"
+    },
+    {
+      "prefijo": "OAU",
+      "tipo": "Ordenanzas",
+      "organo": "Asamblea Universitaria"
+    },
+    {
+      "prefijo": "OCD",
+      "tipo": "Ordenanzas",
+      "organo": "Consejo Directivo"
+    },
+    {
+      "prefijo": "OD",
+      "tipo": "Ordenanzas",
+      "organo": "Decanato"
+    },
+    {
+      "prefijo": "OCE",
+      "tipo": "Ordenanzas",
+      "organo": "Consejo de Escuela"
+    },
+    {
+      "prefijo": "ORE",
+      "tipo": "Ordenanzas",
+      "organo": "Rectoría"
+    },
+    {
+      "prefijo": "DR",
+      "tipo": "Decretos",
+      "organo": "Rectorado"
+    },
+    {
+      "prefijo": "DD",
+      "tipo": "Decretos",
+      "organo": "Decanato"
+    },
+    {
+      "prefijo": "DE",
+      "tipo": "Decretos",
+      "organo": "Rectoría"
+    },
+    {
+      "prefijo": "ACS",
+      "tipo": "Actas",
+      "organo": "Consejo Superior"
+    },
+    {
+      "prefijo": "ACD",
+      "tipo": "Actas",
+      "organo": "Consejo Directivo"
+    },
+    {
+      "prefijo": "AAU",
+      "tipo": "Actas",
+      "organo": "Asamblea Universitaria"
+    },
+    {
+      "prefijo": "ACE",
+      "tipo": "Actas",
+      "organo": "Consejo de Escuela"
+    },
+    {
+      "prefijo": "ACCo",
+      "tipo": "Actas",
+      "organo": "Consejo Consultivo"
+    },
+    {
+      "prefijo": "ACVTS",
+      "tipo": "Actas",
+      "organo": "Secretaría de Vinculación Tecnológica y Social"
+    },
+    {
+      "prefijo": "ACA",
+      "tipo": "Actas",
+      "organo": "Actas de Comité Académico"
+    },
+    {
+      "prefijo": "ACP",
+      "tipo": "Actas",
+      "organo": "Consejo de Posgrado"
+    },
+    {
+      "prefijo": "ODCS",
+      "tipo": "Ordenanzas del día",
+      "organo": "Consejo Superior"
+    },
+    {
+      "prefijo": "ODCD",
+      "tipo": "Ordenanzas del día",
+      "organo": "Consejo Directivo"
+    },
+    {
+      "prefijo": "ODCE",
+      "tipo": "Ordenanzas del día",
+      "organo": "Consejo de Escuela"
+    }
+  ],
+  "dependencias": [
+    {
+      "codigo": "fapsi",
+      "sigla": "FaPsi",
+      "numero": 12,
+      "origen": "Facultad de Psicología",
+      "nombre": "Facultad de Psicología"
+    },
+    {
+      "codigo": "fcejs",
+      "sigla": "FCEJS",
+      "numero": 15,
+      "origen": "Facultad de Ciencias Económicas, Jurídicas y Sociales",
+      "nombre": "Facultad de Ciencias Económicas Jurídicas y Sociales"
+    },
+    {
+      "codigo": "fcfmn",
+      "sigla": "FCFMyN",
+      "numero": 3,
+      "origen": "Facultad de Ciencias Físicas Matemáticas y Naturales",
+      "nombre": "Facultad de Ciencias Físicas, Matemáticas y Naturales"
+    },
+    {
+      "codigo": "fch",
+      "sigla": "FCH",
+      "numero": 4,
+      "origen": "Facultad de Ciencias Humanas",
+      "nombre": "Facultad de Ciencias Humanas"
+    },
+    {
+      "codigo": "fcs",
+      "sigla": "FCS",
+      "numero": 10,
+      "origen": "Facultad de Ciencias de la Salud",
+      "nombre": "Facultad de Ciencias de la Salud"
+    },
+    {
+      "codigo": "fica",
+      "sigla": "FICA",
+      "numero": 14,
+      "origen": "Facultad de Ingeniería y Ciencias Agropecuarias",
+      "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias"
+    },
+    {
+      "codigo": "fqbf",
+      "sigla": "FQByF",
+      "numero": 2,
+      "origen": "Facultad de Química Bioquímica y Farmacia",
+      "nombre": "Facultad de Química Bioquímica y Farmacia"
+    },
+    {
+      "codigo": "ftu",
+      "sigla": "FTU",
+      "numero": 11,
+      "origen": "Facultad de Turismo y Urbanismo",
+      "nombre": "Facultad de Turismo y Urbanismo"
+    }
+  ],
+  "departamentos": {
+    "fapsi": [
+      {
+        "nombre": "Departamento de Formacion Basica General y Complementaria",
+        "areas": [
+          "Area Psicobiologica"
+        ]
+      },
+      {
+        "nombre": "Departamento de Formacion Profesional",
+        "areas": [
+          "Area de Intervencion Psicologica II"
+        ]
+      },
+      {
+        "nombre": "Departamento de Psicologia Clinica",
+        "areas": [
+          "Area Psicodiagnostico"
+        ]
+      },
+      {
+        "nombre": "Departamento de Psicologia Educacional",
+        "areas": [
+          "Area Orientacion Vocacional"
+        ]
+      }
+    ],
+    "fcejs": [
+      {
+        "nombre": "Departamento de Ciencias Economicas",
+        "areas": [
+          "Area de Administracion",
+          "Area de Economia y Gestion Publica"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ciencias Sociales",
+        "areas": [
+          "Area de Formacion Basica en Cs. Sociales y Humanas",
+          "Area Trabajo Social"
+        ]
+      },
+      {
+        "nombre": "Departamento de Contabilidad",
+        "areas": [
+          "Area Costos"
+        ]
+      },
+      {
+        "nombre": "Departamento de Derecho",
+        "areas": [
+          "Area Derecho Privado"
+        ]
+      }
+    ],
+    "fcfmn": [
+      {
+        "nombre": "Departamento de Fisica",
+        "areas": [
+          "Area Fisica Experimental"
+        ]
+      },
+      {
+        "nombre": "Departamento de Geologia",
+        "areas": [
+          "Area Geologia Basica",
+          "Area Unica de Geologia"
+        ]
+      },
+      {
+        "nombre": "Departamento de Informatica",
+        "areas": [
+          "Area Ingenieria de Software"
+        ]
+      },
+      {
+        "nombre": "Departamento de Matematica",
+        "areas": [
+          "Area Unica de Matematica"
+        ]
+      }
+    ],
+    "fch": [
+      {
+        "nombre": "Departamento de Artes",
+        "areas": [
+          "Area Musica"
+        ]
+      },
+      {
+        "nombre": "Departamento de Educacion Fisica",
+        "areas": [
+          "Area Actividad Fisica y Salud"
+        ]
+      },
+      {
+        "nombre": "Departamento de Educacion y Formacion Docente",
+        "areas": [
+          "Area Didactica General"
+        ]
+      }
+    ],
+    "fcs": [
+      {
+        "nombre": "Departamento de Kinesiologia y Fisioterapia",
+        "areas": [
+          "Area Rehabilitacion"
+        ]
+      },
+      {
+        "nombre": "Departamento de Nutricion",
+        "areas": [
+          "Area Nutricion Comunitaria"
+        ]
+      },
+      {
+        "nombre": "Departamento de Obstetricia",
+        "areas": [
+          "Area Obstetricia Clinica"
+        ]
+      }
+    ],
+    "fica": [
+      {
+        "nombre": "Departamento de Ciencias Agropecuarias",
+        "areas": [
+          "Area de Basicas Agronomicas",
+          "Area Produccion Animal"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ciencias Basicas",
+        "areas": [
+          "Area de Computacion"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ingenieria de Alimentos",
+        "areas": [
+          "Area Tecnologia de Alimentos"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ingenieria de Procesos",
+        "areas": [
+          "Area de Procesos Fisicos"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ingenieria Quimica",
+        "areas": [
+          "Area Operaciones Unitarias"
+        ]
+      }
+    ],
+    "fqbf": [
+      {
+        "nombre": "Departamento de Biologia",
+        "areas": [
+          "Area Biologia Molecular"
+        ]
+      },
+      {
+        "nombre": "Departamento de Bioquimica y Ciencias Biologicas",
+        "areas": [
+          "Area Microbiologia"
+        ]
+      },
+      {
+        "nombre": "Departamento de Farmacia",
+        "areas": [
+          "Area Tecnologia Farmaceutica"
+        ]
+      },
+      {
+        "nombre": "Departamento de Quimica",
+        "areas": [
+          "Area de Quimica Analitica",
+          "Area de Quimica General e Inorganica",
+          "Area de Quimica-Fisica"
+        ]
+      }
+    ],
+    "ftu": [
+      {
+        "nombre": "Departamento de Arquitectura",
+        "areas": [
+          "Area Diseño Arquitectonico"
+        ]
+      },
+      {
+        "nombre": "Departamento de Ciencias Basicas",
+        "areas": [
+          "Area Idiomas"
+        ]
+      }
+    ]
+  },
+  "cargos": [
+    "Auxiliares de Primera",
+    "Auxiliares de Segunda",
+    "Jefes de Trabajos Practicos",
+    "Profesores Adjuntos",
+    "Profesores Asociados",
+    "Profesores Titulares"
+  ],
+  "dedicaciones": [
+    "Exclusivos",
+    "Semiexclusivos",
+    "Simples"
+  ],
+  "caracteres": [
+    "Efectivos",
+    "Interinos",
+    "Suplentes"
+  ]
+}

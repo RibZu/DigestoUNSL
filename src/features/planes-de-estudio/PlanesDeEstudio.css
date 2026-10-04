@@ -1,56 +1,9 @@
-.planes-page {
-    --planes-separador: var(--border);
-}
-
-.planes-page {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 3rem;
-}
-
 .carrera-item__nombre {
     margin: 0;
     font-size: var(--titulo-xs);
     font-weight: var(--peso-negrita);
     color: var(--text-h);
     overflow-wrap: anywhere;
-}
-
-.planes-page__criterios {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.planes-page__campo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.planes-page__campo label {
-    font-size: var(--texto-sm);
-    color: var(--text);
-}
-
-.planes-page__chips {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.planes-page__lista-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.planes-page__limpiar {
-    align-self: flex-start;
 }
 
 .planes-page__facultades {
@@ -70,7 +23,7 @@
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.75rem 0;
-    border-bottom: 1px solid var(--planes-separador);
+    border-bottom: 1px solid var(--border);
     box-sizing: border-box;
 }
 
@@ -87,16 +40,6 @@
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--color-primario);
-    background-color: transparent;
-    border: 1px solid var(--color-primario);
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.carrera-item__plan:hover,
-.carrera-item__plan:focus-visible {
-    color: var(--bs-white);
-    background-color: var(--color-primario);
 }
 
 .carrera-item:hover {
@@ -107,61 +50,7 @@
     min-height: 44px;
 }
 
-.planes-page__icono {
-    width: 0.85em;
-    height: 0.85em;
-}
-
-.planes-page__limpiar {
-    color: var(--color-primario);
-    background-color: transparent;
-    border: 1px solid var(--color-primario);
-    transition: background-color 0.15s ease, color 0.15s ease;
-}
-
-.planes-page__limpiar:hover,
-.planes-page__limpiar:focus-visible {
-    color: var(--bs-white);
-    background-color: var(--color-primario);
-    border-color: var(--color-primario);
-}
-
-.planes-page__campo input,
-.planes-page__campo select,
-.planes-page__chip,
-.planes-page__limpiar {
-    min-height: 44px;
-}
-
-.planes-page__mensaje-vacio {
-    border: 1px solid var(--border);
-    border-radius: var(--radio);
-    padding: 1rem;
-    color: var(--text);
-    background: var(--accent-bg);
-    box-sizing: border-box;
-}
-
-.planes-page__mensaje-vacio p {
-    margin: 0 0 0.5rem;
-}
-
-.planes-page__mensaje-vacio a {
-    color: var(--color-primario);
-}
-
 @media (min-width: 768px) {
-    .planes-page__criterios {
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: flex-end;
-    }
-
-    .planes-page__campo {
-        flex: 1 1 auto;
-        min-width: 10rem;
-    }
-
     .carrera-item {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -172,9 +61,4 @@
     .carrera-item__planes {
         justify-content: flex-end;
     }
-}
-
-.planes-page .btn,
-.btn.planes-page__sitio-oficial {
-    --bs-btn-border-radius: var(--radio);
 }

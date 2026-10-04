@@ -1,21 +1,12 @@
-import mock from '../features/planes-de-estudio/planes-de-estudio.mock.json'
+import listado from '../features/planes-de-estudio/planes-de-estudio.mock.json'
+import detalle from '../features/planes-de-estudio/planes-de-estudio.detalle.mock.json'
 
-function simularRespuesta(datos) {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve(datos), 100)
-    })
-}
+export const SITIO_PLANES_DE_ESTUDIO = 'http://planesestudio.unsl.edu.ar/'
 
 export function obtenerPlanesDeEstudio() {
-    return simularRespuesta(mock.facultades)
+    return listado.facultades
 }
 
-export async function obtenerPlanDeEstudio(carrera, plan) {
-    const { default: detalle } = await import(
-        '../features/planes-de-estudio/planes-de-estudio.detalle.mock.json'
-    )
-    const encontrado = detalle.planes.find(
-        (p) => p.carrera === carrera && p.plan.replaceAll('/', '-') === plan
-    )
-    return simularRespuesta(encontrado ?? null)
+export function obtenerPlanDeEstudio(carrera, plan) {
+    return detalle.planes.find((p) => p.carrera === carrera && p.plan.replaceAll('/', '-') === plan) ?? null
 }
