@@ -2,7 +2,7 @@
 
 SPA en React que reemplaza el sitio legacy en PHP del Digesto Administrativo de la Universidad
 Nacional de San Luis: búsqueda de documentos, novedades, concursos, planes de estudio y un panel
-administrativo protegido.
+administrativo protegido. Una version preliminar se encuentra desplegada en: https://digesto-unsl.vercel.app/
 
 ## Cómo correrlo
 
