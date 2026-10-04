@@ -72,7 +72,7 @@
   padding: 0.25rem;
   display: flex;
   align-items: center;
-  border-radius: var(--radio);
+  border-radius: 50%;
   transition: color 0.2s ease, background-color 0.2s ease;
 }
 
