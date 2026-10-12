@@ -1,0 +1,26 @@
+.panel-modulo {
+  border-top: 4px solid var(--color-primario);
+}
+
+.panel-modulo:hover {
+  box-shadow: var(--sombra);
+}
+
+.panel-modulo:focus-within {
+  outline: 2px solid var(--color-primario);
+  outline-offset: 2px;
+}
+
+.panel-modulo__nombre {
+  margin: 0 0 0.5rem;
+  font-size: var(--titulo-sm);
+}
+
+.panel-modulo__enlace {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+.panel-modulo__enlace:focus {
+  outline: 0;
+}

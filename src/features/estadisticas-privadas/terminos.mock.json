@@ -1,0 +1,64 @@
+{
+  "terminos": [
+    {
+      "termino": "calendario académico",
+      "busquedas": 1842
+    },
+    {
+      "termino": "concurso docente",
+      "busquedas": 1517
+    },
+    {
+      "termino": "plan de estudios",
+      "busquedas": 1390
+    },
+    {
+      "termino": "licencia",
+      "busquedas": 1204
+    },
+    {
+      "termino": "becas",
+      "busquedas": 1131
+    },
+    {
+      "termino": "designación",
+      "busquedas": 987
+    },
+    {
+      "termino": "régimen académico",
+      "busquedas": 864
+    },
+    {
+      "termino": "equivalencias",
+      "busquedas": 864
+    },
+    {
+      "termino": "elecciones",
+      "busquedas": 702
+    },
+    {
+      "termino": "viáticos",
+      "busquedas": 655
+    },
+    {
+      "termino": "reglamento de posgrado",
+      "busquedas": 598
+    },
+    {
+      "termino": "adscripciones",
+      "busquedas": 541
+    },
+    {
+      "termino": "aranceles",
+      "busquedas": 487
+    },
+    {
+      "termino": "carrera docente",
+      "busquedas": 432
+    },
+    {
+      "termino": "mesas de examen",
+      "busquedas": 401
+    }
+  ]
+}
