@@ -22,13 +22,13 @@ export default function Ayuda() {
                     <ul>
                         {BLOQUES_AYUDA.map((bloque) => (
                             <li key={bloque.id}>
-                                <a href={`#${bloque.id}`} className="btn btn-sm btn-outline-secondary">
+                                <a href={`#${bloque.id}`} className="btn btn-sm btn-outline-primary">
                                     {bloque.titulo}
                                 </a>
                             </li>
                         ))}
                         <li>
-                            <a href="#enlaces-de-interes" className="btn btn-sm btn-outline-secondary">
+                            <a href="#enlaces-de-interes" className="btn btn-sm btn-outline-primary">
                                 Enlaces de interés
                             </a>
                         </li>

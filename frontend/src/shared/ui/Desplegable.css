@@ -10,6 +10,10 @@
     font-weight: var(--peso-negrita);
 }
 
+.desplegable__contenido .desplegable__titulo {
+    font-size: var(--titulo-xs);
+}
+
 .desplegable__boton {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +63,7 @@
 .desplegable__contenido {
     margin: 0 1rem 1rem 1.5rem;
     padding: 0.75rem 0 0.25rem 0.75rem;
-    border-left: 2px solid var(--color-celeste);
+    border-left: 2px solid var(--color-primario);
 }
 
 @media (min-width: 768px) {

@@ -1,9 +1,73 @@
 import { useState, useEffect } from 'react'
-import mockData from '../../../data/normativas.mock.json'
 
-const TIPOS_DOCUMENTO = mockData.tiposDocumento
-const ORIGENES_TRAMITE = mockData.origenesTramite
-const ORGANOS_EMISORES = mockData.organosEmisores
+const TIPOS_DOCUMENTO = [
+  'Actas',
+  'Circulares',
+  'Convenios',
+  'Decretos',
+  'Ordenanzas del día',
+  'Ordenanzas',
+  'Proveídos',
+  'Resoluciones',
+]
+
+const ORIGENES_TRAMITE = [
+  'Escuela Normal Juan Pascual Pringles',
+  'DEDA',
+  'IPAU',
+  'DOSPU',
+  'Facultad de Ciencias Físicas Matemáticas y Naturales',
+  'Facultad de Ciencias Humanas',
+  'Facultad de Ingeniería y Ciencias Económico-Sociales',
+  'Facultad de Química Bioquímica y Farmacia',
+  'Organismos Nacionales',
+  'Rectorado',
+  'Facultad de Ciencias de la Salud',
+  'Facultad de Turismo y Urbanismo',
+  'Facultad de Psicología',
+  'Facultad de Ingeniería y Ciencias Agropecuarias',
+  'Facultad de Ciencias Económicas, Jurídicas y Sociales',
+]
+
+const ORGANOS_EMISORES = [
+  'Asamblea Universitaria',
+  'Auditoría Interna',
+  'Consejo de Escuela',
+  'Consejo Consultivo',
+  'Consejo Directivo',
+  'Consejo Superior',
+  'Consejo de Posgrado',
+  'Secretaría de Vinculación Tecnológica y Social',
+  'Actas de Comité Académico',
+  'Decanato',
+  'DEDA',
+  'IPAU',
+  'DOSPU',
+  'Rectorado',
+  'Rectoría',
+  'Secretaría Académica',
+  'Secretaría Administrativa',
+  'Secretaría de Asuntos Estudiantiles y Bienestar',
+  'Secretaría de Ciencia y Técnica',
+  'Secretaría de Extensión Universitaria',
+  'Secretaría General',
+  'Secretaría de Hacienda',
+  'Secretaría de Postgrado',
+  'Secretaría de Planeamiento',
+  'Dirección General de Administración',
+  'Departamento de Física-FCFMN',
+  'Departamento de Matemáticas-FCFMN',
+  'Departamento de Informática-FCFMN',
+  'Departamento de Geología-FCFMN',
+  'Departamento de Minería-FCFMN',
+  'CONEAU',
+  'Ministerio de Ciencia y Tecnología',
+  'Ministerio de Educación',
+  'Junta Electoral-UNSL',
+  'Departamento de Electrónica-FCFMN',
+  'Junta Electoral-Facultad',
+  'Secretaría de Imagen y Comunicación Institucional',
+]
 
 export default function FormularioAlta({ documentoEditar, onGuardar, onCancelar, triggerToast }) {
   const [formData, setFormData] = useState({

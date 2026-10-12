@@ -1,3 +1,5 @@
+import { SITIO_PLANES_DE_ESTUDIO } from '../../services/planesDeEstudio.js'
+
 export const BLOQUES_AYUDA = [
     {
         id: 'dudas-generales',
@@ -37,7 +39,7 @@ export const BLOQUES_AYUDA = [
                 id: 'generales-cuenta',
                 pregunta: '¿Necesito una cuenta para consultar?',
                 respuesta:
-                    'No, toda la consulta es pública y no requiere cuenta. El acceso institucional es solo para el personal que administra el Digesto.',
+                    'No, la consulta es pública. "Ingresar", en el pie de página, es solo para el personal que administra el Digesto.',
             },
             {
                 id: 'generales-celular',
@@ -47,16 +49,9 @@ export const BLOQUES_AYUDA = [
             },
             {
                 id: 'generales-enlaces-externos',
-                pregunta:
-                    '¿Por qué algunos enlaces abren otra pestaña o llevan a otro sitio de la UNSL?',
+                pregunta: '¿Por qué algunos enlaces abren otra pestaña?',
                 respuesta:
-                    'Los planes de estudio, las resoluciones de los concursos, el Portal y el Correo están en sitios oficiales de la UNSL. Esos enlaces se abren en otra pestaña para que no pierdas tu lugar en el Digesto.',
-            },
-            {
-                id: 'generales-error',
-                pregunta: '¿Qué hago si una página no carga o muestra un error?',
-                respuesta:
-                    'Usá el botón "Reintentar" cuando aparece, como en Concursos y en Planes de estudio. Si no alcanza, recargá la página o volvé a intentar más tarde.',
+                    'El sitio oficial de planes de estudio, el Portal y el Correo de la UNSL están en otros sitios. Se abren en otra pestaña para que no pierdas tu lugar en el Digesto.',
             },
         ],
     },
@@ -69,7 +64,7 @@ export const BLOQUES_AYUDA = [
                 id: 'inicio-que-encuentro',
                 pregunta: '¿Qué encuentro en la página de inicio?',
                 respuesta:
-                    'Tres accesos rápidos: Búsqueda, Novedades y Concursos. Cada uno explica qué ofrece su sección y tiene un botón para ir a ella. El pie de página tiene el acceso a Ayuda.',
+                    'Tres accesos: Búsqueda, Novedades y Concursos, cada uno con su botón. El pie de página tiene Ayuda e Ingresar.',
             },
         ],
     },
@@ -82,13 +77,13 @@ export const BLOQUES_AYUDA = [
                 id: 'busqueda-palabra-clave',
                 pregunta: '¿Cómo busco un documento por palabra clave?',
                 respuesta:
-                    'Escribí la palabra en el campo principal y apretá "Buscar". Podés usar una palabra, un concepto o parte del resumen del documento.',
+                    'Escribí la palabra en el campo principal y apretá "Buscar". Se busca en el título, el resumen y el código del documento.',
             },
             {
                 id: 'busqueda-filtros',
                 pregunta: '¿Cómo filtro por tipo de documento o por organismo emisor?',
                 respuesta:
-                    'Elegí una opción en "Tipo de Documento" (Resolución, Ordenanza, Decreto, Convenio o Acta / Circular). También podés elegir un "Organismo Emisor", como el Rectorado o una facultad.',
+                    'Elegí una opción en "Tipo de Documento" (Resolución, Ordenanza, Decreto, Convenio o Acta / Circular) o en "Organismo Emisor" (el Rectorado, una facultad o las secretarías).',
             },
             {
                 id: 'busqueda-avanzada',
@@ -96,13 +91,6 @@ export const BLOQUES_AYUDA = [
                     '¿Cómo encuentro un documento si conozco su número y su año, o un rango de fechas?',
                 respuesta:
                     'Apretá "Filtros avanzados". Ahí aparecen los campos de número, año, fecha desde y fecha hasta.',
-            },
-            {
-                id: 'busqueda-contenido-completo',
-                pregunta:
-                    '¿Qué cambia si marco "Buscar también dentro del contenido completo del documento"?',
-                respuesta:
-                    'La búsqueda deja de mirar solo los datos del documento y también revisa su texto completo. Sirve cuando recordás una frase, pero no el título.',
             },
             {
                 id: 'busqueda-sin-resultados',
@@ -130,17 +118,10 @@ export const BLOQUES_AYUDA = [
                     'Usá "Filtrar por tipo" (Resoluciones, Ordenanzas o Disposiciones) o el buscador por título, descripción o código. El buscador no distingue mayúsculas de minúsculas.',
             },
             {
-                id: 'novedades-ver-y-descargar',
-                pregunta: '¿Cómo veo el documento completo y descargo su PDF?',
-                respuesta:
-                    'Hacé clic en el título para abrir el detalle. Si solo querés el archivo, usá "Descargar PDF" en la tarjeta.',
-            },
-            {
                 id: 'novedades-detalle',
-                pregunta:
-                    '¿Qué información muestra el detalle de una normativa (código, fecha, expediente, visto, considerando, artículos) y cómo copio su enlace?',
+                pregunta: '¿Cómo veo el detalle de una normativa?',
                 respuesta:
-                    'El detalle muestra el código, el lugar y la fecha, el expediente, el Visto, el Considerando y los artículos. Con "Copiar Enlace" copiás su dirección y con "Descargar PDF" bajás el archivo. Para volver, usá el botón de la parte superior.',
+                    'Hacé clic en su título. El detalle muestra el código, el lugar y la fecha, el expediente, el Visto, el Considerando y los artículos. "Copiar Enlace" copia su dirección y el botón de arriba te devuelve a los resultados.',
             },
         ],
     },
@@ -151,9 +132,15 @@ export const BLOQUES_AYUDA = [
         preguntas: [
             {
                 id: 'concursos-que-es',
-                pregunta: '¿Qué es un llamado a concurso y cómo veo los de una facultad?',
+                pregunta: '¿Qué es un llamado a concurso y cuáles aparecen?',
                 respuesta:
-                    'Es un llamado público para cubrir un cargo docente. Las facultades aparecen plegadas, con su ciudad a la derecha, y un clic despliega sus concursos. Cuando buscás o filtrás, se abren solas las que tienen resultados.',
+                    'Es un llamado público para cubrir un cargo docente. Solo aparecen los que tienen la inscripción abierta, agrupados por facultad: cada facultad está plegada, con su ciudad a la derecha, y un clic la despliega.',
+            },
+            {
+                id: 'concursos-buscar',
+                pregunta: '¿Cómo busco un concurso?',
+                respuesta:
+                    'Escribí un cargo, área, departamento o número de resolución, o elegí facultad, carácter o dedicación, y apretá "Buscar". Se abren las facultades con resultados; "Limpiar filtros" vuelve a mostrar todo.',
             },
             {
                 id: 'concursos-caracter',
@@ -176,10 +163,10 @@ export const BLOQUES_AYUDA = [
                 ],
             },
             {
-                id: 'concursos-fechas-resolucion',
-                pregunta: '¿Dónde veo las fechas de inscripción y la resolución del llamado?',
+                id: 'concursos-fechas',
+                pregunta: '¿Dónde veo las fechas de inscripción?',
                 respuesta:
-                    'Cada tarjeta muestra la "Inscripción", con las fechas de inicio y de cierre. El botón "Ver resolución" abre la resolución del llamado en el Digesto. El buscador acepta cargo, área, departamento o número de resolución.',
+                    'Cada tarjeta muestra "Inscripción desde" e "Inscripción hasta", con las fechas de inicio y de cierre.',
             },
             {
                 id: 'concursos-inscripcion',
@@ -198,13 +185,13 @@ export const BLOQUES_AYUDA = [
                 id: 'planes-encontrar',
                 pregunta: '¿Cómo encuentro el plan de mi carrera?',
                 respuesta:
-                    'Buscá por carrera u ordenanza, o filtrá por facultad y desplegala. Cada plan abre una página con sus materias por año. El plan oficial y las correlativas de cada materia se consultan en el sitio oficial de planes de estudio.',
+                    'Escribí la carrera o la ordenanza, o elegí una facultad, y apretá "Buscar": se abren las facultades con resultados. Cada plan abre una página con sus materias por año; el plan oficial y las correlativas están en el sitio oficial de planes de estudio.',
             },
             {
                 id: 'planes-no-aparece',
                 pregunta: '¿Por qué no aparece mi plan?',
                 respuesta:
-                    'Se muestran solo los planes vigentes posteriores a 2009. Para ver todos los planes, usá el botón "¿No encontrás tu plan? …", que lleva al sitio oficial planesestudio.unsl.edu.ar.',
+                    'Se muestran solo los planes vigentes posteriores a 2009. Para ver todos, usá el botón "¿No encontrás tu plan? …", que lleva al sitio oficial de planes de estudio.',
             },
             {
                 id: 'planes-dos-facultades',
@@ -214,14 +201,23 @@ export const BLOQUES_AYUDA = [
             },
         ],
     },
+    {
+        id: 'estadisticas',
+        titulo: 'Estadísticas',
+        ruta: '/estadisticas',
+        preguntas: [
+            {
+                id: 'estadisticas-que-muestra',
+                pregunta: '¿Qué muestra la página de Estadísticas?',
+                respuesta:
+                    'Indicadores generales del Digesto y dos gráficos: la documentación por órgano emisor y las normativas por año de emisión.',
+            },
+        ],
+    },
 ]
 
 export const ENLACES_DE_INTERES = [
     { id: 'portal-unsl', texto: 'Portal de la UNSL', url: 'http://www.unsl.edu.ar' },
     { id: 'correo', texto: 'Correo institucional', url: 'https://webmail.unsl.edu.ar' },
-    {
-        id: 'planes-oficial',
-        texto: 'Planes de estudio (sitio oficial)',
-        url: 'http://planesestudio.unsl.edu.ar/',
-    },
+    { id: 'planes-oficial', texto: 'Planes de estudio (sitio oficial)', url: SITIO_PLANES_DE_ESTUDIO },
 ]

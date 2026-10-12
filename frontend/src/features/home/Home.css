@@ -4,9 +4,9 @@
   min-height: 60vh;
   padding: calc(var(--alto-barra) + 3rem) 0 3rem;
   background:
-    linear-gradient(rgb(30 41 77 / 0.72), rgb(38 43 69 / 0.82)),
+    linear-gradient(rgb(30 41 77 / 0.72), rgb(30 41 77 / 0.82)),
     url('./portada-unsl.webp') center / cover no-repeat,
-    var(--color-marino-base);
+    var(--color-primario);
   color: var(--bs-white);
 }
 

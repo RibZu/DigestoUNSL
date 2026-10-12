@@ -1,4 +1,4 @@
-import { normativas } from '../data/normativas.mock.json'
+import mock from '../features/busqueda/busqueda.mock.json'
 
 function simularRespuesta(datos) {
     return new Promise((resolve) => {
@@ -6,19 +6,16 @@ function simularRespuesta(datos) {
     })
 }
 
-//Normaliza una normativa al shape esperado por Busqueda.jsx
-function toResultado(n) {
-    // Formatea fecha de "YYYY-MM-DD" a "DD-MM-YYYY"
-    const [y, m, d] = n.fecha.split('-')
-    return {
-        id: n.id,
-        title: n.titulo,
-        codigo: n.codigo,
-        organo: n.origen,   // "Origen" es el campo más descriptivo para la búsqueda
-        tipo: n.tipo,
-        fecha: `${d}-${m}-${y}`,
-        snippet: n.snippet,
-    }
+/** Mapeo de valores del select de organismo a fragmentos del campo `organo` en el JSON */
+const ORGANISMO_MAP = {
+    rectorado: 'rectorado',
+    fcfmyn: 'fcfmyn',
+    fcejs: 'fcejs',
+    fch: 'fch',
+    fqbyf: 'fqbyf',
+    fcs: 'fcs',
+    fapyp: 'psicología',
+    secretarias: 'secretarías',
 }
 
 /**
@@ -42,54 +39,53 @@ export function filtrarResultados({
     fechaDesde = '',
     fechaHasta = '',
 } = {}) {
-    return normativas
-        .filter((n) => {
-            // Texto libre — título, snippet o código
-            if (searchTerm) {
-                const q = searchTerm.toLowerCase()
-                if (
-                    !n.titulo.toLowerCase().includes(q) &&
-                    !n.snippet.toLowerCase().includes(q) &&
-                    !n.codigo.toLowerCase().includes(q)
-                ) return false
-            }
+    return mock.filter((item) => {
+        // Texto libre — título o snippet
+        if (searchTerm) {
+            const q = searchTerm.toLowerCase()
+            const enTitulo = item.title.toLowerCase().includes(q)
+            const enSnippet = item.snippet.toLowerCase().includes(q)
+            const enCodigo = item.codigo.toLowerCase().includes(q)
+            if (!enTitulo && !enSnippet && !enCodigo) return false
+        }
 
-            // Tipo de documento
-            if (tipoDocumento) {
-                if (!n.tipo.toLowerCase().includes(tipoDocumento.toLowerCase())) return false
-            }
+        // Tipo de documento
+        if (tipoDocumento) {
+            if (!item.tipo.toLowerCase().includes(tipoDocumento.toLowerCase())) return false
+        }
 
-            // Organismo emisor — busca en origen y organo
-            if (organismoEmisor) {
-                const keyword = organismoEmisor.toLowerCase()
-                const enOrigen = n.origen.toLowerCase().includes(keyword)
-                const enOrgano = n.organo.toLowerCase().includes(keyword)
-                if (!enOrigen && !enOrgano) return false
-            }
+        // Organismo emisor
+        if (organismoEmisor) {
+            const keyword = ORGANISMO_MAP[organismoEmisor] ?? organismoEmisor
+            if (!item.organo.toLowerCase().includes(keyword)) return false
+        }
 
-            // Número de norma (busca en el código)
-            if (numeroNorma) {
-                if (!n.codigo.includes(numeroNorma)) return false
-            }
+        // Número de norma (busca en el código)
+        if (numeroNorma) {
+            if (!item.codigo.includes(numeroNorma)) return false
+        }
 
-            // Año (los 2 últimos dígitos del código, ej: "26" en "RR-1-145/26")
-            if (anioNorma) {
-                const anioCorto = String(anioNorma).slice(-2)
-                if (!n.codigo.endsWith(`/${anioCorto}`)) return false
-            }
+        // Año (busca en el código, ej: "26" en "RR-1-145/26")
+        if (anioNorma) {
+            const anioCorto = String(anioNorma).slice(-2)
+            if (!item.codigo.endsWith(`/${anioCorto}`)) return false
+        }
 
-            // Rango de fechas — n.fecha ya está en YYYY-MM-DD
-            if (fechaDesde && n.fecha < fechaDesde) return false
-            if (fechaHasta && n.fecha > fechaHasta) return false
+        // Rango de fechas — el campo `fecha` en el mock está en formato DD-MM-YYYY
+        if (fechaDesde || fechaHasta) {
+            const [d, m, y] = item.fecha.split('-')
+            const fechaItem = `${y}-${m}-${d}` // convertir a YYYY-MM-DD para comparar
+            if (fechaDesde && fechaItem < fechaDesde) return false
+            if (fechaHasta && fechaItem > fechaHasta) return false
+        }
 
-            return true
-        })
-        .sort((a, b) => b.fecha.localeCompare(a.fecha))
-        .map(toResultado)
+        return true
+    })
 }
 
-//Versión asíncrona (simula llamada a API).
+/**
+ * Versión asíncrona (simula llamada a API).
+ */
 export function buscarNormativas(params) {
     return simularRespuesta(filtrarResultados(params))
 }
-

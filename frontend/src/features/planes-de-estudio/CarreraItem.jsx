@@ -8,8 +8,8 @@ export default function CarreraItem({ carrera }) {
                 {carrera.planes.map((plan) => (
                     <li key={plan.plan}>
                         <Link
-                            className="carrera-item__plan btn btn-sm"
-                            to={`/planes-de-estudio/${carrera.codigo}/${plan.plan}`}
+                            className="carrera-item__plan btn btn-sm btn-outline-primary"
+                            to={`/planes-de-estudio/${carrera.codigo}/${plan.plan.replaceAll('/', '-')}`}
                             aria-label={`Plan ${plan.ordenanza} de ${carrera.nombre}`}
                         >
                             {plan.ordenanza}

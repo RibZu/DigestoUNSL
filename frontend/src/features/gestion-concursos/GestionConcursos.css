@@ -1,0 +1,72 @@
+.gestion-concursos__bloque {
+    margin: 0 0 1.5rem;
+    padding: 1rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radio);
+}
+
+.gestion-concursos__bloque > legend {
+    float: none;
+    width: auto;
+    padding: 0 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-primario);
+}
+
+.gestion-concursos__llamado {
+    position: relative;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radio);
+}
+
+.gestion-concursos__llamado > legend {
+    float: none;
+    padding: 0 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.gestion-concursos__quitar {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    background: var(--bg);
+}
+
+.gestion-concursos__codigo {
+    display: block;
+    padding: 0.5rem 0.75rem;
+    color: var(--color-primario);
+    background: var(--accent-bg);
+    border: 1px solid var(--color-primario);
+    border-radius: var(--radio);
+}
+
+.gestion-concursos__codigo--error {
+    color: var(--bs-danger);
+    border-color: var(--bs-danger);
+}
+
+.gestion-concursos__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+.gestion-concursos__tabla th,
+.gestion-concursos__tabla td {
+    overflow-wrap: anywhere;
+}
+
+.gestion-concursos__tabla strong,
+.gestion-concursos__tabla thead th,
+.gestion-concursos__tabla .btn {
+    white-space: nowrap;
+}
+
+.gestion-concursos__tabla .btn {
+    overflow-wrap: normal;
+}

@@ -8,6 +8,7 @@ export const layoutNavigationSections = [
     label: 'Planes de estudio',
     path: '/planes-de-estudio',
   },
+  { key: 'estadisticas', label: 'Estadísticas', path: '/estadisticas' },
 ]
 
 export const ayudaSection = { key: 'ayuda', label: 'Ayuda', path: '/ayuda' }

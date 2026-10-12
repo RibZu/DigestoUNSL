@@ -1,7 +1,7 @@
 .encabezado-pagina {
-    background: var(--color-marino-base);
+    background: var(--color-primario);
     color: var(--bs-white);
-    padding-top: calc(var(--alto-barra) + 2rem);
+    padding-top: calc(var(--alto-barra) + 3rem);
     padding-bottom: 2rem;
     margin-bottom: 2rem;
 }

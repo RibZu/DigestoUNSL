@@ -1,20 +1,11 @@
 import { useState, useEffect } from 'react'
-import mockData from '../../data/normativas.mock.json'
+import mockData from './documentos.mock.json'
 import FormularioAlta from './components/FormularioAlta.jsx'
 import TablaGestion from './components/TablaGestion.jsx'
 import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
 import './AltaDocumento.css'
 
-// Adapta el esquema unificado al shape que usa TablaGestion/FormularioAlta
-const documentosIniciales = mockData.normativas.map((n) => ({
-  id: n.id,
-  fecha: n.fechaAlta,
-  tipo: n.tipo,
-  origen: n.origen,
-  organo: n.organo,
-  descripcion: n.descripcion,
-  pdfNombre: n.pdfNombre,
-}))
+const { documentosIniciales } = mockData
 
 export default function AltaDocumento() {
   const [activeTab, setActiveTab] = useState('gestion') // 'alta' | 'gestion'
