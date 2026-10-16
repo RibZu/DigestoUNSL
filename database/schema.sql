@@ -1,83 +1,105 @@
 -- ========================================================
--- DIGESTO UNSL - ESQUEMA DE BASE DE DATOS (PostgreSQL)
+-- DIGESTO UNSL - ESQUEMA DE BASE DE DATOS (PostgreSQL 18)
 -- Genera: Tipos ENUM, Tablas, Relaciones e Índices
--- Datos de ejemplo: seed.sql
+-- Es el diseño de database/esquema.dbml. Datos: seed.sql
 -- ========================================================
 
+-- Los archivos están en UTF-8 (psql en Windows usa otra codificación si no se aclara)
+SET client_encoding = 'UTF8';
+
 -- --------------------------------------------------------
--- 1. TIPOS ENUM PERSONALIZADOS
+-- 1. TIPOS ENUM
 -- --------------------------------------------------------
 
 DO $$ BEGIN
-    CREATE TYPE enum_ambito AS ENUM ('universidad', 'facultad', 'escuela');
+    CREATE TYPE ciudad AS ENUM ('San Luis', 'Villa Mercedes', 'Merlo');
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
 DO $$ BEGIN
-    CREATE TYPE enum_modulo AS ENUM ('concursos', 'normativas', 'planes');
+    CREATE TYPE ambito AS ENUM ('universidad', 'facultad', 'escuela');
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
 DO $$ BEGIN
-    CREATE TYPE enum_cargo AS ENUM (
-        'Profesor Titular', 
-        'Profesor Asociado', 
-        'Profesor Adjunto', 
-        'Jefe de Trabajos Prácticos', 
-        'Auxiliar de Primera', 
-        'Auxiliar de Segunda'
+    CREATE TYPE modulo AS ENUM ('documentos', 'concursos');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
+-- En plural, como los publica el feed. Los últimos valores de cada uno son históricos:
+-- quedan para los llamados viejos y el formulario del panel no los ofrece.
+DO $$ BEGIN
+    CREATE TYPE cargo AS ENUM (
+        'Profesores Titulares',
+        'Profesores Asociados',
+        'Profesores Adjuntos',
+        'Jefes de Trabajos Practicos',
+        'Auxiliares de Primera',
+        'Auxiliares de Segunda',
+        'Agregados Ad-Honorem Alumnos',
+        'Agregados Ad-Honorem Diplomados',
+        'Varios'
     );
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
 DO $$ BEGIN
-    CREATE TYPE enum_dedicacion AS ENUM ('Exclusiva', 'Semiexclusiva', 'Simple');
+    CREATE TYPE dedicacion AS ENUM ('Exclusivos', 'Semiexclusivos', 'Simples', 'Completos', 'Varias');
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
 DO $$ BEGIN
-    CREATE TYPE enum_caracter AS ENUM ('Efectivo', 'Interino', 'Suplente');
+    CREATE TYPE caracter AS ENUM (
+        'Efectivos',
+        'Interinos',
+        'Suplentes',
+        'Temporarios',
+        'Reemplazantes',
+        'Contratados',
+        'Varios'
+    );
 EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
 -- --------------------------------------------------------
--- 2. TABLAS BASE / CATÁLOGOS INSTITUCIONALES
+-- 2. CATÁLOGOS Y USUARIOS
 -- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS dependencia (
     id SERIAL PRIMARY KEY,
-    numero INT UNIQUE NOT NULL,
-    codigo VARCHAR(20) UNIQUE,
-    sigla VARCHAR(20),
+    numero INT UNIQUE,
+    codigo VARCHAR(10) UNIQUE,
+    sigla VARCHAR(20) NOT NULL,
     nombre VARCHAR(150) NOT NULL,
-    ubicacion VARCHAR(100),
-    es_facultad BOOLEAN DEFAULT true,
-    historica BOOLEAN DEFAULT false,
+    ubicacion ciudad,
+    es_facultad BOOLEAN NOT NULL DEFAULT false,
+    historica BOOLEAN NOT NULL DEFAULT false,
     fecha_baja TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS tipo_documento (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR(100) UNIQUE NOT NULL,
+    nombre VARCHAR(50) UNIQUE NOT NULL,
     fecha_baja TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS organo_emisor (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR(150) UNIQUE NOT NULL,
+    nombre VARCHAR(100) UNIQUE NOT NULL,
     fecha_baja TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS codificacion (
-    prefijo VARCHAR(20) PRIMARY KEY,
+    prefijo VARCHAR(10) PRIMARY KEY,
     id_tipo INT NOT NULL,
     id_organo INT,
-    ambito enum_ambito NOT NULL DEFAULT 'universidad',
+    ambito ambito,
     fecha_baja TIMESTAMP,
     CONSTRAINT fk_codificacion_tipo FOREIGN KEY (id_tipo) REFERENCES tipo_documento(id),
     CONSTRAINT fk_codificacion_organo FOREIGN KEY (id_organo) REFERENCES organo_emisor(id)
@@ -88,38 +110,38 @@ CREATE TABLE IF NOT EXISTS usuario (
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
     password_hash VARCHAR(255) NOT NULL,
-    es_admin BOOLEAN DEFAULT false,
-    fecha_alta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    es_admin BOOLEAN NOT NULL DEFAULT false,
+    fecha_alta TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     fecha_baja TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS permiso (
     id_usuario INT NOT NULL,
     id_dependencia INT NOT NULL,
-    modulo enum_modulo NOT NULL,
+    modulo modulo NOT NULL,
     fecha_baja TIMESTAMP,
     PRIMARY KEY (id_usuario, id_dependencia, modulo),
-    CONSTRAINT fk_permiso_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id) ON DELETE CASCADE,
+    CONSTRAINT fk_permiso_usuario FOREIGN KEY (id_usuario) REFERENCES usuario(id),
     CONSTRAINT fk_permiso_dependencia FOREIGN KEY (id_dependencia) REFERENCES dependencia(id)
 );
 
 -- --------------------------------------------------------
--- 3. MÓDULO DIGESTO / DOCUMENTOS
+-- 3. DOCUMENTOS
 -- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS documento (
     id SERIAL PRIMARY KEY,
-    codigo VARCHAR(50) UNIQUE NOT NULL,
-    prefijo VARCHAR(20) NOT NULL,
+    codigo VARCHAR(30) UNIQUE NOT NULL,
+    prefijo VARCHAR(10) NOT NULL,
     id_dependencia_origen INT NOT NULL,
-    numero VARCHAR(20),
-    anio SMALLINT,
+    numero VARCHAR(10) NOT NULL,
+    anio SMALLINT NOT NULL,
     id_dependencia_emisora INT NOT NULL,
-    fecha_emision DATE NOT NULL,
-    descripcion TEXT NOT NULL,
-    archivo_ruta VARCHAR(500),
-    url_externa VARCHAR(500),
-    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    fecha_emision DATE,
+    descripcion TEXT,
+    archivo_ruta VARCHAR(255),
+    url_externa VARCHAR(255),
+    fecha_registro TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     id_usuario_alta INT,
     fecha_modificacion TIMESTAMP,
     id_usuario_modificacion INT,
@@ -128,13 +150,13 @@ CREATE TABLE IF NOT EXISTS documento (
     CONSTRAINT fk_doc_prefijo FOREIGN KEY (prefijo) REFERENCES codificacion(prefijo),
     CONSTRAINT fk_doc_dep_origen FOREIGN KEY (id_dependencia_origen) REFERENCES dependencia(id),
     CONSTRAINT fk_doc_dep_emisora FOREIGN KEY (id_dependencia_emisora) REFERENCES dependencia(id),
-    CONSTRAINT fk_doc_user_alta FOREIGN KEY (id_usuario_alta) REFERENCES usuario(id) ON DELETE SET NULL,
-    CONSTRAINT fk_doc_user_mod FOREIGN KEY (id_usuario_modificacion) REFERENCES usuario(id) ON DELETE SET NULL,
-    CONSTRAINT fk_doc_user_baja FOREIGN KEY (id_usuario_baja) REFERENCES usuario(id) ON DELETE SET NULL
+    CONSTRAINT fk_doc_user_alta FOREIGN KEY (id_usuario_alta) REFERENCES usuario(id),
+    CONSTRAINT fk_doc_user_mod FOREIGN KEY (id_usuario_modificacion) REFERENCES usuario(id),
+    CONSTRAINT fk_doc_user_baja FOREIGN KEY (id_usuario_baja) REFERENCES usuario(id)
 );
 
 -- --------------------------------------------------------
--- 4. MÓDULO CONCURSOS DOCENTES
+-- 4. CONCURSOS DOCENTES
 -- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS departamento (
@@ -142,6 +164,7 @@ CREATE TABLE IF NOT EXISTS departamento (
     id_dependencia INT NOT NULL,
     nombre VARCHAR(150) NOT NULL,
     fecha_baja TIMESTAMP,
+    CONSTRAINT uq_departamento UNIQUE (id_dependencia, nombre),
     CONSTRAINT fk_departamento_dependencia FOREIGN KEY (id_dependencia) REFERENCES dependencia(id)
 );
 
@@ -150,6 +173,7 @@ CREATE TABLE IF NOT EXISTS area (
     id_departamento INT NOT NULL,
     nombre VARCHAR(150) NOT NULL,
     fecha_baja TIMESTAMP,
+    CONSTRAINT uq_area UNIQUE (id_departamento, nombre),
     CONSTRAINT fk_area_departamento FOREIGN KEY (id_departamento) REFERENCES departamento(id)
 );
 
@@ -157,25 +181,28 @@ CREATE TABLE IF NOT EXISTS llamado_concurso (
     id SERIAL PRIMARY KEY,
     id_documento INT NOT NULL,
     id_area INT NOT NULL,
-    cargo enum_cargo NOT NULL,
-    dedicacion enum_dedicacion NOT NULL,
-    caracter enum_caracter NOT NULL,
+    cargo cargo NOT NULL,
+    dedicacion dedicacion,
+    caracter caracter NOT NULL,
     inscripcion_desde DATE NOT NULL,
     inscripcion_hasta DATE NOT NULL,
     fecha_baja TIMESTAMP,
     id_usuario_baja INT,
+    -- No duplicar al releer el feed (la dedicación puede venir vacía)
+    CONSTRAINT uq_llamado UNIQUE NULLS NOT DISTINCT
+        (id_documento, id_area, cargo, dedicacion, caracter, inscripcion_desde),
     CONSTRAINT fk_concurso_documento FOREIGN KEY (id_documento) REFERENCES documento(id),
     CONSTRAINT fk_concurso_area FOREIGN KEY (id_area) REFERENCES area(id),
-    CONSTRAINT fk_concurso_user_baja FOREIGN KEY (id_usuario_baja) REFERENCES usuario(id) ON DELETE SET NULL
+    CONSTRAINT fk_concurso_user_baja FOREIGN KEY (id_usuario_baja) REFERENCES usuario(id)
 );
 
 -- --------------------------------------------------------
--- 5. MÓDULO PLANES DE ESTUDIO Y CARRERAS
+-- 5. PLANES DE ESTUDIO Y CARRERAS
 -- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS carrera (
     id SERIAL PRIMARY KEY,
-    codigo VARCHAR(20) UNIQUE NOT NULL,
+    codigo VARCHAR(10) UNIQUE NOT NULL,
     nombre VARCHAR(200) NOT NULL,
     fecha_baja TIMESTAMP
 );
@@ -185,8 +212,8 @@ CREATE TABLE IF NOT EXISTS carrera_dependencia (
     id_dependencia INT NOT NULL,
     fecha_baja TIMESTAMP,
     PRIMARY KEY (id_carrera, id_dependencia),
-    CONSTRAINT fk_cardep_carrera FOREIGN KEY (id_carrera) REFERENCES carrera(id) ON DELETE CASCADE,
-    CONSTRAINT fk_cardep_dependencia FOREIGN KEY (id_dependencia) REFERENCES dependencia(id) ON DELETE CASCADE
+    CONSTRAINT fk_cardep_carrera FOREIGN KEY (id_carrera) REFERENCES carrera(id),
+    CONSTRAINT fk_cardep_dependencia FOREIGN KEY (id_dependencia) REFERENCES dependencia(id)
 );
 
 CREATE TABLE IF NOT EXISTS plan_estudio (
@@ -195,11 +222,12 @@ CREATE TABLE IF NOT EXISTS plan_estudio (
     plan VARCHAR(20) NOT NULL,
     ordenanza VARCHAR(50) NOT NULL,
     anios SMALLINT NOT NULL,
-    url_oficial VARCHAR(500),
-    version_id INT,
-    sincronizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    url_oficial VARCHAR(500) NOT NULL,
+    version_id INT NOT NULL,
+    sincronizado_en TIMESTAMP NOT NULL,
     fecha_baja TIMESTAMP,
-    CONSTRAINT fk_plan_carrera FOREIGN KEY (id_carrera) REFERENCES carrera(id) ON DELETE CASCADE
+    CONSTRAINT uq_plan UNIQUE (id_carrera, plan),
+    CONSTRAINT fk_plan_carrera FOREIGN KEY (id_carrera) REFERENCES carrera(id)
 );
 
 CREATE TABLE IF NOT EXISTS materia (
@@ -207,11 +235,12 @@ CREATE TABLE IF NOT EXISTS materia (
     id_plan INT NOT NULL,
     anio SMALLINT NOT NULL,
     orden SMALLINT NOT NULL,
-    codigo VARCHAR(30) NOT NULL,
+    codigo VARCHAR(20) NOT NULL,
     nombre VARCHAR(200) NOT NULL,
     periodo VARCHAR(50),
     fecha_baja TIMESTAMP,
-    CONSTRAINT fk_materia_plan FOREIGN KEY (id_plan) REFERENCES plan_estudio(id) ON DELETE CASCADE
+    CONSTRAINT uq_materia UNIQUE (id_plan, anio, codigo),
+    CONSTRAINT fk_materia_plan FOREIGN KEY (id_plan) REFERENCES plan_estudio(id)
 );
 
 -- --------------------------------------------------------
@@ -219,17 +248,15 @@ CREATE TABLE IF NOT EXISTS materia (
 -- --------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS termino_buscado (
-    termino VARCHAR(150) PRIMARY KEY,
-    busquedas INT DEFAULT 1
+    termino VARCHAR(200) PRIMARY KEY,
+    busquedas INT NOT NULL DEFAULT 0
 );
 
 -- --------------------------------------------------------
 -- 7. ÍNDICES
 -- --------------------------------------------------------
 
-CREATE INDEX IF NOT EXISTS idx_documento_fecha ON documento(fecha_emision);
-CREATE INDEX IF NOT EXISTS idx_documento_emisora ON documento(id_dependencia_emisora);
-CREATE INDEX IF NOT EXISTS idx_concurso_vigencia ON llamado_concurso(inscripcion_hasta);
-CREATE INDEX IF NOT EXISTS idx_plan_estudio_carrera ON plan_estudio(id_carrera);
-CREATE INDEX IF NOT EXISTS idx_materia_plan ON materia(id_plan);
-
+CREATE INDEX IF NOT EXISTS idx_documento_fecha_emision ON documento(fecha_emision);
+CREATE INDEX IF NOT EXISTS idx_documento_fecha_registro ON documento(fecha_registro);
+CREATE INDEX IF NOT EXISTS idx_documento_prefijo_numero_anio ON documento(prefijo, numero, anio);
+CREATE INDEX IF NOT EXISTS idx_llamado_inscripcion_hasta ON llamado_concurso(inscripcion_hasta);

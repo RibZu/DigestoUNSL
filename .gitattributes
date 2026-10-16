@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# gofmt rechaza los archivos con CRLF: los .go siempre con LF, también en Windows
+*.go text eol=lf
