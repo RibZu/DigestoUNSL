@@ -12,9 +12,10 @@ Este directorio contiene los scripts y el modelo formal de la base de datos Post
 3. Nombre de la base de datos: `DigestoUNSL` (o el configurado en tu `.env`) y guardar.
 4. Seleccionar la base de datos `DigestoUNSL` en el árbol izquierdo.
 5. Abrir la herramienta de consulta: **Tools** > **Query Tool** (o ícono de play/ejecutar).
-6. Abrir el archivo `database/BD.sql` (o copiar y pegar todo su contenido en el editor).
+6. Abrir el archivo `database/schema.sql` (o copiar y pegar todo su contenido en el editor).
 7. Presionar **F5** (o el botón **Execute**).
-8. ¡Listo! Se habrán creado los tipos `ENUM`, las 15 tablas con sus relaciones e índices, y los datos iniciales de prueba.
+8. Repetir los pasos 6 y 7 con `database/seed.sql`, que carga los datos iniciales y de prueba.
+9. ¡Listo! Se habrán creado los tipos `ENUM`, las 15 tablas con sus relaciones e índices, y los datos iniciales de prueba.
 
 ### Opción B: Desde la Terminal (psql)
 Con la terminal parada en la raíz del proyecto:
@@ -22,8 +23,11 @@ Con la terminal parada en la raíz del proyecto:
 # 1. Crear la base de datos si aún no existe
 psql -U postgres -c "CREATE DATABASE \"DigestoUNSL\";"
 
-# 2. Ejecutar el script SQL completo
-psql -U postgres -d DigestoUNSL -f database/BD.sql
+# 2. Crear los tipos, las tablas y los índices
+psql -U postgres -d DigestoUNSL -f database/schema.sql
+
+# 3. Cargar los datos iniciales y de prueba
+psql -U postgres -d DigestoUNSL -f database/seed.sql
 ```
 
 ---

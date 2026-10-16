@@ -1,10 +1,9 @@
 {
-  "name": "digesto",
+  "name": "digesto-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "node ./backend_node/src/server.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
