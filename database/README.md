@@ -42,7 +42,7 @@ classDiagram
         varchar codigo UK
         varchar sigla
         varchar nombre
-        varchar ubicacion
+        ciudad ubicacion
         boolean es_facultad
         boolean historica
         timestamp fecha_baja
@@ -61,7 +61,7 @@ classDiagram
         varchar prefijo PK
         int id_tipo FK
         int id_organo FK
-        enum_ambito ambito
+        ambito ambito
         timestamp fecha_baja
     }
     class usuario {
@@ -76,7 +76,7 @@ classDiagram
     class permiso {
         int id_usuario PK, FK
         int id_dependencia PK, FK
-        enum_modulo modulo PK
+        modulo modulo PK
         timestamp fecha_baja
     }
     class documento {
@@ -114,9 +114,9 @@ classDiagram
         int id PK
         int id_documento FK
         int id_area FK
-        enum_cargo cargo
-        enum_dedicacion dedicacion
-        enum_caracter caracter
+        cargo cargo
+        dedicacion dedicacion
+        caracter caracter
         date inscripcion_desde
         date inscripcion_hasta
         timestamp fecha_baja
@@ -186,141 +186,245 @@ classDiagram
 Si querés ver o editar el diagrama visual en [dbdiagram.io](https://dbdiagram.io/):
 
 ```dbml
+Enum ciudad {
+  "San Luis"
+  "Villa Mercedes"
+  Merlo
+}
+
+Enum ambito {
+  universidad
+  facultad
+  escuela
+}
+
+Enum modulo {
+  documentos
+  concursos
+}
+
+Enum cargo {
+  "Profesores Titulares"
+  "Profesores Asociados"
+  "Profesores Adjuntos"
+  "Jefes de Trabajos Practicos"
+  "Auxiliares de Primera"
+  "Auxiliares de Segunda"
+  "Agregados Ad-Honorem Alumnos"
+  "Agregados Ad-Honorem Diplomados"
+  Varios
+}
+
+Enum dedicacion {
+  Exclusivos
+  Semiexclusivos
+  Simples
+  Completos
+  Varias
+}
+
+Enum caracter {
+  Efectivos
+  Interinos
+  Suplentes
+  Temporarios
+  Reemplazantes
+  Contratados
+  Varios
+}
+
 Table dependencia {
   id int [pk, increment]
   numero int [unique]
-  codigo varchar [unique]
-  sigla varchar
-  nombre varchar
-  ubicacion varchar
-  es_facultad boolean
-  historica boolean
+  codigo varchar(10) [unique]
+  sigla varchar(20) [not null]
+  nombre varchar(150) [not null]
+  ubicacion ciudad
+  es_facultad boolean [not null, default: false]
+  historica boolean [not null, default: false]
   fecha_baja timestamp
 }
 
 Table tipo_documento {
   id int [pk, increment]
-  nombre varchar [unique]
+  nombre varchar(50) [not null, unique]
   fecha_baja timestamp
 }
 
 Table organo_emisor {
   id int [pk, increment]
-  nombre varchar [unique]
+  nombre varchar(100) [not null, unique]
   fecha_baja timestamp
 }
 
 Table codificacion {
-  prefijo varchar [pk]
+  prefijo varchar(10) [pk]
   id_tipo int [not null]
   id_organo int
-  ambito varchar
+  ambito ambito
   fecha_baja timestamp
 }
 
 Table usuario {
   id int [pk, increment]
-  nombre varchar
-  email varchar [unique]
-  password_hash varchar
-  es_admin boolean
-  fecha_alta timestamp
+  nombre varchar(100) [not null]
+  email varchar(150) [not null, unique]
+  password_hash varchar(255) [not null]
+  es_admin boolean [not null, default: false]
+  fecha_alta timestamp [not null, default: `now()`]
   fecha_baja timestamp
 }
 
 Table permiso {
-  id_usuario int [pk]
-  id_dependencia int [pk]
-  modulo varchar [pk]
+  id_usuario int [not null]
+  id_dependencia int [not null]
+  modulo modulo [not null]
   fecha_baja timestamp
+  indexes {
+    (id_usuario, id_dependencia, modulo) [pk]
+  }
 }
 
 Table documento {
   id int [pk, increment]
-  codigo varchar [unique]
-  prefijo varchar [not null]
+  codigo varchar(30) [not null, unique]
+  prefijo varchar(10) [not null]
   id_dependencia_origen int [not null]
-  numero varchar
-  anio smallint
+  numero varchar(10) [not null]
+  anio smallint [not null]
   id_dependencia_emisora int [not null]
   fecha_emision date
   descripcion text
-  archivo_ruta varchar
-  url_externa varchar
-  fecha_registro timestamp
+  archivo_ruta varchar(255)
+  url_externa varchar(255)
+  fecha_registro timestamp [not null, default: `now()`]
   id_usuario_alta int
   fecha_modificacion timestamp
   id_usuario_modificacion int
   fecha_baja timestamp
   id_usuario_baja int
+  indexes {
+    fecha_emision
+    fecha_registro
+    (prefijo, numero, anio)
+  }
 }
 
 Table departamento {
   id int [pk, increment]
   id_dependencia int [not null]
-  nombre varchar
+  nombre varchar(150) [not null]
   fecha_baja timestamp
+  indexes {
+    (id_dependencia, nombre) [unique]
+  }
 }
 
 Table area {
   id int [pk, increment]
   id_departamento int [not null]
-  nombre varchar
+  nombre varchar(150) [not null]
   fecha_baja timestamp
+  indexes {
+    (id_departamento, nombre) [unique]
+  }
 }
 
 Table llamado_concurso {
   id int [pk, increment]
   id_documento int [not null]
   id_area int [not null]
-  cargo varchar
-  dedicacion varchar
-  caracter varchar
-  inscripcion_desde date
-  inscripcion_hasta date
+  cargo cargo [not null]
+  dedicacion dedicacion
+  caracter caracter [not null]
+  inscripcion_desde date [not null]
+  inscripcion_hasta date [not null]
   fecha_baja timestamp
   id_usuario_baja int
+  indexes {
+    inscripcion_hasta
+    (id_documento, id_area, cargo, dedicacion, caracter, inscripcion_desde) [unique]
+  }
 }
 
 Table carrera {
   id int [pk, increment]
-  codigo varchar [unique]
-  nombre varchar
+  codigo varchar(10) [not null, unique]
+  nombre varchar(200) [not null]
   fecha_baja timestamp
 }
 
 Table carrera_dependencia {
-  id_carrera int [pk]
-  id_dependencia int [pk]
+  id_carrera int [not null]
+  id_dependencia int [not null]
   fecha_baja timestamp
+  indexes {
+    (id_carrera, id_dependencia) [pk]
+  }
 }
 
 Table plan_estudio {
   id int [pk, increment]
   id_carrera int [not null]
-  plan varchar
-  ordenanza varchar
-  anios smallint
-  url_oficial varchar
-  version_id int
-  sincronizado_en timestamp
+  plan varchar(20) [not null]
+  ordenanza varchar(50) [not null]
+  anios smallint [not null]
+  url_oficial varchar(500) [not null]
+  version_id int [not null]
+  sincronizado_en timestamp [not null]
   fecha_baja timestamp
+  indexes {
+    (id_carrera, plan) [unique]
+  }
 }
 
 Table materia {
   id int [pk, increment]
   id_plan int [not null]
-  anio smallint
-  orden smallint
-  codigo varchar
-  nombre varchar
-  periodo varchar
+  anio smallint [not null]
+  orden smallint [not null]
+  codigo varchar(20) [not null]
+  nombre varchar(200) [not null]
+  periodo varchar(50)
   fecha_baja timestamp
+  indexes {
+    (id_plan, anio, codigo) [unique]
+  }
 }
 
 Table termino_buscado {
-  termino varchar [pk]
-  busquedas int
+  termino varchar(200) [pk]
+  busquedas int [not null, default: 0]
+}
+
+TableGroup catalogos {
+  dependencia
+  tipo_documento
+  organo_emisor
+  codificacion
+  departamento
+  area
+}
+
+TableGroup usuarios {
+  usuario
+  permiso
+}
+
+TableGroup documentos_y_concursos {
+  documento
+  llamado_concurso
+}
+
+TableGroup planes_de_estudio {
+  carrera
+  carrera_dependencia
+  plan_estudio
+  materia
+}
+
+TableGroup estadisticas {
+  termino_buscado
 }
 
 Ref: codificacion.id_tipo > tipo_documento.id

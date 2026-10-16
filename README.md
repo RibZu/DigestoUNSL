@@ -12,7 +12,7 @@ administrativo protegido. Una version preliminar se encuentra desplegada en: htt
 | `backend_node/` | La API en Node + Express, lo único que llama el front (por módulo y en capas). | `backend-go` y la base de datos |
 | `backend-go/` | La API en Go: lee el feed de concursos, planesestudio y el Digesto actual, y le devuelve JSON a `backend_node`. | Las fuentes externas |
 | `database/` | El esquema de la base (`schema.sql`) y los datos de ejemplo (`seed.sql`), en PostgreSQL. | La usa `backend_node` |
-| `documentacion/` | El diseño de las dos APIs (`api.md` y `api-go.md`) y el material de la cátedra. | — |
+| `documentacion/` | Tres PDF: `api-y-base-de-datos.pdf` (endpoints de las dos APIs, sincronización y base de datos), `dominio.pdf` (los datos del Digesto: tipos, prefijos, dependencias, fuentes y casos especiales) y `reparto-de-tareas.pdf` (qué hace cada uno). También el material de la cátedra. | — |
 
 Cada carpeta es un programa independiente: `frontend` y `backend_node` tienen su propio
 `package.json` y `backend-go` su propio `go.mod`. Se instalan y se ejecutan por separado, cada uno en
