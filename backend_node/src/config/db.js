@@ -1,18 +1,18 @@
-const { Pool } = require('pg');
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
-require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
+import pkg from 'pg';
+import { env } from './env.js';
 
-// Creamos el pool utilizando las variables de entorno de nuestro .env
-const pool = new Pool({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    database: process.env.DB_DATABASE,
-    password: process.env.DB_PASSWORD,
-    port: process.env.DB_PORT,
+const { Pool } = pkg;
+
+// Pool de conexiones
+export const pool = new Pool({
+  host: env.PGHOST,
+  port: env.PGPORT,
+  user: env.PGUSER,
+  password: env.PGPASSWORD,
+  database: env.PGDATABASE,
 });
 
-// Exportamos un objeto con una función 'query' para usarla en los controladores
-module.exports = {
-    query: (text, params) => pool.query(text, params),
-};
+// Log de errores de conexiones inactivas que el servidor puede cerrar inesperadamente
+pool.on('error', (err) => {
+  console.error('Error inesperado en el pool de conexiones', err);
+});

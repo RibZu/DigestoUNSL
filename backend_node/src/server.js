@@ -1,11 +1,4 @@
-// backend-node/src/server.js
-const app = require('./app');
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '.env') });
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+import app from './app.js';
+import { env } from './config/env.js';
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+app.listen(env.PORT, () => console.log(`Servidor en http://localhost:${env.PORT}`));
