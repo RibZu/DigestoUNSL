@@ -12,8 +12,6 @@ lerna-debug.log*
 node_modules
 package-lock.json
 .env
-backend-go/api
-backend-go/api.exe
 dist
 dist-ssr
 *.local
