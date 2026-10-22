@@ -1,0 +1,238 @@
+/* Diseño minimalista, legible y cómodo para la gestión de usuarios */
+
+.gestion-usuarios {
+  animation: fadeIn 0.2s ease-out;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Barra de control superior */
+.usuarios-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+
+.usuarios-search {
+  position: relative;
+  min-width: 280px;
+  max-width: 420px;
+  flex: 1;
+}
+
+.usuarios-search input {
+  padding-left: 2.5rem;
+  padding-top: 0.45rem;
+  padding-bottom: 0.45rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.975rem;
+  background-color: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.usuarios-search input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 3px rgba(30, 41, 77, 0.1);
+  outline: none;
+}
+
+.usuarios-search-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+/* Píldoras de filtro */
+.filtros-pildoras {
+  display: flex;
+  gap: 0.35rem;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.filtro-btn {
+  border: none;
+  background: transparent;
+  color: #475569;
+  font-size: 0.925rem;
+  font-weight: 500;
+  padding: 0.4rem 0.85rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.filtro-btn:hover {
+  color: #0f172a;
+}
+
+.filtro-btn.active {
+  background: #ffffff;
+  color: var(--color-primario);
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Tabla limpia con tipografía ampliada */
+.tabla-usuarios-minimal {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tabla-usuarios-minimal table {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.tabla-usuarios-minimal th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.95rem 1.15rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-usuarios-minimal td {
+  padding: 0.95rem 1.15rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tabla-usuarios-minimal tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-usuarios-minimal tbody tr:hover {
+  background-color: #fafbfc;
+}
+
+/* Estado con punto discreto y texto más legible */
+.estado-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+}
+
+.estado-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.estado-dot.activo {
+  color: #15803d;
+}
+.estado-dot.activo::before {
+  background-color: #22c55e;
+}
+
+.estado-dot.inactivo {
+  color: #64748b;
+}
+.estado-dot.inactivo::before {
+  background-color: #94a3b8;
+}
+
+/* Badges discretos para permisos asignados */
+.badge-dep {
+  background: #f1f5f9;
+  color: #1e293b;
+  font-size: 0.825rem;
+  font-weight: 600;
+  padding: 0.25rem 0.55rem;
+  border-radius: 5px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Botones de acción cómodos */
+.btn-accion-ghost {
+  border: none;
+  background: transparent;
+  color: #64748b;
+  padding: 0.45rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  line-height: 1;
+}
+
+.btn-accion-ghost:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.btn-accion-ghost:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-accion-ghost.danger:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-accion-ghost.success:hover {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Modales mínimos */
+.modal-minimal .modal-content {
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  font-size: 0.975rem;
+}
+
+.modal-minimal .modal-header {
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1.15rem 1.5rem;
+}
+
+.modal-minimal .modal-title {
+  font-size: 1.15rem;
+}
+
+.modal-minimal .modal-body {
+  padding: 1.5rem;
+}
+
+.modal-minimal .modal-footer {
+  border-top: 1px solid #f1f5f9;
+  padding: 0.95rem 1.5rem;
+  background: #fafbfc;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}

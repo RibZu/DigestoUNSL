@@ -21,6 +21,12 @@ const MODULOS = [
     descripcion: 'Carga, edición y baja de los documentos del Digesto.',
     ruta: '/alta',
   },
+  {
+    clave: 'usuarios',
+    nombre: 'Gestión de usuarios y roles',
+    descripcion: 'Administración de cuentas institucionales y permisos por facultad.',
+    ruta: '/login/usuarios',
+  },
 ]
 
 export default function Panel() {

@@ -4,17 +4,19 @@ import { corsOptions } from './config/cors.js';
 import { notFound } from './middlewares/notFound.middleware.js';
 import { errorHandler } from './middlewares/error.middleware.js';
 
+import authRoutes from './modules/auth/auth.routes.js';
+import usuariosRoutes from './modules/usuarios/usuarios.routes.js';
+
 const app = express();
 
 app.use(cors(corsOptions));
 app.use(express.json());
 
-// Ruta de prueba inicial
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'OK', message: 'Digesto UNSL API funcionando' });
-});
+//rutas de autenticación
+app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/usuarios', usuariosRoutes);
 
-// Primero la ruta 404 (Pagina no encontrada), después el manejo de errores
+// Manejo de errores y 404
 app.use(notFound);
 app.use(errorHandler);
 

@@ -16,6 +16,7 @@ import PlanesDeEstudio from '../features/planes-de-estudio/PlanesDeEstudio.jsx'
 import PlanDeEstudio from '../features/planes-de-estudio/PlanDeEstudio.jsx'
 import PaginaNoEncontrada from '../shared/ui/PaginaNoEncontrada.jsx'
 import AltaDocumento from '../features/alta/AltaDocumento.jsx'
+import GestionUsuarios from '../features/usuarios/GestionUsuarios.jsx'
 
 
 const router = createBrowserRouter([
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
           { path: 'estadisticas', element: <EstadisticasPrivadas /> },
           { path: 'panel', element: <Panel /> },
           { path: 'concursos', element: <GestionConcursos /> },
+          { path: 'usuarios', element: <GestionUsuarios /> },
         ],
       },
       { path: 'planes-de-estudio', element: <PlanesDeEstudio /> },

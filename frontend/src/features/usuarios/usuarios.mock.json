@@ -1,0 +1,78 @@
+{
+  "dependencias": [
+    { "id": 1, "sigla": "Org. Nac.", "nombre": "Organismos Nacionales" },
+    { "id": 2, "sigla": "Rectorado", "nombre": "Rectorado" },
+    { "id": 3, "sigla": "FQByF", "nombre": "Facultad de Química, Bioquímica y Farmacia" },
+    { "id": 4, "sigla": "FCFMyN", "nombre": "Facultad de Ciencias Físicas, Matemáticas y Naturales" },
+    { "id": 5, "sigla": "FCH", "nombre": "Facultad de Ciencias Humanas" },
+    { "id": 6, "sigla": "FICES", "nombre": "Facultad de Ingeniería y Ciencias Económico-Sociales" },
+    { "id": 7, "sigla": "ENJPP", "nombre": "Escuela Normal Juan Pascual Pringles" },
+    { "id": 8, "sigla": "IPAU", "nombre": "Instituto Politécnico y Artístico Universitario" },
+    { "id": 9, "sigla": "DOSPU", "nombre": "Dirección de Obra Social para el Personal Universitario" },
+    { "id": 10, "sigla": "DEDA", "nombre": "Departamento de Educación a Distancia" },
+    { "id": 11, "sigla": "FCS", "nombre": "Facultad de Ciencias de la Salud" },
+    { "id": 12, "sigla": "FTU", "nombre": "Facultad de Turismo y Urbanismo" },
+    { "id": 13, "sigla": "FaPsi", "nombre": "Facultad de Psicología" },
+    { "id": 14, "sigla": "FICA", "nombre": "Facultad de Ingeniería y Ciencias Agropecuarias" },
+    { "id": 15, "sigla": "FCEJS", "nombre": "Facultad de Ciencias Económicas, Jurídicas y Sociales" }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Administrador General",
+      "email": "admin@unsl.edu.ar",
+      "es_admin": true,
+      "fecha_alta": "2025-01-15T09:00:00Z",
+      "fecha_baja": null,
+      "permisos": []
+    },
+    {
+      "id": 2,
+      "nombre": "María Laura Gómez",
+      "email": "mlgomez@unsl.edu.ar",
+      "es_admin": false,
+      "fecha_alta": "2025-03-10T11:20:00Z",
+      "fecha_baja": null,
+      "permisos": [
+        { "id_dependencia": 4, "sigla": "FCFMyN", "modulo": "documentos" },
+        { "id_dependencia": 4, "sigla": "FCFMyN", "modulo": "concursos" },
+        { "id_dependencia": 2, "sigla": "Rectorado", "modulo": "documentos" }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Carlos Alberto Rossi",
+      "email": "crossi@unsl.edu.ar",
+      "es_admin": false,
+      "fecha_alta": "2025-04-02T14:45:00Z",
+      "fecha_baja": null,
+      "permisos": [
+        { "id_dependencia": 5, "sigla": "FCH", "modulo": "documentos" },
+        { "id_dependencia": 13, "sigla": "FaPsi", "modulo": "concursos" }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Florencia Belén Castro",
+      "email": "fbcastro@unsl.edu.ar",
+      "es_admin": false,
+      "fecha_alta": "2025-06-18T08:30:00Z",
+      "fecha_baja": null,
+      "permisos": [
+        { "id_dependencia": 15, "sigla": "FCEJS", "modulo": "documentos" },
+        { "id_dependencia": 14, "sigla": "FICA", "modulo": "documentos" }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Esteban Morales",
+      "email": "emorales@unsl.edu.ar",
+      "es_admin": false,
+      "fecha_alta": "2024-11-20T10:15:00Z",
+      "fecha_baja": "2026-02-14T12:00:00Z",
+      "permisos": [
+        { "id_dependencia": 3, "sigla": "FQByF", "modulo": "documentos" }
+      ]
+    }
+  ]
+}
