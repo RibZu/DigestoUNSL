@@ -12,23 +12,23 @@ export const verificarToken = async (req, res, next) => {
     const token = authHeader.split(' ')[1];
 
     try {
-        // 1. Verificamos el token
+        //Verificamos el token
         const payload = jwt.verify(token, env.JWT_SECRET);
 
-        // 2. Delegamos la consulta de la base de datos al REPOSITORIO (respetando la arquitectura)
-        const usuario = await buscarPorId(payload.id); // (Necesitamos crear esta función en el repositorio si no está)
+        //Delegamos la consulta de la base de datos al REPOSITORIO 
+        const usuario = await buscarPorId(payload.id); 
 
         if (!usuario || usuario.fecha_baja) {
             return res.status(401).json({ error: 'Token inválido o cuenta dada de baja' });
         }
 
-        // 3. Obtenemos los permisos usando también el repositorio
+        // Obtenemos los permisos
         let permisos = [];
         if (!usuario.es_admin) {
             permisos = await obtenerPermisosUsuario(usuario.id);
         }
 
-        // 4. Asignamos a req.usuario
+        // Asignamos a req.usuario
         req.usuario = {
             id: usuario.id,
             nombre: usuario.nombre,
