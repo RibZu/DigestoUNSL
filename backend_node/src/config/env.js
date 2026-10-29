@@ -12,7 +12,7 @@ export const env = {
 
   // JWT: clave para firmar los tokens y cuánto duran
   JWT_SECRET: process.env.JWT_SECRET, // sin valor por defecto: el secreto NUNCA va en el código
-  JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '8h',
+  JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '1h',
 
   // API en Go que lee las fuentes externas
   GO_API_URL: process.env.GO_API_URL ?? 'http://localhost:8080',

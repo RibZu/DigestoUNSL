@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
 import Desplegable from '../../shared/ui/Desplegable'
 import Filtros from '../../shared/ui/Filtros'
@@ -15,17 +15,26 @@ function filtrarFacultades(facultades, criterio) {
         .filter((facultad) => criterio.facultad === '' || facultad.codigo === criterio.facultad)
         .map((facultad) => ({
             ...facultad,
-            carreras: facultad.carreras.filter((carrera) =>
+            carreras: (facultad.carreras || []).filter((carrera) =>
                 contieneTexto([carrera.nombre, ...carrera.planes.map((plan) => plan.ordenanza)], criterio.texto)
             ),
         }))
-        .filter((facultad) => facultad.carreras.length > 0)
+        .filter((facultad) => facultad.carreras && facultad.carreras.length > 0)
 }
 
 export default function PlanesDeEstudio() {
     const [criterio, setCriterio] = useState(CRITERIO_VACIO)
     const [abiertas, setAbiertas] = useState([])
-    const facultades = obtenerPlanesDeEstudio()
+    const [facultades, setFacultades] = useState([])
+    const [cargando, setCargando] = useState(true)
+
+    useEffect(() => {
+        obtenerPlanesDeEstudio()
+            .then((data) => setFacultades(data || []))
+            .catch((err) => console.error(err))
+            .finally(() => setCargando(false))
+    }, [])
+
     const visibles = filtrarFacultades(facultades, criterio)
 
     function handleAplicar(nuevo) {
@@ -68,7 +77,14 @@ export default function PlanesDeEstudio() {
                     onAplicar={handleAplicar}
                 />
 
-                {visibles.length === 0 ? (
+                {cargando ? (
+                    <div className="text-center py-5">
+                        <div className="spinner-border text-primary" role="status">
+                            <span className="visually-hidden">Cargando...</span>
+                        </div>
+                        <p className="mt-2 text-muted">Cargando planes de estudio...</p>
+                    </div>
+                ) : visibles.length === 0 ? (
                     <MensajeVacio texto="No se encontraron carreras con los criterios seleccionados.">
                         <a href={SITIO_PLANES_DE_ESTUDIO} target="_blank" rel="noreferrer">
                             Buscá tu plan en el sitio oficial de planes de estudio

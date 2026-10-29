@@ -12,7 +12,7 @@ function validar(valores) {
     return errores
 }
 
-export default function FormularioLogin({ onIngresar }) {
+export default function FormularioLogin({ onIngresar, error, cargando }) {
     const [valores, setValores] = useState(VALORES_INICIALES)
     const [errores, setErrores] = useState({})
     const formularioRef = useRef(null)
@@ -40,6 +40,11 @@ export default function FormularioLogin({ onIngresar }) {
 
     return (
         <form ref={formularioRef} className="login-form" onSubmit={handleSubmit} noValidate>
+            {error && (
+                <div className="alert alert-danger py-2 mb-3" role="alert">
+                    {error}
+                </div>
+            )}
             <div className="login-form-group">
                 <label htmlFor="correo">Correo electrónico</label>
                 <input
@@ -84,8 +89,8 @@ export default function FormularioLogin({ onIngresar }) {
                 </a>
             </div>
 
-            <button type="submit" className="btn btn-primary w-100">
-                Ingresar al sistema
+            <button type="submit" className="btn btn-primary w-100" disabled={cargando}>
+                {cargando ? 'Ingresando...' : 'Ingresar al sistema'}
             </button>
         </form>
     )

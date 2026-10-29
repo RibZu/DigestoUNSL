@@ -11,12 +11,12 @@ import {
 
 const SALT_ROUNDS = 10;
 
-//Listar todos los usuarios
+// Listar todos los usuarios
 export const listarUsuarios = async () => {
     return await obtenerTodos();
 };
 
-//Crear un usuario
+// Crear un usuario
 export const crearUsuario = async (nombre, email, password, es_admin = false) => {
     // Buscamos si el email ya existe en la base (incluso dados de baja)
     const usuarioExistente = buscarPorEmailCompleto 
@@ -27,7 +27,7 @@ export const crearUsuario = async (nombre, email, password, es_admin = false) =>
 
     if (usuarioExistente) {
         if (usuarioExistente.fecha_baja) {
-            // Regla del proyecto: Si el correo era de una cuenta dada de baja, la reactiva
+            // reactivar si estaba dado de baja
             return await reactivarUsuarioBD(
                 usuarioExistente.id, 
                 nombre, 
@@ -35,18 +35,18 @@ export const crearUsuario = async (nombre, email, password, es_admin = false) =>
                 es_admin
             );
         } else {
-            // Si ya existe y está activo, lanzamos un error con código de duplicado (409)
+            // email ya registrado
             const error = new Error('Ya existe un usuario con ese email');
             error.code = '23505';
             throw error;
         }
     }
 
-    // Si no existe, creamos la cuenta nueva
+    
     return await crear(nombre, email, hash, es_admin);
 };
 
-//Modificar o dar de baja/reactivar un usuario 
+// Modificar o dar de baja/reactivar un usuario 
 export const actualizarUsuario = async (id, datos, usuarioActualId) => {
     if (datos.baja === true && Number(id) === Number(usuarioActualId)) {
         const error = new Error('Un administrador no puede darse de baja a sí mismo');
@@ -84,12 +84,29 @@ export const actualizarUsuario = async (id, datos, usuarioActualId) => {
     return await actualizarUsuarioBD(id, { setQuery, values });
 };
 
-//modifica la lista completa de permisos de un usuario
+// Modifica la lista completa de permisos de un usuario
 export const actualizarPermisos = async (idUsuario, permisos) => {
     if (!Array.isArray(permisos)) {
         const error = new Error('El formato de permisos debe ser un arreglo.');
         error.status = 400;
         throw error;
     }
+
+    for (const perm of permisos) {
+        if (!perm || typeof perm !== 'object' || !perm.id_dependencia || !perm.modulo) {
+            const error = new Error(
+                'Cada elemento de permisos debe ser un objeto con id_dependencia (número) y modulo ("documentos" o "concursos"). Ejemplo: [{ "id_dependencia": 4, "modulo": "documentos" }]'
+            );
+            error.status = 400;
+            throw error;
+        }
+
+        if (!['documentos', 'concursos'].includes(perm.modulo)) {
+            const error = new Error(`Módulo inválido: "${perm.modulo}". Los valores permitidos son "documentos" o "concursos".`);
+            error.status = 400;
+            throw error;
+        }
+    }
+
     return await actualizarPermisosBD(idUsuario, permisos);
 };
