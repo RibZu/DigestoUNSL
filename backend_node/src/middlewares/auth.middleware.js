@@ -51,3 +51,21 @@ export const verificarAdmin = (req, res, next) => {
     }
     next();
 };
+
+export const verificarPermiso = (modulo) => {
+    return (req, res, next) => {
+        if (!req.usuario) {
+            return res.status(401).json({ error: 'No autenticado' });
+        }
+        // Administrador tiene acceso total a todos los módulos y dependencias
+        if (req.usuario.es_admin) {
+            return next();
+        }
+        // Moderador con permiso en el módulo solicitado
+        const tienePermisoModulo = req.usuario.permisos?.some(p => p.modulo === modulo);
+        if (!tienePermisoModulo) {
+            return res.status(403).json({ error: `Acceso denegado. No posee permisos para el módulo ${modulo}.` });
+        }
+        next();
+    };
+};

@@ -1,16 +1,14 @@
 import { Router } from 'express';
-import { listar, obtenerPorId, crear, actualizar, eliminar } from './documentos.controller.js';
-import { verificarToken, verificarAdmin } from '../../middlewares/auth.middleware.js';
+import { listar, obtenerPorId, actualizar } from './documentos.controller.js';
+import { verificarToken, verificarPermiso } from '../../middlewares/auth.middleware.js';
 
 const router = Router();
 
-// Consultas públicas de normativas/documentos
+// Consultas públicas de normativas
 router.get('/', listar);
 router.get('/:id', obtenerPorId);
 
-// Operaciones de gestión protegidas por token y permisos de admin
-router.post('/', verificarToken, verificarAdmin, crear);
-router.patch('/:id', verificarToken, verificarAdmin, actualizar);
-router.delete('/:id', verificarToken, verificarAdmin, eliminar);
+// Modificar o dar de baja un documento
+router.patch('/:id', verificarToken, verificarPermiso('documentos'), actualizar);
 
 export default router;

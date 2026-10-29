@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import EncabezadoPagina from '../../shared/layout/EncabezadoPagina'
 import MateriasDelAnio from './MateriasDelAnio'
@@ -17,7 +18,30 @@ const ANIOS = [
 
 export default function PlanDeEstudio() {
     const { carrera, plan } = useParams()
-    const detalle = obtenerPlanDeEstudio(carrera, plan)
+    const [detalle, setDetalle] = useState(null)
+    const [cargando, setCargando] = useState(true)
+
+    useEffect(() => {
+        obtenerPlanDeEstudio(carrera, plan)
+            .then((data) => setDetalle(data))
+            .catch(() => setDetalle(null))
+            .finally(() => setCargando(false))
+    }, [carrera, plan])
+
+    if (cargando) {
+        return (
+            <>
+                <EncabezadoPagina titulo="Cargando plan...">
+                    <p>Obteniendo información del plan de estudio...</p>
+                </EncabezadoPagina>
+                <div className="container-xl text-center py-5">
+                    <div className="spinner-border text-primary" role="status">
+                        <span className="visually-hidden">Cargando...</span>
+                    </div>
+                </div>
+            </>
+        )
+    }
 
     if (detalle === null) {
         return (
@@ -37,7 +61,7 @@ export default function PlanDeEstudio() {
         )
     }
 
-    const cantidadMaterias = detalle.materiasPorAnio.reduce((total, grupo) => total + grupo.materias.length, 0)
+    const cantidadMaterias = (detalle.materiasPorAnio || []).reduce((total, grupo) => total + (grupo.materias || []).length, 0)
 
     return (
         <>
@@ -82,10 +106,10 @@ export default function PlanDeEstudio() {
 
             <section className="container-xl d-flex flex-column gap-4 pb-5">
                 <div className="plan-materias">
-                    {detalle.materiasPorAnio.map((grupo) => (
+                    {(detalle.materiasPorAnio || []).map((grupo) => (
                         <MateriasDelAnio
                             key={grupo.anio}
-                            titulo={ANIOS[grupo.anio - 1]}
+                            titulo={ANIOS[grupo.anio - 1] || `Año ${grupo.anio}`}
                             materias={grupo.materias}
                         />
                     ))}
