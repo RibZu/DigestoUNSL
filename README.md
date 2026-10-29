@@ -20,7 +20,7 @@ psql -U postgres -d DigestoUNSL -f database/seed.sql
 
 Copiar `backend_node/.env.example` como `backend_node/.env` y completar la contraseña de PostgreSQL y
 un `JWT_SECRET` largo y aleatorio. Copiar también `backend-go/.env.example` como `backend-go/.env`.
-Los archivos `.env` no se suben al repositorio.
+
 
 ## 3. Backend
 
