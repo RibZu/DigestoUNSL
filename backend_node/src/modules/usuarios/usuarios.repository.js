@@ -1,4 +1,4 @@
-import { pool } from '../../config/db.js'; 
+import { pool } from '../../config/db.js';
 
 export const crear = async (nombre, email, hash, es_admin = false) => {
     const { rows } = await pool.query(
@@ -7,20 +7,9 @@ export const crear = async (nombre, email, hash, es_admin = false) => {
         RETURNING id, nombre, email, es_admin, fecha_alta`,
         [nombre, email, hash, es_admin]
     );
-    return rows[0]; 
+    return rows[0];
 };
 
-export const buscarPorEmail = async (email) => {
-    const { rows } = await pool.query(
-        `SELECT id, nombre, email, password_hash, es_admin, fecha_baja 
-         FROM usuario 
-         WHERE email = $1`,
-        [email]
-    );
-    return rows[0]; // Retorna el usuario o undefined si no existe
-};
-
-//busca un usuario por email, incluso si está dado de baja
 export const buscarPorEmailCompleto = async (email) => {
     const { rows } = await pool.query(
         `SELECT id, nombre, email, password_hash, es_admin, fecha_baja FROM usuario WHERE email = $1`,
@@ -31,7 +20,7 @@ export const buscarPorEmailCompleto = async (email) => {
 
 export const obtenerPermisosUsuario = async (idUsuario) => {
     const { rows } = await pool.query(
-        `SELECT p.id_dependencia, d.sigla, p.modulo 
+        `SELECT p.id_dependencia, d.sigla, p.modulo
          FROM permiso p
          JOIN dependencia d ON p.id_dependencia = d.id
          WHERE p.id_usuario = $1 AND p.fecha_baja IS NULL`,
@@ -42,8 +31,8 @@ export const obtenerPermisosUsuario = async (idUsuario) => {
 
 export const buscarPorId = async (id) => {
     const { rows } = await pool.query(
-        `SELECT id, nombre, email, es_admin, fecha_baja 
-         FROM usuario 
+        `SELECT id, nombre, email, es_admin, fecha_baja
+         FROM usuario
          WHERE id = $1`,
         [id]
     );
@@ -54,13 +43,21 @@ export const obtenerTodos = async () => {
     const { rows } = await pool.query(
         `SELECT id, nombre, email, es_admin, fecha_baja FROM usuario`
     );
-    return rows; // Retorna el arreglo completo, no rows[0]
+    return rows;
+};
+
+export const buscarDependenciasActivas = async (ids) => {
+    const { rows } = await pool.query(
+        `SELECT id FROM dependencia WHERE id = ANY($1) AND fecha_baja IS NULL`,
+        [ids]
+    );
+    return rows;
 };
 
 export const reactivarUsuarioBD = async (id, nombre, passwordHash, esAdmin) => {
     const { rows } = await pool.query(
-        `UPDATE usuario 
-         SET nombre = $1, password_hash = $2, es_admin = $3, fecha_baja = NULL 
+        `UPDATE usuario
+         SET nombre = $1, password_hash = $2, es_admin = $3, fecha_baja = NULL
          WHERE id = $4
          RETURNING id, nombre, email, es_admin, fecha_alta, fecha_baja`,
         [nombre, passwordHash, esAdmin, id]
@@ -72,7 +69,7 @@ export const actualizarUsuarioBD = async (id, camposDinamicos) => {
     const { setQuery, values } = camposDinamicos;
     const query = `UPDATE usuario SET ${setQuery} WHERE id = $${values.length + 1} RETURNING id, nombre, email, es_admin, fecha_baja`;
     values.push(id);
-    
+
     const { rows } = await pool.query(query, values);
     return rows[0];
 };
@@ -82,13 +79,11 @@ export const actualizarPermisosBD = async (idUsuario, nuevosPermisos) => {
     try {
         await client.query('BEGIN');
 
-        // Dar de baja lógica todos los permisos actuales de ese usuario
         await client.query(
             `UPDATE permiso SET fecha_baja = NOW() WHERE id_usuario = $1 AND fecha_baja IS NULL`,
             [idUsuario]
         );
 
-        // Procesar cada permiso nuevo que viene en el arreglo
         for (const perm of nuevosPermisos) {
             const { rows: existente } = await client.query(
                 `SELECT 1 FROM permiso WHERE id_usuario = $1 AND id_dependencia = $2 AND modulo = $3`,
@@ -96,13 +91,11 @@ export const actualizarPermisosBD = async (idUsuario, nuevosPermisos) => {
             );
 
             if (existente.length > 0) {
-                // Si ya existía, lo reactivamos quitando la fecha de baja
                 await client.query(
                     `UPDATE permiso SET fecha_baja = NULL WHERE id_usuario = $1 AND id_dependencia = $2 AND modulo = $3`,
                     [idUsuario, perm.id_dependencia, perm.modulo]
                 );
             } else {
-                // Si es nuevo, lo insertamos
                 await client.query(
                     `INSERT INTO permiso (id_usuario, id_dependencia, modulo) VALUES ($1, $2, $3)`,
                     [idUsuario, perm.id_dependencia, perm.modulo]
@@ -112,9 +105,8 @@ export const actualizarPermisosBD = async (idUsuario, nuevosPermisos) => {
 
         await client.query('COMMIT');
 
-        // Retornar los permisos vigentes actualizados
         const { rows: actualizados } = await client.query(
-            `SELECT p.id_dependencia, d.sigla, p.modulo 
+            `SELECT p.id_dependencia, d.sigla, p.modulo
              FROM permiso p
              JOIN dependencia d ON p.id_dependencia = d.id
              WHERE p.id_usuario = $1 AND p.fecha_baja IS NULL`,

@@ -13,17 +13,24 @@ export const login = async (req, res, next) => {
             });
         }
 
-        // Ejecutar la autenticación en el servicio
+        if (typeof email !== 'string' || typeof password !== 'string') {
+            return res.status(400).json({
+                error: 'Hay datos inválidos.',
+                campos: {
+                    email: typeof email !== 'string' ? 'El correo tiene que ser texto.' : undefined,
+                    password: typeof password !== 'string' ? 'La contraseña tiene que ser texto.' : undefined
+                }
+            });
+        }
+
         const resultado = await autenticarUsuario(email, password);
 
-        // Respuesta exitosa 200 OK con el token y los datos de la cuenta
         res.status(200).json(resultado);
     } catch (err) {
-        // Si el servicio arrojó un error 401 controlado (credenciales malas o baja lógica)
         if (err.status === 401) {
             return res.status(401).json({ error: err.message });
         }
-        next(err); // Deriva al middleware global de errores
+        next(err);
     }
 };
 

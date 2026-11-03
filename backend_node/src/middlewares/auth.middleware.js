@@ -11,41 +11,41 @@ export const verificarToken = async (req, res, next) => {
 
     const token = authHeader.split(' ')[1];
 
+    let payload;
     try {
-        //Verificamos el token
-        const payload = jwt.verify(token, env.JWT_SECRET);
-
-        //Delegamos la consulta de la base de datos al REPOSITORIO 
-        const usuario = await buscarPorId(payload.id); 
-
-        if (!usuario || usuario.fecha_baja) {
-            return res.status(401).json({ error: 'Token inválido o cuenta dada de baja' });
-        }
-
-        // Obtenemos los permisos
-        let permisos = [];
-        if (!usuario.es_admin) {
-            permisos = await obtenerPermisosUsuario(usuario.id);
-        }
-
-        // Asignamos a req.usuario
-        req.usuario = {
-            id: usuario.id,
-            nombre: usuario.nombre,
-            email: usuario.email,
-            es_admin: usuario.es_admin,
-            permisos
-        };
-
-        next();
+        payload = jwt.verify(token, env.JWT_SECRET);
     } catch (err) {
         const mensaje = err.name === 'TokenExpiredError' ? 'Token vencido' : 'Token inválido';
         return res.status(401).json({ error: mensaje });
     }
+
+    let usuario;
+    let permisos = [];
+    try {
+        usuario = await buscarPorId(payload.id);
+        if (usuario && !usuario.fecha_baja && !usuario.es_admin) {
+            permisos = await obtenerPermisosUsuario(usuario.id);
+        }
+    } catch (err) {
+        return next(err);
+    }
+
+    if (!usuario || usuario.fecha_baja) {
+        return res.status(401).json({ error: 'Token inválido o cuenta dada de baja' });
+    }
+
+    req.usuario = {
+        id: usuario.id,
+        nombre: usuario.nombre,
+        email: usuario.email,
+        es_admin: usuario.es_admin,
+        permisos
+    };
+
+    next();
 };
 
 export const verificarAdmin = (req, res, next) => {
-    // req.usuario fue cargado previamente por el middleware verificarToken
     if (!req.usuario || !req.usuario.es_admin) {
         return res.status(403).json({ error: 'Acceso denegado. Se requieren permisos de administrador.' });
     }
@@ -57,15 +57,13 @@ export const verificarPermiso = (modulo) => {
         if (!req.usuario) {
             return res.status(401).json({ error: 'No autenticado' });
         }
-        // Administrador tiene acceso total a todos los módulos y dependencias
         if (req.usuario.es_admin) {
             return next();
         }
-        // Moderador con permiso en el módulo solicitado
         const tienePermisoModulo = req.usuario.permisos?.some(p => p.modulo === modulo);
         if (!tienePermisoModulo) {
             return res.status(403).json({ error: `Acceso denegado. No posee permisos para el módulo ${modulo}.` });
         }
         next();
     };
-};
+};
