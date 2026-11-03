@@ -16,6 +16,17 @@ psql -U postgres -f database/schema.sql
 psql -U postgres -d DigestoUNSL -f database/seed.sql
 ```
 
+> **Nota:** en Windows, al correr estos comandos en PowerShell, puede aparecer el error
+> `psql : El término 'psql' no se reconoce como nombre de un cmdlet...`. Una posible solución es
+> agregar la carpeta de PostgreSQL al PATH para la consola abierta:
+>
+> ```powershell
+> $env:Path += ";C:\Program Files\PostgreSQL\18\bin"
+> ```
+>
+> o dejarla fija en "Editar las variables de entorno de esta cuenta" → `Path`, y abrir una consola
+> nueva.
+
 ## 2. Variables de entorno
 
 Copiar `backend_node/.env.example` como `backend_node/.env` y completar la contraseña de PostgreSQL y
