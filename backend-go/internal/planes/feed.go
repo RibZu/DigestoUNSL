@@ -89,10 +89,12 @@ func leerListado(pagina string) ([]Carrera, error) {
 		for _, enlace := range reVigente.FindAllStringSubmatch(fila[2], -1) {
 			href := strings.ReplaceAll(enlace[1], "&amp;", "&")
 			consulta, err := url.ParseQuery(href[strings.Index(href, "?")+1:])
+
 			if err != nil {
 				return nil, fmt.Errorf("enlace con otra forma: %s", href)
 			}
 			versionID, err := strconv.Atoi(consulta.Get("version_id"))
+
 			if err != nil || consulta.Get("car") == "" || consulta.Get("plan") == "" {
 				return nil, fmt.Errorf("enlace con otra forma: %s", href)
 			}
