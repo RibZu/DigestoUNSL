@@ -8,11 +8,11 @@
 
 ## 1. Base de datos
 
-Crear la base `DigestoUNSL` y ejecutar los scripts desde la raíz del proyecto:
+Ejecutar los scripts desde la raíz del proyecto: `schema.sql` crea la base `DigestoUNSL` y sus
+tablas, y `seed.sql` carga los datos de prueba.
 
 ```bash
-psql -U postgres -c "CREATE DATABASE \"DigestoUNSL\";"
-psql -U postgres -d DigestoUNSL -f database/schema.sql
+psql -U postgres -f database/schema.sql
 psql -U postgres -d DigestoUNSL -f database/seed.sql
 ```
 

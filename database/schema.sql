@@ -1,8 +1,14 @@
 -- ========================================================
 -- DIGESTO UNSL - ESQUEMA DE BASE DE DATOS (PostgreSQL 18)
--- Genera: Tipos ENUM, Tablas, Relaciones e Índices
--- Es el diseño de database/esquema.dbml. Datos: seed.sql
+-- Crea la base, los tipos ENUM, las tablas, las relaciones y los índices. Datos: seed.sql
+-- Ejecutar con: psql -U postgres -f database/schema.sql
 -- ========================================================
+
+-- Comillas dobles porque el nombre tiene mayúsculas
+CREATE DATABASE "DigestoUNSL";
+
+-- Conectarse a la base recién creada (comando de psql)
+\c "DigestoUNSL"
 
 -- Los archivos están en UTF-8 (psql en Windows usa otra codificación si no se aclara)
 SET client_encoding = 'UTF8';

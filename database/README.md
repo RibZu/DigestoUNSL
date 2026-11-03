@@ -6,29 +6,31 @@ Este directorio contiene los scripts y el modelo formal de la base de datos Post
 
 ## 1. Cómo levantar la base de datos (Instrucciones para el equipo)
 
-### Opción A: Usando pgAdmin 4 (Recomendado)
+`schema.sql` empieza creando la base `DigestoUNSL` y conectándose a ella, como el proyecto de muestra
+de la cátedra; después crea los tipos `ENUM`, las 15 tablas con sus relaciones y los índices.
+`seed.sql` carga los datos iniciales y de prueba.
+
+### Opción A: Usando pgAdmin 4
 1. Abrir **pgAdmin 4** y conectarse al servidor local de PostgreSQL.
 2. Hacer clic derecho sobre **Databases** > **Create** > **Database...**
 3. Nombre de la base de datos: `DigestoUNSL` (o el configurado en tu `.env`) y guardar.
-4. Seleccionar la base de datos `DigestoUNSL` en el árbol izquierdo.
-5. Abrir la herramienta de consulta: **Tools** > **Query Tool** (o ícono de play/ejecutar).
-6. Abrir el archivo `database/schema.sql` (o copiar y pegar todo su contenido en el editor).
-7. Presionar **F5** (o el botón **Execute**).
-8. Repetir los pasos 6 y 7 con `database/seed.sql`, que carga los datos iniciales y de prueba.
-9. ¡Listo! Se habrán creado los tipos `ENUM`, las 15 tablas con sus relaciones e índices, y los datos iniciales de prueba.
+4. Hacer clic derecho sobre **DigestoUNSL** > **Query Tool** (siempre sobre esa base, no sobre `postgres`).
+5. Abrir el archivo `database/schema.sql`, seleccionar desde la línea siguiente a `\c "DigestoUNSL"`
+   hasta el final y presionar **F5**.
+6. Abrir el archivo `database/seed.sql` y presionar **F5**.
+
+> En pgAdmin **no** se puede ejecutar `schema.sql` entero: la línea `\c` es un comando exclusivo de
+> `psql` y pgAdmin no la entiende. Por eso la base se crea desde el menú y se saltean las primeras líneas.
 
 ### Opción B: Desde la Terminal (psql)
 Con la terminal parada en la raíz del proyecto:
 ```bash
-# 1. Crear la base de datos si aún no existe
-psql -U postgres -c "CREATE DATABASE \"DigestoUNSL\";"
-
-# 2. Crear los tipos, las tablas y los índices
-psql -U postgres -d DigestoUNSL -f database/schema.sql
-
-# 3. Cargar los datos iniciales y de prueba
+psql -U postgres -f database/schema.sql
 psql -U postgres -d DigestoUNSL -f database/seed.sql
 ```
+
+Si la base ya existía, `schema.sql` avisa que la base de datos «DigestoUNSL» ya existe y sigue con el
+resto: no es un problema.
 
 ---
 

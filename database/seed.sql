@@ -1,6 +1,6 @@
 -- ========================================================
 -- DIGESTO UNSL - DATOS INICIALES Y DE PRUEBA (PostgreSQL 18)
--- Se ejecuta después de schema.sql. Sale de los records de database/esquema.dbml.
+-- Se ejecuta después de schema.sql: psql -U postgres -d DigestoUNSL -f database/seed.sql
 -- ========================================================
 
 -- Los archivos están en UTF-8 (psql en Windows usa otra codificación si no se aclara)
