@@ -49,6 +49,16 @@ npm run dev
 
 Abrir `http://localhost:5173`.
 
+## Levantar todo con `levantar.bat` (Windows)
+
+En la raíz del proyecto está `levantar.bat`, que reemplaza los pasos 3 y 4 para no abrir cada programa
+a mano: abre tres ventanas de consola, `backend-go`, `backend_node` y `frontend`, y en cada una corre su
+`go run ./cmd/api` o `npm run dev`. Se ejecuta con doble clic o desde la raíz con `.\levantar.bat`.
+
+No instala dependencias ni crea la base: antes hay que tener PostgreSQL corriendo, haber hecho los
+pasos 1 y 2 y un `npm install` en `backend_node` y en `frontend`. Si un programa falla, su ventana queda
+abierta con el error; para detenerlo se cierra su ventana o se aprieta Ctrl+C.
+
 ## Usuario de prueba
 
 | Correo | Contraseña |
