@@ -1,0 +1,10 @@
+.tabla-gestion th,
+.tabla-gestion td {
+  overflow-wrap: break-word;
+}
+
+.tabla-gestion strong,
+.tabla-gestion thead th,
+.tabla-gestion .btn {
+  white-space: nowrap;
+}

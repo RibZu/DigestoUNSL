@@ -1,0 +1,35 @@
+.barra-gestion {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.barra-gestion .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  box-shadow: var(--sombra);
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.barra-gestion .btn:hover {
+  transform: translateY(-2px);
+}
+
+.barra-gestion .btn:focus-visible {
+  outline: 3px solid var(--color-celeste);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barra-gestion .btn {
+    transition: none;
+  }
+
+  .barra-gestion .btn:hover {
+    transform: none;
+  }
+}

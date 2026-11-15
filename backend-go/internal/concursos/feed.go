@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-const urlFeeds = "http://digesto.unsl.edu.ar/feeds/"
+const urlCanonica = "http://digesto.unsl.edu.ar/"
 
 var (
 	reInscripcion = regexp.MustCompile(`Inscripciones:\s*(\d{2})/(\d{2})/(\d{2})\s+al\s+(\d{2})/(\d{2})/(\d{2})\s*-\s*(\S+)`)
@@ -23,13 +23,14 @@ var (
 
 type fuente struct {
 	cliente *http.Client
+	base    string
 	pausa   time.Duration
 	mu      sync.Mutex
 	ultimo  time.Time
 }
 
-func nuevaFuente(pausa, espera time.Duration) *fuente {
-	return &fuente{pausa: pausa, cliente: &http.Client{
+func nuevaFuente(pausa, espera time.Duration, base string) *fuente {
+	return &fuente{base: base, pausa: pausa, cliente: &http.Client{
 		Timeout: espera,
 		CheckRedirect: func(req *http.Request, via []*http.Request) error {
 			return http.ErrUseLastResponse
@@ -65,7 +66,7 @@ func latin1(charset string, entrada io.Reader) (io.Reader, error) {
 }
 
 func (f *fuente) leerFeed(codigo string) ([]item, error) {
-	resp, err := f.pedir(urlFeeds + codigo + "-conc.xml")
+	resp, err := f.pedir(f.base + "feeds/" + codigo + "-conc.xml")
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +92,7 @@ func agrupar(items []item) ([]Concurso, error) {
 	indice := map[string]int{}
 
 	for _, it := range items {
-		titulo := strings.TrimSpace(it.Title)
+		titulo := strings.TrimSpace(reparar(it.Title))
 		if strings.HasPrefix(titulo, "No hay nuevos llamados") {
 			continue
 		}
@@ -114,9 +115,9 @@ func agrupar(items []item) ([]Concurso, error) {
 			llamado.Dedicacion = &dedicacion
 		}
 
-		inscripcion := reInscripcion.FindStringSubmatch(it.Description)
+		inscripcion := reInscripcion.FindStringSubmatch(reparar(it.Description))
 		if inscripcion == nil {
-			return nil, fmt.Errorf("descripción con otra forma: %s", strings.TrimSpace(it.Description))
+			return nil, fmt.Errorf("descripción con otra forma: %s", strings.TrimSpace(reparar(it.Description)))
 		}
 		llamado.InscripcionDesde = "20" + inscripcion[3] + "-" + inscripcion[2] + "-" + inscripcion[1]
 		llamado.InscripcionHasta = "20" + inscripcion[6] + "-" + inscripcion[5] + "-" + inscripcion[4]
@@ -155,7 +156,7 @@ func agrupar(items []item) ([]Concurso, error) {
 }
 
 func (f *fuente) completarArchivo(c *Concurso) error {
-	resp, err := f.pedir(c.URLExterna)
+	resp, err := f.pedir(strings.Replace(c.URLExterna, urlCanonica, f.base, 1))
 	if err != nil {
 		return err
 	}

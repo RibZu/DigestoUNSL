@@ -32,3 +32,9 @@ CLAUDE.md
 documentacion/
 database/diagrama.mmd
 database/esquema.dbml
+
+# PDF subidos por el panel
+archivos/
+
+# Carga inicial del Digesto (SQL y PDF)
+backend_node/Digesto-datos/

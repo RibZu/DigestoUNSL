@@ -4,7 +4,7 @@ import './Universidad.css'
 
 const LOGOS = { barra: logoBlanco, pie: logoColor }
 
-export default function Universidad({ variante = 'barra' }) {
+function Universidad({ variante = 'barra' }) {
   return (
     <div className={`universidad universidad--${variante}`}>
       <img
@@ -20,3 +20,5 @@ export default function Universidad({ variante = 'barra' }) {
     </div>
   )
 }
+
+export default Universidad

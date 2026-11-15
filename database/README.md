@@ -7,7 +7,7 @@ Este directorio contiene los scripts y el modelo formal de la base de datos Post
 ## 1. Cómo levantar la base de datos (Instrucciones para el equipo)
 
 `schema.sql` empieza creando la base `DigestoUNSL` y conectándose a ella, como el proyecto de muestra
-de la cátedra; después crea los tipos `ENUM`, las 15 tablas con sus relaciones y los índices.
+de la cátedra; después crea los tipos `ENUM`, las 16 tablas con sus relaciones y los índices.
 `seed.sql` carga los datos iniciales y de prueba.
 
 ### Opción A: Usando pgAdmin 4
@@ -31,6 +31,48 @@ psql -U postgres -d DigestoUNSL -f database/seed.sql
 
 Si la base ya existía, `schema.sql` avisa que la base de datos «DigestoUNSL» ya existe y sigue con el
 resto: no es un problema.
+
+### Carga completa (después del seed)
+
+El seed deja solo unos pocos documentos de prueba. Para tener los datos reales del Digesto (documentos,
+llamados a concurso, carreras, planes y materias) se corren, uno por uno y en este orden, los archivos de
+la carga. Se corren con la terminal parada en `backend_node/`, porque ahí está la copia de la carga:
+`backend_node/Digesto-datos/` (fuera de git).
+
+1. Documentos, llamados, carreras, planes y materias (una sola transacción):
+
+```bash
+psql -d DigestoUNSL -v ON_ERROR_STOP=1 -f Digesto-datos/digesto.sql
+```
+
+2. Rutas de los PDF (`archivo_ruta` de los documentos que tienen archivo):
+
+```bash
+psql -d DigestoUNSL -v ON_ERROR_STOP=1 -f Digesto-datos/digesto-archivos.sql
+```
+
+3. Estadísticas de la base, para que las consultas usen bien los índices:
+
+```bash
+psql -d DigestoUNSL -c "ANALYZE;"
+```
+
+Los dos archivos se pueden volver a correr sin problema (usan `ON CONFLICT`). Los PDF están en
+`Digesto-datos/archivos`, y esa es la carpeta que usa el back con la variable `ARCHIVOS_DIR` de
+`backend_node/.env`.
+
+### Base ya creada (columnas nuevas de `usuario`)
+
+`schema.sql` ya trae `telefono` y `dni` en `usuario`. Si la base se creó antes de ese cambio, se agregan
+una sola vez, sin perder datos:
+
+```sql
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS telefono VARCHAR(30);
+ALTER TABLE usuario ADD COLUMN IF NOT EXISTS dni VARCHAR(8);
+```
+
+La tabla `solicitud_restablecimiento`, el tipo `resultado_solicitud` y los índices nuevos de `documento`
+se crean volviendo a correr `schema.sql` (usa `IF NOT EXISTS`).
 
 ---
 
@@ -70,10 +112,23 @@ classDiagram
         int id PK
         varchar nombre
         varchar email UK
+        varchar telefono
+        varchar dni
         varchar password_hash
         boolean es_admin
         timestamp fecha_alta
         timestamp fecha_baja
+    }
+    class solicitud_restablecimiento {
+        int id PK
+        varchar nombre
+        varchar email
+        varchar telefono
+        varchar dni
+        timestamp fecha_solicitud
+        resultado_solicitud resultado
+        timestamp fecha_baja
+        int id_usuario_baja FK
     }
     class permiso {
         int id_usuario PK, FK
@@ -163,6 +218,7 @@ classDiagram
     tipo_documento "1" --> "0..*" codificacion : se codifica con
     organo_emisor "0..1" --> "0..*" codificacion : se codifica con
     usuario "1" --> "0..*" permiso : tiene
+    usuario "0..1" --> "0..*" solicitud_restablecimiento : resuelve
     dependencia "1" --> "0..*" permiso : habilita
     codificacion "1" --> "0..*" documento : codifica
     dependencia "1" --> "0..*" documento : origina
@@ -203,6 +259,11 @@ Enum ambito {
 Enum modulo {
   documentos
   concursos
+}
+
+Enum resultado_solicitud {
+  restablecida
+  rechazada
 }
 
 Enum cargo {
@@ -271,10 +332,30 @@ Table usuario {
   id int [pk, increment]
   nombre varchar(100) [not null]
   email varchar(150) [not null, unique]
+  telefono varchar(30)
+  dni varchar(8)
   password_hash varchar(255) [not null]
   es_admin boolean [not null, default: false]
   fecha_alta timestamp [not null, default: `now()`]
   fecha_baja timestamp
+}
+
+Table solicitud_restablecimiento {
+  id int [pk, increment]
+  nombre varchar(100) [not null]
+  email varchar(150) [not null]
+  telefono varchar(30) [not null]
+  dni varchar(8) [not null]
+  fecha_solicitud timestamp [not null, default: `now()`]
+  resultado resultado_solicitud
+  fecha_baja timestamp
+  id_usuario_baja int
+  indexes {
+    `lower(email)` [unique, note: 'Parcial: WHERE fecha_baja IS NULL']
+  }
+  checks {
+    `(fecha_baja IS NULL) = (resultado IS NULL)` [name: 'ck_solicitud_resultado']
+  }
 }
 
 Table permiso {
@@ -309,6 +390,9 @@ Table documento {
     fecha_emision
     fecha_registro
     (prefijo, numero, anio)
+    (anio, id)
+    id_dependencia_emisora
+    id_dependencia_origen
   }
 }
 
@@ -410,6 +494,7 @@ TableGroup catalogos {
 
 TableGroup usuarios {
   usuario
+  solicitud_restablecimiento
   permiso
 }
 
@@ -431,6 +516,7 @@ TableGroup estadisticas {
 
 Ref: codificacion.id_tipo > tipo_documento.id
 Ref: codificacion.id_organo > organo_emisor.id
+Ref: solicitud_restablecimiento.id_usuario_baja > usuario.id
 Ref: permiso.id_usuario > usuario.id
 Ref: permiso.id_dependencia > dependencia.id
 Ref: documento.prefijo > codificacion.prefijo

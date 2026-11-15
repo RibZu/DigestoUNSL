@@ -5,13 +5,12 @@ export const buscarConcursosBD = async (filtros) => {
     const values = [];
     let index = 1;
 
-    // filtro segun fecha de inscripcion
     let condicionLlamado = 'lc.fecha_baja IS NULL';
     if (filtros.estado === 'vigentes' || !filtros.estado) {
         condicionLlamado += ' AND lc.inscripcion_hasta >= CURRENT_DATE';
     } else if (filtros.estado === 'vencidos') {
         condicionLlamado += ' AND lc.inscripcion_hasta < CURRENT_DATE';
-    } // si es 'todos', no agregamos filtro de fecha
+    }
 
     if (filtros.facultad) {
         whereDoc += ` AND LOWER(f.codigo) = LOWER($${index})`;
@@ -53,21 +52,26 @@ export const buscarConcursosBD = async (filtros) => {
         ${whereDoc}
     `;
 
-    // Contar total de documentos únicos con llamados coincidentes
     const countQuery = `SELECT COUNT(DISTINCT d.id)::INT AS total ${baseFrom}`;
     const countRes = await pool.query(countQuery, values);
     const total = countRes.rows[0].total;
 
-    // Paginación
     const limite = Math.min(parseInt(filtros.limite, 10) || 20, 100);
     const pagina = Math.max(parseInt(filtros.pagina, 10) || 1, 1);
     const offset = (pagina - 1) * limite;
 
-    // Obtener los IDs de los documentos para la página actual
+    const porRegistro = filtros.orden === 'registro';
+    const ordenIds = porRegistro
+        ? 'ORDER BY d.fecha_registro DESC, d.id DESC'
+        : 'ORDER BY d.anio DESC, largo DESC, d.numero DESC, d.id DESC';
+    const ordenDocs = porRegistro
+        ? 'ORDER BY d.fecha_registro DESC, d.id DESC'
+        : 'ORDER BY d.anio DESC, length(d.numero) DESC, d.numero DESC, d.id DESC';
+
     const idsQuery = `
-        SELECT DISTINCT d.id, d.anio, d.numero
+        SELECT DISTINCT d.id, d.anio, d.numero, length(d.numero) AS largo, d.fecha_registro
         ${baseFrom}
-        ORDER BY d.anio DESC, d.numero DESC
+        ${ordenIds}
         LIMIT $${index} OFFSET $${index + 1}
     `;
     values.push(limite, offset);
@@ -79,14 +83,13 @@ export const buscarConcursosBD = async (filtros) => {
         return { total, pagina, limite, resultados: [] };
     }
 
-    // Traer los documentos con sus llamados completos
     const { rows: docs } = await pool.query(
-        `SELECT d.id, d.codigo, d.prefijo, d.numero, d.anio, d.fecha_emision, d.descripcion, d.url_externa,
+        `SELECT d.id, d.codigo, d.prefijo, d.numero, d.anio, d.fecha_emision, d.descripcion, d.url_externa, d.id_dependencia_emisora, d.archivo_ruta,
                 f.sigla AS facultad_sigla, f.nombre AS facultad_nombre
          FROM documento d
          LEFT JOIN dependencia f ON d.id_dependencia_emisora = f.id
          WHERE d.id = ANY($1::INT[])
-         ORDER BY d.anio DESC, d.numero DESC`,
+         ${ordenDocs}`,
         [docIds]
     );
 
@@ -113,13 +116,13 @@ export const buscarConcursosBD = async (filtros) => {
     };
 };
 
-export const obtenerConcursoPorIdBD = async (id) => {
+export const obtenerConcursoPorIdBD = async (id, incluirBaja = false) => {
     const { rows } = await pool.query(
-        `SELECT d.id, d.codigo, d.prefijo, d.numero, d.anio, d.fecha_emision, d.descripcion, d.url_externa,
+        `SELECT d.id, d.codigo, d.prefijo, d.numero, d.anio, d.fecha_emision, d.descripcion, d.url_externa, d.id_dependencia_emisora, d.archivo_ruta, d.fecha_baja,
                 f.sigla AS facultad_sigla, f.nombre AS facultad_nombre
          FROM documento d
          LEFT JOIN dependencia f ON d.id_dependencia_emisora = f.id
-         WHERE d.id = $1 AND d.fecha_baja IS NULL`,
+         WHERE d.id = $1 ${incluirBaja ? '' : 'AND d.fecha_baja IS NULL'}`,
         [id]
     );
 
@@ -140,4 +143,151 @@ export const obtenerConcursoPorIdBD = async (id) => {
 
     concurso.llamados = llamados;
     return concurso;
+};
+
+export const areaActiva = async (id) => {
+    const { rows } = await pool.query(
+        `SELECT id FROM area WHERE id = $1 AND fecha_baja IS NULL`,
+        [id]
+    );
+    return rows.length > 0;
+};
+
+export const idsDeLlamados = async (idDocumento) => {
+    const { rows } = await pool.query(
+        `SELECT id FROM llamado_concurso WHERE id_documento = $1`,
+        [idDocumento]
+    );
+    return rows.map((fila) => Number(fila.id));
+};
+
+export const insertarOReactivarLlamado = async (client, idDocumento, l) => {
+    const { rows } = await client.query(
+        `INSERT INTO llamado_concurso
+            (id_documento, id_area, cargo, dedicacion, caracter, inscripcion_desde, inscripcion_hasta)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         ON CONFLICT ON CONSTRAINT uq_llamado DO UPDATE SET
+            inscripcion_hasta = EXCLUDED.inscripcion_hasta, fecha_baja = NULL, id_usuario_baja = NULL
+         RETURNING id`,
+        [idDocumento, l.id_area, l.cargo, l.dedicacion, l.caracter, l.inscripcion_desde, l.inscripcion_hasta]
+    );
+    return Number(rows[0].id);
+};
+
+export const actualizarLlamado = async (client, idDocumento, l) => {
+    await client.query(
+        `UPDATE llamado_concurso SET
+            id_area = $3, cargo = $4, dedicacion = $5, caracter = $6,
+            inscripcion_desde = $7, inscripcion_hasta = $8,
+            fecha_baja = NULL, id_usuario_baja = NULL
+         WHERE id = $1 AND id_documento = $2`,
+        [l.id, idDocumento, l.id_area, l.cargo, l.dedicacion, l.caracter, l.inscripcion_desde, l.inscripcion_hasta]
+    );
+};
+
+export const darDeBajaLlamadosExcepto = async (client, idDocumento, idsVigentes, idUsuario) => {
+    await client.query(
+        `UPDATE llamado_concurso SET fecha_baja = NOW(), id_usuario_baja = $3
+         WHERE id_documento = $1 AND fecha_baja IS NULL AND id <> ALL($2::INT[])`,
+        [idDocumento, idsVigentes, idUsuario]
+    );
+};
+
+export const listarFacultadesConFeed = async () => {
+    const { rows } = await pool.query(
+        `SELECT id, codigo FROM dependencia
+         WHERE codigo IS NOT NULL AND es_facultad AND fecha_baja IS NULL
+         ORDER BY numero`
+    );
+    return rows;
+};
+
+export const buscarDependenciaPorNumero = async (numero) => {
+    const { rows } = await pool.query(
+        `SELECT id, numero FROM dependencia WHERE numero = $1 AND fecha_baja IS NULL`,
+        [numero]
+    );
+    return rows[0];
+};
+
+export const valoresDeEnums = async () => {
+    const { rows } = await pool.query(
+        `SELECT 'cargo' AS enum, unnest(enum_range(NULL::cargo))::text AS valor
+         UNION ALL SELECT 'dedicacion', unnest(enum_range(NULL::dedicacion))::text
+         UNION ALL SELECT 'caracter', unnest(enum_range(NULL::caracter))::text`
+    );
+    const valores = { cargo: new Set(), dedicacion: new Set(), caracter: new Set() };
+    for (const fila of rows) valores[fila.enum].add(fila.valor);
+    return valores;
+};
+
+export const insertarDocumentoSincronizado = async (client, d) => {
+    const { rows } = await client.query(
+        `INSERT INTO documento
+            (codigo, prefijo, id_dependencia_origen, numero, anio, id_dependencia_emisora,
+             url_externa, archivo_ruta, fecha_registro)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, COALESCE($9::timestamp, CURRENT_TIMESTAMP))
+         RETURNING id`,
+        [d.codigo, d.prefijo, d.id_dependencia_origen, d.numero, d.anio, d.id_dependencia_emisora,
+         d.url_externa, d.archivo_ruta, d.fecha_registro]
+    );
+    return rows[0].id;
+};
+
+export const completarDocumentoSincronizado = async (client, id, urlExterna, archivoRuta) => {
+    const { rowCount } = await client.query(
+        `UPDATE documento SET
+            url_externa = COALESCE(url_externa, $2),
+            archivo_ruta = COALESCE(archivo_ruta, $3)
+         WHERE id = $1
+           AND ((url_externa IS NULL AND $2::text IS NOT NULL)
+             OR (archivo_ruta IS NULL AND $3::text IS NOT NULL))`,
+        [id, urlExterna, archivoRuta]
+    );
+    return rowCount;
+};
+
+export const estructuraDeFacultad = async (client, idDependencia) => {
+    const { rows: departamentos } = await client.query(
+        `SELECT id, nombre FROM departamento WHERE id_dependencia = $1`,
+        [idDependencia]
+    );
+    const { rows: areas } = await client.query(
+        `SELECT a.id, a.id_departamento, a.nombre
+         FROM area a JOIN departamento d ON d.id = a.id_departamento
+         WHERE d.id_dependencia = $1`,
+        [idDependencia]
+    );
+    return { departamentos, areas };
+};
+
+export const insertarDepartamento = async (client, idDependencia, nombre) => {
+    const { rows } = await client.query(
+        `INSERT INTO departamento (id_dependencia, nombre) VALUES ($1, $2)
+         ON CONFLICT ON CONSTRAINT uq_departamento DO UPDATE SET nombre = EXCLUDED.nombre
+         RETURNING id`,
+        [idDependencia, nombre]
+    );
+    return rows[0].id;
+};
+
+export const insertarArea = async (client, idDepartamento, nombre) => {
+    const { rows } = await client.query(
+        `INSERT INTO area (id_departamento, nombre) VALUES ($1, $2)
+         ON CONFLICT ON CONSTRAINT uq_area DO UPDATE SET nombre = EXCLUDED.nombre
+         RETURNING id`,
+        [idDepartamento, nombre]
+    );
+    return rows[0].id;
+};
+
+export const insertarLlamadoSiFalta = async (client, idDocumento, l) => {
+    const { rowCount } = await client.query(
+        `INSERT INTO llamado_concurso
+            (id_documento, id_area, cargo, dedicacion, caracter, inscripcion_desde, inscripcion_hasta)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         ON CONFLICT ON CONSTRAINT uq_llamado DO NOTHING`,
+        [idDocumento, l.id_area, l.cargo, l.dedicacion ?? null, l.caracter, l.inscripcion_desde, l.inscripcion_hasta]
+    );
+    return rowCount;
 };

@@ -1,4 +1,3 @@
-// Carga las variables del archivo .env en process.env
 process.loadEnvFile();
 
 export const env = {
@@ -10,15 +9,20 @@ export const env = {
   PGPASSWORD: process.env.PGPASSWORD ?? 'postgres',
   PGDATABASE: process.env.PGDATABASE ?? 'DigestoUNSL',
 
-  // JWT: clave para firmar los tokens y cuánto duran
-  JWT_SECRET: process.env.JWT_SECRET, // sin valor por defecto: el secreto NUNCA va en el código
+  JWT_SECRET: process.env.JWT_SECRET,
   JWT_EXPIRES_IN: process.env.JWT_EXPIRES_IN ?? '1h',
 
-  // API en Go que lee las fuentes externas
   GO_API_URL: process.env.GO_API_URL ?? 'http://localhost:8080',
+
+  CRON_CONCURSOS: process.env.CRON_CONCURSOS ?? '30 23 * * *',
+  CRON_PLANES: process.env.CRON_PLANES ?? '0 3 1 2,6,10 *',
+  DIGESTO_DOCS_URL: (process.env.DIGESTO_DOCS_URL ?? 'http://digesto.unsl.edu.ar/docs/').replace(/\/?$/, '/'),
+  PAUSA_DESCARGAS: Number(process.env.PAUSA_DESCARGAS ?? 1000),
+  ESPERA_GO: Number(process.env.ESPERA_GO ?? 900000),
+
+  ARCHIVOS_DIR: process.env.ARCHIVOS_DIR ?? '../archivos',
 };
 
-// Si falta el secreto, el servidor no arranca (mejor fallar ahora que firmar tokens inseguros)
 if (!env.JWT_SECRET) {
   throw new Error('Falta JWT_SECRET en el archivo .env');
 }

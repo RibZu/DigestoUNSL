@@ -52,6 +52,13 @@ func duracion(clave string, defecto time.Duration) time.Duration {
 	return d
 }
 
+func conBarra(valor string) string {
+	if strings.HasSuffix(valor, "/") {
+		return valor
+	}
+	return valor + "/"
+}
+
 func noEncontrada(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.WriteHeader(http.StatusNotFound)
@@ -64,12 +71,15 @@ func main() {
 	puerto := texto("PORT", "8080")
 	pausa := duracion("PAUSA", time.Second)
 	espera := duracion("ESPERA", 30*time.Second)
+	fuenteDigesto := conBarra(texto("FUENTE_DIGESTO", "http://digesto.unsl.edu.ar/"))
+	fuentePlanes := conBarra(texto("FUENTE_PLANES", "http://planesestudio.unsl.edu.ar/"))
 
 	mux := http.NewServeMux()
-	mux.HandleFunc("GET /api/v1/dependencias/{codigo}/concursos", concursos.Handler(pausa, espera))
-	mux.HandleFunc("GET /api/v1/dependencias/{codigo}/planes", planes.Handler(pausa, espera))
+	mux.HandleFunc("GET /api/v1/dependencias/{codigo}/concursos", concursos.Handler(pausa, espera, fuenteDigesto))
+	mux.HandleFunc("GET /api/v1/dependencias/{codigo}/planes", planes.Handler(pausa, espera, fuentePlanes))
 	mux.HandleFunc("/", noEncontrada)
 
+	log.Printf("fuentes: %s y %s", fuenteDigesto, fuentePlanes)
 	log.Printf("backend-go escuchando en el puerto %s", puerto)
 	log.Fatal(http.ListenAndServe(":"+puerto, mux))
 }

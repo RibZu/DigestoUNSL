@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-const urlPlanes = "http://planesestudio.unsl.edu.ar/"
+const urlCanonica = "http://planesestudio.unsl.edu.ar/"
 
 var (
 	reEtiquetas = regexp.MustCompile(`<[^>]*>`)
@@ -38,13 +38,14 @@ var ordinales = map[string]int{
 
 type fuente struct {
 	cliente *http.Client
+	base    string
 	pausa   time.Duration
 	mu      sync.Mutex
 	ultimo  time.Time
 }
 
-func nuevaFuente(pausa, espera time.Duration) *fuente {
-	return &fuente{pausa: pausa, cliente: &http.Client{Timeout: espera}}
+func nuevaFuente(pausa, espera time.Duration, base string) *fuente {
+	return &fuente{base: base, pausa: pausa, cliente: &http.Client{Timeout: espera}}
 }
 
 func (f *fuente) pedir(direccion string) (string, error) {
@@ -76,6 +77,7 @@ func (f *fuente) pedir(direccion string) (string, error) {
 
 func limpiar(s string) string {
 	s = reEtiquetas.ReplaceAllString(s, " ")
+	s = reparar(s)
 	s = html.UnescapeString(s)
 	return strings.Join(strings.Fields(s), " ")
 }
@@ -114,7 +116,7 @@ func leerListado(pagina string) ([]Carrera, error) {
 			carreras[pos].Planes = append(carreras[pos].Planes, Plan{
 				Plan:       consulta.Get("plan"),
 				Ordenanza:  ordenanza[1],
-				URLOficial: urlPlanes + href,
+				URLOficial: urlCanonica + href,
 				VersionID:  versionID,
 			})
 		}
@@ -178,7 +180,7 @@ func leerPlan(pagina string) (int, []Materia, error) {
 }
 
 func (f *fuente) planes(fac int) ([]Carrera, error) {
-	pagina, err := f.pedir(urlPlanes + "index.php?action=fac_g3&fac=" + strconv.Itoa(fac))
+	pagina, err := f.pedir(f.base + "index.php?action=fac_g3&fac=" + strconv.Itoa(fac))
 	if err != nil {
 		return nil, err
 	}
@@ -190,7 +192,7 @@ func (f *fuente) planes(fac int) ([]Carrera, error) {
 	for i := range carreras {
 		for j := range carreras[i].Planes {
 			plan := &carreras[i].Planes[j]
-			pagina, err := f.pedir(plan.URLOficial)
+			pagina, err := f.pedir(f.base + strings.TrimPrefix(plan.URLOficial, urlCanonica))
 			if err != nil {
 				return nil, fmt.Errorf("plan %s de %s: %w", plan.Plan, carreras[i].Codigo, err)
 			}

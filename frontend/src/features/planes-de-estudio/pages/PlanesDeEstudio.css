@@ -1,0 +1,64 @@
+.carrera-item__nombre {
+  margin: 0;
+  font-size: var(--titulo-xs);
+  font-weight: var(--peso-negrita);
+  color: var(--text-h);
+  overflow-wrap: anywhere;
+}
+
+.planes-page__facultades {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.planes-page__carreras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carrera-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+.carrera-item__planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carrera-item__plan {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.carrera-item:hover {
+  background-color: var(--accent-bg);
+}
+
+.planes-page__sitio-oficial {
+  min-height: 44px;
+}
+
+@media (min-width: 768px) {
+  .carrera-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1.5rem;
+  }
+
+  .carrera-item__planes {
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,23 @@
+.gestion-concursos__llamado {
+  position: relative;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radio);
+}
+
+.gestion-concursos__llamado > legend {
+  padding: 0;
+  margin-bottom: 0.75rem;
+}
+
+.gestion-concursos__llamado > legend + * {
+  clear: both;
+}
+
+.gestion-concursos__quitar {
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+  background: var(--bg);
+}

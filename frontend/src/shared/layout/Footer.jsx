@@ -1,11 +1,11 @@
-import { Link } from 'react-router';
-import Universidad from './Universidad';
-import { ayudaSection, ingresoSection } from './navigation';
-import './Footer.css';
+import { Link } from 'react-router'
+import Universidad from './Universidad'
+import { ayudaSection, ingresoSection } from './navigation'
+import './Footer.css'
 
-const ANIO_ACTUAL = new Date().getFullYear();
+const ANIO_ACTUAL = new Date().getFullYear()
 
-export default function Footer() {
+function Footer() {
   return (
     <footer className="digesto-footer">
       <div className="container-xl">
@@ -30,7 +30,6 @@ export default function Footer() {
             <h2 className="footer-titulo">Contacto</h2>
             <ul className="footer-lista-contacto">
               <li>
-                <span className="footer-rol">Administración:</span>
                 <span className="footer-correo">
                   <svg
                     className="footer-icono"
@@ -43,7 +42,7 @@ export default function Footer() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  lruiz@unsl.edu.ar
+                  simonriberizunino@gmail.com
                 </span>
               </li>
             </ul>
@@ -70,7 +69,20 @@ export default function Footer() {
           </a>{' '}
           — Todos los Derechos Reservados.
         </p>
+        <p className="footer-firma">
+          Desarrollado por{' '}
+          <a
+            href="https://simonriberi.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-enlace"
+          >
+            Simón Riberi Zunino
+          </a>
+        </p>
       </div>
     </footer>
-  );
+  )
 }
+
+export default Footer

@@ -1,0 +1,38 @@
+.formulario-bloque {
+  margin: 0 0 1.5rem;
+  padding: 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radio);
+}
+
+.formulario-bloque > legend {
+  padding: 0;
+  margin-bottom: 1rem;
+  color: var(--color-primario);
+}
+
+.formulario-bloque > legend + * {
+  clear: both;
+}
+
+.formulario-codigo {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-primario);
+  background: var(--accent-bg);
+  border: 1px solid var(--color-primario);
+  border-radius: var(--radio);
+}
+
+.formulario-codigo--error {
+  color: var(--bs-danger);
+  border-color: var(--bs-danger);
+}
+
+.formulario-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}

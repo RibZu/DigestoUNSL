@@ -35,6 +35,12 @@ EXCEPTION
     WHEN duplicate_object THEN null;
 END $$;
 
+DO $$ BEGIN
+    CREATE TYPE resultado_solicitud AS ENUM ('restablecida', 'rechazada');
+EXCEPTION
+    WHEN duplicate_object THEN null;
+END $$;
+
 -- En plural, como los publica el feed. Los últimos valores de cada uno son históricos:
 -- quedan para los llamados viejos y el formulario del panel no los ofrece.
 DO $$ BEGIN
@@ -115,10 +121,26 @@ CREATE TABLE IF NOT EXISTS usuario (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     email VARCHAR(150) UNIQUE NOT NULL,
+    telefono VARCHAR(30),
+    dni VARCHAR(8),
     password_hash VARCHAR(255) NOT NULL,
     es_admin BOOLEAN NOT NULL DEFAULT false,
     fecha_alta TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     fecha_baja TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS solicitud_restablecimiento (
+    id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL,
+    telefono VARCHAR(30) NOT NULL,
+    dni VARCHAR(8) NOT NULL,
+    fecha_solicitud TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    resultado resultado_solicitud,
+    fecha_baja TIMESTAMP,
+    id_usuario_baja INT,
+    CONSTRAINT fk_solicitud_user_baja FOREIGN KEY (id_usuario_baja) REFERENCES usuario(id),
+    CONSTRAINT ck_solicitud_resultado CHECK ((fecha_baja IS NULL) = (resultado IS NULL))
 );
 
 CREATE TABLE IF NOT EXISTS permiso (
@@ -266,3 +288,7 @@ CREATE INDEX IF NOT EXISTS idx_documento_fecha_emision ON documento(fecha_emisio
 CREATE INDEX IF NOT EXISTS idx_documento_fecha_registro ON documento(fecha_registro);
 CREATE INDEX IF NOT EXISTS idx_documento_prefijo_numero_anio ON documento(prefijo, numero, anio);
 CREATE INDEX IF NOT EXISTS idx_llamado_inscripcion_hasta ON llamado_concurso(inscripcion_hasta);
+CREATE INDEX IF NOT EXISTS idx_documento_anio_id ON documento(anio, id);
+CREATE INDEX IF NOT EXISTS idx_documento_dependencia_emisora ON documento(id_dependencia_emisora);
+CREATE INDEX IF NOT EXISTS idx_documento_dependencia_origen ON documento(id_dependencia_origen);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_solicitud_pendiente_email ON solicitud_restablecimiento (lower(email)) WHERE fecha_baja IS NULL;

@@ -15,9 +15,15 @@ export const obtenerPorId = async (req, res, next) => {
         const documento = await documentoService.obtenerDocumentoPorId(id);
         res.status(200).json(documento);
     } catch (error) {
-        if (error.status) {
-            return res.status(error.status).json({ error: error.message });
-        }
+        next(error);
+    }
+};
+
+export const crear = async (req, res, next) => {
+    try {
+        const documento = await documentoService.crearDocumento(req.body ?? {}, req.file, req.usuario);
+        res.status(201).json(documento);
+    } catch (error) {
         next(error);
     }
 };
@@ -25,13 +31,18 @@ export const obtenerPorId = async (req, res, next) => {
 export const actualizar = async (req, res, next) => {
     try {
         const { id } = req.params;
-        const userId = req.usuario.id;
-        const documentoActualizado = await documentoService.actualizarDocumento(id, req.body, userId, req.usuario);
-        res.status(200).json(documentoActualizado);
+        const documento = await documentoService.actualizarDocumento(id, req.body ?? {}, req.file, req.usuario);
+        res.status(200).json(documento);
     } catch (error) {
-        if (error.status) {
-            return res.status(error.status).json({ error: error.message });
-        }
+        next(error);
+    }
+};
+
+export const obtenerArchivo = async (req, res, next) => {
+    try {
+        const ruta = await documentoService.obtenerArchivo(req.params.id);
+        res.sendFile(ruta);
+    } catch (error) {
         next(error);
     }
 };

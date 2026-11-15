@@ -508,11 +508,11 @@ ON CONFLICT DO NOTHING;
 -- Términos buscados
 INSERT INTO termino_buscado (termino, busquedas)
 VALUES
-    ('calendario académico', 1842),
-    ('concurso docente', 1517),
-    ('plan de estudios', 1390),
-    ('licencia', 1204),
-    ('becas', 1131)
+    ('calendario académico', 100),
+    ('concurso docente', 82),
+    ('plan de estudios', 75),
+    ('licencia', 65),
+    ('becas', 61)
 ON CONFLICT DO NOTHING;
 
 -- --------------------------------------------------------

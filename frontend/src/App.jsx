@@ -1,19 +1,8 @@
-import { Outlet, ScrollRestoration } from 'react-router'
-import Header from './shared/layout/Header'
-import Footer from './shared/layout/Footer'
-import './App.css'
+import { RouterProvider } from 'react-router/dom'
+import { router } from './router'
 
 function App() {
-  return (
-    <div className="app-layout">
-      <Header />
-      <main className="app-content">
-        <Outlet />
-      </main>
-      <Footer />
-      <ScrollRestoration />
-    </div>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

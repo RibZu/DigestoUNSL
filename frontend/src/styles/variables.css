@@ -1,0 +1,72 @@
+:root {
+  --color-primario: #1a1d56;
+  --color-primario-hover: #232c77;
+  --color-fondo: #f3f4f6;
+  --color-pie: #f1f5f9;
+  --color-celeste: #0088cc;
+  --color-violeta: #853385;
+
+  --text: #4b5563;
+  --text-h: #1f2937;
+  --bg: #ffffff;
+  --border: #e5e7eb;
+  --code-bg: #eef1f6;
+  --accent-bg: rgba(26, 29, 86, 0.08);
+  --accent-border: rgba(26, 29, 86, 0.35);
+
+  --fuente: 'PT Sans', 'PT Sans Respaldo', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  --peso-regular: 400;
+  --peso-negrita: 700;
+  --texto-sm: 0.875rem;
+  --texto: 1rem;
+  --texto-lg: 1.125rem;
+  --titulo-xs: 1rem;
+  --titulo-sm: 1.25rem;
+  --titulo-md: 1.5rem;
+  --titulo-lg: 1.875rem;
+  --titulo-xl: 2.25rem;
+  --interlineado: 1.5;
+  --interlineado-titulo: 1.2;
+
+  --alto-barra: 4rem;
+  --alto-control-flotante: calc(3.5rem + 2px);
+  --radio: 0.5rem;
+  --radio-medio: 0.375rem;
+  --radio-chico: 0.25rem;
+  --sombra-barra:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --sombra:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --sombra-suave: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  --sombra-tarjeta: 0 1px 2px rgba(8, 6, 13, 0.06), 0 8px 16px -8px rgba(8, 6, 13, 0.12);
+  --sombra-tarjeta-hover:
+    0 2px 4px rgba(8, 6, 13, 0.08), 0 16px 24px -10px rgba(8, 6, 13, 0.18);
+
+  --texto-sobre-azul: rgb(255 255 255 / 0.85);
+  --velo-claro: rgb(255 255 255 / 0.12);
+  --borde-claro: rgb(255 255 255 / 0.4);
+  --color-primario-translucido: rgb(26 29 86 / 0.95);
+  --velo-portada-inicio: rgb(26 29 86 / 0.72);
+  --velo-portada-fin: rgb(26 29 86 / 0.82);
+
+  --bs-body-font-family: var(--fuente);
+  --bs-body-color: var(--text-h);
+  --bs-body-color-rgb: 31, 41, 55;
+  --bs-body-bg: var(--color-fondo);
+  --bs-body-bg-rgb: 243, 244, 246;
+  --bs-primary: var(--color-primario);
+  --bs-primary-rgb: 26, 29, 86;
+  --bs-focus-ring-color: rgb(26 29 86 / 0.25);
+  --bs-link-color: var(--color-primario);
+  --bs-link-color-rgb: 26, 29, 86;
+  --bs-link-hover-color: var(--color-primario-hover);
+  --bs-link-hover-color-rgb: 35, 44, 119;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --alto-barra: 5rem;
+  }
+}

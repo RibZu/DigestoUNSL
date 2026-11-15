@@ -30,8 +30,8 @@ func responder(w http.ResponseWriter, estado int, v any) {
 	w.Write(cuerpo)
 }
 
-func Handler(pausa, espera time.Duration) http.HandlerFunc {
-	f := nuevaFuente(pausa, espera)
+func Handler(pausa, espera time.Duration, base string) http.HandlerFunc {
+	f := nuevaFuente(pausa, espera, base)
 
 	return func(w http.ResponseWriter, r *http.Request) {
 		codigo := r.PathValue("codigo")

@@ -15,9 +15,24 @@ export const obtenerPorId = async (req, res, next) => {
         const concurso = await concursosService.obtenerConcursoPorId(id);
         res.status(200).json(concurso);
     } catch (error) {
-        if (error.status) {
-            return res.status(error.status).json({ error: error.message });
-        }
+        next(error);
+    }
+};
+
+export const crear = async (req, res, next) => {
+    try {
+        const { completado, concurso } = await concursosService.crearConcurso(req.body ?? {}, req.file, req.usuario);
+        res.status(completado ? 200 : 201).json(concurso);
+    } catch (error) {
+        next(error);
+    }
+};
+
+export const actualizar = async (req, res, next) => {
+    try {
+        const concurso = await concursosService.actualizarConcurso(req.params.id, req.body ?? {}, req.file, req.usuario);
+        res.status(200).json(concurso);
+    } catch (error) {
         next(error);
     }
 };

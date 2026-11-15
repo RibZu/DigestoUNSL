@@ -1,14 +1,15 @@
 import { Router } from 'express';
-import { listar, obtenerPorId, actualizar } from './documentos.controller.js';
+import { listar, obtenerPorId, crear, actualizar, obtenerArchivo } from './documentos.controller.js';
 import { verificarToken, verificarPermiso } from '../../middlewares/auth.middleware.js';
+import { subirPdf } from '../../middlewares/subirPdf.middleware.js';
 
 const router = Router();
 
-// Consultas públicas de normativas
 router.get('/', listar);
+router.get('/:id/archivo', obtenerArchivo);
 router.get('/:id', obtenerPorId);
 
-// Modificar o dar de baja un documento
-router.patch('/:id', verificarToken, verificarPermiso('documentos'), actualizar);
+router.post('/', verificarToken, verificarPermiso('documentos'), subirPdf, crear);
+router.patch('/:id', verificarToken, verificarPermiso('documentos'), subirPdf, actualizar);
 
 export default router;

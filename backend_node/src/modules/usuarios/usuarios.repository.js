@@ -1,11 +1,11 @@
 import { pool } from '../../config/db.js';
 
-export const crear = async (nombre, email, hash, es_admin = false) => {
+export const crear = async (nombre, email, hash, es_admin = false, telefono = null, dni = null) => {
     const { rows } = await pool.query(
-        `INSERT INTO usuario (nombre, email, password_hash, es_admin)
-        VALUES ($1, $2, $3, $4)
-        RETURNING id, nombre, email, es_admin, fecha_alta`,
-        [nombre, email, hash, es_admin]
+        `INSERT INTO usuario (nombre, email, password_hash, es_admin, telefono, dni)
+        VALUES ($1, $2, $3, $4, $5, $6)
+        RETURNING id, nombre, email, telefono, dni, es_admin, fecha_alta`,
+        [nombre, email, hash, es_admin, telefono, dni]
     );
     return rows[0];
 };
@@ -31,7 +31,7 @@ export const obtenerPermisosUsuario = async (idUsuario) => {
 
 export const buscarPorId = async (id) => {
     const { rows } = await pool.query(
-        `SELECT id, nombre, email, es_admin, fecha_baja
+        `SELECT id, nombre, email, telefono, dni, es_admin, fecha_baja
          FROM usuario
          WHERE id = $1`,
         [id]
@@ -39,9 +39,19 @@ export const buscarPorId = async (id) => {
     return rows[0];
 };
 
+export const buscarClavePorId = async (id) => {
+    const { rows } = await pool.query(
+        `SELECT password_hash FROM usuario WHERE id = $1`,
+        [id]
+    );
+    return rows[0]?.password_hash;
+};
+
 export const obtenerTodos = async () => {
     const { rows } = await pool.query(
-        `SELECT id, nombre, email, es_admin, fecha_baja FROM usuario`
+        `SELECT id, nombre, email, telefono, dni, es_admin, fecha_baja
+         FROM usuario
+         ORDER BY (fecha_baja IS NOT NULL), nombre`
     );
     return rows;
 };
@@ -54,20 +64,20 @@ export const buscarDependenciasActivas = async (ids) => {
     return rows;
 };
 
-export const reactivarUsuarioBD = async (id, nombre, passwordHash, esAdmin) => {
+export const reactivarUsuarioBD = async (id, nombre, passwordHash, esAdmin, telefono = null, dni = null) => {
     const { rows } = await pool.query(
         `UPDATE usuario
-         SET nombre = $1, password_hash = $2, es_admin = $3, fecha_baja = NULL
-         WHERE id = $4
-         RETURNING id, nombre, email, es_admin, fecha_alta, fecha_baja`,
-        [nombre, passwordHash, esAdmin, id]
+         SET nombre = $1, password_hash = $2, es_admin = $3, telefono = $4, dni = $5, fecha_baja = NULL
+         WHERE id = $6
+         RETURNING id, nombre, email, telefono, dni, es_admin, fecha_alta, fecha_baja`,
+        [nombre, passwordHash, esAdmin, telefono, dni, id]
     );
     return rows[0];
 };
 
 export const actualizarUsuarioBD = async (id, camposDinamicos) => {
     const { setQuery, values } = camposDinamicos;
-    const query = `UPDATE usuario SET ${setQuery} WHERE id = $${values.length + 1} RETURNING id, nombre, email, es_admin, fecha_baja`;
+    const query = `UPDATE usuario SET ${setQuery} WHERE id = $${values.length + 1} RETURNING id, nombre, email, telefono, dni, es_admin, fecha_baja`;
     values.push(id);
 
     const { rows } = await pool.query(query, values);

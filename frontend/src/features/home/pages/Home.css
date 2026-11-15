@@ -1,0 +1,53 @@
+.home-portada {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  padding: calc(var(--alto-barra) + 3rem) 0 3rem;
+  background:
+    linear-gradient(var(--velo-portada-inicio), var(--velo-portada-fin)),
+    url('../portada-unsl.webp') center / cover no-repeat,
+    var(--color-primario);
+  color: var(--bs-white);
+}
+
+.home-portada__contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+
+.home-portada h1 {
+  margin: 0;
+  color: var(--bs-white);
+}
+
+.home-portada p {
+  max-width: 60ch;
+  font-size: var(--texto-lg);
+  color: var(--texto-sobre-azul);
+}
+
+.home-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+  padding-bottom: 3rem;
+}
+
+.home-showcase > :nth-child(1) {
+  border-top-color: var(--color-celeste);
+}
+
+.home-showcase > :nth-child(2) {
+  border-top-color: var(--color-violeta);
+}
+
+@media (min-width: 768px) {
+  .home-showcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
