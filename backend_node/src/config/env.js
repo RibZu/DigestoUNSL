@@ -1,4 +1,6 @@
-process.loadEnvFile();
+import { existsSync } from 'node:fs';
+
+if (existsSync('.env')) process.loadEnvFile();
 
 export const env = {
   PORT: process.env.PORT ?? 3000,

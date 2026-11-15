@@ -1,11 +1,9 @@
 import { pool } from '../../config/db.js';
 
 export const obtenerTotalesDocumentosBD = async () => {
-    // Total general activo
     const totalRes = await pool.query(`SELECT COUNT(*)::INT AS total FROM documento WHERE fecha_baja IS NULL`);
     const total = totalRes.rows[0].total;
 
-    // Total del año actual
     const anioActual = new Date().getFullYear();
     const anioActualRes = await pool.query(
         `SELECT COUNT(*)::INT AS total FROM documento WHERE fecha_baja IS NULL AND anio = $1`,
@@ -13,7 +11,6 @@ export const obtenerTotalesDocumentosBD = async () => {
     );
     const del_anio = anioActualRes.rows[0].total;
 
-    // Totales por órgano
     const porOrganoRes = await pool.query(`
         SELECT COALESCE(o.nombre, 'Sin órgano') AS organo, COUNT(d.id)::INT AS cantidad
         FROM documento d
@@ -24,7 +21,6 @@ export const obtenerTotalesDocumentosBD = async () => {
         ORDER BY cantidad DESC
     `);
 
-    // Totales por tipo
     const porTipoRes = await pool.query(`
         SELECT COALESCE(t.nombre, 'Sin tipo') AS tipo, COUNT(d.id)::INT AS cantidad
         FROM documento d
@@ -35,7 +31,6 @@ export const obtenerTotalesDocumentosBD = async () => {
         ORDER BY cantidad DESC
     `);
 
-    // Totales por año
     const porAnioRes = await pool.query(`
         SELECT anio, COUNT(*)::INT AS cantidad
         FROM documento

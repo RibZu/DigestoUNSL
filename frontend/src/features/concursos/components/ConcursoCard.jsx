@@ -1,10 +1,12 @@
-import { API_URL } from '../../../shared/utils/api'
+import { enlaceDelArchivo } from '../../normativas'
 import { formatearFecha, SIN_DATO } from '../../../shared/utils/formato.js'
 
 function ConcursoCard({ concurso }) {
-  const urlResolucion = concurso.archivo_ruta
-    ? `${API_URL}/documentos/${concurso.id_documento}/archivo`
-    : concurso.url_externa
+  const urlResolucion = enlaceDelArchivo({
+    id: concurso.id_documento,
+    tiene_archivo: concurso.tiene_archivo,
+    url_externa: concurso.url_externa,
+  })
 
   return (
     <article className="concurso-card">

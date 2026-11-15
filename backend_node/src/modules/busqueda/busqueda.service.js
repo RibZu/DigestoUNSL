@@ -1,7 +1,8 @@
-import {buscarDocumentos, registrarTerminoBuscado } from './busqueda.repository.js';
+import { buscarDocumentos, registrarTerminoBuscado } from './busqueda.repository.js';
+import { validarFiltros } from '../documentos/filtros.js';
 
 export const realizarBusqueda = async (filtros) => {
-    // Si viene un parámetro de búsqueda general, incrementamos la estadística en termino_buscado
+    validarFiltros(filtros);
     if (filtros.q) {
         await registrarTerminoBuscado(filtros.q);
     }

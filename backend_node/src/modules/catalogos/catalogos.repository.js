@@ -1,5 +1,4 @@
 import { pool } from '../../config/db.js';
-// 1. TIPOS DE DOCUMENTO
 export const listarTiposDocumentoBD = async (incluirBajas) => {
     const condicion = incluirBajas ? '' : 'WHERE fecha_baja IS NULL';
     const { rows } = await pool.query(
@@ -51,7 +50,6 @@ export const actualizarTipoDocumentoBD = async (id, nombre, baja) => {
     );
     return rows[0];
 };
-// 2. ÓRGANOS EMISORES
 export const listarOrganosBD = async (incluirBajas) => {
     const condicion = incluirBajas ? '' : 'WHERE fecha_baja IS NULL';
     const { rows } = await pool.query(
@@ -103,7 +101,6 @@ export const actualizarOrganoBD = async (id, nombre, baja) => {
     );
     return rows[0];
 };
-// PREFIJOS 
 export const listarPrefijosBD = async (incluirBajas) => {
     const condicion = incluirBajas ? '' : 'WHERE c.fecha_baja IS NULL';
     const { rows } = await pool.query(
@@ -174,7 +171,6 @@ export const actualizarPrefijoBD = async (prefijo, datos) => {
     );
     return rows[0];
 };
-// 4. DEPENDENCIAS
 export const listarDependenciasBD = async (incluirBajas) => {
     const condicion = incluirBajas ? '' : 'WHERE fecha_baja IS NULL';
     const { rows } = await pool.query(
@@ -253,7 +249,6 @@ export const actualizarDependenciaBD = async (id, datos) => {
     );
     return rows[0];
 };
-// 5. DEPARTAMENTOS
 export const listarDepartamentosBD = async (idDependencia, incluirBajas) => {
     const condiciones = [];
     const values = [];
@@ -325,7 +320,6 @@ export const actualizarDepartamentoBD = async (id, idDependencia, nombre, baja) 
     );
     return rows[0];
 };
-// 6. ÁREAS
 export const listarAreasBD = async (idDepartamento, incluirBajas) => {
     const condiciones = [];
     const values = [];

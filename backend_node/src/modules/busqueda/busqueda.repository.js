@@ -11,7 +11,6 @@ export const buscarDocumentos = async (filtros) => {
     const values = [];
     let index = 1;
 
-    // filtros dinamicos
     if (filtros.q) {
         baseQuery += ` AND (d.descripcion ILIKE $${index} OR d.codigo ILIKE $${index})`;
         values.push(`%${filtros.q}%`);
@@ -53,17 +52,14 @@ export const buscarDocumentos = async (filtros) => {
         index++;
     }
 
-    // 1. Obtener el total de registros que coinciden (para la paginación del frontend)
     const countQuery = `SELECT COUNT(*) ${baseQuery}`;
     const countResult = await pool.query(countQuery, values);
     const total = parseInt(countResult.rows[0].count, 10);
 
-    // paginacion
     const limite = Math.min(parseInt(filtros.limite, 10) || 20, 100);
     const pagina = Math.max(parseInt(filtros.pagina, 10) || 1, 1);
     const offset = (pagina - 1) * limite;
 
-    // orden
     let ordenSql = 'ORDER BY d.anio DESC, d.numero DESC';
     if (filtros.orden === 'registro') {
         ordenSql = 'ORDER BY d.fecha_registro DESC';
@@ -71,7 +67,6 @@ export const buscarDocumentos = async (filtros) => {
         ordenSql = 'ORDER BY d.fecha_emision DESC';
     }
 
-    // 4. Obtener solo los resultados de la página actual
     const dataQuery = `
         SELECT d.*, 
                dep_orig.nombre AS dependencia_origen_nombre, 
@@ -92,7 +87,6 @@ export const buscarDocumentos = async (filtros) => {
     };
 };
 
-// Registrar término buscado para estadísticas
 export const registrarTerminoBuscado = async (termino) => {
     if (!termino || termino.trim() === '') return;
     const terminoLimpio = termino.trim().toLowerCase();

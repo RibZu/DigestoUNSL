@@ -19,7 +19,12 @@ export async function pedirApi(ruta, { metodo = 'GET', cuerpo } = {}) {
     body = JSON.stringify(cuerpo)
   }
 
-  const respuesta = await fetch(`${API_URL}${ruta}`, { method: metodo, headers: cabeceras, body })
+  let respuesta
+  try {
+    respuesta = await fetch(`${API_URL}${ruta}`, { method: metodo, headers: cabeceras, body })
+  } catch {
+    throw new Error('No se pudo conectar con el servidor. Probá de nuevo en unos minutos.')
+  }
   const esJson = (respuesta.headers.get('content-type') ?? '').includes('application/json')
   const datos = esJson ? await respuesta.json() : null
 

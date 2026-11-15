@@ -3,6 +3,7 @@ import { registrarTerminoBuscado } from '../busqueda/busqueda.repository.js';
 import { conTransaccion } from '../../config/transaccion.js';
 import { crearError, exigirPermiso } from './errores.js';
 import { esPdf, existeArchivo, guardarArchivo, rutaAbsoluta, rutaParaDocumento } from './archivos.js';
+import { esFechaValida, validarFiltros } from './filtros.js';
 
 const ANIO_MINIMO = 1973;
 const TIPO_ORDEN_DEL_DIA = 'Órdenes del día';
@@ -14,13 +15,6 @@ const esEnteroPositivo = (valor) => /^\d+$/.test(String(valor).trim()) && Number
 const esSesion = (valor) => {
     const partes = /^(\d{1,2})\/(\d{1,2})$/.exec(String(valor).trim());
     return Boolean(partes) && Number(partes[1]) >= 1 && Number(partes[1]) <= 31 && Number(partes[2]) >= 1 && Number(partes[2]) <= 12;
-};
-
-const esFechaValida = (valor) => {
-    const texto = String(valor).trim();
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(texto)) return false;
-    const fecha = new Date(`${texto}T00:00:00Z`);
-    return !Number.isNaN(fecha.getTime()) && fecha.toISOString().slice(0, 10) === texto;
 };
 
 const vacio = (valor) => valor === undefined || valor === null || String(valor).trim() === '';
@@ -107,6 +101,7 @@ export const armarDatosDelCodigo = async (prefijo, idDependenciaOrigen, numero, 
 };
 
 export const listarDocumentos = async (filtros) => {
+    validarFiltros(filtros);
     const primeraPagina = (parseInt(filtros.pagina, 10) || 1) === 1;
     if (filtros.q && filtros.q.trim() && primeraPagina) {
         await registrarTerminoBuscado(filtros.q.trim());

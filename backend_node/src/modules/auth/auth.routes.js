@@ -6,7 +6,6 @@ const router = Router();
 
 router.post('/', login);
 
-// ruta protegida con jwt
 router.get('/sesion', verificarToken, sesion);
 
 export default router;

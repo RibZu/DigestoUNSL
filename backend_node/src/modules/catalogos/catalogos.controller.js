@@ -1,6 +1,5 @@
 import * as catService from './catalogos.service.js';
 
-// chequeo de permisos para bajas
 const validarPermisoBajas = (req) => {
     if (req.query.incluir_bajas === 'true') {
         if (!req.usuario) {
@@ -18,7 +17,6 @@ const validarPermisoBajas = (req) => {
     return false;
 };
 
-// 1. TIPOS DE DOCUMENTO
 export const listarTipos = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);
@@ -49,7 +47,6 @@ export const actualizarTipo = async (req, res, next) => {
     }
 };
 
-// 2. ÓRGANOS EMISORES
 export const listarOrganos = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);
@@ -80,7 +77,6 @@ export const actualizarOrgano = async (req, res, next) => {
     }
 };
 
-// 3. PREFIJOS
 export const listarPrefijos = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);
@@ -110,7 +106,6 @@ export const actualizarPrefijo = async (req, res, next) => {
     }
 };
 
-// 4. DEPENDENCIAS
 export const listarDependencias = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);
@@ -140,7 +135,6 @@ export const actualizarDependencia = async (req, res, next) => {
     }
 };
 
-// 5. DEPARTAMENTOS
 export const listarDepartamentos = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);
@@ -171,7 +165,6 @@ export const actualizarDepartamento = async (req, res, next) => {
     }
 };
 
-// 6. ÁREAS
 export const listarAreas = async (req, res, next) => {
     try {
         const incluirBajas = validarPermisoBajas(req);

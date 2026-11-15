@@ -7,6 +7,7 @@ import {
 } from '../documentos/documentos.service.js';
 import { crearError, exigirPermiso } from '../documentos/errores.js';
 import { esPdf, existeArchivo, guardarArchivo, rutaParaDocumento } from '../documentos/archivos.js';
+import { validarFiltros } from '../documentos/filtros.js';
 import { conTransaccion } from '../../config/transaccion.js';
 import { pool } from '../../config/db.js';
 import { env } from '../../config/env.js';
@@ -116,6 +117,7 @@ const exigirResolucionDeFacultad = async (prefijo) => {
 };
 
 export const listarConcursos = async (filtros) => {
+    validarFiltros(filtros);
     const pagina = await concursosRepo.buscarConcursosBD(filtros);
     const resultados = await Promise.all(
         pagina.resultados.map(async (fila) => ({

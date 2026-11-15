@@ -26,7 +26,7 @@ function aLlamado(concurso, llamado) {
     caracter: llamado.caracter,
     inscripcionDesde: fechaCorta(llamado.inscripcion_desde),
     inscripcionHasta: fechaCorta(llamado.inscripcion_hasta),
-    archivo_ruta: concurso.archivo_ruta,
+    tiene_archivo: concurso.tiene_archivo,
     url_externa: concurso.url_externa,
   }
 }
@@ -82,7 +82,6 @@ export async function obtenerConcursosCargados(consulta) {
       descripcion: concurso.descripcion,
       dependencia: concurso.facultad_sigla,
       id_dependencia_emisora: concurso.id_dependencia_emisora,
-      archivo_ruta: concurso.archivo_ruta,
       url_externa: concurso.url_externa,
       tiene_archivo: concurso.tiene_archivo,
       llamados: concurso.llamados.map((llamado) => aLlamado(concurso, llamado)),

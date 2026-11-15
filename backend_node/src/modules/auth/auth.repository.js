@@ -18,5 +18,5 @@ export const buscarPorEmail = async (email) => {
          WHERE email = $1`,
         [email]
     );
-    return rows[0]; // Retorna el usuario o undefined si no existe
+    return rows[0];
 };
